@@ -42,4 +42,3 @@ from collections import Counter
 def can_construct(ransom: str, magazine: str) -> bool:
     return not (Counter(ransom) - Counter(magazine))
 ```
-
