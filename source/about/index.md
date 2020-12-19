@@ -36,7 +36,7 @@ Note: "\*" marks my advisor.
 
 ### 编程语言
 
-- 掌握：[Python](https://python.org), [Kotlin](https://kotlinlang.org), Java;
+- 掌握：Python, Kotlin, Java;
 - 熟悉：C, C++, JavaScript, CSS;
 - 了解：Go, Shell.
 
