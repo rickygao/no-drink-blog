@@ -31,7 +31,7 @@ tags: [LeetCode]
 
 ## 题解
 
-栈。每一字符与栈顶消重。
+栈。每一字符与栈顶消重。是{% post_link leetcode-1209 %}的特化。
 
 ```python
 class Solution:
