@@ -12,7 +12,7 @@ tags: [LeetCode]
 
 ### 注意
 
-该题与 [1081](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters) 相同。
+该题与 [1081](https://leetcode-cn.com/problems/smallest-subsequence-of-distinct-characters/) 相同。
 
 ### 示例
 
