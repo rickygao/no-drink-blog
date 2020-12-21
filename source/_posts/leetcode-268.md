@@ -59,6 +59,7 @@ class Solution:
         return missing_number(nums)
 
 from itertools import chain
+from functools import reduce
 
 def missing_number(nums: List[int]) -> int:
     return reduce(int.__xor__, chain(nums, range(len(nums) + 1)))
