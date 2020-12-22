@@ -20,7 +20,7 @@ tags: [Python, Library, Path]
 
 | legacy                    | pathlib                                                |
 | ------------------------- | ------------------------------------------------------ |
-| os.path.join()            | PurePath.joinpath(), PurePath.\_\_div\_\_()            |
+| os.path.join()            | PurePath.joinpath(), PurePath.\_\_truediv\_\_()        |
 | os.getcwd()               | Path.cwd()                                             |
 | os.path.expanduser()      | Path.expanduser(), Path.home()                         |
 | os.path.abspath()         | Path.resolve()                                         |
