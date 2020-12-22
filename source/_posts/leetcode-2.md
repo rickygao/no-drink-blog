@@ -48,8 +48,8 @@ def add_numbers(*l: List[ListNode]) -> ListNode:
             if l[i]:
                 current += l[i].val
                 l[i] = l[i].next
-        node.next = ListNode(val=current % 10)
+        current, r = divmod(current, 10)
+        node.next = ListNode(val=r)
         node = node.next
-        current //= 10
     return head.next
 ```

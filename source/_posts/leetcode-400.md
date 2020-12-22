@@ -45,7 +45,8 @@ def find_nth_digit(n: int) -> int:
         n -= b
         k += 1
         m *= 10
-    t = m // 9 + (n - 1) // k
-    i = k - 1 - (n - 1) % k
+    p, q = divmod(n - 1, k)
+    t = m // 9 + p
+    i = k - 1 - q
     return t // (10 ** i) % 10
 ```

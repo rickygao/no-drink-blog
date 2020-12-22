@@ -50,11 +50,10 @@ class Solution:
 
 def get_smallest_string(n: int, k: int) -> str:
     k -= n
-    z = k // 25
+    z, m = divmod(k, 25)
     if n <= z:
         return 'z' * n
 
-    m = k % 25
     a = n - z - 1
     return 'a' * a + chr(m + ord('a')) + 'z' * z
 ```
