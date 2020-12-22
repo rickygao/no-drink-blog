@@ -40,6 +40,8 @@ class Solution:
     def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
         return zigzag_level_order(root)
 
+from collections import deque
+
 def zigzag_level_order(root: TreeNode) -> List[List[int]]:
     if not root:
         return []
