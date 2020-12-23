@@ -5,7 +5,7 @@ tags: [Computer Vision, Transformer]
 mathjax: true
 ---
 
-本文针对 [:page_with_curl: arXiv](https://arxiv.org/abs/2006.03677) 上的早期版本，与最新版本会有所出入。
+本文针对 [:paperclip: arXiv](https://arxiv.org/abs/2006.03677) 的早期版本，与最新版本会有所出入。
 
 ## 知识背景
 
