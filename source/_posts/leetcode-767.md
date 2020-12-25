@@ -15,13 +15,13 @@ tags: [LeetCode]
 ### 示例
 
 ```raw
-输入: S = "aab"
-输出: "aba"
+输入：S = "aab"
+输出："aba"
 ```
 
 ```raw
-输入: S = "aaab"
-输出: ""
+输入：S = "aaab"
+输出：""
 ```
 
 ### 注意

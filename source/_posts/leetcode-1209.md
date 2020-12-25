@@ -28,9 +28,9 @@ tags: [LeetCode]
 输入：s = "deeedbbcccbdaa", k = 3
 输出："aa"
 解释：
-先删除 "eee" 和 "ccc"，得到 "ddbbbdaa"
-再删除 "bbb"，得到 "dddaa"
-最后删除 "ddd"，得到 "aa"
+先删除 "eee" 和 "ccc", 得到 "ddbbbdaa"
+再删除 "bbb", 得到 "dddaa"
+最后删除 "ddd", 得到 "aa"
 ```
 
 ```raw

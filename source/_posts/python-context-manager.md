@@ -11,7 +11,7 @@ with open('somefile', 'w') as f:
     f.write('foobar')
 ```
 
-打开文件 somefile 作为 `f`，并向 `f` 写入字符串 foobar, 并且在结束时帮我们自动关闭了文件 `f`. 这几乎等同于
+打开文件 somefile 作为 `f`, 并向 `f` 写入字符串 foobar, 并且在结束时帮我们自动关闭了文件 `f`. 这几乎等同于
 
 ```python
 f = open('somefile', 'w')
@@ -120,7 +120,7 @@ f.close()
 
 ### `contextlib.closing`
 
-顾名思义，`contextlib.closing` 接收一个可关闭（实现了 `close` 方法）的对象 `thing` 作为参数，在进入上下文时会将 `thing` 直接返回，在退出上下文时会帮我们自动地关闭该可关闭的对象 `thing`。它几乎相当于
+顾名思义，`contextlib.closing` 接收一个可关闭（实现了 `close` 方法）的对象 `thing` 作为参数，在进入上下文时会将 `thing` 直接返回，在退出上下文时会帮我们自动地关闭该可关闭的对象 `thing`. 它几乎相当于
 
 ```python
 from contextlib import contextmanager
