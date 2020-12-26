@@ -2,13 +2,14 @@
 title: LeetCode 85. 最大矩形
 date: 2020-12-26 12:00:00
 tags: [LeetCode]
+mathjax: true
 ---
 
 [:link: 来源](https://leetcode-cn.com/problems/maximal-rectangle/)
 
 ## 题目
 
-给定一个仅包含 `'0'` 和 `'1'`, 大小为 `(rows, cols)` 的二维二进制矩阵，找出只包含 `'1'` 的最大矩形，并返回其面积。
+给定一个仅包含 `'0'` 和 `'1'`, 大小为 $rows\times cols$ 的二维二进制矩阵，找出只包含 `'1'` 的最大矩形，并返回其面积。
 
 ### 示例
 
