@@ -65,9 +65,11 @@ class Solution:
     def candy(self, ratings: List[int]) -> int:
         return candy(ratings)
 
+from operator import sub
+
 def candy(ratings: List[int]) -> int:
     r, inc, dec, pre = 1, 1, 0, 1
-    for d in map(int.__sub__, ratings[1:], ratings):
+    for d in map(sub, ratings[1:], ratings):
         if d >= 0:
             dec = 0
             pre = 1 if d == 0 else pre + 1

@@ -43,9 +43,11 @@ class Solution:
     def maximumGap(self, nums: List[int]) -> int:
         return maximum_gap(nums)
 
+from operator import sub
+
 def maximum_gap(nums: List[int]) -> int:
     nums = sorted(nums)
-    return max(map(int.__sub__, nums[1:], nums[:-1]), default=0)
+    return max(map(sub, nums[1:], nums[:-1]), default=0)
 ```
 
 ### 桶

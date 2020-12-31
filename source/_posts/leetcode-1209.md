@@ -55,6 +55,8 @@ class Solution:
     def removeDuplicates(self, s: str, k: int) -> str:
         return remove_duplicates(s, k)
 
+from operator import mul
+
 def remove_duplicates(s: str, k: int) -> str:
     r, cnt = [], []
     for c in s:
@@ -66,5 +68,5 @@ def remove_duplicates(s: str, k: int) -> str:
         else:
             r.pop()
             cnt.pop()
-    return ''.join(map(str.__mul__, r, cnt))
+    return ''.join(map(mul, r, cnt))
 ```

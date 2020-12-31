@@ -49,12 +49,14 @@ class Solution:
     def wiggleMaxLength(self, nums: List[int]) -> int:
         return wiggle_max_length(nums)
 
+from operator import sub
+
 def wiggle_max_length(nums: List[int]) -> int:
     if not nums:
         return 0
 
     inc, r = None, 1
-    for diff in map(int.__sub__, nums[1:], nums):
+    for diff in map(sub, nums[1:], nums):
         if diff and ((sign := diff > 0) != inc or inc is None):
             inc, r = sign, r + 1
 

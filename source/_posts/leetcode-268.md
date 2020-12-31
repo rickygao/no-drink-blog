@@ -60,7 +60,8 @@ class Solution:
 
 from itertools import chain
 from functools import reduce
+from operator import xor
 
 def missing_number(nums: List[int]) -> int:
-    return reduce(int.__xor__, chain(nums, range(len(nums) + 1)))
+    return reduce(xor, chain(nums, range(len(nums) + 1)))
 ```

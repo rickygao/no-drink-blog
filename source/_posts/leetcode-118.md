@@ -39,6 +39,7 @@ class Solution:
         return generate(numRows)
 
 from itertools import islice
+from operator import add
 
 def generate(num_rows: int) -> List[List[int]]:
     return list(islice(pascals_triangle(), num_rows))
@@ -47,6 +48,6 @@ def pascals_triangle() -> Iterator[List[int]]:
     row = [1]
     yield row
     while True:
-        row = [1, *map(int.__add__, row, row[1:]), 1]
+        row = [1, *map(add, row, row[1:]), 1]
         yield row
 ```

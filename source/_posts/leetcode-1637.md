@@ -47,7 +47,9 @@ class Solution:
     def maxWidthOfVerticalArea(self, points: List[List[int]]) -> int:
         return max_width_of_vertical_area(points)
 
+from operator import sub
+
 def max_width_of_vertical_area(points: List[List[int]]) -> int:
     xs = sorted({p[0] for p in points})
-    return max(map(int.__sub__, xs[1:], xs), default=0)
+    return max(map(sub, xs[1:], xs), default=0)
 ```

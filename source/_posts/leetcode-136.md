@@ -65,6 +65,8 @@ class Solution:
     def singleNumber(self, nums: List[int]) -> int:
         return single_number(nums)
 
+from operator import xor
+
 def single_number(nums: List[int]) -> int:
-    return accumulate(int.__xor__, nums)
+    return accumulate(xor, nums)
 ```
