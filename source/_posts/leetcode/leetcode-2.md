@@ -39,17 +39,13 @@ class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         return add_numbers(l1, l2)
 
-def add_numbers(*l: List[ListNode]) -> ListNode:
-    l = list(l)
-    head = node = ListNode()
-    current = 0
-    while any(l) or current > 0:
-        for i in range(len(l)):
-            if l[i]:
-                current += l[i].val
-                l[i] = l[i].next
+def add_numbers(*heads: List[ListNode]) -> ListNode:
+    nodes, current = list(heads), 0
+    node = dummy = ListNode()
+    while any(nodes) or current:
+        current += sum(n.val for n in nodes)
         current, r = divmod(current, 10)
-        node.next = ListNode(val=r)
-        node = node.next
-    return head.next
+        nodes = [n.next for n in nodes if n.next]
+        node.next = node = ListNode(val=r)
+    return dummy.next
 ```
