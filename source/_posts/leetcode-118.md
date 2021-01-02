@@ -36,15 +36,15 @@ tags: [LeetCode]
 ```python
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
-        return generate(numRows)
+        return pascals_triangle(numRows)
 
 from itertools import islice
 from operator import add
 
-def generate(num_rows: int) -> List[List[int]]:
-    return list(islice(pascals_triangle(), num_rows))
+def pascals_triangle(num_rows: int) -> List[List[int]]:
+    return list(islice(generate_pascals_triangle(), num_rows))
 
-def pascals_triangle() -> Iterator[List[int]]:
+def generate_pascals_triangle() -> Iterator[List[int]]:
     row = [1]
     yield row
     while True:
