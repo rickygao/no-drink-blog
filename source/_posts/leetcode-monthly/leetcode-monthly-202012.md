@@ -1,5 +1,5 @@
 ---
-title: LeetCode 月报 2020 年 12 月
+title: LeetCode 月报 202012
 date: 2020-12-01 00:00:00
 tags: [LeetCode]
 mathjax: true

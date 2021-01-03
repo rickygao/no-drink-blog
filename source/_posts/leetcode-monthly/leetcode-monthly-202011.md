@@ -1,5 +1,5 @@
 ---
-title: LeetCode 月报 2020 年 11 月
+title: LeetCode 月报 202011
 date: 2020-11-24 22:00:00
 tags: [LeetCode]
 mathjax: true

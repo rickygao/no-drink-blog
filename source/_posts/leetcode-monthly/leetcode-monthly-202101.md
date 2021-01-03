@@ -1,5 +1,5 @@
 ---
-title: LeetCode 月报 2021 年 1 月
+title: LeetCode 月报 202101
 date: 2021-01-01 00:00:00
 tags: [LeetCode]
 mathjax: true
