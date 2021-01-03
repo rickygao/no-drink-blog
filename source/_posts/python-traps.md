@@ -1,8 +1,12 @@
 ---
 title: Python 的陷阱
 date: 2020-11-23 12:00:00
-tags: [Python, Trap]
+tags: [Python]
 ---
+
+本文介绍了 Python 中常见的一些陷阱。
+
+<!-- more -->
 
 ## 喋喋不休生成器
 
