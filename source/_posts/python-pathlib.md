@@ -1,7 +1,7 @@
 ---
-title: Python 之路径操作 pathlib
+title: Python 的路径操作 pathlib
 date: 2020-12-19 01:30:00
-tags: [Python, Library, Path]
+tags: [Python]
 ---
 
 不会吧？不会吧？不会有人还在用 `os.path` 等模块来操作文件系统路径吧？难写又难读，看着就头痛。

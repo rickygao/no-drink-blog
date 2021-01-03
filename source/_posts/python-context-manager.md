@@ -1,7 +1,7 @@
 ---
 title: Python 的上下文管理器
 date: 2020-12-05 13:30:00
-tags: [Python, Context Manager]
+tags: [Python]
 ---
 
 写过 Python 的朋友对如下代码一定不陌生：
