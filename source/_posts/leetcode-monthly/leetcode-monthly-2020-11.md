@@ -5,7 +5,7 @@ tags: [LeetCode]
 mathjax: true
 ---
 
-梦开始的地方。
+梦开始的地方，并不完整的月报完成了 19 道题目。
 
 <!-- more -->
 
