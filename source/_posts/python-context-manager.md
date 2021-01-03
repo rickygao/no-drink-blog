@@ -4,7 +4,7 @@ date: 2020-12-05 13:30:00
 tags: [Python, Context Manager]
 ---
 
-写过 `Python` 的朋友对如下代码一定不陌生：
+写过 Python 的朋友对如下代码一定不陌生：
 
 ```python
 with open('somefile', 'w') as f:
@@ -27,7 +27,7 @@ finally:
 
 ## 使用魔术方法实现上下文管理器
 
-`Python` 中有一类方法的方法名会由双下划线 `__` 包裹起来，比如 `__init__`, `_len_` 等，它们叫做魔术方法。而使用魔术方法来实现上下文管理器重点在于实现 `__enter__` 和 `__exit__` 方法。顾名思义，它们分别于进入和退出上下文时被调用。除此之外，`Python 3.5` 还引入了 `__aenter__` 和 `__aexit__`, 用于实现异步上下文管理器，它们被 `async with` 使用，这里不加考虑。如下我们可以实现一个自己的上下文管理器：
+Python 中有一类方法的方法名会由双下划线 `__` 包裹起来，比如 `__init__`, `_len_` 等，它们叫做魔术方法。而使用魔术方法来实现上下文管理器重点在于实现 `__enter__` 和 `__exit__` 方法。顾名思义，它们分别于进入和退出上下文时被调用。除此之外，`Python 3.5` 还引入了 `__aenter__` 和 `__aexit__`, 用于实现异步上下文管理器，它们被 `async with` 使用，这里不加考虑。如下我们可以实现一个自己的上下文管理器：
 
 ```python
 class MyContextManager:
@@ -72,7 +72,7 @@ class MyContextManager(AbstractContextManager):
 
 ## 使用装饰器实现上下文管理器
 
-`Python` 的装饰器是强大的。`contextlib` 为我们提供了一种方式，可以利用[装饰器 `contextmanager`](https://docs.python.org/zh-cn/3/library/contextlib.html#contextlib.contextmanager) 和函数（而不是一个完整的类的定义）来实现一个上下文管理器。实际上，一个简单的上下文管理器就应该以简单的方式来实现。例如，要实现与上文功能相同的上下文管理器，只需要
+Python 的装饰器是强大的。`contextlib` 为我们提供了一种方式，可以利用[装饰器 `contextmanager`](https://docs.python.org/zh-cn/3/library/contextlib.html#contextlib.contextmanager) 和函数（而不是一个完整的类的定义）来实现一个上下文管理器。实际上，一个简单的上下文管理器就应该以简单的方式来实现。例如，要实现与上文功能相同的上下文管理器，只需要
 
 ```python
 from contextlib import contextmanager
