@@ -9,7 +9,7 @@ mathjax: true
 
 <!-- more -->
 
-## LeetCode 222 完全二叉树的节点个数
+## 222. 完全二叉树的节点个数
 
 [:link: 来源](https://leetcode-cn.com/problems/count-complete-tree-nodes/)
 
@@ -117,7 +117,7 @@ def tree_height(root: TreeNode) -> int:
     return height
 ```
 
-## LeetCode 1370 上升下降字符串
+## 1370. 上升下降字符串
 
 [:link: 来源](https://leetcode-cn.com/problems/increasing-decreasing-string/)
 
@@ -208,7 +208,7 @@ def sort_string(s: str) -> str:
     return ''.join(result)
 ```
 
-## LeetCode 1 两数之和
+## 1. 两数之和
 
 [:link: 来源](https://leetcode-cn.com/problems/two-sum/)
 
@@ -245,7 +245,7 @@ def two_sum(nums: List[int], target: int) -> List[int]:
     raise ValueError
 ```
 
-## LeetCode 2 两数相加
+## 2. 两数相加
 
 [:link: 来源](https://leetcode-cn.com/problems/add-two-numbers/)
 
@@ -291,7 +291,7 @@ def add_numbers(*heads: List[ListNode]) -> ListNode:
     return dummy.next
 ```
 
-## LeetCode 3 无重复字符的最长子串
+## 3. 无重复字符的最长子串
 
 [:link: 来源](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
@@ -353,7 +353,7 @@ def length_of_longest_substring(s: str) -> int:
     return mlen
 ```
 
-## LeetCode 164 最大间距
+## 164. 最大间距
 
 [:link: 来源](https://leetcode-cn.com/problems/maximum-gap/)
 
@@ -435,7 +435,7 @@ def maximum_gap(nums: List[int]) -> int:
     return r
 ```
 
-## LeetCode 905 按奇偶排序数组
+## 905. 按奇偶排序数组
 
 [:link: 来源](https://leetcode-cn.com/problems/sort-array-by-parity/)
 
@@ -482,7 +482,7 @@ def sort_array_by_parity(l: List[int]) -> List[int]:
     return l
 ```
 
-## LeetCode 922 按奇偶排序数组 II
+## 922. 按奇偶排序数组 II
 
 [:link: 来源](https://leetcode-cn.com/problems/sort-array-by-parity-ii/)
 
@@ -532,7 +532,7 @@ def sort_array_by_parity_ii(l: List[int]) -> List[int]:
     return l
 ```
 
-## LeetCode 1344 时钟指针的夹角
+## 1344. 时钟指针的夹角
 
 [:link: 来源](https://leetcode-cn.com/problems/angle-between-hands-of-a-clock/)
 
@@ -591,7 +591,7 @@ def angle_clock(hour: int, minutes: int) -> float:
     return delta_angle * 360
 ```
 
-## LeetCode 697 数组的度
+## 697. 数组的度
 
 [:link: 来源](https://leetcode-cn.com/problems/degree-of-an-array/)
 
@@ -653,7 +653,7 @@ def find_shortest_sub_array(nums: List[int]) -> int:
     return min_slice
 ```
 
-## LeetCode 454 四数相加 II
+## 454. 四数相加 II
 
 [:link: 来源](https://leetcode-cn.com/problems/4sum-ii/)
 
@@ -698,7 +698,7 @@ def sum_count(A: List[int], B: List[int], C: List[int], D: List[int]) -> int:
     return sum(AB[-(c + d)] for c, d in product(C, D))
 ```
 
-## LeetCode 57 插入区间
+## 57. 插入区间
 
 [:link: 来源](https://leetcode-cn.com/problems/insert-interval/)
 
@@ -837,7 +837,7 @@ def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int
     return intervals
 ```
 
-## LeetCode 493 翻转对
+## 493. 翻转对
 
 [:link: 来源](https://leetcode-cn.com/problems/reverse-pairs/)
 
@@ -915,7 +915,7 @@ def reverse_pairs(nums: List[int]) -> int:
     return r
 ```
 
-## LeetCode 1626 无矛盾的最佳球队
+## 1626. 无矛盾的最佳球队
 
 [:link: 来源](https://leetcode-cn.com/problems/best-team-with-no-conflicts/)
 
@@ -972,7 +972,7 @@ def best_team_score(scores: List[int], ages: List[int]) -> int:
     return max(m, default=0)
 ```
 
-## LeetCode 976 三角形的最大周长
+## 976. 三角形的最大周长
 
 [:link: 来源](https://leetcode-cn.com/problems/largest-perimeter-triangle/)
 
@@ -1027,7 +1027,7 @@ def largest_perimeter(sides: List[int]) -> int:
     ), default=0)
 ```
 
-## LeetCode 100 相同的树
+## 100. 相同的树
 
 [:link: 来源](https://leetcode-cn.com/problems/same-tree/)
 
@@ -1118,7 +1118,7 @@ def is_same_tree(t1: TreeNode, t2: TreeNode) -> bool:
     return True
 ```
 
-## LeetCode 767 重构字符串
+## 767. 重构字符串
 
 [:link: 来源](https://leetcode-cn.com/problems/reorganize-string/)
 
@@ -1175,7 +1175,7 @@ def reorganize_string(s: str) -> str:
     return ''.join(result)
 ```
 
-## LeetCode 1566 重复至少 K 次且长度为 M 的模式
+## 1566. 重复至少 K 次且长度为 M 的模式
 
 [:link: 来源](https://leetcode-cn.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
 
@@ -1258,7 +1258,7 @@ def contains_pattern(arr: List[int], m: int, k: int) -> bool:
     return False
 ```
 
-## LeetCode 17 电话号码的字母组合
+## 17. 电话号码的字母组合
 
 [:link: 来源](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)
 

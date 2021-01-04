@@ -9,7 +9,7 @@ mathjax: true
 
 <!-- more -->
 
-## LeetCode 605 种花问题
+## 605. 种花问题
 
 [:link: 来源](https://leetcode-cn.com/problems/can-place-flowers/)
 
@@ -57,7 +57,7 @@ def can_place_flowers(flowerbed: List[int], n: int) -> bool:
     return r >= n
 ```
 
-## LeetCode 1250 检查「好数组」
+## 1250. 检查「好数组」
 
 [:link: 来源](https://leetcode-cn.com/problems/check-if-it-is-a-good-array/)
 
@@ -106,7 +106,7 @@ def is_good_array(nums: List[int]) -> bool:
     return gcd(*nums) == 1
 ```
 
-## LeetCode 239 滑动窗口最大值
+## 239. 滑动窗口最大值
 
 [:link: 来源](https://leetcode-cn.com/problems/sliding-window-maximum/)
 
@@ -184,7 +184,7 @@ def generate_max_sliding_window(nums: Iterator[int], k: int) -> Iterator[int]:
             yield nums[q[0]]
 ```
 
-## LeetCode 86 分隔链表
+## 86. 分隔链表
 
 [:link: 来源](https://leetcode-cn.com/problems/partition-list/)
 

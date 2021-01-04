@@ -9,7 +9,7 @@ mathjax: true
 
 <!-- more -->
 
-## LeetCode 34 在排序数组中查找元素的第一个和最后一个位置
+## 34. 在排序数组中查找元素的第一个和最后一个位置
 
 [:link: 来源](https://leetcode-cn.com/problems/find-first-and-last-position-of-element-in-sorted-array/)
 
@@ -65,7 +65,7 @@ def search_range(nums: List[int], target: int) -> List[int]:
     return [l, r - 1]
 ```
 
-## LeetCode 1641 统计字典序元音字符串的数目
+## 1641. 统计字典序元音字符串的数目
 
 [:link: 来源](https://leetcode-cn.com/problems/count-sorted-vowel-strings/)
 
@@ -157,7 +157,7 @@ class Solution:
         return TABLE[n]
 ```
 
-## LeetCode 451 根据字符出现频率排序
+## 451. 根据字符出现频率排序
 
 [:link: 来源](https://leetcode-cn.com/problems/sort-characters-by-frequency/)
 
@@ -202,7 +202,7 @@ def frequency_sort(s: str) -> str:
     return ''.join(c * n for c, n in Counter(s).most_common())
 ```
 
-## LeetCode 321 拼接最大数
+## 321. 拼接最大数
 
 [:link: 来源](https://leetcode-cn.com/problems/create-maximum-number/)
 
@@ -267,7 +267,7 @@ def _merge(seq1: List[int], seq2: List[int]) -> List[int]:
     return r
 ```
 
-## LeetCode 204 计数质数
+## 204. 计数质数
 
 [:link: 来源](https://leetcode-cn.com/problems/count-primes/)
 
@@ -318,7 +318,7 @@ def count_primes(n: int) -> int:
     return sum(is_primes)
 ```
 
-## LeetCode 101 对称二叉树
+## 101. 对称二叉树
 
 [:link: 来源](https://leetcode-cn.com/problems/symmetric-tree/)
 
@@ -411,7 +411,7 @@ def is_symmetric(t1: TreeNode, t2: TreeNode) -> bool:
     return True
 ```
 
-## LeetCode 659 分割数组为连续子序列
+## 659. 分割数组为连续子序列
 
 [:link: 来源](https://leetcode-cn.com/problems/split-array-into-consecutive-subsequences/)
 
@@ -498,7 +498,7 @@ def is_possible(nums: List[int]) -> bool:
     return not (s1 or s2)
 ```
 
-## LeetCode 456 132 模式
+## 456. 132 模式
 
 [:link: 来源](https://leetcode-cn.com/problems/132-pattern/)
 
@@ -553,7 +553,7 @@ def find_132_pattern(nums: List[int]) -> bool:
     return False
 ```
 
-## LeetCode 621 任务调度器
+## 621. 任务调度器
 
 [:link: 来源](https://leetcode-cn.com/problems/task-scheduler/)
 
@@ -614,7 +614,7 @@ def least_interval(tasks: List[str], n: int) -> int:
     return max((max_times - 1) * (n + 1) + max_count, num_tasks)
 ```
 
-## LeetCode 118 杨辉三角
+## 118. 杨辉三角
 
 [:link: 来源](https://leetcode-cn.com/problems/pascals-triangle/)
 
@@ -662,7 +662,7 @@ def generate_pascals_triangle() -> Iterator[List[int]]:
         yield row
 ```
 
-## LeetCode 263 丑数
+## 263. 丑数
 
 [:link: 来源](https://leetcode-cn.com/problems/ugly-number/)
 
@@ -713,7 +713,7 @@ def is_ugly(num: int) -> bool:
     return num == 1
 ```
 
-## LeetCode 400 第 N 个数字
+## 400. 第 N 个数字
 
 [:link: 来源](https://leetcode-cn.com/problems/nth-digit/)
 
@@ -759,7 +759,7 @@ def find_nth_digit(n: int) -> int:
     return t // (10 ** i) % 10
 ```
 
-## LeetCode 1577 数的平方等于两数乘积的方法数
+## 1577. 数的平方等于两数乘积的方法数
 
 [:link: 来源](https://leetcode-cn.com/problems/number-of-ways-where-square-of-number-is-equal-to-product-of-two-numbers/)
 
@@ -826,7 +826,7 @@ def num_triplets(nums1: List[int], nums2: List[int]) -> int:
     return sum(squares[r] * products[r] for r in equals)
 ```
 
-## LeetCode 861 翻转矩阵后的得分
+## 861. 翻转矩阵后的得分
 
 [:link: 来源](https://leetcode-cn.com/problems/score-after-flipping-matrix/)
 
@@ -899,7 +899,7 @@ def matrix_score(matrix: List[List[int]]) -> int:
     )
 ```
 
-## LeetCode 842 将数组拆分成斐波那契序列
+## 842. 将数组拆分成斐波那契序列
 
 [:link: 来源](https://leetcode-cn.com/problems/split-array-into-fibonacci-sequence/)
 
@@ -980,7 +980,7 @@ def split_into_fibonacci(s: str) -> List[int]:
     return []
 ```
 
-## LeetCode 1190 反转每对括号间的子串
+## 1190. 反转每对括号间的子串
 
 [:link: 来源](https://leetcode-cn.com/problems/reverse-substrings-between-each-pair-of-parentheses/)
 
@@ -1042,7 +1042,7 @@ def reverse_parentheses(s: str) -> str:
     return r[0]
 ```
 
-## LeetCode 492 构造矩形
+## 492. 构造矩形
 
 [:link: 来源](https://leetcode-cn.com/problems/construct-the-rectangle/)
 
@@ -1086,7 +1086,7 @@ def construct_rectangle(area: int) -> List[int]:
     return [area // w, w]
 ```
 
-## LeetCode 62 不同路径
+## 62. 不同路径
 
 [:link: 来源](https://leetcode-cn.com/problems/unique-paths/)
 
@@ -1139,7 +1139,7 @@ def unique_paths(m: int, n: int) -> int:
     return comb(m + n - 2, m - 1)
 ```
 
-## LeetCode 1217 玩筹码
+## 1217. 玩筹码
 
 [:link: 来源](https://leetcode-cn.com/problems/minimum-cost-to-move-chips-to-the-same-position/)
 
@@ -1188,7 +1188,7 @@ def min_cost_to_move_chips(chips: List[int]) -> int:
     return min(odd := sum(p % 2 for p in chips), len(chips) - odd)
 ```
 
-## LeetCode 268 丢失的数字
+## 268. 丢失的数字
 
 [:link: 来源](https://leetcode-cn.com/problems/missing-number/)
 
@@ -1250,7 +1250,7 @@ def missing_number(nums: List[int]) -> int:
     return reduce(xor, chain(nums, range(len(nums) + 1)))
 ```
 
-## LeetCode 860 柠檬水找零
+## 860. 柠檬水找零
 
 [:link: 来源](https://leetcode-cn.com/problems/lemonade-change/)
 
@@ -1361,7 +1361,7 @@ def lemonade_change(bills: List[int]) -> bool:
     return True
 ```
 
-## LeetCode 649 Dota2 参议院
+## 649. Dota2 参议院
 
 [:link: 来源](https://leetcode-cn.com/problems/dota2-senate/)
 
@@ -1427,7 +1427,7 @@ def predict_party_victory(senate: str) -> str:
     return 'Radiant' if radiant else 'Dire'
 ```
 
-## LeetCode 1047 删除字符串中的所有相邻重复项
+## 1047. 删除字符串中的所有相邻重复项
 
 [:link: 来源](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/)
 
@@ -1471,7 +1471,7 @@ def remove_duplicates(s: str) -> str:
     return ''.join(r)
 ```
 
-## LeetCode 102 二叉树的层序遍历
+## 102. 二叉树的层序遍历
 
 [:link: 来源](https://leetcode-cn.com/problems/binary-tree-level-order-traversal/)
 
@@ -1524,7 +1524,7 @@ def level_order(root: TreeNode) -> List[List[int]]:
     return r
 ```
 
-## LeetCode 103 二叉树的锯齿形层次遍历
+## 103. 二叉树的锯齿形层次遍历
 
 [:link: 来源](https://leetcode-cn.com/problems/binary-tree-zigzag-level-order-traversal/)
 
@@ -1579,7 +1579,7 @@ def zigzag_level_order(root: TreeNode) -> List[List[int]]:
     return r
 ```
 
-## LeetCode 376 摆动序列
+## 376. 摆动序列
 
 [:link: 来源](https://leetcode-cn.com/problems/wiggle-subsequence/)
 
@@ -1637,7 +1637,7 @@ def wiggle_max_length(nums: List[int]) -> int:
     return r
 ```
 
-## LeetCode 1338 数组大小减半
+## 1338. 数组大小减半
 
 [:link: 来源](https://leetcode-cn.com/problems/reduce-array-size-to-the-half/)
 
@@ -1703,7 +1703,7 @@ def min_set_size(arr: List[int]) -> int:
     )) if a >= half)
 ```
 
-## LeetCode 1637 两点之间不包含任何点的最宽垂直面积
+## 1637. 两点之间不包含任何点的最宽垂直面积
 
 [:link: 来源](https://leetcode-cn.com/problems/widest-vertical-area-between-two-points-containing-no-points/)
 
@@ -1753,7 +1753,7 @@ def max_width_of_vertical_area(points: List[List[int]]) -> int:
     return max(map(sub, xs[1:], xs), default=0)
 ```
 
-## LeetCode 1227 飞机座位分配概率
+## 1227. 飞机座位分配概率
 
 [:link: 来源](https://leetcode-cn.com/problems/airplane-seat-assignment-probability/)
 
@@ -1799,7 +1799,7 @@ def nth_person_gets_nth_seat(n: int) -> float:
     return 1. if n == 1 else .5
 ```
 
-## LeetCode 217 存在重复元素
+## 217. 存在重复元素
 
 [:link: 来源](https://leetcode-cn.com/problems/contains-duplicate/)
 
@@ -1855,7 +1855,7 @@ def contains_duplicate(nums: List[int]) -> bool:
     return len(set(nums)) < len(nums)
 ```
 
-## LeetCode 1160 拼写单词
+## 1160. 拼写单词
 
 [:link: 来源](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/)
 
@@ -1908,7 +1908,7 @@ def count_characters(words: List[str], chars: str) -> int:
     )
 ```
 
-## LeetCode 1122 数组的相对排序
+## 1122. 数组的相对排序
 
 [:link: 来源](https://leetcode-cn.com/problems/relative-sort-array/)
 
@@ -1949,7 +1949,7 @@ def relative_sort_array(arr1: List[int], arr2: List[int]) -> List[int]:
     return sorted(arr1, key=lambda v: (pos.get(v, mpos), v))
 ```
 
-## LeetCode 229 求众数 II
+## 229. 求众数 II
 
 [:link: 来源](https://leetcode-cn.com/problems/majority-element-ii/)
 
@@ -2074,7 +2074,7 @@ def majority_element(nums: List[int]) -> List[int]:
     return r
 ```
 
-## LeetCode 5625 比赛中的配对次数
+## 5625. 比赛中的配对次数
 
 [:link: 来源](https://leetcode-cn.com/problems/count-of-matches-in-tournament/)
 
@@ -2144,7 +2144,7 @@ def number_of_matches(n: int) -> int:
     return n - 1
 ```
 
-## LeetCode 5626 十、二进制数的最少数目
+## 5626. 十、二进制数的最少数目
 
 [:link: 来源](https://leetcode-cn.com/problems/partitioning-into-minimum-number-of-deci-binary-numbers/)
 
@@ -2191,7 +2191,7 @@ def min_partitions(n: str) -> int:
     return ord(max(n)) - ord('0')
 ```
 
-## LeetCode 349 两个数组的交集
+## 349. 两个数组的交集
 
 [:link: 来源](https://leetcode-cn.com/problems/intersection-of-two-arrays/)
 
@@ -2227,7 +2227,7 @@ def intersection(nums1: List[int], nums2: List[int]) -> List[int]:
     return list(set(nums1) & set(nums2))
 ```
 
-## LeetCode 1374 生成每种字符都是奇数个的字符串
+## 1374. 生成每种字符都是奇数个的字符串
 
 [:link: 来源](https://leetcode-cn.com/problems/generate-a-string-with-characters-that-have-odd-counts/)
 
@@ -2271,7 +2271,7 @@ def generate_the_string(n: int) -> str:
     return 'r' * n if n % 2 else 'r' * (n - 1) + 'g'
 ```
 
-## LeetCode 650 只有两个键的键盘
+## 650. 只有两个键的键盘
 
 [:link: 来源](https://leetcode-cn.com/problems/2-keys-keyboard/)
 
@@ -2319,7 +2319,7 @@ def min_steps(n: int) -> int:
     return r
 ```
 
-## LeetCode 49 字母异位词分组
+## 49. 字母异位词分组
 
 [:link: 来源](https://leetcode-cn.com/problems/group-anagrams/)
 
@@ -2403,7 +2403,7 @@ def group_anagrams(strs: List[str]) -> List[List[str]]:
     return list(r.values())
 ```
 
-## LeetCode 738 单调递增的数字
+## 738. 单调递增的数字
 
 [:link: 来源](https://leetcode-cn.com/problems/monotone-increasing-digits/)
 
@@ -2463,7 +2463,7 @@ def monotone_increasing_digits(n: int) -> int:
     return int(s[:j] + chr(ord(s[j]) - 1) + '9' * (len(s) - j - 1))
 ```
 
-## LeetCode 290 单词规律
+## 290. 单词规律
 
 [:link: 来源](https://leetcode-cn.com/problems/word-pattern/)
 
@@ -2523,7 +2523,7 @@ def wrod_pattern(pattern: str, s: str) -> bool:
     return True
 ```
 
-## LeetCode 1663 具有给定数值的最小字符串
+## 1663. 具有给定数值的最小字符串
 
 [:link: 来源](https://leetcode-cn.com/problems/smallest-string-with-a-given-numeric-value/)
 
@@ -2577,7 +2577,7 @@ def get_smallest_string(n: int, k: int) -> str:
     return 'a' * a + chr(m + ord('a')) + 'z' * z
 ```
 
-## LeetCode 714 买卖股票的最佳时机含手续费
+## 714. 买卖股票的最佳时机含手续费
 
 [:link: 来源](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)
 
@@ -2624,7 +2624,7 @@ def max_profit(prices: List[int], fee: int) -> int:
     return cl
 ```
 
-## LeetCode 137 只出现一次的数字 II
+## 137. 只出现一次的数字 II
 
 [:link: 来源](https://leetcode-cn.com/problems/single-number-ii/)
 
@@ -2693,7 +2693,7 @@ def single_number(nums: List[int]) -> int:
     return once
 ```
 
-## LeetCode 136 只出现一次的数字
+## 136. 只出现一次的数字
 
 [:link: 来源](https://leetcode-cn.com/problems/single-number/)
 
@@ -2760,7 +2760,7 @@ def single_number(nums: List[int]) -> int:
     return accumulate(xor, nums)
 ```
 
-## LeetCode 389 找不同
+## 389. 找不同
 
 [:link: 来源](https://leetcode-cn.com/problems/find-the-difference/)
 
@@ -2828,7 +2828,7 @@ def find_the_difference(s: str, t: str) -> str:
     return chr(sum(map(ord, t)) - sum(map(ord, s)))
 ```
 
-## LeetCode 383 赎金信
+## 383. 赎金信
 
 [:link: 来源](https://leetcode-cn.com/problems/ransom-note/)
 
@@ -2867,7 +2867,7 @@ def can_construct(ransom: str, magazine: str) -> bool:
     return not (Counter(ransom) - Counter(magazine))
 ```
 
-## LeetCode 540 有序数组中的单一元素
+## 540. 有序数组中的单一元素
 
 [:link: 来源](https://leetcode-cn.com/problems/single-element-in-a-sorted-array/)
 
@@ -2912,7 +2912,7 @@ def single_non_duplicate(nums: List[int]) -> int:
     return nums[low]
 ```
 
-## LeetCode 48 旋转图像
+## 48. 旋转图像
 
 [:link: 来源](https://leetcode-cn.com/problems/rotate-image/)
 
@@ -2975,7 +2975,7 @@ def rotate(matrix: List[List[int]]) -> None:
             matrix[        j][n - i - 1], matrix[n - i - 1][n - j - 1]
 ```
 
-## LeetCode 1209 删除字符串中的所有相邻重复项 II
+## 1209. 删除字符串中的所有相邻重复项 II
 
 [:link: 来源](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string-ii/)
 
@@ -3042,7 +3042,7 @@ def remove_duplicates(s: str, k: int) -> str:
     return ''.join(map(mul, r, cnt))
 ```
 
-## LeetCode 917 仅仅反转字母
+## 917. 仅仅反转字母
 
 [:link: 来源](https://leetcode-cn.com/problems/reverse-only-letters/)
 
@@ -3097,7 +3097,7 @@ def reverse_only_letters(s: str) -> str:
     return ''.join(s)
 ```
 
-## LeetCode 316 去除重复字母
+## 316. 去除重复字母
 
 [:link: 来源](https://leetcode-cn.com/problems/remove-duplicate-letters/)
 
@@ -3150,7 +3150,7 @@ def remove_duplicate_letters(s: str) -> str:
     return ''.join(stack)
 ```
 
-## LeetCode 746 使用最小花费爬楼梯
+## 746. 使用最小花费爬楼梯
 
 [:link: 来源](https://leetcode-cn.com/problems/min-cost-climbing-stairs/)
 
@@ -3197,7 +3197,7 @@ def min_cost_climbing_stairs(cost: List[int]) -> int:
     return min(r1, r2)
 ```
 
-## LeetCode 387 字符串中的第一个唯一字符
+## 387. 字符串中的第一个唯一字符
 
 [:link: 来源](https://leetcode-cn.com/problems/first-unique-character-in-a-string/)
 
@@ -3237,7 +3237,7 @@ def first_unique_character(s: str) -> int:
     return next((i for i, c in enumerate(s) if counter[c] == 1), -1)
 ```
 
-## LeetCode 135 分发糖果
+## 135. 分发糖果
 
 [:link: 来源](https://leetcode-cn.com/problems/candy/)
 
@@ -3317,7 +3317,7 @@ def candy(ratings: List[int]) -> int:
     return r
 ```
 
-## LeetCode 455 分发饼干
+## 455. 分发饼干
 
 [:link: 来源](https://leetcode-cn.com/problems/assign-cookies/)
 
@@ -3372,7 +3372,7 @@ def find_content_children(g: List[int], s: List[int]) -> int:
     return i
 ```
 
-## LeetCode 84 柱状图中最大的矩形
+## 84. 柱状图中最大的矩形
 
 [:link: 来源](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)
 
@@ -3411,7 +3411,7 @@ def largest_rectangle_area(heights: List[int]) -> int:
     return r
 ```
 
-## LeetCode 85 最大矩形
+## 85. 最大矩形
 
 [:link: 来源](https://leetcode-cn.com/problems/maximal-rectangle/)
 
@@ -3490,7 +3490,7 @@ def maximal_rectangle_histogram(heights: List[int]) -> int:
     return r
 ```
 
-## LeetCode 205 同构字符串
+## 205. 同构字符串
 
 [:link: 来源](https://leetcode-cn.com/problems/isomorphic-strings/)
 
@@ -3557,7 +3557,7 @@ def is_isomorphix(s: str, t: str) -> bool:
     return len(set(s)) == len(set(t)) == len(set(zip(s, t)))
 ```
 
-## LeetCode 856 括号的分数
+## 856. 括号的分数
 
 [:link: 来源](https://leetcode-cn.com/problems/score-of-parentheses/)
 
@@ -3614,7 +3614,7 @@ def score_of_parentheses(s: str) -> int:
     return stack.pop()
 ```
 
-## LeetCode 188 买卖股票的最佳时机 IV
+## 188. 买卖股票的最佳时机 IV
 
 [:link: 来源](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/)
 
@@ -3669,7 +3669,7 @@ def max_profit(k: int, prices: List[int]) -> int:
     return p[-1]
 ```
 
-## LeetCode 330 按要求补齐数组
+## 330. 按要求补齐数组
 
 [:link: 来源](https://leetcode-cn.com/problems/patching-array/)
 
@@ -3721,7 +3721,7 @@ def min_patches(nums: List[int], n: int) -> int:
     return r
 ```
 
-## LeetCode 1046 最后一块石头的重量
+## 1046. 最后一块石头的重量
 
 [:link: 来源](https://leetcode-cn.com/problems/last-stone-weight/)
 
@@ -3798,7 +3798,7 @@ def last_stone_weight(stones: List[int]) -> int:
     return -heappop(stones) if stones else 0
 ```
 
-## LeetCode 561 数组拆分 I
+## 561. 数组拆分 I
 
 [:link: 来源](https://leetcode-cn.com/problems/array-partition-i/)
 
@@ -3845,7 +3845,7 @@ def array_pair_sum(nums: List[int]) -> int:
     return sum(sorted(nums)[::2])
 ```
 
-## LeetCode 435 无重叠区间
+## 435. 无重叠区间
 
 [:link: 来源](https://leetcode-cn.com/problems/non-overlapping-intervals/)
 
@@ -3899,7 +3899,7 @@ def erase_overlap_intervals(intervals: List[List[int]]) -> int:
     return len(intervals) - reserved
 ```
 
-## LeetCode 1010 总持续时间可被 60 整除的歌曲
+## 1010. 总持续时间可被 60 整除的歌曲
 
 [:link: 来源](https://leetcode-cn.com/problems/pairs-of-songs-with-total-durations-divisible-by-60/)
 
