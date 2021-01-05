@@ -229,3 +229,166 @@ def partition(head: ListNode, x: int) -> ListNode:
 
     return l_dummy.next
 ```
+
+## 509. 斐波那契数
+
+[:link: 来源](https://leetcode-cn.com/problems/fibonacci-number/)
+
+### 题目
+
+斐波那契数，通常用 $F(n)$ 表示，形成的序列称为**斐波那契数列**。该数列由 $0$ 和 $1$ 开始，后面的每一项数字都是前面两项数字的和。也就是：
+
+$$
+F(n)=\begin{cases}
+    0,             & \text{if } n=0,\\
+    1,             & \text{if } n=1,\\
+    F(n-1)+F(n-2), & \text{if } n\ge2.
+\end{cases}
+$$
+
+给你 $n$，请计算 $F(n)$.
+
+#### 示例
+
+```rraw
+输入：2
+输出：1
+解释：F(2) = F(1) + F(0) = 1 + 0 = 1.
+```
+
+```raw
+输入：3
+输出：2
+解释：F(3) = F(2) + F(1) = 1 + 1 = 2.
+```
+
+```raw
+输入：4
+输出：3
+解释：F(4) = F(3) + F(2) = 2 + 1 = 3.
+```
+
+#### 提示
+
+- `0 <= n <= 30`.
+
+### 题解
+
+#### 迭代
+
+```python
+class Solution:
+    def fib(self, n: int) -> int:
+        return fib(n)
+
+def fib(n: int) -> int:
+    f1, f2 = 0, 1
+    for i in range(n):
+        f1, f2 = f2, f1 + f2
+    return f1
+```
+
+#### 通项
+
+$$
+\begin{aligned}
+    F(n)&=\frac{\phi^n-\psi^n}{\phi-\psi},\\
+    \text{where }\phi&=\frac{1+\sqrt5}2,\psi=\frac{1-\sqrt5}2.\\
+\end{aligned}
+$$
+
+```python
+class Solution:
+    def fib(self, n: int) -> int:
+        return fib(n)
+
+from math import sqrt
+
+def fib(n: int) -> int:
+    sqrt5 = sqrt(5)
+    phi, psi = (1 + sqrt5) / 2, (1 - sqrt5) / 2
+    f = (phi ** n - psi ** n) / (phi - psi)
+    return round(f)
+```
+
+#### 查表
+
+```python
+class Solution:
+    def fib(self, n: int) -> int:
+        return fib(n)
+
+FIB = [
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
+    610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657,
+    46368, 75025, 121393, 196418, 317811, 514229, 832040
+]
+
+def fib(n: int) -> int:
+    return FIB[n]
+```
+
+## 830. 较大分组的位置
+
+[:link: 来源](https://leetcode-cn.com/problems/positions-of-large-groups/)
+
+### 题目
+
+在一个由小写字母构成的字符串 `s` 中，包含由一些连续的相同字符所构成的分组。
+
+例如，在字符串 `s = "abbxxxxzyy"` 中，就含有 `"a"`, `"bb"`, `"xxxx"`, `"z"` 和 `"yy"` 这样的一些分组。
+
+分组可以用区间 `[begin, end]` 表示，其中 `begin` 和 `end` 分别表示该分组的起始和终止位置的下标。上例中的 `"xxxx"` 分组用区间表示为 `[3, 6]`.
+
+我们称所有包含大于或等于三个连续字符的分组为**较大分组**。
+
+找到每一个**较大分组**的区间，按起始位置下标递增顺序排序后，返回结果。
+
+#### 示例
+
+```raw
+输入：s = "abbxxxxzzy"
+输出：[[3, 6]]
+解释："xxxx" 是一个起始于 3 且终止于 6 的较大分组。
+```
+
+```raw
+输入：s = "abc"
+输出：[]
+解释："a", "b" 和 "c" 均不是符合要求的较大分组。
+```
+
+```raw
+输入：s = "abcdddeeeeaabbbcd"
+输出：[[3, 5], [6, 9], [12, 14]]
+解释：较大分组为 "ddd", "eeee" 和 "bbb".
+```
+
+```raw
+输入：s = "aba"
+输出：[]
+```
+
+#### 提示
+
+- `1 <= len(s) <= 1000`;
+- `s` 仅含小写英文字母。
+
+### 题解
+
+```python
+class Solution:
+    def largeGroupPositions(self, s: str) -> List[List[int]]:
+        return large_group_positions(s)
+
+from itertools import chain
+
+def large_group_positions(s: str) -> List[List[int]]:
+    r, p = [], None
+    for i, c in enumerate(chain(s, [None])):
+        if p != c:
+            if p and i - b >= 3:
+                r.append([b, i - 1])
+            p, b = c, i
+    return r
+```
