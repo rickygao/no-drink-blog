@@ -93,7 +93,7 @@ def can_place_flowers(flowerbed: List[int], n: int) -> bool:
 
 ### 题解
 
-数学题。[裴蜀定理](https://zh.wikipedia.org/wiki/貝祖等式)的推广形式：若 $a_i\in\mathbb{Z}$ 且 $d=\gcd(a_i)$, 则关于 $x_i$ 的方程 $\sum_ia_ix_i=m$ 有整数解当且仅当 $d\mid m$, 其中 $i=1,2,\dots,n$; 特别地，$\sum_ia_ix_i=1$ 有整数解当且仅当 $a_i$ 互质。
+数学题。[裴蜀定理](https://zh.wikipedia.org/wiki/貝祖等式)的推广形式：若 $a_i\in\mathbb{Z}$ 且 $d=\gcd(a_i)$, 则关于 $x_i$ 的方程 $\sum_ia_ix_i=m$ 有整数解当且仅当 $d\mid m$, 其中 $i=1, 2, \dots, n$; 特别地，$\sum_ia_ix_i=1$ 有整数解当且仅当 $a_i$ 互质。
 
 ```python
 class Solution:
@@ -240,8 +240,8 @@ def partition(head: ListNode, x: int) -> ListNode:
 
 $$
 F(n)=\begin{cases}
-    0,             & \text{if } n=0,\\
-    1,             & \text{if } n=1,\\
+    0,             & \text{if } n=0, \\
+    1,             & \text{if } n=1, \\
     F(n-1)+F(n-2), & \text{if } n\ge2.
 \end{cases}
 $$
@@ -292,8 +292,8 @@ def fib(n: int) -> int:
 
 $$
 \begin{aligned}
-    F(n)&=\frac{\phi^n-\psi^n}{\phi-\psi},\\
-    \text{where }\phi&=\frac{1+\sqrt5}2,\psi=\frac{1-\sqrt5}2.\\
+    F(n)&=\frac{\phi^n-\psi^n}{\phi-\psi}, \\
+    \text{where }\phi&=\frac{1+\sqrt5}2, \psi=\frac{1-\sqrt5}2.\\
 \end{aligned}
 $$
 
@@ -319,8 +319,8 @@ class Solution:
         return fib(n)
 
 FIB = [
-    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377,
-    610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657,
+    0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 
+    610, 987, 1597, 2584, 4181, 6765, 10946, 17711, 28657, 
     46368, 75025, 121393, 196418, 317811, 514229, 832040
 ]
 
@@ -391,4 +391,120 @@ def large_group_positions(s: str) -> List[List[int]]:
                 r.append([b, i - 1])
             p, b = c, i
     return r
+```
+
+## 399. 除法求值
+
+### 题目
+
+给你一个变量对数组 `equations` 和一个实数值数组 `values` 作为已知条件，其中 `equations[i] = [a_i, b_i]` 和 `values[i]` 共同表示等式 `a_i / b_i = values[i]`. 每个 `a_i` 或 `b_i` 是一个表示单个变量的字符串。
+
+另有一些以数组 `queries` 表示的问题，其中 `queries[j] = [c_j, d_j]` 表示第 `j` 个问题，请你根据已知条件找出 `c_j / d_j` 的结果作为答案。
+
+返回**所有问题的答案**。如果存在某个无法确定的答案，则用 `-1.0` 替代这个答案。
+
+#### 注意
+
+输入总是有效的。你可以假设除法运算中不会出现除数为 `0` 的情况，且不存在任何矛盾的结果。
+
+#### 示例
+
+```raw
+输入：equations = [["a", "b"], ["b", "c"]], values = [2.0, 3.0], queries = [["a", "c"], ["b", "a"], ["a", "e"], ["a", "a"], ["x", "x"]]
+输出：[6.00000, 0.50000, -1.00000, 1.00000, -1.00000]
+解释：
+条件：a / b = 2.0, b / c = 3.0;
+问题：a / c = ?, b / a = ?, a / e = ?, a / a = ?, x / x = ?;
+结果：[6.0, 0.5, -1.0, 1.0, -1.0].
+```
+
+```raw
+输入：equations = [["a", "b"], ["b", "c"], ["bc", "cd"]], values = [1.5, 2.5, 5.0], queries = [["a", "c"], ["c", "b"], ["bc", "cd"], ["cd", "bc"]]
+输出：[3.75000, 0.40000, 5.00000, 0.20000]
+```
+
+```raw
+输入：equations = [["a", "b"]], values = [0.5], queries = [["a", "b"], ["b", "a"], ["a", "c"], ["x", "y"]]
+输出：[0.50000, 2.00000, -1.00000, -1.00000]
+```
+
+#### 提示
+
+- `1 <= len(equations) <= 20`, `len(equations[i]) == 2`, `1 <= len(a_i), len(b_i) <= 5`;
+- `len(values) == len(equations)`, `0.0 < values[i] <= 20.0`;
+- `1 <= len(queries) <= 20`, `len(queries[i]) == 2`, `1 <= len(c_j), len(d_j) <= 5`;
+- `a_i`, `b_i`, `c_j`, `d_j` 由小写英文字母与数字组成。
+
+### 题解
+
+#### 深度优先搜索
+
+```python
+class Solution:
+    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+        return calc_equation(equations, values, queries)
+
+from collections import defaultdict
+
+def calc_equation(equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+    end_value_dict = defaultdict(list)
+    for (begin, end), value in zip(equations, values):
+        end_value_dict[begin].append((end, value))
+        end_value_dict[end].append((begin, 1.0 / value))
+
+    query_values = []
+    for query_begin, query_end in queries:
+        if not (query_begin in end_value_dict and query_end in end_value_dict):
+            query_values.append(-1.0)
+            continue
+        seen, stack = set([query_begin]), [(query_begin, 1.0)]
+        while stack:
+            begin, query_value = stack.pop()
+            if begin == query_end:
+                query_values.append(query_value)
+                break
+            for end, value in end_value_dict[begin]:
+                if end not in seen:
+                    seen.add(end)
+                    stack.append((end, value * query_value))
+        else:
+            query_values.append(-1.0)
+
+    return query_values
+```
+
+#### 广度优先搜索
+
+```python
+class Solution:
+    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+        return calc_equation(equations, values, queries)
+
+from collections import defaultdict, deque
+
+def calc_equation(equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+    end_value_dict = defaultdict(list)
+    for (begin, end), value in zip(equations, values):
+        end_value_dict[begin].append((end, value))
+        end_value_dict[end].append((begin, 1.0 / value))
+
+    query_values = []
+    for query_begin, query_end in queries:
+        if not (query_begin in end_value_dict and query_end in end_value_dict):
+            query_values.append(-1.0)
+            continue
+        seen, queue = set([query_begin]), deque([(query_begin, 1.0)])
+        while queue:
+            begin, query_value = queue.popleft()
+            if begin == query_end:
+                query_values.append(query_value)
+                break
+            for end, value in end_value_dict[begin]:
+                if end not in seen:
+                    seen.add(end)
+                    queue.append((end, value * query_value))
+        else:
+            query_values.append(-1.0)
+
+    return query_values
 ```
