@@ -699,3 +699,86 @@ def rotate(nums: List[int], k: int) -> None:
     reverse(nums, s, n)
     reverse(nums, 0, n)
 ```
+
+## 123. 买卖股票的最佳时机 III
+
+[:link: 来源](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
+
+### 题目
+
+给定一个数组，它的第 `i` 个元素是一支给定的股票在第 `i` 天的价格。
+
+设计一个算法来计算你所能获取的最大利润。你最多可以完成**两笔**交易。
+
+#### 注意
+
+你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+
+#### 示例
+
+```raw
+输入：prices = [3, 3, 5, 0, 0, 3, 1, 4]
+输出：6
+解释：在第 4 天（股票价格 = 0）的时候买入，在第 6 天（股票价格 = 3）的时候卖出，这笔交易所能获得利润 = 3 - 0 = 3;
+随后，在第 7 天（股票价格 = 1）的时候买入，在第 8 天（股票价格 = 4）的时候卖出，这笔交易所能获得利润 = 4 - 1 = 3.
+```
+
+```raw
+输入：prices = [1, 2, 3, 4, 5]
+输出：4
+解释：在第 1 天（股票价格 = 1）的时候买入，在第 5 天（股票价格 = 5）的时候卖出, 这笔交易所能获得利润 = 5 - 1 = 4.
+注意你不能在第 1 天和第 2 天接连购买股票，之后再将它们卖出。因为这样属于同时参与了多笔交易，你必须在再次购买前出售掉之前的股票。
+```
+
+```raw
+输入：prices = [7, 6, 4, 3, 1]
+输出：0 
+解释：在这个情况下, 没有交易完成, 所以最大利润为 0.
+```
+
+```raw
+输入：prices = [1]
+输出：0
+```
+
+#### 提示
+
+- `1 <= len(prices) <= 1e5`;
+- `0 <= prices[i] <= 1e5`.
+
+### 题解
+
+#### 通用
+
+本题是[188. 买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/)的特化，可直接套用。
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        return max_profit(2, prices)
+
+def max_profit(k: int, prices: List[int]) -> int:
+    p = [0] + [float('-inf')] * (min(k, len(prices) // 2) * 2)
+    for i, price in enumerate(prices):
+        for j in range(1, min(len(p), ((i + 1) // 2 + 1) * 2)):
+            p[j] = max(p[j], p[j - 1] + price * (-1 if j % 2 else 1))
+    return p[-1]
+```
+
+#### 特化
+
+```python
+class Solution:
+    def maxProfit(self, prices: List[int]) -> int:
+        return max_profit(prices)
+
+def max_profit(prices: List[int]) -> int:
+    cl0 = 0
+    op1 = cl1 = op2 = cl2 = float('-inf')
+    for price in prices:
+        op1 = max(op1, cl0 - price)
+        cl1 = max(cl1, op1 + price)
+        op2 = max(op2, cl1 - price)
+        cl2 = max(cl2, op2 + price)
+    return cl2
+```
