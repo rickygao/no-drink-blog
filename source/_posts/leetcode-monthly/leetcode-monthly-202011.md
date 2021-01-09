@@ -9,7 +9,7 @@ mathjax: true
 
 <!-- more -->
 
-## 222. 完全二叉树的节点个数
+## 222. 完全二叉树的节点个数{#leetcode-222}
 
 [:link: 来源](https://leetcode-cn.com/problems/count-complete-tree-nodes/)
 
@@ -117,7 +117,7 @@ def tree_height(root: TreeNode) -> int:
     return height
 ```
 
-## 1370. 上升下降字符串
+## 1370. 上升下降字符串{#leetcode-1370}
 
 [:link: 来源](https://leetcode-cn.com/problems/increasing-decreasing-string/)
 
@@ -208,7 +208,7 @@ def sort_string(s: str) -> str:
     return ''.join(result)
 ```
 
-## 1. 两数之和
+## 1. 两数之和{#leetcode-1}
 
 [:link: 来源](https://leetcode-cn.com/problems/two-sum/)
 
@@ -245,7 +245,7 @@ def two_sum(nums: List[int], target: int) -> List[int]:
     raise ValueError
 ```
 
-## 2. 两数相加
+## 2. 两数相加{#leetcode-2}
 
 [:link: 来源](https://leetcode-cn.com/problems/add-two-numbers/)
 
@@ -291,7 +291,7 @@ def add_numbers(*heads: List[ListNode]) -> ListNode:
     return dummy.next
 ```
 
-## 3. 无重复字符的最长子串
+## 3. 无重复字符的最长子串{#leetcode-3}
 
 [:link: 来源](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
 
@@ -353,7 +353,7 @@ def length_of_longest_substring(s: str) -> int:
     return mlen
 ```
 
-## 164. 最大间距
+## 164. 最大间距{#leetcode-164}
 
 [:link: 来源](https://leetcode-cn.com/problems/maximum-gap/)
 
@@ -435,7 +435,7 @@ def maximum_gap(nums: List[int]) -> int:
     return r
 ```
 
-## 905. 按奇偶排序数组
+## 905. 按奇偶排序数组{#leetcode-905}
 
 [:link: 来源](https://leetcode-cn.com/problems/sort-array-by-parity/)
 
@@ -482,7 +482,7 @@ def sort_array_by_parity(l: List[int]) -> List[int]:
     return l
 ```
 
-## 922. 按奇偶排序数组 II
+## 922. 按奇偶排序数组 II{#leetcode-922}
 
 [:link: 来源](https://leetcode-cn.com/problems/sort-array-by-parity-ii/)
 
@@ -532,7 +532,7 @@ def sort_array_by_parity_ii(l: List[int]) -> List[int]:
     return l
 ```
 
-## 1344. 时钟指针的夹角
+## 1344. 时钟指针的夹角{#leetcode-1344}
 
 [:link: 来源](https://leetcode-cn.com/problems/angle-between-hands-of-a-clock/)
 
@@ -591,7 +591,7 @@ def angle_clock(hour: int, minutes: int) -> float:
     return delta_angle * 360
 ```
 
-## 697. 数组的度
+## 697. 数组的度{#leetcode-697}
 
 [:link: 来源](https://leetcode-cn.com/problems/degree-of-an-array/)
 
@@ -653,7 +653,7 @@ def find_shortest_sub_array(nums: List[int]) -> int:
     return min_slice
 ```
 
-## 454. 四数相加 II
+## 454. 四数相加 II{#leetcode-454}
 
 [:link: 来源](https://leetcode-cn.com/problems/4sum-ii/)
 
@@ -698,7 +698,7 @@ def sum_count(A: List[int], B: List[int], C: List[int], D: List[int]) -> int:
     return sum(AB[-(c + d)] for c, d in product(C, D))
 ```
 
-## 57. 插入区间
+## 57. 插入区间{#leetcode-57}
 
 [:link: 来源](https://leetcode-cn.com/problems/insert-interval/)
 
@@ -837,7 +837,7 @@ def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int
     return intervals
 ```
 
-## 493. 翻转对
+## 493. 翻转对{#leetcode-493}
 
 [:link: 来源](https://leetcode-cn.com/problems/reverse-pairs/)
 
@@ -915,7 +915,7 @@ def reverse_pairs(nums: List[int]) -> int:
     return r
 ```
 
-## 1626. 无矛盾的最佳球队
+## 1626. 无矛盾的最佳球队{#leetcode-1626}
 
 [:link: 来源](https://leetcode-cn.com/problems/best-team-with-no-conflicts/)
 
@@ -972,7 +972,7 @@ def best_team_score(scores: List[int], ages: List[int]) -> int:
     return max(m, default=0)
 ```
 
-## 976. 三角形的最大周长
+## 976. 三角形的最大周长{#leetcode-976}
 
 [:link: 来源](https://leetcode-cn.com/problems/largest-perimeter-triangle/)
 
@@ -1027,7 +1027,7 @@ def largest_perimeter(sides: List[int]) -> int:
     ), default=0)
 ```
 
-## 100. 相同的树
+## 100. 相同的树{#leetcode-100}
 
 [:link: 来源](https://leetcode-cn.com/problems/same-tree/)
 
@@ -1118,7 +1118,7 @@ def is_same_tree(t1: TreeNode, t2: TreeNode) -> bool:
     return True
 ```
 
-## 767. 重构字符串
+## 767. 重构字符串{#leetcode-767}
 
 [:link: 来源](https://leetcode-cn.com/problems/reorganize-string/)
 
@@ -1175,7 +1175,7 @@ def reorganize_string(s: str) -> str:
     return ''.join(result)
 ```
 
-## 1566. 重复至少 K 次且长度为 M 的模式
+## 1566. 重复至少 K 次且长度为 M 的模式{#leetcode-1566}
 
 [:link: 来源](https://leetcode-cn.com/problems/detect-pattern-of-length-m-repeated-k-or-more-times/)
 
@@ -1258,7 +1258,7 @@ def contains_pattern(arr: List[int], m: int, k: int) -> bool:
     return False
 ```
 
-## 17. 电话号码的字母组合
+## 17. 电话号码的字母组合{#leetcode-17}
 
 [:link: 来源](https://leetcode-cn.com/problems/letter-combinations-of-a-phone-number/)
 

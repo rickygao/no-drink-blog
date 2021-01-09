@@ -9,7 +9,7 @@ mathjax: true
 
 <!-- more -->
 
-## 605. 种花问题
+## 605. 种花问题{#leetcode-605}
 
 [:link: 来源](https://leetcode-cn.com/problems/can-place-flowers/)
 
@@ -57,7 +57,7 @@ def can_place_flowers(flowerbed: List[int], n: int) -> bool:
     return r >= n
 ```
 
-## 1250. 检查「好数组」
+## 1250. 检查「好数组」{#leetcode-1250}
 
 [:link: 来源](https://leetcode-cn.com/problems/check-if-it-is-a-good-array/)
 
@@ -106,7 +106,7 @@ def is_good_array(nums: List[int]) -> bool:
     return gcd(*nums) == 1
 ```
 
-## 239. 滑动窗口最大值
+## 239. 滑动窗口最大值{#leetcode-239}
 
 [:link: 来源](https://leetcode-cn.com/problems/sliding-window-maximum/)
 
@@ -184,7 +184,7 @@ def generate_max_sliding_window(nums: Iterator[int], k: int) -> Iterator[int]:
             yield nums[q[0]]
 ```
 
-## 86. 分隔链表
+## 86. 分隔链表{#leetcode-86}
 
 [:link: 来源](https://leetcode-cn.com/problems/partition-list/)
 
@@ -230,7 +230,7 @@ def partition(head: ListNode, x: int) -> ListNode:
     return l_dummy.next
 ```
 
-## 509. 斐波那契数
+## 509. 斐波那契数{#leetcode-509}
 
 [:link: 来源](https://leetcode-cn.com/problems/fibonacci-number/)
 
@@ -328,7 +328,7 @@ def fib(n: int) -> int:
     return FIB[n]
 ```
 
-## 830. 较大分组的位置
+## 830. 较大分组的位置{#leetcode-830}
 
 [:link: 来源](https://leetcode-cn.com/problems/positions-of-large-groups/)
 
@@ -393,7 +393,7 @@ def large_group_positions(s: str) -> List[List[int]]:
     return r
 ```
 
-## 399. 除法求值
+## 399. 除法求值{#leetcode-399}
 
 ### 题目
 
@@ -509,7 +509,7 @@ def calc_equation(equations: List[List[str]], values: List[float], queries: List
     return query_values
 ```
 
-## 547. 省份数量
+## 547. 省份数量{#leetcode-547}
 
 ### 题目
 
@@ -608,7 +608,7 @@ def find_circle_num(is_connected: List[List[int]]) -> int:
     return r
 ```
 
-## 189. 旋转数组
+## 189. 旋转数组{#leetcode-189}
 
 [:link: 来源](https://leetcode-cn.com/problems/rotate-array/)
 
@@ -700,7 +700,7 @@ def rotate(nums: List[int], k: int) -> None:
     reverse(nums, 0, n)
 ```
 
-## 123. 买卖股票的最佳时机 III
+## 123. 买卖股票的最佳时机 III{#leetcode-123}
 
 [:link: 来源](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iii/)
 
@@ -750,7 +750,7 @@ def rotate(nums: List[int], k: int) -> None:
 
 #### 通用
 
-本题是[188. 买卖股票的最佳时机 IV](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-iv/)的特化，可直接套用。
+本题是[188. 买卖股票的最佳时机 IV](/leetcode-monthly-202012/#leetcode-188)的特化，可直接套用。
 
 ```python
 class Solution:
