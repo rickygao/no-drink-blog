@@ -1454,7 +1454,7 @@ def predict_party_victory(senate: str) -> str:
 
 ### 题解
 
-栈。每一字符与栈顶消重。是{% post_link leetcode-1209 %}的特化。
+栈。每一字符与栈顶消重。是[1209. 删除字符串中的所有相邻重复项 II](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string-ii/)的特化。
 
 ```python
 class Solution:
@@ -3019,7 +3019,7 @@ def rotate(matrix: List[List[int]]) -> None:
 
 ### 题解
 
-栈。每一字符与栈顶消重。是{% post_link leetcode-1047 %}的推广。
+栈。每一字符与栈顶消重。是[1047. 删除字符串中的所有相邻重复项](https://leetcode-cn.com/problems/remove-all-adjacent-duplicates-in-string/)的推广。
 
 ```python
 class Solution:
@@ -3460,7 +3460,7 @@ def largest_rectangle_area(heights: List[int]) -> int:
 
 ### 题解
 
-将矩阵逐行转化为柱状图，再利用{% post_link leetcode-84 %}的方法求解。
+将矩阵逐行转化为柱状图，再利用[84. 柱状图中最大的矩形](https://leetcode-cn.com/problems/largest-rectangle-in-histogram/)的方法求解。
 
 ```python
 class Solution:
@@ -3653,7 +3653,7 @@ def score_of_parentheses(s: str) -> int:
 
 ### 题解
 
-- 动态规划。仿照{% post_link leetcode-714 %}，其中 `p[j * 2]` 表示最多进行 `j` 次交易且当前为空仓的利润，`p[j * 2 + 1]` 表示最多进行 `j` 次交易且当前为开仓的利润，这也暗示 `p[:(j + 1) * 2]` 可以完整地表示 `j` 次交易的最大利润；
+- 动态规划。仿照[714. 买卖股票的最佳时机含手续费](https://leetcode-cn.com/problems/best-time-to-buy-and-sell-stock-with-transaction-fee/)，其中 `p[j * 2]` 表示最多进行 `j` 次交易且当前为空仓的利润，`p[j * 2 + 1]` 表示最多进行 `j` 次交易且当前为开仓的利润，这也暗示 `p[:(j + 1) * 2]` 可以完整地表示 `j` 次交易的最大利润；
 - 最多进行 `len(prices) // 2` 次有效的交易（买卖股票），故而可缩小总共需申请的状态空间。考虑第 `i` 支股票时，最多进行 `(i + 1) // 2` 次有效的交易，故而可缩小每次迭代需更新的状态空间。
 
 ```python
