@@ -1,5 +1,5 @@
 ---
-title: 写在年边 2020
+title: 年边 2020
 date: 2020-12-03 18:00:00
 tags: [Marginalia]
 ---

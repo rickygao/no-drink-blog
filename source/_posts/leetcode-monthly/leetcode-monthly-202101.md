@@ -782,3 +782,81 @@ def max_profit(prices: List[int]) -> int:
         cl2 = max(cl2, op2 + price)
     return cl2
 ```
+
+## 228. 汇总区间
+
+### 题目
+
+给定一个无重复元素的有序整数数组 nums 。
+
+返回**恰好覆盖数组中所有数字**的**最小有序**区间范围列表。也就是说，`nums` 的每个元素都恰好被某个区间范围所覆盖，并且不存在属于某个范围但不属于 `nums` 的数字 `x`.
+
+列表中的每个区间范围 `[a, b]` 应该按如下格式输出：
+
+- `"a->b"`, 如果 `a != b`;
+- `"a"`, 如果 `a == b`.
+
+#### 示例
+
+```raw
+输入：nums = [0, 1, 2, 4, 5, 7]
+输出：["0->2", "4->5", "7"]
+解释：区间范围是
+[0, 2] => "0->2",
+[4, 5] => "4->5",
+[7, 7] => "7".
+```
+
+```raw
+输入：nums = [0, 2, 3, 4, 6, 8, 9]
+输出：["0", "2->4", "6", "8->9"]
+解释：区间范围是
+[0, 0] => "0",
+[2, 4] => "2->4",
+[6, 6] => "6",
+[8, 9] => "8->9".
+```
+
+```raw
+输入：nums = []
+输出：[]
+```
+
+```raw
+输入：nums = [-1]
+输出：["-1"]
+```
+
+```raw
+输入：nums = [0]
+输出：["0"]
+```
+
+#### 提示
+
+- `0 <= len(nums) <= 20`;
+- `-2 ** 31 <= nums[i] <= 2 ** 31 - 1`;
+- `nums` 中的所有值都**互不相同**；
+- `nums` 按升序排列。
+
+### 题解
+
+```python
+class Solution:
+    def summaryRanges(self, nums: List[int]) -> List[str]:
+        return summary_ranges(nums)
+
+def summary_ranges(nums: List[int]) -> List[str]:
+    r = []
+    if not nums:
+        return r
+
+    s = p = nums[0]
+    for n in nums[1:]:
+        if n > p + 1:
+            r.append(f'{s}->{p}' if p > s else f'{s}')
+            s = n
+        p = n
+    r.append(f'{s}->{p}' if p > s else f'{s}')
+    return r
+```
