@@ -866,3 +866,85 @@ def summary_ranges(nums: List[int]) -> List[str]:
     r.append(f'{s}->{p}' if p > s else f'{s}')
     return r
 ```
+
+## 1202. 交换字符串中的元素
+
+[:link: 来源](https://leetcode-cn.com/problems/smallest-string-with-swaps/)
+
+### 题目
+
+给你一个字符串 `s`, 以及该字符串中的一些「索引对」数组 `pairs`, 其中 `pairs[i] = [a, b]` 表示字符串中的两个索引（编号从 `0` 开始）。
+
+你可以**任意多次交换**在 `pairs` 中任意一对索引处的字符。
+
+返回在经过若干次交换后，`s` 可以变成的按字典序最小的字符串。
+
+#### 示例
+
+```raw
+输入：s = "dcab", pairs = [[0, 3], [1, 2]]
+输出："bacd"
+解释： 
+交换 s[0] 和 s[3], s = "bcad";
+交换 s[1] 和 s[2], s = "bacd".
+```
+
+```raw
+输入：s = "dcab", pairs = [[0, 3], [1, 2], [0, 2]]
+输出："abcd"
+解释：
+交换 s[0] 和 s[3], s = "bcad";
+交换 s[0] 和 s[2], s = "acbd";
+交换 s[1] 和 s[2], s = "abcd".
+```
+
+```raw
+输入：s = "cba", pairs = [[0, 1], [1, 2]]
+输出："abc"
+解释：
+交换 s[0] 和 s[1], s = "bca";
+交换 s[1] 和 s[2], s = "bac";
+交换 s[0] 和 s[1], s = "abc".
+```
+
+#### 提示
+
+- `1 <= len(s) <= 1e5`;
+- `0 <= len(pairs) <= 1e5`;
+- `0 <= pairs[i][0], pairs[i][1] < len(s)`;
+- `s` 中只含有小写英文字母。
+
+### 题解
+
+并查集。先求连通分支，再排序 `s` 的每个连通分支子序列。
+
+```python
+class Solution:
+    def smallestStringWithSwaps(self, s: str, pairs: List[List[int]]) -> str:
+        return smallest_string_with_swaps(s, pairs)
+
+from collections import defaultdict
+
+def find(parents: List[int], i: int) -> int:
+    if (p := parents[i]) != i:
+        parents[i] = find(parents, p)
+    return parents[i]
+
+def union(parents: List[int], i: int, j: int):
+    parents[find(parents, i)] = find(parents, j)
+
+def smallest_string_with_swaps(s: str, pairs: List[List[int]]) -> str:
+    parents = list(range(len(s)))
+    for i, j in pairs:
+        union(parents, i, j)
+
+    subs = defaultdict(list)
+    for i in range(len(s)):
+        subs[find(parents, i)].append(i)
+
+    r = [...] * len(s)
+    for ss in subs.values():
+        for i, j in zip(ss, sorted(ss, key=s.__getitem__)):
+            r[i] = s[j]
+    return ''.join(r)
+```
