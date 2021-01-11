@@ -395,6 +395,8 @@ def large_group_positions(s: str) -> List[List[int]]:
 
 ## 399. 除法求值{#leetcode-399}
 
+[:link: 来源](https://leetcode-cn.com/problems/evaluate-division/)
+
 ### 题目
 
 给你一个变量对数组 `equations` 和一个实数值数组 `values` 作为已知条件，其中 `equations[i] = [a_i, b_i]` 和 `values[i]` 共同表示等式 `a_i / b_i = values[i]`. 每个 `a_i` 或 `b_i` 是一个表示单个变量的字符串。
@@ -511,6 +513,8 @@ def calc_equation(equations: List[List[str]], values: List[float], queries: List
 
 ## 547. 省份数量{#leetcode-547}
 
+[:link: 来源](https://leetcode-cn.com/problems/number-of-provinces/)
+
 ### 题目
 
 有 `n` 个城市，其中一些彼此相连，另一些没有相连。如果城市 `a` 与城市 `b` 直接相连，且城市 `b` 与城市 `c` 直接相连，那么城市 `a` 与城市 `c` 间接相连。
@@ -542,22 +546,22 @@ class Solution:
     def findCircleNum(self, isConnected: List[List[int]]) -> int:
         return find_circle_num(isConnected)
 
+def find(parents: List[int], i: int) -> int:
+    if (p := parents[i]) != i:
+        parents[i] = find(parents, p)
+    return parents[i]
+
+def union(parents: List[int], i: int, j: int):
+    parents[find(parents, i)] = find(parents, j)
+
 def find_circle_num(is_connected: List[List[int]]) -> int:
-    def find(parent: List[int], i: int) -> int:
-        if (p := parent[i]) != i:
-            parent[i] = find(parent, p)
-        return parent[i]
-
-    def union(parent: List[int], i: int, j: int):
-        parent[find(parent, i)] = find(parent, j)
-
     cities = len(is_connected)
-    parent = list(range(cities))
+    parents = list(range(cities))
     for i in range(cities):
         for j in range(i + 1, cities):
             if is_connected[i][j]:
-                union(parent, i, j)
-    return sum(i == p for i, p in enumerate(parent))
+                union(parents, i, j)
+    return sum(i == p for i, p in enumerate(parents))
 ```
 
 #### 深度优先搜索
@@ -784,6 +788,8 @@ def max_profit(prices: List[int]) -> int:
 ```
 
 ## 228. 汇总区间
+
+[:link: 来源](https://leetcode-cn.com/problems/summary-ranges/)
 
 ### 题目
 
