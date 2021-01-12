@@ -551,7 +551,7 @@ def find(parents: List[int], i: int) -> int:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int):
+def union(parents: List[int], i: int, j: int) -> None:
     parents[find(parents, i)] = find(parents, j)
 
 def find_circle_num(is_connected: List[List[int]]) -> int:
@@ -930,7 +930,7 @@ def find(parents: List[int], i: int) -> int:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int):
+def union(parents: List[int], i: int, j: int) -> None:
     parents[find(parents, i)] = find(parents, j)
 
 def smallest_string_with_swaps(s: str, pairs: List[List[int]]) -> str:
