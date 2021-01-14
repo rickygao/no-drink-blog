@@ -1094,3 +1094,74 @@ def find_redundant_connection(edges: List[List[int]]) -> List[int]:
         union(parents, i, j)
     return []
 ```
+
+## 1018. 可被 5 整除的二进制前缀
+
+[:link: 来源](https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/)
+
+### 题目
+
+给定由若干 `0` 和 `1` 组成的数组 `A`. 我们定义 $N_i=\overline{A_0A_1\dots A_k\dots A_i}_{\left(2\right)}$, 即由 `A[0]` 到 `A[i]` 组成的第 `i` 个子数组被解释为一个二进制数（从最高有效位到最低有效位）。
+
+返回布尔值列表 `answer`, 只有当 $N_i$ 可以被 `5` 整除时，答案 `answer[i]` 为 `true`, 否则为 `false`.
+
+#### 示例
+
+```raw
+输入：[0, 1, 1]
+输出：[true, false, false]
+解释：输入数字为 0, 01, 011；也就是十进制中的 0, 1, 3.
+只有第一个数可以被 5 整除，因此 answer[0] 为真。
+```
+
+```raw
+输入：[1, 1, 1]
+输出：[false, false, false]
+```
+
+```raw
+输入：[0, 1, 1, 1, 1, 1]
+输出：[true, false, false, false, true, false]
+```
+
+```raw
+输入：[1, 1, 1, 0, 1]
+输出：[false, false, false, false, false]
+```
+
+#### 提示
+
+- `1 <= len(A) <= 30000`;
+- `A[i] 为 0 或 1`.
+
+### 题解
+
+#### 循环
+
+```python
+class Solution:
+    def prefixesDivBy5(self, A: List[int]) -> List[bool]:
+        return prefixes_div_by_5(A)
+
+def prefixes_div_by_5(a: List[int]) -> List[bool]:
+    r, n = [], 0
+    for ai in a:
+        n = (2 * n + ai) % 5
+        r.append(n == 0)
+    return r
+```
+
+#### 简化
+
+```python
+class Solution:
+    def prefixesDivBy5(self, A: List[int]) -> List[bool]:
+        return prefixes_div_by_5(A)
+
+from itertools import accumulate
+
+def prefixes_div_by_5(a: List[int]) -> List[bool]:
+    return [n == 0 for n in accumulate(
+        a, lambda n, ai: (n * 2 + ai) % 5
+    )]
+```
