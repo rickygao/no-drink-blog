@@ -787,7 +787,7 @@ def max_profit(prices: List[int]) -> int:
     return cl2
 ```
 
-## 228. 汇总区间
+## 228. 汇总区间{#leetcode-228}
 
 [:link: 来源](https://leetcode-cn.com/problems/summary-ranges/)
 
@@ -867,7 +867,7 @@ def summary_ranges(nums: List[int]) -> List[str]:
     return r
 ```
 
-## 1202. 交换字符串中的元素
+## 1202. 交换字符串中的元素{#leetcode-1202}
 
 [:link: 来源](https://leetcode-cn.com/problems/smallest-string-with-swaps/)
 
@@ -949,7 +949,7 @@ def smallest_string_with_swaps(s: str, pairs: List[List[int]]) -> str:
     return ''.join(r)
 ```
 
-## 1203. 项目管理
+## 1203. 项目管理{#leetcode-1203}
 
 ### 题目
 
@@ -1029,7 +1029,7 @@ def sort_items(
         return []
 ```
 
-## 684. 冗余连接
+## 684. 冗余连接{#leetcode-684}
 
 [:link: 来源](https://leetcode-cn.com/problems/redundant-connection/)
 
@@ -1095,7 +1095,7 @@ def find_redundant_connection(edges: List[List[int]]) -> List[int]:
     return []
 ```
 
-## 1018. 可被 5 整除的二进制前缀
+## 1018. 可被 5 整除的二进制前缀{#leetcode-1018}
 
 [:link: 来源](https://leetcode-cn.com/problems/binary-prefix-divisible-by-5/)
 
@@ -1166,7 +1166,7 @@ def prefixes_div_by_5(a: List[int]) -> List[bool]:
     )]
 ```
 
-## 947. 移除最多的同行或同列石头
+## 947. 移除最多的同行或同列石头{#leetcode-947}
 
 [:link: 来源](https://leetcode-cn.com/problems/most-stones-removed-with-same-row-or-column/)
 
