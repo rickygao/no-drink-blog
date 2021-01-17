@@ -1246,3 +1246,67 @@ def remove_stones(stones: List[List[int]]) -> int:
 
     return sum(i != p for i, p in enumerate(parents))
 ```
+
+## 1232. 缀点成线{#leetcode-1232}
+
+[:link: 来源](https://leetcode-cn.com/problems/check-if-it-is-a-straight-line/)
+
+### 题目
+
+在一个 $xOy$ 坐标系中有一些点，我们用数组 `coordinates` 来分别记录它们的坐标，其中 `coordinates[i] = [x, y]` 表示横坐标为 `x`, 纵坐标为 `y` 的点。
+
+请你来判断，这些点是否在该坐标系中属于同一条直线上，是则返回 `true`, 否则请返回 `false`.
+
+#### 示例
+
+```raw
+输入：coordinates = [[1, 2], [2, 3], [3, 4], [4, 5], [5, 6], [6, 7]]
+输出：true
+```
+
+```raw
+输入：coordinates = [[1, 1], [2, 2], [3, 4], [4, 5], [5, 6], [7, 7]]
+输出：false
+```
+
+#### 提示
+
+- `2 <= len(coordinates) <= 1000`, `len(coordinates[i]) == 2`;
+- `-1e4 <= coordinates[i][0], coordinates[i][1] <= 1e4`;
+- `coordinates` 中不含重复的点。
+
+### 题解
+
+数学题。
+
+$$
+\begin{aligned}
+&\left\{\left(x_0,y_0\right),\left(x_1,y_1\right),\left(x_2,y_2\right)\right\}\text{ are collinear}\\
+\Leftrightarrow
+&\left(x_1-x_0\right)\left(y_2-y_0\right)=\left(y_1-y_0\right)\left(x_2-x_0\right)\\
+\Leftrightarrow
+&\left(y_0-y_1\right)x_2+\left(x_1-x_0\right)y_2+\left(x_0y_1-x_1y_0\right)=0.
+\end{aligned}
+$$
+
+```python
+class Solution:
+    def checkStraightLine(self, coordinates: List[List[int]]) -> bool:
+        return check_straight_line(coordinates)
+
+def check_straight_line(coordinates: List[List[int]]) -> bool:
+    (x0, y0), (x1, y1) = coordinates[:2]
+    dx, dy = x1 - x0, y1 - y0
+    return all(dx * (y - y0) == dy * (x - x0) for x, y in coordinates[2:])
+```
+
+```python
+class Solution:
+    def checkStraightLine(self, coordinates: List[List[int]]) -> bool:
+        return check_straight_line(coordinates)
+
+def check_straight_line(coordinates: List[List[int]]) -> bool:
+    (x0, y0), (x1, y1) = coordinates[:2]
+    a, b, c = y0 - y1, x1 - x0, x0 * y1 - x1 * y0
+    return all(a * x + b * y + c == 0 for x, y in coordinates[2:])
+```
