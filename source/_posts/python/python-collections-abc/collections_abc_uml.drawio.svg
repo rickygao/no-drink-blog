@@ -1,3 +1,1092 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1203px" height="1163px" viewBox="-0.5 -0.5 1203 1163" content="&lt;mxfile host=&quot;app.diagrams.net&quot; modified=&quot;2021-01-17T08:29:32.371Z&quot; agent=&quot;5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.2 Safari/605.1.15&quot; etag=&quot;1c8ScMcDWQH_xbKkKbFl&quot; version=&quot;14.2.4&quot; type=&quot;device&quot;&gt;&lt;diagram id=&quot;LWALUSMDQtf7f-zwm1hL&quot; name=&quot;Page-1&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;"><defs/><g><rect x="1" y="1" width="560" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 562px; height: 80px; padding-top: 1px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 560px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">AbstractBaseClass</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ abstract_method(self, *args, **kwargs)</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ mixin_method(self, *args, **kwargs)<br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="1" y="13" fill="#FFFFFF" font-family="monospace" font-size="12px">AbstractBaseClass...</text></switch></g><rect x="601" y="1" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 1px; margin-left: 601px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Container</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __contains__(self, item: T): bool</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="601" y="13" fill="#FFFFFF" font-family="monospace" font-size="12px">Container...</text></switch></g><rect x="1" y="121" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 121px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Iterable</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iter__(self): Iterator</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="1" y="133" fill="#FFFFFF" font-family="monospace" font-size="12px">Iterable...</text></switch></g><rect x="1" y="241" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 241px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Iterator</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __next__(self)</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iter__(self): Iterator</p></div></div></div></foreignObject><text x="1" y="253" fill="#FFFFFF" font-family="monospace" font-size="12px">Iterator...</text></switch></g><path d="M 141 241 L 141 225.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 141 205.47 L 151 225.47 L 131 225.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="321" y="241" width="240" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 242px; height: 80px; padding-top: 241px; margin-left: 321px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 240px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Reversible</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __reversed__(self): Iterable</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="321" y="253" fill="#FFFFFF" font-family="monospace" font-size="12px">Reversible...</text></switch></g><path d="M 441 241 L 441 191 Q 441 181 431 181 L 305.47 181" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 285.47 181 L 305.47 171 L 305.47 191 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="1" y="361" width="280" height="120" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 120px; padding-top: 361px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 120px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Generator</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ send(self, value)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ throw(self, type, value, traceback)</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ close(self)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iter__(self): Iterator</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __next__(self)</p></div></div></div></foreignObject><text x="1" y="373" fill="#FFFFFF" font-family="monospace" font-size="12px">Generator...</text></switch></g><rect x="921" y="1" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 1px; margin-left: 921px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Sized</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __len__(self): int</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="921" y="13" fill="#FFFFFF" font-family="monospace" font-size="12px">Sized...</text></switch></g><rect x="601" y="241" width="280" height="120" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 120px; padding-top: 241px; margin-left: 601px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 120px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Collection</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __contains__(self, item): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iter__(self): Iterator<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __len__(self): int<br style="font-size: 12px" /></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="601" y="253" fill="#FFFFFF" font-family="monospace" font-size="12px">Collection...</text></switch></g><path d="M 141 361 L 141 345.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 141 325.47 L 151 345.47 L 131 345.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><path d="M 741 241 L 741 105.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 741 85.47 L 751 105.47 L 731 105.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><path d="M 671 241 L 671 151 Q 671 141 661 141 L 305.47 141" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 285.47 141 L 305.47 131 L 305.47 151 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><path d="M 811 241 L 811 171 Q 811 161 821 161 L 981 161 Q 991 161 991 151 L 991 105.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 991 85.47 L 1001 105.47 L 981 105.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="321" y="441" width="240" height="240" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 242px; height: 240px; padding-top: 441px; margin-left: 321px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 240px; height: 240px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Sequence</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __getitem__(self, index)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __len__(self): int<br style="font-size: 12px" /></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __contains__(self, item): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iter__(self): Iterator</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __reversed__(self): Iterable<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ index(self, value): int<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ count(self, value): int<br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="321" y="453" fill="#FFFFFF" font-family="monospace" font-size="12px">Sequence...</text></switch></g><path d="M 501 441 L 501 411 Q 501 401 511 401 L 661 401 Q 671 401 671 393.24 L 671 385.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 671 365.47 L 681 385.47 L 661 385.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="321" y="721" width="240" height="320" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 242px; height: 320px; padding-top: 721px; margin-left: 321px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 240px; height: 320px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">MutableSequence</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __getitem__(self, index)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __setitem__(self, index, value)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __delitem__(self, index)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __len__(self): int</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ insert(self, index, value)</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __contains__(self, item): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iter__(self): Iterator</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __reversed__(self): Iterable<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ index(self, value): int<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ count(self, value): int<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ append(self, value)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ reverse(self)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ extend(self, other: Iterator)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ pop(self)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ remove(self, value)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iadd__(self, other: Iterator)<br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="321" y="733" fill="#FFFFFF" font-family="monospace" font-size="12px">MutableSequence...</text></switch></g><path d="M 441 721 L 441 705.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 441 685.47 L 451 705.47 L 431 705.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="921" y="441" width="280" height="280" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 280px; padding-top: 441px; margin-left: 921px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 280px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Set</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __contains__(self, item): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iter__(self): Iterator<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __len__(self): int<br style="font-size: 12px" /></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __le__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __lt__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __eq__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __ne__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __gt__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __ge__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __and__(self, other: Set): Set</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __or__(self, other: Set): Set</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __sub__(self, other: Set): Set</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __xor__(self, other: Set): Set</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ isdisjoint(self, other: Set): bool<br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="921" y="453" fill="#FFFFFF" font-family="monospace" font-size="12px">Set...</text></switch></g><path d="M 991 441 L 991 411 Q 991 401 981 401 L 821 401 Q 811 401 811 393.24 L 811 385.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 811 365.47 L 821 385.47 L 801 385.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><path d="M 441 441 L 441 345.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 441 325.47 L 451 345.47 L 431 345.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="921" y="761" width="280" height="400" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 400px; padding-top: 761px; margin-left: 921px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 400px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">MutableSet</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __contains__(self, item): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iter__(self): Iterator<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __len__(self): int<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ add(self, value)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ discard(self, value)</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __le__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __lt__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __eq__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __ne__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __gt__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __ge__(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __and__(self, other: Set): Set</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __or__(self, other: Set): Set</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __sub__(self, other: Set): Set</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __xor__(self, other: Set): Set</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ isdisjoint(self, other: Set): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ clear(self)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ pop(self)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ remove(self, value)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __ior__(self, other: Set)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iand__(self, other: Set)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __ixor__(self, other: Set)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __isub__(self, other: Set)<br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="921" y="773" fill="#FFFFFF" font-family="monospace" font-size="12px">MutableSet...</text></switch></g><path d="M 1061 761 L 1061 745.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 1061 725.47 L 1071 745.47 L 1051 745.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="601" y="441" width="280" height="240" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 240px; padding-top: 441px; margin-left: 601px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 240px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Mapping</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __getitem__(self, key)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iter__(self): Iterator<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __len__(self): int<br style="font-size: 12px" /></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __contains__(self, key)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ keys(self): KeysView</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ items(self): ItemsView</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ values(self): ValuesView</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ get(self, key, default)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __eq__(self, other: Mapping): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __ne__(self, other: Mapping): bool</p></div></div></div></foreignObject><text x="601" y="453" fill="#FFFFFF" font-family="monospace" font-size="12px">Mapping...</text></switch></g><path d="M 741 441 L 741 385.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 741 365.47 L 751 385.47 L 731 385.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="601" y="721" width="280" height="320" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 320px; padding-top: 721px; margin-left: 601px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 320px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">MutableMapping</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __getitem__(self, key)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __setitem__(self, key, value)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __delitem__(self, key)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __iter__(self): Iterator<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __len__(self): int<br style="font-size: 12px" /></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __contains__(self, key)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ keys(self): KeysView</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ items(self): ItemsView</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ values(self): ValuesView</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ get(self, key, default)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __eq__(self, other: Mapping): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __ne__(self, other: Mapping): bool</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ pop(self)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ popitem(self)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ clear(self)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ update(self, other: Mapping)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ setdefault(self, key, default_value)</p></div></div></div></foreignObject><text x="601" y="733" fill="#FFFFFF" font-family="monospace" font-size="12px">MutableMapping...</text></switch></g><path d="M 741 721 L 741 705.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 741 685.47 L 751 705.47 L 731 705.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="921" y="201" width="280" height="40" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 40px; padding-top: 201px; margin-left: 921px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 40px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">MappingView</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="921" y="213" fill="#FFFFFF" font-family="monospace" font-size="12px">MappingView...</text></switch></g><path d="M 1131 201 L 1131 105.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 1131 85.47 L 1141 105.47 L 1121 105.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="1021" y="321" width="80" height="40" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 82px; height: 40px; padding-top: 321px; margin-left: 1021px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 80px; height: 40px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">ItemsView</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="1021" y="333" fill="#FFFFFF" font-family="monospace" font-size="12px">ItemsView...</text></switch></g><rect x="1121" y="321" width="80" height="40" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 82px; height: 40px; padding-top: 321px; margin-left: 1121px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 80px; height: 40px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">KeysView</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="1121" y="333" fill="#FFFFFF" font-family="monospace" font-size="12px">KeysView...</text></switch></g><rect x="921" y="321" width="80" height="40" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 82px; height: 40px; padding-top: 321px; margin-left: 921px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 80px; height: 40px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">ValuesView</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="921" y="333" fill="#FFFFFF" font-family="monospace" font-size="12px">ValuesView...</text></switch></g><path d="M 941 321 L 941 311 Q 941 301 931 301 L 905.47 301" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 885.47 301 L 905.47 291 L 905.47 311 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><path d="M 1061 321 L 1061 265.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 1061 245.47 L 1071 265.47 L 1051 265.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><path d="M 1161 321 L 1161 291 Q 1161 281 1151 281 L 1141 281 Q 1131 281 1131 273.24 L 1131 265.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 1131 245.47 L 1141 265.47 L 1121 265.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><path d="M 1061 361 L 1061 416.53" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 1061 436.53 L 1051 416.53 L 1071 416.53 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><path d="M 1161 361 L 1161 391 Q 1161 401 1151 401 L 1141 401 Q 1131 401 1131 408.76 L 1131 416.53" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 1131 436.53 L 1121 416.53 L 1141 416.53 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><path d="M 961 321 L 961 291 Q 961 281 971 281 L 981 281 Q 991 281 991 273.24 L 991 265.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 991 245.47 L 1001 265.47 L 981 265.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="341" y="361" width="80" height="40" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 82px; height: 40px; padding-top: 361px; margin-left: 341px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 80px; height: 40px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">ByteString</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="341" y="373" fill="#FFFFFF" font-family="monospace" font-size="12px">ByteString...</text></switch></g><path d="M 381 401 L 381 416.53" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 381 436.53 L 371 416.53 L 391 416.53 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="1" y="801" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 801px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">AsyncIterable</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __aiter__(self): AsyncIterator</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="1" y="813" fill="#FFFFFF" font-family="monospace" font-size="12px">AsyncIterable...</text></switch></g><rect x="1" y="921" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 921px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">AsyncIterator</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __anext__(self)</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __aiter__(self): AsyncIterator</p></div></div></div></foreignObject><text x="1" y="933" fill="#FFFFFF" font-family="monospace" font-size="12px">AsyncIterator...</text></switch></g><path d="M 141 921 L 141 905.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 141 885.47 L 151 905.47 L 131 905.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="1" y="1041" width="280" height="120" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 120px; padding-top: 1041px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 120px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">AsyncGenerator</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ asend(self, value)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ athrow(self, type, value, traceback)</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ aclose(self)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __aiter__(self): Iterator</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __anext__(self)</p></div></div></div></foreignObject><text x="1" y="1053" fill="#FFFFFF" font-family="monospace" font-size="12px">AsyncGenerator...</text></switch></g><path d="M 141 1041 L 141 1025.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 141 1005.47 L 151 1025.47 L 131 1025.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="1" y="641" width="280" height="120" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 120px; padding-top: 641px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 120px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Coroutine</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __await__(self): Iterator<br style="font-size: 12px" /></p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ send(self, value)</p><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ throw(self, type, value, traceback)</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ close(self)</p></div></div></div></foreignObject><text x="1" y="653" fill="#FFFFFF" font-family="monospace" font-size="12px">Coroutine...</text></switch></g><rect x="1" y="521" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 521px; margin-left: 1px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Awaitable</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __await__(self): Iterator</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="1" y="533" fill="#FFFFFF" font-family="monospace" font-size="12px">Awaitable...</text></switch></g><path d="M 141 641 L 141 625.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/><path d="M 141 605.47 L 151 625.47 L 131 625.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/><rect x="321" y="1081" width="240" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 242px; height: 80px; padding-top: 1081px; margin-left: 321px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 240px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Hashable</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __hash__(self): int</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="321" y="1093" fill="#FFFFFF" font-family="monospace" font-size="12px">Hashable...</text></switch></g><rect x="601" y="1081" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/><g transform="translate(-0.5 -0.5)"><switch><foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"><div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 1081px; margin-left: 601px;"><div style="box-sizing: border-box; font-size: 0; text-align: left; width: 280px; height: 80px; overflow: hidden; "><div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; "><p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px"><b style="font-size: 12px">Callable</b></p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px">+ __call__(self, *args, **kwargs)</p><hr style="font-size: 12px" /><p style="margin: 0px 0px 0px 4px ; font-size: 12px"><br style="font-size: 12px" /></p></div></div></div></foreignObject><text x="601" y="1093" fill="#FFFFFF" font-family="monospace" font-size="12px">Callable...</text></switch></g></g><switch><g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/><a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank"><text text-anchor="middle" font-size="10px" x="50%" y="100%">Viewer does not support full SVG 1.1</text></a></switch></svg>
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1242px" height="1162px" viewBox="-0.5 -0.5 1242 1162" content="&lt;mxfile host=&quot;77348b83-26f9-47e7-86e8-f98018195b58&quot; modified=&quot;2021-01-18T03:02:48.098Z&quot; agent=&quot;5.0 (Macintosh; Intel Mac OS X 11_0_0) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.52.1 Chrome/83.0.4103.122 Electron/9.3.5 Safari/537.36&quot; etag=&quot;yNaYQFPV7FVeJ8tfTD-q&quot; version=&quot;13.10.0&quot; type=&quot;embed&quot;&gt;&lt;diagram id=&quot;LWALUSMDQtf7f-zwm1hL&quot; name=&quot;Page-1&quot;&gt;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&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <rect x="1" y="1" width="600" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 602px; height: 80px; padding-top: 1px; margin-left: 1px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 602px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        AbstractBaseClass
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + abstract_method(self, *args, **kwargs)
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + mixin_method(self, *args, **kwargs)
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1" y="13" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    AbstractBaseClass...
+                </text>
+            </switch>
+        </g>
+        <rect x="641" y="1" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 1px; margin-left: 641px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Container
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __contains__(self, item: T): bool
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="641" y="13" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Container...
+                </text>
+            </switch>
+        </g>
+        <rect x="1" y="121" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 121px; margin-left: 1px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Iterable
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iter__(self): Iterator
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1" y="133" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Iterable...
+                </text>
+            </switch>
+        </g>
+        <rect x="1" y="241" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 241px; margin-left: 1px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Iterator
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __next__(self)
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iter__(self): Iterator
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1" y="253" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Iterator...
+                </text>
+            </switch>
+        </g>
+        <path d="M 141 241 L 141 225.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 141 205.47 L 151 225.47 L 131 225.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="321" y="201" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 201px; margin-left: 321px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Reversible
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __reversed__(self): Iterable
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="321" y="213" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Reversible...
+                </text>
+            </switch>
+        </g>
+        <path d="M 461 201 L 461 191 Q 461 181 451 181 L 305.47 181" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 285.47 181 L 305.47 171 L 305.47 191 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="1" y="361" width="280" height="120" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 120px; padding-top: 361px; margin-left: 1px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 120px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Generator
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + send(self, value)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + throw(self, type, value, traceback)
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + close(self)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iter__(self): Iterator
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __next__(self)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1" y="373" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Generator...
+                </text>
+            </switch>
+        </g>
+        <rect x="961" y="1" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 1px; margin-left: 961px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Sized
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __len__(self): int
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="961" y="13" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Sized...
+                </text>
+            </switch>
+        </g>
+        <rect x="641" y="201" width="280" height="160" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 160px; padding-top: 201px; margin-left: 641px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 160px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Collection
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __contains__(self, item): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iter__(self): Iterator
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __len__(self): int
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="641" y="213" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Collection...
+                </text>
+            </switch>
+        </g>
+        <path d="M 141 361 L 141 345.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 141 325.47 L 151 345.47 L 131 345.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 781 201 L 781 105.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 781 85.47 L 791 105.47 L 771 105.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 711 201 L 711 151 Q 711 141 701 141 L 305.47 141" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 285.47 141 L 305.47 131 L 305.47 151 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 851 201 L 851 151 Q 851 141 861 141 L 1021 141 Q 1031 141 1031 131 L 1031 105.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1031 85.47 L 1041 105.47 L 1021 105.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="321" y="441" width="280" height="240" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 240px; padding-top: 441px; margin-left: 321px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 240px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Sequence
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __getitem__(self, index)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __len__(self): int
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __contains__(self, item): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iter__(self): Iterator
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __reversed__(self): Iterable
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + index(self, value): int
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + count(self, value): int
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="321" y="453" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Sequence...
+                </text>
+            </switch>
+        </g>
+        <path d="M 531 441 L 531 411 Q 531 401 541 401 L 701 401 Q 711 401 711 393.24 L 711 385.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 711 365.47 L 721 385.47 L 701 385.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="321" y="721" width="280" height="320" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 320px; padding-top: 721px; margin-left: 321px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 320px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        MutableSequence
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __getitem__(self, index)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __setitem__(self, index, value)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __delitem__(self, index)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __len__(self): int
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + insert(self, index, value)
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __contains__(self, item): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iter__(self): Iterator
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __reversed__(self): Iterable
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + index(self, value): int
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + count(self, value): int
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + append(self, value)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + reverse(self)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + extend(self, other: Iterator)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + pop(self)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + remove(self, value)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iadd__(self, other: Iterator)
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="321" y="733" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    MutableSequence...
+                </text>
+            </switch>
+        </g>
+        <path d="M 461 721 L 461 705.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 461 685.47 L 471 705.47 L 451 705.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="961" y="441" width="280" height="280" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 280px; padding-top: 441px; margin-left: 961px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 280px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Set
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __contains__(self, item): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iter__(self): Iterator
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __len__(self): int
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __le__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __lt__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __eq__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __ne__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __gt__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __ge__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __and__(self, other: Set): Set
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __or__(self, other: Set): Set
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __sub__(self, other: Set): Set
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __xor__(self, other: Set): Set
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + isdisjoint(self, other: Set): bool
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="961" y="453" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Set...
+                </text>
+            </switch>
+        </g>
+        <path d="M 1031 441 L 1031 411 Q 1031 401 1021 401 L 861 401 Q 851 401 851 393.24 L 851 385.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 851 365.47 L 861 385.47 L 841 385.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 391 441 L 391 305.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 391 285.47 L 401 305.47 L 381 305.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="961" y="761" width="280" height="400" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 400px; padding-top: 761px; margin-left: 961px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 400px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        MutableSet
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __contains__(self, item): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iter__(self): Iterator
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __len__(self): int
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + add(self, value)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + discard(self, value)
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __le__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __lt__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __eq__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __ne__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __gt__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __ge__(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __and__(self, other: Set): Set
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __or__(self, other: Set): Set
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __sub__(self, other: Set): Set
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __xor__(self, other: Set): Set
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + isdisjoint(self, other: Set): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + clear(self)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + pop(self)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + remove(self, value)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __ior__(self, other: Set)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iand__(self, other: Set)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __ixor__(self, other: Set)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __isub__(self, other: Set)
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="961" y="773" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    MutableSet...
+                </text>
+            </switch>
+        </g>
+        <path d="M 1101 761 L 1101 745.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1101 725.47 L 1111 745.47 L 1091 745.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="641" y="441" width="280" height="240" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 240px; padding-top: 441px; margin-left: 641px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 240px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Mapping
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __getitem__(self, key)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iter__(self): Iterator
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __len__(self): int
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __contains__(self, key)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + keys(self): KeysView
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + items(self): ItemsView
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + values(self): ValuesView
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + get(self, key, default)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __eq__(self, other: Mapping): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __ne__(self, other: Mapping): bool
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="641" y="453" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Mapping...
+                </text>
+            </switch>
+        </g>
+        <path d="M 781 441 L 781 385.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 781 365.47 L 791 385.47 L 771 385.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="641" y="721" width="280" height="320" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 320px; padding-top: 721px; margin-left: 641px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 320px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        MutableMapping
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __getitem__(self, key)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __setitem__(self, key, value)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __delitem__(self, key)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __iter__(self): Iterator
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __len__(self): int
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __contains__(self, key)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + keys(self): KeysView
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + items(self): ItemsView
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + values(self): ValuesView
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + get(self, key, default)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __eq__(self, other: Mapping): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __ne__(self, other: Mapping): bool
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + pop(self)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + popitem(self)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + clear(self)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + update(self, other: Mapping)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + setdefault(self, key, default_value)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="641" y="733" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    MutableMapping...
+                </text>
+            </switch>
+        </g>
+        <path d="M 781 721 L 781 705.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 781 685.47 L 791 705.47 L 771 705.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="961" y="201" width="280" height="40" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 40px; padding-top: 201px; margin-left: 961px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 40px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        MappingView
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="961" y="213" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    MappingView...
+                </text>
+            </switch>
+        </g>
+        <path d="M 1171 201 L 1171 105.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1171 85.47 L 1181 105.47 L 1161 105.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="1061" y="321" width="80" height="40" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 82px; height: 40px; padding-top: 321px; margin-left: 1061px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 82px; height: 40px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        ItemsView
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1061" y="333" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    ItemsView...
+                </text>
+            </switch>
+        </g>
+        <rect x="1161" y="321" width="80" height="40" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 82px; height: 40px; padding-top: 321px; margin-left: 1161px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 82px; height: 40px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        KeysView
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1161" y="333" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    KeysView...
+                </text>
+            </switch>
+        </g>
+        <rect x="961" y="321" width="80" height="40" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 82px; height: 40px; padding-top: 321px; margin-left: 961px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 82px; height: 40px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        ValuesView
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="961" y="333" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    ValuesView...
+                </text>
+            </switch>
+        </g>
+        <path d="M 981 321 L 981 291 Q 981 281 971 281 L 945.47 281" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 925.47 281 L 945.47 271 L 945.47 291 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1101 321 L 1101 265.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1101 245.47 L 1111 265.47 L 1091 265.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1201 321 L 1201 291 Q 1201 281 1191 281 L 1181 281 Q 1171 281 1171 273.24 L 1171 265.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1171 245.47 L 1181 265.47 L 1161 265.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1101 361 L 1101 416.53" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1101 436.53 L 1091 416.53 L 1111 416.53 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1201 361 L 1201 391 Q 1201 401 1191 401 L 1181 401 Q 1171 401 1171 408.76 L 1171 416.53" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1171 436.53 L 1161 416.53 L 1181 416.53 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <path d="M 1001 321 L 1001 291 Q 1001 281 1011 281 L 1021 281 Q 1031 281 1031 273.24 L 1031 265.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 1031 245.47 L 1041 265.47 L 1021 265.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="521" y="321" width="80" height="40" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 82px; height: 40px; padding-top: 321px; margin-left: 521px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 82px; height: 40px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        ByteString
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="521" y="333" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    ByteString...
+                </text>
+            </switch>
+        </g>
+        <path d="M 521 341 L 471 341 Q 461 341 461 351 L 461 416.53" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 461 436.53 L 451 416.53 L 471 416.53 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="1" y="801" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 801px; margin-left: 1px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        AsyncIterable
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __aiter__(self): AsyncIterator
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1" y="813" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    AsyncIterable...
+                </text>
+            </switch>
+        </g>
+        <rect x="1" y="921" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 921px; margin-left: 1px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        AsyncIterator
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __anext__(self)
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __aiter__(self): AsyncIterator
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1" y="933" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    AsyncIterator...
+                </text>
+            </switch>
+        </g>
+        <path d="M 141 921 L 141 905.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 141 885.47 L 151 905.47 L 131 905.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="1" y="1041" width="280" height="120" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 120px; padding-top: 1041px; margin-left: 1px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 120px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        AsyncGenerator
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + asend(self, value)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + athrow(self, type, value, traceback)
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + aclose(self)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __aiter__(self): Iterator
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __anext__(self)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1" y="1053" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    AsyncGenerator...
+                </text>
+            </switch>
+        </g>
+        <path d="M 141 1041 L 141 1025.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 141 1005.47 L 151 1025.47 L 131 1025.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="1" y="641" width="280" height="120" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 120px; padding-top: 641px; margin-left: 1px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 120px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Coroutine
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __await__(self): Iterator
+                                    <br style="font-size: 12px"/>
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + send(self, value)
+                                </p>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + throw(self, type, value, traceback)
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + close(self)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1" y="653" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Coroutine...
+                </text>
+            </switch>
+        </g>
+        <rect x="1" y="521" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 521px; margin-left: 1px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Awaitable
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __await__(self): Iterator
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="1" y="533" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Awaitable...
+                </text>
+            </switch>
+        </g>
+        <path d="M 141 641 L 141 625.47" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 141 605.47 L 151 625.47 L 131 625.47 Z" fill="none" stroke="#f28e1c" stroke-width="4" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="321" y="1081" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 1081px; margin-left: 321px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Hashable
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __hash__(self): int
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="321" y="1093" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Hashable...
+                </text>
+            </switch>
+        </g>
+        <rect x="641" y="1081" width="280" height="80" fill="#f28e1c" stroke="#9d5909" stroke-width="2" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject style="overflow: visible; text-align: left;" pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe flex-start; justify-content: unsafe flex-start; width: 282px; height: 80px; padding-top: 1081px; margin-left: 641px;">
+                        <div style="box-sizing: border-box; font-size: 0; text-align: left; width: 282px; height: 80px; overflow: hidden; ">
+                            <div style="display: inline-block; font-size: 12px; font-family: monospace; color: #FFFFFF; line-height: 1.2; pointer-events: all; width: 100%; height: 100%; white-space: nowrap; ">
+                                <p style="margin: 4px 0px 0px ; text-align: center ; font-size: 12px">
+                                    <b style="font-size: 12px">
+                                        Callable
+                                    </b>
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    + __call__(self, *args, **kwargs)
+                                </p>
+                                <hr style="font-size: 12px"/>
+                                <p style="margin: 0px 0px 0px 4px ; font-size: 12px">
+                                    <br style="font-size: 12px"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="641" y="1093" fill="#FFFFFF" font-family="monospace" font-size="12px">
+                    Callable...
+                </text>
+            </switch>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://desk.draw.io/support/solutions/articles/16000042487" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Viewer does not support full SVG 1.1
+            </text>
+        </a>
+    </switch>
+</svg>
