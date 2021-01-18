@@ -6,4 +6,4 @@ tags: [Python]
 
 [:blue_book: 官方文档](https://docs.python.org/zh-cn/3/library/collections.abc.html)
 
-{% asset_img collections_abc_uml.svg "'容器抽象基类 UML' '容器抽象基类类图 UML'" %}
+{% asset_img collections_abc_uml.drawio.svg "'容器抽象基类 UML' '容器抽象基类类图 UML'" %}
