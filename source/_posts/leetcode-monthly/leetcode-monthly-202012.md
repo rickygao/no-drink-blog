@@ -541,8 +541,10 @@ class Solution:
     def find132pattern(self, nums: List[int]) -> bool:
         return find_132_pattern(nums)
 
+from math import inf
+
 def find_132_pattern(nums: List[int]) -> bool:
-    s, a_k = [], float('-inf')
+    s, a_k = [], -inf
     for a_i in reversed(nums):
         if a_i < a_k:
             return True
@@ -3663,8 +3665,10 @@ class Solution:
     def maxProfit(self, k: int, prices: List[int]) -> int:
         return max_profit(k, prices)
 
+from math import inf
+
 def max_profit(k: int, prices: List[int]) -> int:
-    p = [0] + [float('-inf')] * (min(k, len(prices) // 2) * 2)
+    p = [0] + [-inf] * (min(k, len(prices) // 2) * 2)
     for i, price in enumerate(prices):
         for j in range(1, min(len(p), ((i + 1) // 2 + 1) * 2)):
             p[j] = max(p[j], p[j - 1] + price * (-1 if j % 2 else 1))
@@ -3890,10 +3894,11 @@ class Solution:
         return erase_overlap_intervals(intervals)
 
 from operator import itemgetter
+from math import inf
 
 def erase_overlap_intervals(intervals: List[List[int]]) -> int:
     intervals = sorted(intervals, key=itemgetter(1))
-    last, reserved = float('-inf'), 0
+    last, reserved = -inf, 0
     for l, r in intervals:
         if l >= last:
             last = r

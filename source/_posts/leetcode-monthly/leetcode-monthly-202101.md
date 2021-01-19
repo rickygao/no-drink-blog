@@ -761,8 +761,10 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         return max_profit(2, prices)
 
+from math import inf
+
 def max_profit(k: int, prices: List[int]) -> int:
-    p = [0] + [float('-inf')] * (min(k, len(prices) // 2) * 2)
+    p = [0] + [-inf] * (min(k, len(prices) // 2) * 2)
     for i, price in enumerate(prices):
         for j in range(1, min(len(p), ((i + 1) // 2 + 1) * 2)):
             p[j] = max(p[j], p[j - 1] + price * (-1 if j % 2 else 1))
@@ -776,9 +778,11 @@ class Solution:
     def maxProfit(self, prices: List[int]) -> int:
         return max_profit(prices)
 
+from math import inf
+
 def max_profit(prices: List[int]) -> int:
     cl0 = 0
-    op1 = cl1 = op2 = cl2 = float('-inf')
+    op1 = cl1 = op2 = cl2 = -inf
     for price in prices:
         op1 = max(op1, cl0 - price)
         cl1 = max(cl1, op1 + price)
