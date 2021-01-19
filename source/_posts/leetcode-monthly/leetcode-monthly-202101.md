@@ -1378,3 +1378,111 @@ def accounts_merge(accounts: List[List[str]]) -> List[List[str]]:
         p2account.setdefault(find(parents, i), (name, set()))[1].update(emails)
     return [[name, *sorted(emails)] for name, emails in p2account.values()]
 ```
+
+## 1584. 连接所有点的最小费用{#leetcode-1584}
+
+[:link: 来源](https://leetcode-cn.com/problems/min-cost-to-connect-all-points/)
+
+### 题目
+
+给你一个 `points` 数组，表示 $xOy$ 平面上的一些点，其中 `points[i] = [xi, yi]`, 代表点 $\left(x_i,y_i\right)$.
+
+连接点 $\left(x_i,y_i\right)$ 和点 $\left(x_j,y_j\right)$ 的费用为它们之间的**曼哈顿距离**
+
+$$
+d_{i,j}=\left|x_i-x_j\right|+\left|y_i-y_j\right|
+$$
+
+其中 $\left|v\right|$ 表示 $v$ 的绝对值。
+
+请你返回将所有点连接的最小总费用。只有任意两点之间**有且仅有**一条简单路径时，才认为所有点都已连接。
+
+#### 示例
+
+```raw
+输入：points = [[0, 0], [2, 2], [3, 10], [5, 2], [7, 0]]
+输出：20
+解释：我们可以按照上图所示连接所有点得到最小总费用，总费用为 20. 注意到任意两个点之间只有唯一一条路径互相到达。
+```
+
+```raw
+输入：points = [[3, 12], [-2, 5], [-4, 1]]
+输出：18
+```
+
+```raw
+输入：points = [[0, 0], [1, 1], [1, 0], [-1, 1]]
+输出：4
+```
+
+```raw
+输入：points = [[-1000000, -1000000], [1000000, 1000000]]
+输出：4000000
+```
+
+```raw
+输入：points = [[0, 0]]
+输出：0
+```
+
+#### 提示
+
+- `1 <= len(points) <= 1000`;
+- `-1e6 <= xi, yi <= 1e6`;
+- 所有点 `(xi, yi)` 两两不同。
+
+### 题解
+
+#### Kruskal
+
+并查集记录连通性。
+
+```python
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        return min_cost_connect_points(points)
+
+from itertools import combinations
+
+def find(parents: List[int], i: int) -> int:
+    if (p := parents[i]) != i:
+        parents[i] = find(parents, p)
+    return parents[i]
+
+def union(parents: List[int], i: int, j: int) -> None:
+    parents[find(parents, j)] = find(parents, i)
+
+def min_cost_connect_points(points: List[List[int]]) -> int:
+    r, parents, edges = 0, list(range(len(points))), sorted(
+        (abs(xi - xj) + abs(yi - yj), i, j)
+        for (i, (xi, yi)), (j, (xj, yj))
+        in combinations(enumerate(points), 2)
+    )
+    for d, i, j in edges:
+        if find(parents, i) != find(parents, j):
+            union(parents, i, j)
+            r += d
+    return r
+```
+
+#### Prim
+
+```python
+class Solution:
+    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+        return min_cost_connect_points(points)
+
+from operator import itemgetter
+from math import inf, isfinite
+
+def min_cost_connect_points(points: List[List[int]]) -> int:
+    r, p2d = 0, {(x, y): inf for x, y in points}
+    while p2d:
+        mp, d = min(p2d.items(), key=itemgetter(1))
+        del p2d[mp]
+        if isfinite(d):
+            r += d
+        for p in p2d:
+            p2d[p] = min(p2d[p], abs(mp[0] - p[0]) + abs(mp[1] - p[1]))
+    return r
+```
