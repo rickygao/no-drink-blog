@@ -1142,7 +1142,7 @@ def is_same_tree(t1: TreeNode, t2: TreeNode) -> bool:
 
 #### 注意
 
-`S` 只包含小写字母并且长度在 `[1, 500]` 区间内。
+`S` 只包含小写字母并且长度在 $\left[1,500\right]$ 区间内。
 
 ### 题解
 

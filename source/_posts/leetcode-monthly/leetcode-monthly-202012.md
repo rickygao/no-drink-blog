@@ -442,7 +442,7 @@ def is_symmetric(t1: TreeNode, t2: TreeNode) -> bool:
 
 #### 提示
 
-输入的数组长度范围为 `[1, 10000]`.
+输入的数组长度范围为 $\left[1,10000\right]$.
 
 ### 题解
 
@@ -597,7 +597,7 @@ def find_132_pattern(nums: List[int]) -> bool:
 
 - `1 <= len(tasks) <= 1e4`;
 - `tasks[i]` 是大写英文字母；
-- `n` 的取值范围为 `[0, 100]`.
+- `n` 的取值范围为 $\left[0,100\right]$.
 
 ### 题解
 
@@ -3180,8 +3180,8 @@ def remove_duplicate_letters(s: str) -> str:
 
 #### 注意
 
-- `cost` 的长度将会在 `[2, 1000]`;
-- 每一个 `cost[i]` 将会是一个 `int` 类型，范围为 `[0, 999]`.
+- `cost` 的长度将会在 $\left[2,1000\right]$;
+- 每一个 `cost[i]` 将会是一个 `int` 类型，范围为 $\left[0,999\right]$.
 
 ### 题解
 
