@@ -2033,7 +2033,7 @@ def majority_element(nums: List[int], f: int) -> List[int]:
             if r[i] == n:
                 c[i] += 1
                 break
-    
+
     l = len(nums) // f
     return [ri for ri, ci in zip(r, c) if ci > l]
 ```
