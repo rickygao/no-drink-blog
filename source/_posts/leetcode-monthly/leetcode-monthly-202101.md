@@ -1490,3 +1490,74 @@ def min_cost_connect_points(points: List[List[int]]) -> int:
             p2d[p] = min(p2d[p], abs(mp[0] - p[0]) + abs(mp[1] - p[1]))
     return r
 ```
+
+## 628. 三个数的最大乘积{#leetcode-628}
+
+[:link: 来源](https://leetcode-cn.com/problems/maximum-product-of-three-numbers/)
+
+### 题目
+
+给定一个整型数组，在数组中找出由三个数组成的最大乘积，并输出这个乘积。
+
+#### 示例
+
+```raw
+输入：[1, 2, 3]
+输出：6
+```
+
+```raw
+输入：[1, 2, 3, 4]
+输出：24
+```
+
+#### 注意
+
+- 给定的整型数组长度范围是 $\left[3,{10}^4\right]$, 数组中所有的元素范围是 $\left[-1000,1000\right]$;
+- 输入的数组中任意三个数的乘积不会超出 32 位有符号整数的范围。
+
+### 题解
+
+最大乘积在**最大的三个元素**或**最小的两个元素和最大的元素**取得。
+
+#### 排序
+
+```python
+class Solution:
+    def maximumProduct(self, nums: List[int]) -> int:
+        return maximum_product(nums)
+
+def maximum_product(nums: List[int]) -> int:
+    sorted_nums = sorted(nums)
+    (a, b), (x, y, z) = sorted_nums[:2], sorted_nums[-3:]
+    return max(a * b * z, x * y * z)
+```
+
+#### 扫描
+
+```python
+class Solution:
+    def maximumProduct(self, nums: List[int]) -> int:
+        return maximum_product(nums)
+
+from math import inf
+
+def maximum_product(nums: List[int]) -> int:
+    a = b = inf
+    x = y = z = -inf
+
+    for n in nums:
+        if n < a:
+            a, b = n, a
+        elif n < b:
+            b = n
+
+        if n > z:
+            x, y, z = y, z, n
+        elif n > y:
+            x, y = y, n
+        elif n > x:
+            x = n
+
+    return max(a * b * z, x * y * z)
+```
