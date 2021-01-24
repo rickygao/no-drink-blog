@@ -1717,3 +1717,55 @@ def make_connected(n: int, connections: List[List[int]]) -> int:
         union(parents, i, j)
     return sum(find(parents, i) == i for i in range(n)) - 1
 ```
+
+## 674. 最长连续递增序列{#leetcode-674}
+
+[:link: 来源](https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/)
+
+### 题目
+
+给定一个未经排序的整数数组，找到最长且**连续递增的子序列**，并返回该序列的长度。
+
+连续递增的子序列 可以由两个下标 `l < r` 确定，如果对于每个 `l <= i < r - 1`, 都有 `nums[i] < nums[i + 1]`, 那么子序列 `nums[l:r]` 就是连续递增子序列。
+
+#### 示例
+
+```raw
+输入：nums = [1, 3, 5, 4, 7]
+输出：3
+解释：最长连续递增序列是 [1, 3, 5], 长度为 3. 尽管 [1, 3, 5, 7] 也是升序的子序列, 但它不是连续的，因为 5 和 7 在原数组里被 4 隔开。 
+```
+
+```raw
+输入：nums = [2, 2, 2, 2, 2]
+输出：1
+解释：最长连续递增序列是 [2], 长度为 1.
+```
+
+#### 提示
+
+- `0 <= len(nums) <= 1e4`;
+- `-1e9 <= nums[i] <= 1e9`.
+
+### 题解
+
+```python
+class Solution:
+    def findLengthOfLCIS(self, nums: List[int]) -> int:
+        return find_length_of_lcis(nums)
+
+from operator import sub
+
+def find_length_of_lcis(nums: List[int]) -> int:
+    if not nums:
+        return 0
+
+    m, r = 1, 0
+    for d in map(sub, nums[1:], nums):
+        if d > 0:
+            m += 1
+        else:
+            r = max(m, r)
+            m = 1
+    return max(m, r)
+```
