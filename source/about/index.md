@@ -28,7 +28,7 @@ comments: false
 
 ## 学术成果
 
-- Exploring the Effects of Blur and Deblurring to Visual Object Tracking. Qing Guo, Wei Feng\*, **Ruijun Gao**, Yang Liu, and Song Wang. IEEE Transcations on Image Processing, 2020. (TIP, CCF-A) [:paperclip:](https://arxiv.org/abs/1908.07904)
+- Qing Guo, Wei Feng\*, **Ruijun Gao**, Yang Liu, and Song Wang. Exploring the Effects of Blur and Deblurring to Visual Object Tracking. in *IEEE Transactions on Image Processing*, 30:1812-1824, 2021. [:paperclip:](https://ieeexplore.ieee.org/document/9318560)
 
 Note: "\*" marks my advisor.
 
