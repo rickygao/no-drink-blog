@@ -1769,3 +1769,97 @@ def find_length_of_lcis(nums: List[int]) -> int:
             m = 1
     return max(m, r)
 ```
+
+## 959. 由斜杠划分区域{#leetcode-959}
+
+[:link: 来源](https://leetcode-cn.com/problems/regions-cut-by-slashes/)
+
+### 题目
+
+在由 $1\times1$ 方格组成的 $N\times N$ 网格 `grid` 中，每个 $1\times1$ 方格由 `'/'`, `'\\'` 或空格构成。这些字符会将方块划分为一些共边的区域。（请注意，反斜杠字符是转义的，因此用 `'\\'` 表示）。
+
+返回区域的数目。
+
+#### 示例
+
+```raw
+输入：[
+  " /",
+  "/ ",
+]
+输出：2
+```
+
+```raw
+输入：[
+  " /",
+  "  ",
+]
+输出：1
+```
+
+```raw
+输入：[
+  "\\/",
+  "/\\",
+]
+输出：4
+```
+
+```raw
+输入：[
+  "/\\",
+  "\\/",
+]
+输出：5
+```
+
+```raw
+输入：[
+  "//",
+  "/ ",
+]
+输出：3
+```
+
+#### 提示
+
+- `1 <= len(grid) == len(grid[i]) <= 30`;
+- `grid[i][j] in ('/', '\\', ' ')`.
+
+### 题解
+
+并查集。共 $N+1$ 个格点，起始时边缘格点处于同一连通分支。遍历所有方格：若出现斜线连接的格点已经处于同一连通分支，则证明格点出现闭环，结果将多划分出一个区域；否则将格点合并。
+
+```python
+class Solution:
+    def regionsBySlashes(self, grid: List[str]) -> int:
+        return regions_by_slashes(grid)
+
+def find(parents: List[int], i: int) -> int:
+    if (p := parents[i]) != i:
+        parents[i] = find(parents, p)
+    return parents[i]
+
+def union(parents: List[int], i: int, j: int) -> None:
+    parents[find(parents, j)] = find(parents, i)
+
+def regions_by_slashes(grid: List[str]) -> int:
+    n, r = len(grid) + 1, 1
+    parents = list(range(n * n))
+    parents[:n] = parents[-n:] = parents[::n] = parents[n - 1::n] = [0] * n
+    for i, row in enumerate(grid):
+        for j, slash in enumerate(row):
+            if slash == ' ':
+                continue
+            if slash == '/':
+                pi, pj = i * n + j + 1, i * n + j + n
+            elif slash == '\\':
+                pi, pj = i * n + j, i * n + j + n + 1
+
+            if find(parents, pi) != find(parents, pj):
+                union(parents, pi, pj)
+            else:
+                r += 1
+    return r
+```
