@@ -1908,3 +1908,88 @@ def num_equiv_domino_pairs(dominoes: List[List[int]]) -> int:
         ).values()
     ) // 2
 ```
+
+## 1579. 保证图可完全遍历{#leetcode-1579}
+
+[:link: 来源](https://leetcode-cn.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/)
+
+### 题目
+
+Alice 和 Bob 共有一个无向图，其中包含 `n` 个节点和 `3` 种类型的边：
+
+- 类型 1: 只能由 Alice 遍历。
+- 类型 2: 只能由 Bob 遍历。
+- 类型 3: Alice 和 Bob 都可以遍历。
+
+给你一个数组 `edges`, 其中 `edges[i] = [type_i, u_i, v_i]` 表示节点 `u_i` 和 `v_i` 之间存在类型为 `type_i` 的双向边。请你在保证图仍能够被 Alice 和 Bob 完全遍历的前提下，找出可以删除的最大边数。如果从任何节点开始，Alice 和 Bob 都可以到达所有其他节点，则认为图是可以完全遍历的。
+
+返回可以删除的最大边数，如果 Alice 和 Bob 无法完全遍历图，则返回 `-1`.
+
+#### 示例
+
+```raw
+输入：n = 4, edges = [[3, 1, 2], [3, 2, 3], [1, 1, 3], [1, 2, 4], [1, 1, 2], [2, 3, 4]]
+输出：2
+解释：如果删除 [1, 1, 2] 和 [1, 1, 3] 这两条边，Alice 和 Bob 仍然可以完全遍历这个图。再删除任何其他的边都无法保证图可以完全遍历。所以可以删除的最大边数是 2.
+```
+
+```raw
+输入：n = 4, edges = [[3, 1, 2], [3, 2, 3], [1, 1, 4], [2, 1, 4]]
+输出：0
+解释：注意，删除任何一条边都会使 Alice 和 Bob 无法完全遍历这个图。
+```
+
+```raw
+输入：n = 4, edges = [[3, 2, 3], [1, 1, 2], [2, 3, 4]]
+输出：-1
+解释：在当前图中，Alice 无法从其他节点到达节点 4. 类似地，Bob 也不能达到节点 1. 因此，图无法完全遍历。
+```
+
+#### 提示
+
+- `1 <= n <= 1e5`;
+- `1 <= len(edges) <= min(1ee5, 3 * n * (n - 1) // 2)`, `len(edges[i]) == 3`;
+- `1 <= edges[i][0] <= 3`, `1 <= edges[i][1] < edges[i][2] <= n`;
+- 所有元组 `(type_i, u_i, v_i)` 互不相同。
+
+### 题解
+
+- 并查集，Kruscal. 逆向思维，向空图添加边，优先使用公共边；
+- 提前退出。
+
+```python
+class Solution:
+    def maxNumEdgesToRemove(self, n: int, edges: List[List[int]]) -> int:
+        return max_num_edges_to_remove(n, edges)
+
+def find(parents: List[int], i: int) -> int:
+    if (p := parents[i]) != i:
+        parents[i] = find(parents, p)
+    return parents[i]
+
+def union(parents: List[int], i: int, j: int) -> None:
+    parents[find(parents, j)] = find(parents, i)
+
+def max_num_edges_to_remove(n: int, edges: List[List[int]]) -> int:
+    parents, reserved, countdown = list(range(n + 1)), 0, (n - 1) * 2
+    for t, i, j in edges:
+        if t == 3 and find(parents, i) != find(parents, j):
+            union(parents, i, j)
+            reserved += 1
+            countdown -= 2
+            if not countdown:
+                return len(edges) - reserved
+
+    alice_parents, bob_parents = parents, parents.copy()
+    for t, i, j in edges:
+        if t != 3:
+            parents = alice_parents if t == 1 else bob_parents
+            if find(parents, i) != find(parents, j):
+                union(parents, i, j)
+                reserved += 1
+                countdown -= 1
+                if not countdown:
+                    return len(edges) - reserved
+
+    return -1
+```
