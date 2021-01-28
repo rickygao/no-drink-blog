@@ -506,7 +506,7 @@ def sort_array_by_parity(l: List[int]) -> List[int]:
 
 - `2 <= len(A) <= 20000`;
 - `len(A) % 2 == 0`;
-- `0 <= A[i] <= 1000`.
+- `0 <= A[i] <= `.
 
 ### 题解
 
@@ -949,7 +949,7 @@ def reverse_pairs(nums: List[int]) -> int:
 
 #### 提示
 
-- `1 <= len(scores) == len(ages) <= 1000`;
+- `1 <= len(scores) == len(ages) <= 1e3`;
 - `1 <= scores[i] <= 1e6`, `1 <= ages[i] <= 1e3`.
 
 ### 题解
@@ -1006,7 +1006,7 @@ def best_team_score(scores: List[int], ages: List[int]) -> int:
 
 #### 提示
 
-- `3 <= len(A) <= 10000`;
+- `3 <= len(A) <= 1e4`;
 - `1 <= A[i] <= 1e6`.
 
 ### 题解

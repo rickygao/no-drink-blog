@@ -371,7 +371,7 @@ def fib(n: int) -> int:
 
 #### 提示
 
-- `1 <= len(s) <= 1000`;
+- `1 <= len(s) <= 1e3`;
 - `s` 仅含小写英文字母。
 
 ### 题解
@@ -1214,7 +1214,7 @@ def prefixes_div_by_5(a: List[int]) -> List[bool]:
 
 #### 提示
 
-- `1 <= len(stones) <= 1000`;
+- `1 <= len(stones) <= 1e3`;
 - `0 <= xi, yi <= 1e4`;
 - 不会有两块石头放在同一个坐标点上。
 
@@ -1275,7 +1275,7 @@ def remove_stones(stones: List[List[int]]) -> int:
 
 #### 提示
 
-- `2 <= len(coordinates) <= 1000`, `len(coordinates[i]) == 2`;
+- `2 <= len(coordinates) <= 1e3`, `len(coordinates[i]) == 2`;
 - `-1e4 <= coordinates[i][0], coordinates[i][1] <= 1e4`;
 - `coordinates` 中不含重复的点。
 
@@ -1350,7 +1350,7 @@ def check_straight_line(coordinates: List[List[int]]) -> bool:
 
 #### 提示
 
-- `1 <= len(accounts) <= 1000`;
+- `1 <= len(accounts) <= 1e3`;
 - `1 <= len(accounts[i]) <= 10`;
 - `1 <= len(accounts[i][j]) <= 30`.
 
@@ -1431,7 +1431,7 @@ $$
 
 #### 提示
 
-- `1 <= len(points) <= 1000`;
+- `1 <= len(points) <= 1e3`;
 - `-1e6 <= xi, yi <= 1e6`;
 - 所有点 `(xi, yi)` 两两不同。
 
@@ -1600,9 +1600,9 @@ def maximum_product(nums: List[int]) -> int:
 
 #### 提示
 
-- `1 <= len(A) <= 10000`;
+- `1 <= len(A) <= 1e4`;
 - `0 <= A[i] <= 9`;
-- `0 <= K <= 10000`;
+- `0 <= K <= 1e4`;
 - 如果 `len(A) > 1`, 那么 `A[0] != 0`.
 
 ### 题解
