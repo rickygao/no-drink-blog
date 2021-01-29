@@ -2041,3 +2041,119 @@ def pivot_index(nums: List[int]) -> int:
             return i
     return -1
 ```
+
+## 1631. 最小体力消耗路径{#leetcode-1631}
+
+[:link: 来源](https://leetcode-cn.com/problems/path-with-minimum-effort/)
+
+### 题目
+
+你准备参加一场远足活动。给你一个二维 $rows\times cols$ 的地图 `heights`, 其中 `heights[row][col]` 表示格子 `(row, col)` 的高度。一开始你在最左上角的格子 `(0, 0)`, 且你希望去最右下角的格子 `(rows - 1, cols - 1)` (注意下标从 `0` 开始编号). 你每次可以往**上、下、左、右**四个方向之一移动，你想要找到耗费**体力值**最小的一条路径。
+
+一条路径耗费的**体力值**是路径上相邻格子之间**高度差绝对值**的**最大值**决定的。
+
+请你返回从左上角走到右下角的最小**体力消耗值**。
+
+#### 示例
+
+```raw
+输入：heights = [[1, 2, 2], [3, 8, 2], [5, 3, 5]]
+输出：2
+解释：路径 [1, 3, 5, 3, 5] 连续格子的差值绝对值最大为 2.
+这条路径比路径 [1, 2, 2, 2, 5] 更优，因为另一条路径差值最大值为 3.
+```
+
+```raw
+输入：heights = [[1, 2, 3], [3, 8, 4], [5, 3, 5]]
+输出：1
+解释：路径 [1, 2, 3, 4, 5] 的相邻格子差值绝对值最大为 1, 比路径 [1, 3, 5, 3, 5] 更优。
+```
+
+```raw
+输入：heights = [[1, 2, 1, 1, 1], [1, 2, 1, 2, 1], [1, 2, 1, 2, 1], [1, 2, 1, 2, 1], [1, 1, 1, 2, 1]]
+输出：0
+解释：上图所示路径不需要消耗任何体力。
+```
+
+#### 提示
+
+- `rows == len(heights)`, `cols == len(heights[i])`;
+- `1 <= rows, cols <= 100`;
+- `1 <= heights[i][j] <= 1e6`.
+
+### 题解
+
+#### 排序并查集
+
+```python
+class Solution:
+    def minimumEffortPath(self, heights: List[List[int]]) -> int:
+        return minimum_effort_path(heights)
+
+from itertools import chain, count
+
+def find(parents: List[int], i: int) -> int:
+    if (p := parents[i]) != i:
+        parents[i] = find(parents, p)
+    return parents[i]
+
+def union(parents: List[int], i: int, j: int) -> None:
+    parents[find(parents, j)] = find(parents, i)
+
+def minimum_effort_path(heights: List[List[int]]) -> int:
+    m, n = len(heights), len(heights[0])
+    parents = list(range(m * n))
+    edges = sorted(chain((
+        (abs(x - y), k := i * n + j, k + 1)
+        for i, row in zip(count(), heights)
+        for j, x, y in zip(count(), row, row[1:])
+    ), (
+        (abs(x - y), k := i * n + j, k + n)
+        for j, col in zip(count(), zip(*heights))
+        for i, x, y in zip(count(), col, col[1:])
+    )))
+    for d, i, j in edges:
+        union(parents, i, j)
+        if find(parents, 0) == find(parents, m * n - 1):
+            return d
+    return 0
+```
+
+#### 堆并查集
+
+```python
+class Solution:
+    def minimumEffortPath(self, heights: List[List[int]]) -> int:
+        return minimum_effort_path(heights)
+
+from itertools import chain, count
+from heapq import heapify, heappop
+
+def find(parents: List[int], i: int) -> int:
+    if (p := parents[i]) != i:
+        parents[i] = find(parents, p)
+    return parents[i]
+
+def union(parents: List[int], i: int, j: int) -> None:
+    parents[find(parents, j)] = find(parents, i)
+
+def minimum_effort_path(heights: List[List[int]]) -> int:
+    m, n = len(heights), len(heights[0])
+    parents = list(range(m * n))
+    edges = list(chain((
+        (abs(x - y), k := i * n + j, k + 1)
+        for i, row in zip(count(), heights)
+        for j, x, y in zip(count(), row, row[1:])
+    ), (
+        (abs(x - y), k := i * n + j, k + n)
+        for j, col in zip(count(), zip(*heights))
+        for i, x, y in zip(count(), col, col[1:])
+    )))
+    heapify(edges)
+    while edges:
+        d, i, j = heappop(edges)
+        union(parents, i, j)
+        if find(parents, 0) == find(parents, m * n - 1):
+            return d
+    return 0
+```
