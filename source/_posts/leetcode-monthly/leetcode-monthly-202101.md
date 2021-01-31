@@ -1,13 +1,13 @@
 ---
 title: LeetCode 月报 202101
 date: 2021-01-01 00:00:00
-tags: [LeetCode]
+tags: [LeetCode, Disjoint Sets]
 mathjax: true
 ---
 
 新年新气象，跑步逃离魔幻的 2020 年。
 
-充满并查集的一月，开幕雷击，已会默写。
+共计 30 题。充满并查集的一个月，已会默写。
 
 <!-- more -->
 
