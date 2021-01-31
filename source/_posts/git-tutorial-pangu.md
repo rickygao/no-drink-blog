@@ -6,10 +6,10 @@ tags: [Git, Tutorial, CLI]
 
 ## 准备
 
-1. 一个 `shell`;
-2. 还有 `git`;
-3. [GitHub](https://github.com) Account;
-4. [Git Book](https://git-scm.com/book/zh/v2/);
+1. 一个 `shell`；
+2. 还有 `git`；
+3. [GitHub](https://github.com) Account；
+4. [Git Book](https://git-scm.com/book/zh/v2/)；
 5. 最重要的是随时能够动的手。
 
 盘古会在 `shell` 中使用 `git --version` 命令来检视 `git` 的版本号。遇到不理解或者感兴趣的问题还会主动去查阅文档和书籍。
@@ -111,7 +111,7 @@ Changes not staged for commit:
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
 
-`git` 发现了 `tree` 被修改了, 这真是太强了，这下盘古修改了什么就一览无余了！同时，`git` 还告诉盘古可以试试：
+`git` 发现了 `tree` 被修改了，这真是太强了，这下盘古修改了什么就一览无余了！同时，`git` 还告诉盘古可以试试：
 
 ```shell
 $ git commit -a -m 'tree is beautiful'
@@ -164,7 +164,7 @@ Branch 'main' set up to track remote branch 'main' from 'origin'.
 
 芜湖，这样其他盘古也能看到这个仓库了！
 
-盘古很孤独，但是又想体验协作开发，于是他为了模拟别人向远程仓库提交内容，点击了仓库页面上的 `Add a README` 并 `Commit new file`. 这样一来本地的版本库就比远程仓库慢了一个提交。他会使用：
+盘古很孤独，但是又想体验协作开发，于是他为了模拟别人向远程仓库提交内容，点击了仓库页面上的 `Add a README` 并 `Commit new file`。这样一来本地的版本库就比远程仓库慢了一个提交。他会使用：
 
 ```shell
 $ git pull

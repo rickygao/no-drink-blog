@@ -10,7 +10,7 @@ tags: [Python]
 
 ## 模块概览
 
-`pathlib` 模块中最重要的内容就是 `Path` 类，我们可以简单地使用一个路径字符串构造它，例如 `Path('~/Downloads')`, 同时它提供了许多易于理解和使用的方法。这里将不逐一说明，使用时可在官方文档检索方法的详细说明。以下提供了它们与命令式风格的模块提供的函数的简单对照，但功能并不完全一致，可供参考。
+`pathlib` 模块中最重要的内容就是 `Path` 类，我们可以简单地使用一个路径字符串构造它，例如 `Path('~/Downloads')`。同时它提供了许多易于理解和使用的方法。这里将不逐一说明，使用时可在官方文档检索方法的详细说明。以下提供了它们与命令式风格的模块提供的函数的简单对照，但功能并不完全一致，可供参考。
 
 <!-- more -->
 
@@ -95,7 +95,7 @@ if __name__ == '__main__':
     print(f'{num_images = }')
 ```
 
-`collect_images.py` 脚本将收集 `images` 目录下的所有以 `png`, `jpg`, `gif`, `bmp` 为后缀的图片文件，按字典序排序后写入 `images.txt` 文件中。使用了 `rglob` 和 `write_text` 方法。
+`collect_images.py` 脚本将收集 `images` 目录下的所有以 `png`、`jpg`、`gif` 或 `bmp` 为后缀的图片文件，按字典序排序后写入 `images.txt` 文件中。使用了 `rglob` 和 `write_text` 方法。
 
 ### 拷贝文件
 
@@ -122,6 +122,6 @@ if __name__ == '__main__':
 
 `copy_files.py` 脚本将收集 `source` 目录下的所有以 `txt` 为后缀的文件，在保持原来的目录结构的情况下拷贝到 `target` 目录下。
 
-脚本中使用了 `relative_to` 方法来获取相对路径以及 `mkdir` 方法的 `parents` 和 `exist_ok` 参数来方便地创建目录结构。另外，`target_folder.joinpath(relative_path)` 也可以等价地写成 `target_folder / relative_path`.
+脚本中使用了 `relative_to` 方法来获取相对路径以及 `mkdir` 方法的 `parents` 和 `exist_ok` 参数来方便地创建目录结构。另外，`target_folder.joinpath(relative_path)` 也可以等价地写成 `target_folder / relative_path`。
 
-随着 Python 版本的迭代，很多如 `shutil.copy` 这样接受路径字符串的函数，甚至包括一些第三方包（如 NumPy 和 Pillow）中的某些函数（如 `numpy.save`, `numpy.load` 和 `PIL.Image.open`），现在也可以接受路径对象了。
+随着 Python 版本的迭代，很多如 `shutil.copy` 这样接受路径字符串的函数，甚至包括一些第三方包（如 NumPy 和 Pillow）中的某些函数（如 `numpy.save`、`numpy.load` 和 `PIL.Image.open`），现在也可以接受路径对象了。
