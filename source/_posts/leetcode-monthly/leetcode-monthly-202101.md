@@ -2244,3 +2244,71 @@ def swim_in_water(heights: List[List[int]]) -> int:
     return 0
 ```
 
+## 839. 相似字符串组{#leetcode-839}
+
+[:link: 来源](https://leetcode-cn.com/problems/similar-string-groups/)
+
+### 题目
+
+如果交换字符串 `X` 中的两个不同位置的字母，使得它和字符串 `Y` 相等，那么称 `X` 和 `Y` 两个字符串相似。如果这两个字符串本身是相等的，那它们也是相似的。
+
+例如，`"tars"` 和 `"rats"` 是相似的（交换 `0` 与 `2` 的位置）；`"rats"` 和 `"arts"` 也是相似的，但是 `"star"` 不与 `"tars"`,`"rats"`, `"arts"` 相似。
+
+总之，它们通过相似性形成了两个关联组：`{"tars", "rats", "arts"}` 和 `{"star"}`. 注意，`"tars"` 和 `"arts"` 是在同一组中，即使它们并不相似。形式上，对每个组而言，要确定一个单词在组中，只需要这个词和该组中至少一个单词相似。
+
+给你一个字符串列表 `strs`. 列表中的每个字符串都是 `strs` 中其它所有字符串的一个字母异位词。请问 `strs` 中有多少个相似字符串组？
+
+#### 示例
+
+```raw
+输入：strs = ["tars", "rats", "arts", "star"]
+输出：2
+```
+
+```raw
+输入：strs = ["omv", "ovm"]
+输出：1
+```
+
+#### 提示
+
+- `1 <= len(strs) <= 100`, `1 <= len(strs[i]) <= 1e3`, `sum(map(len, strs)) <= 2 * 1e4`;
+- `strs[i]` 只包含小写字母；
+- `strs` 中的所有单词都具有相同的长度，且是彼此的字母异位词。
+
+#### 备注
+
+字母异位词（anagram），一种把某个字符串的字母的位置（顺序）加以改换所形成的新词。
+
+### 题解
+
+并查集。
+
+```python
+class Solution:
+    def numSimilarGroups(self, strs: List[str]) -> int:
+        return num_similar_groups(strs)
+
+from itertools import combinations
+
+def find(parents: List[int], i: int) -> int:
+    if (p := parents[i]) != i:
+        parents[i] = find(parents, p)
+    return parents[i]
+
+def union(parents: List[int], i: int, j: int) -> None:
+    parents[find(parents, j)] = find(parents, i)
+
+def num_similar_groups(strs: List[str]) -> int:
+    parents = list(range(len(strs)))
+    for (i, s), (j, t) in combinations(enumerate(strs), 2):
+        n = 0
+        for c, d in zip(s, t):
+            if c != d:
+                n += 1
+                if n > 2:
+                    break
+        else:
+            union(parents, i, j)
+    return sum(i == p for i, p in enumerate(parents))
+```
