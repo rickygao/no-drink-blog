@@ -94,3 +94,78 @@ pub fn fair_candy_swap(a: &[i32], b: &[i32]) -> Option<(i32, i32)> {
     None
 }
 ```
+
+## 424. 替换后的最长重复字符{#leetcode-424}
+
+[:link: 来源](https://leetcode-cn.com/problems/longest-repeating-character-replacement/)
+
+### 题目
+
+给你一个仅由大写英文字母组成的字符串，你可以将任意位置上的字符替换成另外的字符，总共可最多替换 `k` 次。在执行上述操作后，找到包含重复字母的最长子串的长度。
+
+#### 注意
+
+字符串长度和 `k` 不会超过 `1e4`。
+
+#### 示例
+
+```raw
+输入：s = "ABAB", k = 2
+输出：4
+解释：用两个 'A' 替换为两个 'B'，反之亦然。
+```
+
+```raw
+输入：s = "AABABBA", k = 1
+输出：4
+解释：将中间的一个 'A' 替换为 'B'，字符串变为 "AABBBBA"。子串 "BBBB" 有最长重复字母，答案为 4。
+```
+
+### 题解
+
+双指针。
+
+```python Python
+class Solution:
+    def characterReplacement(self, s: str, k: int) -> int:
+        return character_replacement(s, k)
+
+from collections import Counter
+
+def character_replacement(s: str, k: int) -> int:
+    c = Counter()
+    i = j = m = 0
+    while j < len(s):
+        c[s[j]] += 1
+        m = max(m, c[s[j]])
+        j += 1
+        if j - i - m > k:
+            c[s[i]] -= 1
+            i += 1
+    return j - i
+```
+
+```rust Rust
+impl Solution {
+    pub fn character_replacement(s: String, k: i32) -> i32 {
+        character_replacement(&s, k as usize) as i32
+    }
+}
+
+use std::collections::HashMap;
+
+pub fn character_replacement(s: &str, k: usize) -> usize {
+    let mut c: HashMap<_, usize> = HashMap::new();
+    let (mut m, mut l) = (0, 0);
+    let (mut p, mut q) = (s.chars(), s.chars());
+    while let Some(j) = q.next() {
+        m = m.max(*c.entry(j).and_modify(|cj| *cj += 1).or_insert(1));
+        if l >= k + m {
+            *c.get_mut(&p.next().unwrap()).unwrap() -= 1;
+        } else {
+            l += 1;
+        }
+    }
+    l
+}
+```
