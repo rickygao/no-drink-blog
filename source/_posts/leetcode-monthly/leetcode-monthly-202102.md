@@ -169,3 +169,97 @@ pub fn character_replacement(s: &str, k: usize) -> usize {
     l
 }
 ```
+
+## 480. 滑动窗口中位数{#leetcode-480}
+
+[:link: 来源](https://leetcode-cn.com/problems/sliding-window-median/)
+
+### 题目
+
+中位数是有序序列最中间的那个数。如果序列的大小是偶数，则没有最中间的数；此时中位数是最中间的两个数的平均数。
+
+例如：
+
+- `[2, 3, 4]` 的中位数是 3；
+- `[2, 3]` 的中位数是 (2 + 3) / 2 = 2.5。
+
+给你一个数组 `nums`，有一个大小为 `k` 的窗口从最左端滑动到最右端。窗口中有 `k` 个数，每次窗口向右移动一位。你的任务是找出每次窗口移动后得到的新窗口中元素的中位数，并输出由它们组成的数组。
+
+#### 示例
+
+```raw
+输入：nums = [1, 3, -1,- 3, 5, 3, 6, 7], k = 3
+输出：[1, -1, -1, 3, 5, 6]
+解释：滑动窗口的位置和中位数如下。
+----------------------------+----
+ [1  3  -1] -3  5  3  6  7  |  1
+  1 [3  -1  -3] 5  3  6  7  | -1
+  1  3 [-1  -3  5] 3  6  7  | -1
+  1  3  -1 [-3  5  3] 6  7  |  3
+  1  3  -1  -3 [5  3  6] 7  |  5
+  1  3  -1  -3  5 [3  6  7] |  6
+----------------------------+----
+```
+
+#### 提示
+
+- 你可以假设 `k` 始终有效，即 `k` 始终小于输入的非空数组的元素个数；
+- 与真实值误差在 `1e-5` 以内的答案将被视作正确答案。
+
+### 题解
+
+二分查找。维护有序窗口。然后，写一个生成器吧！
+
+```python Python
+class Solution:
+    def medianSlidingWindow(self, nums: List[int], k: int) -> List[float]:
+        return list(generate_median_sliding_window(nums, k))
+
+from bisect import bisect_left
+from collections import deque
+
+def generate_median_sliding_window(nums: Iterator[int], k: int) -> Iterator[int]:
+    m, r = divmod(k, 2)
+    w, sw = deque(), []
+    for n in nums:
+        w.append(n)
+        sw.insert(bisect.bisect_left(sw, n), n)
+        if len(w) < k:
+            continue
+        if len(w) > k:
+            sw.pop(bisect.bisect_left(sw, w.popleft()))
+        yield sw[m] if r else (sw[m] + sw[m - 1]) / 2
+```
+
+尚难驾驭 Rust 的类型体操和生命周期，暂时不写迭代器适配器。
+
+```rust Rust
+impl Solution {
+    pub fn median_sliding_window(nums: Vec<i32>, k: i32) -> Vec<f64> {
+        median_sliding_window(&nums, k as usize)
+    }
+}
+
+use std::collections::VecDeque;
+
+pub fn median_sliding_window(nums: &[i32], k: usize) -> Vec<f64> {
+    let (mut window, mut sorted_window) = (VecDeque::with_capacity(k), Vec::with_capacity(k));
+    let mut medians = Vec::with_capacity(nums.len().max(k) - k + 1);
+    for &n in nums {
+        window.push_back(n);
+        sorted_window.insert(sorted_window.binary_search(&n).unwrap_or_else(|i| i), n);
+        if sorted_window.len() < k {
+            continue;
+        }
+        if sorted_window.len() > k {
+            sorted_window.remove(sorted_window.binary_search(&window.pop_front().unwrap()).unwrap());
+        }
+        medians.push(if k % 2 == 1 {
+            sorted_window[k / 2] as f64
+        } else {
+            (sorted_window[k / 2] as f64 + sorted_window[k / 2 - 1] as f64) / 2.0
+        });
+    }
+    medians
+}
+```
