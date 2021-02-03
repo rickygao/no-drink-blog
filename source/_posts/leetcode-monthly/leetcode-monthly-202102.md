@@ -243,22 +243,24 @@ impl Solution {
 use std::collections::VecDeque;
 
 pub fn median_sliding_window(nums: &[i32], k: usize) -> Vec<f64> {
-    let (mut window, mut sorted_window) = (VecDeque::with_capacity(k), Vec::with_capacity(k));
-    let mut medians = Vec::with_capacity(nums.len().max(k) - k + 1);
-    for &n in nums {
+    if nums.len() < k || k == 0 {
+        return Vec::new();
+    }
+    let median = |sorted_window: &Vec<&i32>| if k % 2 == 1 {
+        *sorted_window[k / 2] as f64
+    } else {
+        (*sorted_window[k / 2] as f64 + *sorted_window[k / 2 - 1] as f64) / 2.0
+    };
+    let mut window = nums[..k].iter().collect::<VecDeque<_>>();
+    let mut sorted_window = nums[..k].iter().collect::<Vec<_>>();
+    sorted_window.sort_unstable();
+    let mut medians = Vec::with_capacity(nums.len() - k + 1);
+    medians.push(median(&sorted_window));
+    for n in nums[k..].iter() {
+        sorted_window.remove(sorted_window.binary_search(&window.pop_front().unwrap()).unwrap());
         window.push_back(n);
         sorted_window.insert(sorted_window.binary_search(&n).unwrap_or_else(|i| i), n);
-        if sorted_window.len() < k {
-            continue;
-        }
-        if sorted_window.len() > k {
-            sorted_window.remove(sorted_window.binary_search(&window.pop_front().unwrap()).unwrap());
-        }
-        medians.push(if k % 2 == 1 {
-            sorted_window[k / 2] as f64
-        } else {
-            (sorted_window[k / 2] as f64 + sorted_window[k / 2 - 1] as f64) / 2.0
-        });
+        medians.push(median(&sorted_window));
     }
     medians
 }
