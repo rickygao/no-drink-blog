@@ -265,3 +265,75 @@ pub fn median_sliding_window(nums: &[i32], k: usize) -> Vec<f64> {
     medians
 }
 ```
+
+## 643. 子数组最大平均数 I{#leetcode-643}
+
+[:link: 来源](https://leetcode-cn.com/problems/maximum-average-subarray-i/)
+
+### 题目
+
+给定 `n` 个整数，找出平均数最大且长度为 `k` 的连续子数组，并输出该最大平均数。
+
+#### 示例
+
+```raw
+输入：[1, 12, -5, -6, 50, 3], k = 4
+输出：12.75
+解释：最大平均数 (12 - 5 - 6 + 50) / 4 = 51 / 4 = 12.75
+```
+
+#### 提示
+
+- `1 <= k <= n <= 3e4`；
+- 所给数据范围 $[-{10}^4，{10}^4]$。
+
+### 题解
+
+```python Python
+class Solution:
+    def findMaxAverage(self, nums: List[int], k: int) -> float:
+        return find_max_average(nums, k)
+
+from collections import deque
+
+def find_max_average(nums: List[int], k: int) -> float:
+    return max(generate_sum_sliding_window(nums, k)) / k
+
+def generate_sum_sliding_window(nums: Iterator[int], k: int) -> Iterator[int]:
+    w, s = deque(), 0
+    for n in nums:
+        w.append(n)
+        s += n
+        if len(w) < k:
+            continue
+        if len(w) > k:
+            s -= w.popleft()
+        yield s
+```
+
+```rust Rust
+impl Solution {
+    pub fn find_max_average(nums: Vec<i32>, k: i32) -> f64 {
+        find_max_average(&nums, k as usize).unwrap()
+    }
+}
+
+use std::collections::VecDeque;
+
+pub fn find_max_average(nums: &[i32], k: usize) -> Option<f64> {
+    if nums.len() < k || k == 0 {
+        return None;
+    }
+    let mut window = nums[..k].iter().collect::<VecDeque<_>>();
+    let mut sum = nums[..k].iter().sum::<i32>();
+    let mut max = sum;
+    for n in nums[k..].iter() {
+        sum = sum - window.pop_front().unwrap() + n;
+        if sum > max {
+            max = sum;
+        }
+        window.push_back(n);
+    }
+    Some((max as f64) / (k as f64))
+}
+```
