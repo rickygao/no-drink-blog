@@ -7,6 +7,8 @@ mathjax: true
 
 快过年了。重启「Rust 从入门到放弃」计划。
 
+本月大概是滑动窗口月了。
+
 <!-- more -->
 
 ## 888. 公平的糖果棒交换{#leetcode-888}
@@ -180,8 +182,8 @@ pub fn character_replacement(s: &str, k: usize) -> usize {
 
 例如：
 
-- `[2, 3, 4]` 的中位数是 3；
-- `[2, 3]` 的中位数是 (2 + 3) / 2 = 2.5。
+- `[2, 3, 4]` 的中位数是 `3`；
+- `[2, 3]` 的中位数是 `(2 + 3) / 2 = 2.5`。
 
 给你一个数组 `nums`，有一个大小为 `k` 的窗口从最左端滑动到最右端。窗口中有 `k` 个数，每次窗口向右移动一位。你的任务是找出每次窗口移动后得到的新窗口中元素的中位数，并输出由它们组成的数组。
 
@@ -246,21 +248,21 @@ pub fn median_sliding_window(nums: &[i32], k: usize) -> Vec<f64> {
     if nums.len() < k || k == 0 {
         return Vec::new();
     }
-    let median = |sorted_window: &Vec<&i32>| if k % 2 == 1 {
-        *sorted_window[k / 2] as f64
-    } else {
-        (*sorted_window[k / 2] as f64 + *sorted_window[k / 2 - 1] as f64) / 2.0
-    };
     let mut window = nums[..k].iter().collect::<VecDeque<_>>();
     let mut sorted_window = nums[..k].iter().collect::<Vec<_>>();
     sorted_window.sort_unstable();
+    let median = |sorted_window: &Vec<&i32>| if k % 2 == 1 {
+        *sorted_window[k / 2] as f64
+    } else {
+        (*sorted_window[k / 2] as f64 + *sorted_window[k / 2 - 1] as f64) / 2f64
+    };
     let mut medians = Vec::with_capacity(nums.len() - k + 1);
     medians.push(median(&sorted_window));
     for n in nums[k..].iter() {
         sorted_window.remove(sorted_window.binary_search(&window.pop_front().unwrap()).unwrap());
-        window.push_back(n);
         sorted_window.insert(sorted_window.binary_search(&n).unwrap_or_else(|i| i), n);
         medians.push(median(&sorted_window));
+        window.push_back(n);
     }
     medians
 }
