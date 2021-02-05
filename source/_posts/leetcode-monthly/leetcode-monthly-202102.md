@@ -331,9 +331,7 @@ pub fn find_max_average(nums: &[i32], k: usize) -> Option<f64> {
     let mut max = sum;
     for n in nums[k..].iter() {
         sum = sum - window.pop_front().unwrap() + n;
-        if sum > max {
-            max = sum;
-        }
+        max = max.max(sum);
         window.push_back(n);
     }
     Some((max as f64) / (k as f64))
@@ -411,7 +409,7 @@ use std::collections::VecDeque;
 
 pub fn equal_substring(s: &str, t: &str, max_cost: u32) -> usize {
     let mut window = VecDeque::new();
-    let (mut cost, mut len) = (0, 0);
+    let (mut cost, mut max) = (0, 0);
     for distance in Iterator::zip(s.chars(), t.chars()).map(
         |(si, ti)| (si as i32 - ti as i32).abs() as u32
     ) {
@@ -420,10 +418,8 @@ pub fn equal_substring(s: &str, t: &str, max_cost: u32) -> usize {
         while cost > max_cost {
             cost -= window.pop_front().unwrap();
         }
-        if window.len() > len {
-            len = window.len();
-        }
+        max = max.max(window.len());
     }
-    len
+    max
 }
 ```
