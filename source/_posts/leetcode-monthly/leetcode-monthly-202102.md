@@ -242,13 +242,10 @@ impl Solution {
     }
 }
 
-use std::collections::VecDeque;
-
 pub fn median_sliding_window(nums: &[i32], k: usize) -> Vec<f64> {
     if nums.len() < k || k == 0 {
         return Vec::new();
     }
-    let mut window = nums[..k].iter().collect::<VecDeque<_>>();
     let mut sorted_window = nums[..k].iter().collect::<Vec<_>>();
     sorted_window.sort_unstable();
     let median = |sorted_window: &Vec<&i32>| if k % 2 == 1 {
@@ -258,11 +255,10 @@ pub fn median_sliding_window(nums: &[i32], k: usize) -> Vec<f64> {
     };
     let mut medians = Vec::with_capacity(nums.len() - k + 1);
     medians.push(median(&sorted_window));
-    for n in nums[k..].iter() {
-        sorted_window.remove(sorted_window.binary_search(&window.pop_front().unwrap()).unwrap());
+    for (m, n) in Iterator::zip(nums.iter(), nums[k..].iter()) {
+        sorted_window.remove(sorted_window.binary_search(&m).unwrap());
         sorted_window.insert(sorted_window.binary_search(&n).unwrap_or_else(|i| i), n);
         medians.push(median(&sorted_window));
-        window.push_back(n);
     }
     medians
 }
@@ -320,19 +316,15 @@ impl Solution {
     }
 }
 
-use std::collections::VecDeque;
-
 pub fn find_max_average(nums: &[i32], k: usize) -> Option<f64> {
     if nums.len() < k || k == 0 {
         return None;
     }
-    let mut window = nums[..k].iter().collect::<VecDeque<_>>();
     let mut sum = nums[..k].iter().sum::<i32>();
     let mut max = sum;
-    for n in nums[k..].iter() {
-        sum = sum - window.pop_front().unwrap() + n;
+    for (m, n) in Iterator::zip(nums.iter(), nums[k..].iter()) {
+        sum = sum - m + n;
         max = max.max(sum);
-        window.push_back(n);
     }
     Some((max as f64) / (k as f64))
 }
