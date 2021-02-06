@@ -415,3 +415,118 @@ pub fn equal_substring(s: &str, t: &str, max_cost: u32) -> usize {
     max
 }
 ```
+
+## 1423. 可获得的最大点数{#leetcode-1423}
+
+[:link: 来源](https://leetcode-cn.com/problems/maximum-points-you-can-obtain-from-cards/)
+
+### 题目
+
+几张卡牌**排成一行**，每张卡牌都有一个对应的点数。点数由整数数组 `cardPoints` 给出。
+
+每次行动，你可以从行的开头或者末尾拿一张卡牌，最终你必须正好拿 `k` 张卡牌。
+
+你的点数就是你拿到手中的所有卡牌的点数之和。
+
+给你一个整数数组 `cardPoints` 和整数 `k`，请你返回可以获得的最大点数。
+
+#### 示例
+
+```raw
+输入：cardPoints = [1, 2, 3, 4, 5, 6, 1], k = 3
+输出：12
+解释：第一次行动，不管拿哪张牌，你的点数总是 1。但是，先拿最右边的卡牌将会最大化你的可获得点数。最优策略是拿右边的三张牌，最终点数为 1 + 6 + 5 = 12。
+```
+
+```raw
+输入：cardPoints = [2, 2, 2], k = 2
+输出：4
+解释：无论你拿起哪两张卡牌，可获得的点数总是 4。
+```
+
+```raw
+输入：cardPoints = [9, 7, 7, 9, 7, 7, 9], k = 7
+输出：55
+解释：你必须拿起所有卡牌，可以获得的点数为所有卡牌的点数之和。
+```
+
+```raw
+输入：cardPoints = [1, 1000, 1], k = 1
+输出：1
+解释：你无法拿到中间那张卡牌，所以可以获得的最大点数为 1。
+```
+
+```raw
+输入：cardPoints = [1, 79, 80, 1, 1, 1, 200, 1], k = 3
+输出：202
+```
+
+#### 提示
+
+- `1 <= len(cardPoints) <= 1e5`；
+- `1 <= cardPoints[i] <= 1e4`；
+- `1 <= k <= len(cardPoints)`。
+
+### 题解
+
+滑动窗口。逆向思维，窗口大小为 `len(cardPoints) - k`。
+
+```python Python
+class Solution:
+    def maxScore(self, cardPoints: List[int], k: int) -> int:
+        return max_score(cardPoints, k)
+
+def max_score(card_points: List[int], k: int) -> int:
+    ws = len(card_points) - k
+    ms = s = sum(card_points[:ws])
+    for p, q in zip(card_points, card_points[ws:]):
+        s = s - p + q
+        ms = min(ms, s)
+    return sum(card_points) - ms
+```
+
+```rust Rust
+impl Solution {
+    pub fn max_score(card_points: Vec<i32>, k: i32) -> i32 {
+        max_score(&card_points, k as usize)
+    }
+}
+
+pub fn max_score(card_points: &[i32], k: usize) -> i32 {
+    if k == 0 {
+        return 0;
+    }
+    let window_size = card_points.len() - k;
+    let mut sum = card_points[..window_size].iter().sum::<i32>();
+    let mut min = sum;
+    for (m, n) in Iterator::zip(card_points.iter(), card_points[window_size..].iter()) {
+        sum = sum - m + n;
+        min = min.min(sum);
+    }
+    card_points.iter().sum::<i32>() - min
+}
+```
+
+使用 `Iterator::fold` 的版本，这样写的可读性有些许下降。
+
+```rust Rust
+impl Solution {
+    pub fn max_score(card_points: Vec<i32>, k: i32) -> i32 {
+        max_score(&card_points, k as usize)
+    }
+}
+
+pub fn max_score(card_points: &[i32], k: usize) -> i32 {
+    if k == 0 {
+        return 0;
+    }
+    let window_size = card_points.len() - k;
+    let sum = card_points[..window_size].iter().sum::<i32>();
+    card_points.iter().sum::<i32>() - Iterator::zip(
+        card_points.iter(), card_points[window_size..].iter()
+    ).fold((sum, sum), |(sum, min), (m, n)| {
+        let sum = sum - m + n;
+        (sum, min.min(sum))
+    }).1
+}
+```
