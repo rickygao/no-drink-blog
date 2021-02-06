@@ -231,10 +231,10 @@ def sort_string(s: str) -> str:
 
 ```python
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:
+    def twoSum(self, nums: list[int], target: int) -> list[int]:
         return two_sum(nums, target)
 
-def two_sum(nums: List[int], target: int) -> List[int]:
+def two_sum(nums: list[int], target: int) -> list[int]:
     seen = dict()
     for i, m in enumerate(nums):
         n = target - m
@@ -279,7 +279,7 @@ class Solution:
     def addTwoNumbers(self, l1: ListNode, l2: ListNode) -> ListNode:
         return add_numbers(l1, l2)
 
-def add_numbers(*heads: List[ListNode]) -> ListNode:
+def add_numbers(*heads: list[ListNode]) -> ListNode:
     nodes, current = list(heads), 0
     node = dummy = ListNode()
     while any(nodes) or current:
@@ -386,12 +386,12 @@ def length_of_longest_substring(s: str) -> int:
 
 ```python
 class Solution:
-    def maximumGap(self, nums: List[int]) -> int:
+    def maximumGap(self, nums: list[int]) -> int:
         return maximum_gap(nums)
 
 from operator import sub
 
-def maximum_gap(nums: List[int]) -> int:
+def maximum_gap(nums: list[int]) -> int:
     nums = sorted(nums)
     return max(map(sub, nums[1:], nums[:-1]), default=0)
 ```
@@ -402,10 +402,10 @@ def maximum_gap(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def maximumGap(self, nums: List[int]) -> int:
+    def maximumGap(self, nums: list[int]) -> int:
         return maximum_gap(nums)
 
-def maximum_gap(nums: List[int]) -> int:
+def maximum_gap(nums: list[int]) -> int:
     if len(nums) < 2:
         return 0
 
@@ -462,10 +462,10 @@ def maximum_gap(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def sortArrayByParity(self, A: List[int]) -> List[int]:
+    def sortArrayByParity(self, A: list[int]) -> list[int]:
         return sort_array_by_parity(A)
 
-def sort_array_by_parity(l: List[int]) -> List[int]:
+def sort_array_by_parity(l: list[int]) -> list[int]:
     i = 0
     j = len(l) - 1
     while i < j:
@@ -512,10 +512,10 @@ def sort_array_by_parity(l: List[int]) -> List[int]:
 
 ```python
 class Solution:
-    def sortArrayByParityII(self, A: List[int]) -> List[int]:
+    def sortArrayByParityII(self, A: list[int]) -> list[int]:
         return sort_array_by_parity_ii(A)
 
-def sort_array_by_parity_ii(l: List[int]) -> List[int]:
+def sort_array_by_parity_ii(l: list[int]) -> list[int]:
     i = 0
     j = 1
     while i < len(l) and j < len(l):
@@ -626,10 +626,10 @@ def angle_clock(hour: int, minutes: int) -> float:
 
 ```python
 class Solution:
-    def findShortestSubArray(self, nums: List[int]) -> int:
+    def findShortestSubArray(self, nums: list[int]) -> int:
         return find_shortest_sub_array(nums)
 
-def find_shortest_sub_array(nums: List[int]) -> int:
+def find_shortest_sub_array(nums: list[int]) -> int:
     counter = dict()
     starts = dict()
     stops = dict()
@@ -677,13 +677,13 @@ def find_shortest_sub_array(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def fourSumCount(self, A: List[int], B: List[int], C: List[int], D: List[int]) -> int:
+    def fourSumCount(self, A: list[int], B: list[int], C: list[int], D: list[int]) -> int:
         return sum_count(A, B, C, D)
 
 from itertools import product
 from collections import Counter
 
-def sum_count(A: List[int], B: List[int], C: List[int], D: List[int]) -> int:
+def sum_count(A: list[int], B: list[int], C: list[int], D: list[int]) -> int:
     AB = Counter(a + b for a, b in product(A, B))
     return sum(AB[-(c + d)] for c, d in product(C, D))
 ```
@@ -720,10 +720,10 @@ def sum_count(A: List[int], B: List[int], C: List[int], D: List[int]) -> int:
 
 ```python
 class Solution:
-    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+    def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
         return insert(intervals, newInterval)
 
-def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int]]:
+def insert(intervals: list[list[int]], new_interval: list[int]) -> list[list[int]]:
     if not intervals:
         return [new_interval]
 
@@ -749,10 +749,10 @@ def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int
 
 ```python
 class Solution:
-    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+    def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
         return insert(intervals, newInterval)
 
-def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int]]:
+def insert(intervals: list[list[int]], new_interval: list[int]) -> list[list[int]]:
     if not intervals:
         return [new_interval]
 
@@ -788,10 +788,10 @@ def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int
 
 ```python
 class Solution:
-    def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+    def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
         return insert(intervals, newInterval)
 
-def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int]]:
+def insert(intervals: list[list[int]], new_interval: list[int]) -> list[list[int]]:
     if not intervals:
         intervals.append(new_interval)
 
@@ -855,12 +855,12 @@ def insert(intervals: List[List[int]], new_interval: List[int]) -> List[List[int
 
 ```python
 class Solution:
-    def reversePairs(self, nums: List[int]) -> int:
+    def reversePairs(self, nums: list[int]) -> int:
         return reverse_pairs(nums)
 
 import bisect
 
-def reverse_pairs(nums: List[int]) -> int:
+def reverse_pairs(nums: list[int]) -> int:
     r, nums2 = 0, []
     for n in reversed(nums):
         r += bisect.bisect_left(nums2, n)
@@ -875,12 +875,12 @@ def reverse_pairs(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def reversePairs(self, nums: List[int]) -> int:
+    def reversePairs(self, nums: list[int]) -> int:
         return reverse_pairs(nums)
 
 from bisect import bisect_left
 
-def reverse_pairs(nums: List[int]) -> int:
+def reverse_pairs(nums: list[int]) -> int:
     # discretize
     nums12 = nums + [n * 2 for n in nums]
     nums12.sort()
@@ -949,10 +949,10 @@ def reverse_pairs(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def bestTeamScore(self, scores: List[int], ages: List[int]) -> int:
+    def bestTeamScore(self, scores: list[int], ages: list[int]) -> int:
         return best_team_score(scores, ages)
 
-def best_team_score(scores: List[int], ages: List[int]) -> int:
+def best_team_score(scores: list[int], ages: list[int]) -> int:
     players, m = sorted(zip(ages, scores)), []
     for i, (ai, si) in enumerate(players):
         m.append(max(si, max((
@@ -1006,10 +1006,10 @@ def best_team_score(scores: List[int], ages: List[int]) -> int:
 
 ```python
 class Solution:
-    def largestPerimeter(self, A: List[int]) -> int:
+    def largestPerimeter(self, A: list[int]) -> int:
         return largest_perimeter(A)
 
-def largest_perimeter(sides: List[int]) -> int:
+def largest_perimeter(sides: list[int]) -> int:
     sides.sort(reverse=True)
     return max((
         a + b + c
@@ -1223,10 +1223,10 @@ def reorganize_string(s: str) -> str:
 
 ```python
 class Solution:
-    def containsPattern(self, arr: List[int], m: int, k: int) -> bool:
+    def containsPattern(self, arr: list[int], m: int, k: int) -> bool:
         return contains_pattern(arr, m, k)
 
-def contains_pattern(arr: List[int], m: int, k: int) -> bool:
+def contains_pattern(arr: list[int], m: int, k: int) -> bool:
     return any(arr[i:i + m] * k == arr[i:i + m * k] for i in range(len(arr) - m * k + 1))
 ```
 
@@ -1234,10 +1234,10 @@ def contains_pattern(arr: List[int], m: int, k: int) -> bool:
 
 ```python
 class Solution:
-    def containsPattern(self, arr: List[int], m: int, k: int) -> bool:
+    def containsPattern(self, arr: list[int], m: int, k: int) -> bool:
         return contains_pattern(arr, m, k)
 
-def contains_pattern(arr: List[int], m: int, k: int) -> bool:
+def contains_pattern(arr: list[int], m: int, k: int) -> bool:
     count, total = 0, m * (k - 1)
     for e1, e2 in zip(arr, arr[m:]):
         if e1 == e2:
@@ -1276,7 +1276,7 @@ def contains_pattern(arr: List[int], m: int, k: int) -> bool:
 
 ```python
 class Solution:
-    def letterCombinations(self, digits: str) -> List[str]:
+    def letterCombinations(self, digits: str) -> list[str]:
         return letter_combinations(digits)
 
 from itertools import product
@@ -1287,7 +1287,7 @@ MAPPING = {
     '7': 'pqrs', '8': 'tuv', '9': 'wxyz',
 }
 
-def letter_combinations(digits: str) -> List[str]:
+def letter_combinations(digits: str) -> list[str]:
     if digits == '':
         return []
 

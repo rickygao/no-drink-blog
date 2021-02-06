@@ -58,10 +58,10 @@ mathjax: true
 
 ```python Python
 class Solution:
-    def fairCandySwap(self, A: List[int], B: List[int]) -> List[int]:
+    def fairCandySwap(self, A: list[int], B: list[int]) -> list[int]:
         return fair_candy_swap(A, B)
 
-def fair_candy_swap(a: List[int], b: List[int]) -> List[int]:
+def fair_candy_swap(a: list[int], b: list[int]) -> list[int]:
     d = (sum(a) - sum(b)) // 2
     a = set(a)
     for y in b:
@@ -214,9 +214,10 @@ pub fn character_replacement(s: &str, k: usize) -> usize {
 
 ```python Python
 class Solution:
-    def medianSlidingWindow(self, nums: List[int], k: int) -> List[float]:
+    def medianSlidingWindow(self, nums: list[int], k: int) -> list[float]:
         return list(generate_median_sliding_window(nums, k))
 
+from typing import Iterator
 from bisect import bisect_left
 from collections import deque
 
@@ -289,12 +290,13 @@ pub fn median_sliding_window(nums: &[i32], k: usize) -> Vec<f64> {
 
 ```python Python
 class Solution:
-    def findMaxAverage(self, nums: List[int], k: int) -> float:
+    def findMaxAverage(self, nums: list[int], k: int) -> float:
         return find_max_average(nums, k)
 
+from typing import Iterator
 from collections import deque
 
-def find_max_average(nums: List[int], k: int) -> float:
+def find_max_average(nums: list[int], k: int) -> float:
     return max(generate_sum_sliding_window(nums, k)) / k
 
 def generate_sum_sliding_window(nums: Iterator[int], k: int) -> Iterator[int]:
@@ -473,10 +475,10 @@ pub fn equal_substring(s: &str, t: &str, max_cost: u32) -> usize {
 
 ```python Python
 class Solution:
-    def maxScore(self, cardPoints: List[int], k: int) -> int:
+    def maxScore(self, cardPoints: list[int], k: int) -> int:
         return max_score(cardPoints, k)
 
-def max_score(card_points: List[int], k: int) -> int:
+def max_score(card_points: list[int], k: int) -> int:
     ws = len(card_points) - k
     ms = s = sum(card_points[:ws])
     for p, q in zip(card_points, card_points[ws:]):

@@ -43,12 +43,12 @@ mathjax: true
 
 ```python
 class Solution:
-    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+    def canPlaceFlowers(self, flowerbed: list[int], n: int) -> bool:
         return can_place_flowers(flowerbed, n)
 
 from itertools import chain
 
-def can_place_flowers(flowerbed: List[int], n: int) -> bool:
+def can_place_flowers(flowerbed: list[int], n: int) -> bool:
     r = c = 0
     for b in chain([0], flowerbed, [0, 1]):
         if b:
@@ -99,12 +99,12 @@ def can_place_flowers(flowerbed: List[int], n: int) -> bool:
 
 ```python
 class Solution:
-    def isGoodArray(self, nums: List[int]) -> bool:
+    def isGoodArray(self, nums: list[int]) -> bool:
         return is_good_array(nums)
 
 from math import gcd
 
-def is_good_array(nums: List[int]) -> bool:
+def is_good_array(nums: list[int]) -> bool:
     return gcd(*nums) == 1
 ```
 
@@ -166,12 +166,13 @@ def is_good_array(nums: List[int]) -> bool:
 
 ```python
 class Solution:
-    def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
+    def maxSlidingWindow(self, nums: list[int], k: int) -> list[int]:
         return max_sliding_window(nums, k)
 
+from typing import Iterator
 from collections import deque
 
-def max_sliding_window(nums: List[int], k: int) -> List[int]:
+def max_sliding_window(nums: list[int], k: int) -> list[int]:
     return list(generate_max_sliding_window(nums, k))
 
 def generate_max_sliding_window(nums: Iterator[int], k: int) -> Iterator[int]:
@@ -380,12 +381,12 @@ def fib(n: int) -> int:
 
 ```python
 class Solution:
-    def largeGroupPositions(self, s: str) -> List[List[int]]:
+    def largeGroupPositions(self, s: str) -> list[list[int]]:
         return large_group_positions(s)
 
 from itertools import chain
 
-def large_group_positions(s: str) -> List[List[int]]:
+def large_group_positions(s: str) -> list[list[int]]:
     r, p = [], None
     for i, c in enumerate(chain(s, [None])):
         if p != c:
@@ -450,12 +451,12 @@ def large_group_positions(s: str) -> List[List[int]]:
 
 ```python
 class Solution:
-    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+    def calcEquation(self, equations: list[list[str]], values: list[float], queries: list[list[str]]) -> list[float]:
         return calc_equation(equations, values, queries)
 
 from collections import defaultdict
 
-def calc_equation(equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+def calc_equation(equations: list[list[str]], values: list[float], queries: list[list[str]]) -> list[float]:
     end_value_dict = defaultdict(list)
     for (begin, end), value in zip(equations, values):
         end_value_dict[begin].append((end, value))
@@ -486,12 +487,12 @@ def calc_equation(equations: List[List[str]], values: List[float], queries: List
 
 ```python
 class Solution:
-    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+    def calcEquation(self, equations: list[list[str]], values: list[float], queries: list[list[str]]) -> list[float]:
         return calc_equation(equations, values, queries)
 
 from collections import defaultdict, deque
 
-def calc_equation(equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+def calc_equation(equations: list[list[str]], values: list[float], queries: list[list[str]]) -> list[float]:
     end_value_dict = defaultdict(list)
     for (begin, end), value in zip(equations, values):
         end_value_dict[begin].append((end, value))
@@ -550,18 +551,18 @@ def calc_equation(equations: List[List[str]], values: List[float], queries: List
 
 ```python
 class Solution:
-    def findCircleNum(self, isConnected: List[List[int]]) -> int:
+    def findCircleNum(self, isConnected: list[list[int]]) -> int:
         return find_circle_num(isConnected)
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def find_circle_num(is_connected: List[List[int]]) -> int:
+def find_circle_num(is_connected: list[list[int]]) -> int:
     cities = len(is_connected)
     parents = list(range(cities))
     for i in range(cities):
@@ -575,10 +576,10 @@ def find_circle_num(is_connected: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def findCircleNum(self, isConnected: List[List[int]]) -> int:
+    def findCircleNum(self, isConnected: list[list[int]]) -> int:
         return find_circle_num(isConnected)
 
-def find_circle_num(is_connected: List[List[int]]) -> int:
+def find_circle_num(is_connected: list[list[int]]) -> int:
     r, seen = 0, set()
     for i in range(len(is_connected)):
         if i not in seen:
@@ -598,12 +599,12 @@ def find_circle_num(is_connected: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def findCircleNum(self, isConnected: List[List[int]]) -> int:
+    def findCircleNum(self, isConnected: list[list[int]]) -> int:
         return find_circle_num(isConnected)
 
 from collections import deque
 
-def find_circle_num(is_connected: List[List[int]]) -> int:
+def find_circle_num(is_connected: list[list[int]]) -> int:
     r, seen = 0, set()
     for i in range(len(is_connected)):
         if i not in seen:
@@ -657,10 +658,10 @@ def find_circle_num(is_connected: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def rotate(self, nums: List[int], k: int) -> None:
+    def rotate(self, nums: list[int], k: int) -> None:
         rotate(nums, k)
 
-def rotate(nums: List[int], k: int) -> None:
+def rotate(nums: list[int], k: int) -> None:
     k %= len(nums)
     nums[:] = nums[-k:] + nums[:-k]
 ```
@@ -674,12 +675,12 @@ def rotate(nums: List[int], k: int) -> None:
 
 ```python
 class Solution:
-    def rotate(self, nums: List[int], k: int) -> None:
+    def rotate(self, nums: list[int], k: int) -> None:
         rotate(nums, k)
 
 from math import gcd
 
-def rotate(nums: List[int], k: int) -> None:
+def rotate(nums: list[int], k: int) -> None:
     n, p = len(nums), gcd(k, len(nums))
     for i in range(p):
         t = nums[i]
@@ -694,16 +695,16 @@ def rotate(nums: List[int], k: int) -> None:
 
 ```python
 class Solution:
-    def rotate(self, nums: List[int], k: int) -> None:
+    def rotate(self, nums: list[int], k: int) -> None:
         rotate(nums, k)
 
-def reverse(nums: List[int], start: int, end: int) -> None:
+def reverse(nums: list[int], start: int, end: int) -> None:
     i, j = start, end - 1
     while i < j:
         nums[i], nums[j] = nums[j], nums[i]
         i, j = i + 1, j - 1
 
-def rotate(nums: List[int], k: int) -> None:
+def rotate(nums: list[int], k: int) -> None:
     n = len(nums)
     s = n - k % n
     reverse(nums, 0, s)
@@ -765,12 +766,12 @@ def rotate(nums: List[int], k: int) -> None:
 
 ```python
 class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
+    def maxProfit(self, prices: list[int]) -> int:
         return max_profit(2, prices)
 
 from math import inf
 
-def max_profit(k: int, prices: List[int]) -> int:
+def max_profit(k: int, prices: list[int]) -> int:
     p = [0] + [-inf] * (min(k, len(prices) // 2) * 2)
     for i, price in enumerate(prices):
         for j in range(1, min(len(p), ((i + 1) // 2 + 1) * 2)):
@@ -782,12 +783,12 @@ def max_profit(k: int, prices: List[int]) -> int:
 
 ```python
 class Solution:
-    def maxProfit(self, prices: List[int]) -> int:
+    def maxProfit(self, prices: list[int]) -> int:
         return max_profit(prices)
 
 from math import inf
 
-def max_profit(prices: List[int]) -> int:
+def max_profit(prices: list[int]) -> int:
     cl0 = 0
     op1 = cl1 = op2 = cl2 = -inf
     for price in prices:
@@ -860,10 +861,10 @@ def max_profit(prices: List[int]) -> int:
 
 ```python
 class Solution:
-    def summaryRanges(self, nums: List[int]) -> List[str]:
+    def summaryRanges(self, nums: list[int]) -> list[str]:
         return summary_ranges(nums)
 
-def summary_ranges(nums: List[int]) -> List[str]:
+def summary_ranges(nums: list[int]) -> list[str]:
     r = []
     if not nums:
         return r
@@ -931,20 +932,20 @@ def summary_ranges(nums: List[int]) -> List[str]:
 
 ```python
 class Solution:
-    def smallestStringWithSwaps(self, s: str, pairs: List[List[int]]) -> str:
+    def smallestStringWithSwaps(self, s: str, pairs: list[list[int]]) -> str:
         return smallest_string_with_swaps(s, pairs)
 
 from collections import defaultdict
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def smallest_string_with_swaps(s: str, pairs: List[List[int]]) -> str:
+def smallest_string_with_swaps(s: str, pairs: list[list[int]]) -> str:
     parents = list(range(len(s)))
     for i, j in pairs:
         union(parents, i, j)
@@ -1004,16 +1005,16 @@ def smallest_string_with_swaps(s: str, pairs: List[List[int]]) -> str:
 
 ```python
 class Solution:
-    def sortItems(self, n: int, m: int, group: List[int], beforeItems: List[List[int]]) -> List[int]:
+    def sortItems(self, n: int, m: int, group: list[int], beforeItems: list[list[int]]) -> list[int]:
         return sort_items(n, m, group, beforeItems)
 
 from graphlib import TopologicalSorter, CycleError
 from itertools import count
 
 def sort_items(
-    n: int, m: int, groups: List[int],
-    before_items: List[List[int]]
-) -> List[int]:
+    n: int, m: int, groups: list[int],
+    before_items: list[list[int]]
+) -> list[int]:
     groups = [
         group if group != -1 else fake_group
         for fake_group, group in zip(count(m), groups)
@@ -1087,18 +1088,18 @@ def sort_items(
 
 ```python
 class Solution:
-    def findRedundantConnection(self, edges: List[List[int]]) -> List[int]:
+    def findRedundantConnection(self, edges: list[list[int]]) -> list[int]:
         return find_redundant_connection(edges)
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def find_redundant_connection(edges: List[List[int]]) -> List[int]:
+def find_redundant_connection(edges: list[list[int]]) -> list[int]:
     parents = list(range(len(edges) + 1))
 
     for i, j in edges:
@@ -1153,10 +1154,10 @@ def find_redundant_connection(edges: List[List[int]]) -> List[int]:
 
 ```python
 class Solution:
-    def prefixesDivBy5(self, A: List[int]) -> List[bool]:
+    def prefixesDivBy5(self, A: list[int]) -> list[bool]:
         return prefixes_div_by_5(A)
 
-def prefixes_div_by_5(a: List[int]) -> List[bool]:
+def prefixes_div_by_5(a: list[int]) -> list[bool]:
     r, n = [], 0
     for ai in a:
         n = (2 * n + ai) % 5
@@ -1168,12 +1169,12 @@ def prefixes_div_by_5(a: List[int]) -> List[bool]:
 
 ```python
 class Solution:
-    def prefixesDivBy5(self, A: List[int]) -> List[bool]:
+    def prefixesDivBy5(self, A: list[int]) -> list[bool]:
         return prefixes_div_by_5(A)
 
 from itertools import accumulate
 
-def prefixes_div_by_5(a: List[int]) -> List[bool]:
+def prefixes_div_by_5(a: list[int]) -> list[bool]:
     return [n == 0 for n in accumulate(
         a, lambda n, ai: (n * 2 + ai) % 5
     )]
@@ -1233,20 +1234,20 @@ def prefixes_div_by_5(a: List[int]) -> List[bool]:
 
 ```python
 class Solution:
-    def removeStones(self, stones: List[List[int]]) -> int:
+    def removeStones(self, stones: list[list[int]]) -> int:
         return remove_stones(stones)
 
 from collections import defaultdict
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def remove_stones(stones: List[List[int]]) -> int:
+def remove_stones(stones: list[list[int]]) -> int:
     lines = defaultdict(list)
     for i, (x, y) in enumerate(stones):
         lines[(x, ...)].append(i)
@@ -1305,10 +1306,10 @@ $$
 
 ```python
 class Solution:
-    def checkStraightLine(self, coordinates: List[List[int]]) -> bool:
+    def checkStraightLine(self, coordinates: list[list[int]]) -> bool:
         return check_straight_line(coordinates)
 
-def check_straight_line(coordinates: List[List[int]]) -> bool:
+def check_straight_line(coordinates: list[list[int]]) -> bool:
     (x0, y0), (x1, y1) = coordinates[:2]
     dx, dy = x1 - x0, y1 - y0
     return all(dx * (y - y0) == dy * (x - x0) for x, y in coordinates[2:])
@@ -1316,10 +1317,10 @@ def check_straight_line(coordinates: List[List[int]]) -> bool:
 
 ```python
 class Solution:
-    def checkStraightLine(self, coordinates: List[List[int]]) -> bool:
+    def checkStraightLine(self, coordinates: list[list[int]]) -> bool:
         return check_straight_line(coordinates)
 
-def check_straight_line(coordinates: List[List[int]]) -> bool:
+def check_straight_line(coordinates: list[list[int]]) -> bool:
     (x0, y0), (x1, y1) = coordinates[:2]
     a, b, c = y0 - y1, x1 - x0, x0 * y1 - x1 * y0
     return all(a * x + b * y + c == 0 for x, y in coordinates[2:])
@@ -1373,18 +1374,18 @@ def check_straight_line(coordinates: List[List[int]]) -> bool:
 
 ```python
 class Solution:
-    def accountsMerge(self, accounts: List[List[str]]) -> List[List[str]]:
+    def accountsMerge(self, accounts: list[list[str]]) -> list[list[str]]:
         return accounts_merge(accounts)
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def accounts_merge(accounts: List[List[str]]) -> List[List[str]]:
+def accounts_merge(accounts: list[list[str]]) -> list[list[str]]:
     parents, email2j = list(range(len(accounts))), {}
     for i, (name, *emails) in enumerate(accounts):
         for email in emails:
@@ -1456,20 +1457,20 @@ $$
 
 ```python
 class Solution:
-    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+    def minCostConnectPoints(self, points: list[list[int]]) -> int:
         return min_cost_connect_points(points)
 
 from itertools import combinations
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def min_cost_connect_points(points: List[List[int]]) -> int:
+def min_cost_connect_points(points: list[list[int]]) -> int:
     r, parents, edges = 0, list(range(len(points))), sorted(
         (abs(xi - xj) + abs(yi - yj), i, j)
         for (i, (xi, yi)), (j, (xj, yj))
@@ -1486,13 +1487,13 @@ def min_cost_connect_points(points: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def minCostConnectPoints(self, points: List[List[int]]) -> int:
+    def minCostConnectPoints(self, points: list[list[int]]) -> int:
         return min_cost_connect_points(points)
 
 from operator import itemgetter
 from math import inf, isfinite
 
-def min_cost_connect_points(points: List[List[int]]) -> int:
+def min_cost_connect_points(points: list[list[int]]) -> int:
     r, p2d = 0, {(x, y): inf for x, y in points}
     while p2d:
         mp, d = min(p2d.items(), key=itemgetter(1))
@@ -1537,10 +1538,10 @@ def min_cost_connect_points(points: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def maximumProduct(self, nums: List[int]) -> int:
+    def maximumProduct(self, nums: list[int]) -> int:
         return maximum_product(nums)
 
-def maximum_product(nums: List[int]) -> int:
+def maximum_product(nums: list[int]) -> int:
     sorted_nums = sorted(nums)
     (a, b), (x, y, z) = sorted_nums[:2], sorted_nums[-3:]
     return max(a * b * z, x * y * z)
@@ -1550,12 +1551,12 @@ def maximum_product(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def maximumProduct(self, nums: List[int]) -> int:
+    def maximumProduct(self, nums: list[int]) -> int:
         return maximum_product(nums)
 
 from math import inf
 
-def maximum_product(nums: List[int]) -> int:
+def maximum_product(nums: list[int]) -> int:
     a = b = inf
     x = y = z = -inf
 
@@ -1624,10 +1625,10 @@ def maximum_product(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def addToArrayForm(self, A: List[int], K: int) -> List[int]:
+    def addToArrayForm(self, A: list[int], K: int) -> list[int]:
         return add_to_array_form(A, K)
 
-def add_to_array_form(a: List[int], k: int) -> List[int]:
+def add_to_array_form(a: list[int], k: int) -> list[int]:
     r = []
     for i in reversed(a):
         k, b = divmod(i + k, 10)
@@ -1643,12 +1644,12 @@ def add_to_array_form(a: List[int], k: int) -> List[int]:
 
 ```python
 class Solution:
-    def addToArrayForm(self, A: List[int], K: int) -> List[int]:
+    def addToArrayForm(self, A: list[int], K: int) -> list[int]:
         return add_to_array_form(A, K)
 
 from collections import deque
 
-def add_to_array_form(a: List[int], k: int) -> List[int]:
+def add_to_array_form(a: list[int], k: int) -> list[int]:
     r = deque()
     for i in reversed(a):
         k, b = divmod(i + k, 10)
@@ -1710,18 +1711,18 @@ def add_to_array_form(a: List[int], k: int) -> List[int]:
 
 ```python
 class Solution:
-    def makeConnected(self, n: int, connections: List[List[int]]) -> int:
+    def makeConnected(self, n: int, connections: list[list[int]]) -> int:
         return make_connected(n, connections)
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def make_connected(n: int, connections: List[List[int]]) -> int:
+def make_connected(n: int, connections: list[list[int]]) -> int:
     if len(connections) < n - 1:
         return -1
 
@@ -1764,12 +1765,12 @@ def make_connected(n: int, connections: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def findLengthOfLCIS(self, nums: List[int]) -> int:
+    def findLengthOfLCIS(self, nums: list[int]) -> int:
         return find_length_of_lcis(nums)
 
 from operator import sub
 
-def find_length_of_lcis(nums: List[int]) -> int:
+def find_length_of_lcis(nums: list[int]) -> int:
     if not nums:
         return 0
 
@@ -1846,18 +1847,18 @@ def find_length_of_lcis(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def regionsBySlashes(self, grid: List[str]) -> int:
+    def regionsBySlashes(self, grid: list[str]) -> int:
         return regions_by_slashes(grid)
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def regions_by_slashes(grid: List[str]) -> int:
+def regions_by_slashes(grid: list[str]) -> int:
     n, r = len(grid) + 1, 1
     parents = list(range(n * n))
     parents[:n] = parents[-n:] = parents[::n] = parents[n - 1::n] = [0] * n
@@ -1907,12 +1908,12 @@ def regions_by_slashes(grid: List[str]) -> int:
 
 ```python
 class Solution:
-    def numEquivDominoPairs(self, dominoes: List[List[int]]) -> int:
+    def numEquivDominoPairs(self, dominoes: list[list[int]]) -> int:
         return num_equiv_domino_pairs(dominoes)
 
 from collections import Counter
 
-def num_equiv_domino_pairs(dominoes: List[List[int]]) -> int:
+def num_equiv_domino_pairs(dominoes: list[list[int]]) -> int:
     return sum(
         c * (c - 1)
         for c in Counter(
@@ -1974,18 +1975,18 @@ Alice 和 Bob 共有一个无向图，其中包含 `n` 个节点和 `3` 种类�
 
 ```python
 class Solution:
-    def maxNumEdgesToRemove(self, n: int, edges: List[List[int]]) -> int:
+    def maxNumEdgesToRemove(self, n: int, edges: list[list[int]]) -> int:
         return max_num_edges_to_remove(n, edges)
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def max_num_edges_to_remove(n: int, edges: List[List[int]]) -> int:
+def max_num_edges_to_remove(n: int, edges: list[list[int]]) -> int:
     parents, reserved, countdown = list(range(n + 1)), 0, (n - 1) * 2
     for t, i, j in edges:
         if t == 3 and find(parents, i) != find(parents, j):
@@ -2044,12 +2045,12 @@ def max_num_edges_to_remove(n: int, edges: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def pivotIndex(self, nums: List[int]) -> int:
+    def pivotIndex(self, nums: list[int]) -> int:
         return pivot_index(nums)
 
 from itertools import count, accumulate
 
-def pivot_index(nums: List[int]) -> int:
+def pivot_index(nums: list[int]) -> int:
     s = sum(nums)
     for i, n, a in zip(count(), nums, accumulate(nums, initial=0)):
         if s == n + a * 2:
@@ -2103,20 +2104,20 @@ def pivot_index(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def minimumEffortPath(self, heights: List[List[int]]) -> int:
+    def minimumEffortPath(self, heights: list[list[int]]) -> int:
         return minimum_effort_path(heights)
 
 from itertools import chain, count
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def minimum_effort_path(heights: List[List[int]]) -> int:
+def minimum_effort_path(heights: list[list[int]]) -> int:
     m, n = len(heights), len(heights[0])
     parents = list(range(m * n))
     edges = sorted(chain((
@@ -2139,21 +2140,21 @@ def minimum_effort_path(heights: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def minimumEffortPath(self, heights: List[List[int]]) -> int:
+    def minimumEffortPath(self, heights: list[list[int]]) -> int:
         return minimum_effort_path(heights)
 
 from itertools import chain, count
 from heapq import heapify, heappop
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def minimum_effort_path(heights: List[List[int]]) -> int:
+def minimum_effort_path(heights: list[list[int]]) -> int:
     m, n = len(heights), len(heights[0])
     parents = list(range(m * n))
     edges = list(chain((
@@ -2226,20 +2227,20 @@ def minimum_effort_path(heights: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def swimInWater(self, grid: List[List[int]]) -> int:
+    def swimInWater(self, grid: list[list[int]]) -> int:
         return swim_in_water(grid)
 
 from itertools import chain, count
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def swim_in_water(heights: List[List[int]]) -> int:
+def swim_in_water(heights: list[list[int]]) -> int:
     n = len(heights)
     parents = list(range(n * n))
     edges = sorted(chain((
@@ -2302,20 +2303,20 @@ def swim_in_water(heights: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def numSimilarGroups(self, strs: List[str]) -> int:
+    def numSimilarGroups(self, strs: list[str]) -> int:
         return num_similar_groups(strs)
 
 from itertools import combinations
 
-def find(parents: List[int], i: int) -> int:
+def find(parents: list[int], i: int) -> int:
     if (p := parents[i]) != i:
         parents[i] = find(parents, p)
     return parents[i]
 
-def union(parents: List[int], i: int, j: int) -> None:
+def union(parents: list[int], i: int, j: int) -> None:
     parents[find(parents, j)] = find(parents, i)
 
-def num_similar_groups(strs: List[str]) -> int:
+def num_similar_groups(strs: list[str]) -> int:
     parents = list(range(len(strs)))
     for (i, s), (j, t) in combinations(enumerate(strs), 2):
         n = 0

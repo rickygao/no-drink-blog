@@ -52,12 +52,12 @@ mathjax: true
 
 ```python
 class Solution:
-    def searchRange(self, nums: List[int], target: int) -> List[int]:
+    def searchRange(self, nums: list[int], target: int) -> list[int]:
         return search_range(nums, target)
 
 from bisect import bisect_left, bisect_right
 
-def search_range(nums: List[int], target: int) -> List[int]:
+def search_range(nums: list[int], target: int) -> list[int]:
     l = bisect_left(nums, target)
     if l >= len(nums) or nums[l] != target:
         return [-1, -1]
@@ -110,9 +110,9 @@ class Solution:
     def countVowelStrings(self, n: int) -> int:
         return count_vowel_strings(n, 5)
 
-from functools import lru_cache
+from functools import cache
 
-@lru_cache(maxsize=None)  # use `functools.cache` instead since Python 3.9
+@cache
 def count_vowel_strings(n: int, v: int) -> int:
     if n == 0:
         return 1
@@ -240,17 +240,17 @@ def frequency_sort(s: str) -> str:
 
 ```python
 class Solution:
-    def maxNumber(self, nums1: List[int], nums2: List[int], k: int) -> List[int]:
+    def maxNumber(self, nums1: list[int], nums2: list[int], k: int) -> list[int]:
         return max_number(nums1, nums2, k)
 
-def max_number(nums1: List[int], nums2: List[int], k: int) -> List[int]:
+def max_number(nums1: list[int], nums2: list[int], k: int) -> list[int]:
     x_min, x_max = max(0, k - len(nums2)), min(k, len(nums1))
     return max((
         _merge(_max_number(nums1, x), _max_number(nums2, k - x))
         for x in range(x_min, x_max + 1)
     ), default=[])
 
-def _max_number(nums: List[int], k: int) -> List[int]:
+def _max_number(nums: list[int], k: int) -> list[int]:
     s, to_drop = [], len(nums) - k
     for n in nums:
         while to_drop > 0 and s and s[-1] < n:
@@ -259,7 +259,7 @@ def _max_number(nums: List[int], k: int) -> List[int]:
         s.append(n)
     return s[:k]
 
-def _merge(seq1: List[int], seq2: List[int]) -> List[int]:
+def _merge(seq1: list[int], seq2: list[int]) -> list[int]:
     r = []
     while seq1 or seq2:
         s = max(seq1, seq2)
@@ -452,10 +452,10 @@ def is_symmetric(t1: TreeNode, t2: TreeNode) -> bool:
 
 ```python
 class Solution:
-    def isPossible(self, nums: List[int]) -> bool:
+    def isPossible(self, nums: list[int]) -> bool:
         return is_possible(nums)
 
-def is_possible(nums: List[int]) -> bool:
+def is_possible(nums: list[int]) -> bool:
     seqs = []
     for n in nums:
         for seq in reversed(seqs):
@@ -474,12 +474,12 @@ def is_possible(nums: List[int]) -> bool:
 
 ```python
 class Solution:
-    def isPossible(self, nums: List[int]) -> bool:
+    def isPossible(self, nums: list[int]) -> bool:
         return is_possible(nums)
 
 from itertools import groupby
 
-def is_possible(nums: List[int]) -> bool:
+def is_possible(nums: list[int]) -> bool:
     prev, s1, s2, s3 = None, 0, 0, 0
     for n, group in groupby(nums):
         if prev is not None and n - prev != 1:
@@ -538,12 +538,12 @@ def is_possible(nums: List[int]) -> bool:
 
 ```python
 class Solution:
-    def find132pattern(self, nums: List[int]) -> bool:
+    def find132pattern(self, nums: list[int]) -> bool:
         return find_132_pattern(nums)
 
 from math import inf
 
-def find_132_pattern(nums: List[int]) -> bool:
+def find_132_pattern(nums: list[int]) -> bool:
     s, a_k = [], -inf
     for a_i in reversed(nums):
         if a_i < a_k:
@@ -602,12 +602,12 @@ def find_132_pattern(nums: List[int]) -> bool:
 
 ```python
 class Solution:
-    def leastInterval(self, tasks: List[str], n: int) -> int:
+    def leastInterval(self, tasks: list[str], n: int) -> int:
         return least_interval(tasks, n)
 
 from collections import Counter
 
-def least_interval(tasks: List[str], n: int) -> int:
+def least_interval(tasks: list[str], n: int) -> int:
     times = Counter(tasks).values()
     num_tasks = len(tasks)
     max_times = max(times, default=0)
@@ -646,16 +646,17 @@ def least_interval(tasks: List[str], n: int) -> int:
 
 ```python
 class Solution:
-    def generate(self, numRows: int) -> List[List[int]]:
+    def generate(self, numRows: int) -> list[list[int]]:
         return pascals_triangle(numRows)
 
+from typing import Iterator
 from itertools import islice
 from operator import add
 
-def pascals_triangle(num_rows: int) -> List[List[int]]:
+def pascals_triangle(num_rows: int) -> list[list[int]]:
     return list(islice(generate_pascals_triangle(), num_rows))
 
-def generate_pascals_triangle() -> Iterator[List[int]]:
+def generate_pascals_triangle() -> Iterator[list[int]]:
     row = [1]
     yield row
     while True:
@@ -814,13 +815,13 @@ def find_nth_digit(n: int) -> int:
 
 ```python
 class Solution:
-    def numTriplets(self, nums1: List[int], nums2: List[int]) -> int:
+    def numTriplets(self, nums1: list[int], nums2: list[int]) -> int:
         return num_triplets(nums1, nums2) + num_triplets(nums2, nums1)
 
 from itertools import combinations
 from collections import Counter
 
-def num_triplets(nums1: List[int], nums2: List[int]) -> int:
+def num_triplets(nums1: list[int], nums2: list[int]) -> int:
     squares = Counter(n_i * n_i for n_i in nums1)
     products = Counter(n_j * n_k for n_j, n_k in combinations(nums2, 2))
     equals = squares.keys() & products.keys()
@@ -860,10 +861,10 @@ def num_triplets(nums1: List[int], nums2: List[int]) -> int:
 
 ```python
 class Solution:
-    def matrixScore(self, A: List[List[int]]) -> int:
+    def matrixScore(self, A: list[list[int]]) -> int:
         return matrix_score(A)
 
-def matrix_score(matrix: List[List[int]]) -> int:
+def matrix_score(matrix: list[list[int]]) -> int:
     nr, nc = len(matrix), len(matrix[0])
 
     # hflip the rows w/ a leading zero
@@ -885,12 +886,12 @@ def matrix_score(matrix: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def matrixScore(self, A: List[List[int]]) -> int:
+    def matrixScore(self, A: list[list[int]]) -> int:
         return matrix_score(A)
 
 from functools import reduce
 
-def matrix_score(matrix: List[List[int]]) -> int:
+def matrix_score(matrix: list[list[int]]) -> int:
     nr, nc = len(matrix), len(matrix[0])
     return reduce(
         lambda r, j: r * 2 + max(
@@ -960,10 +961,10 @@ def matrix_score(matrix: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def splitIntoFibonacci(self, S: str) -> List[int]:
+    def splitIntoFibonacci(self, S: str) -> list[int]:
         return split_into_fibonacci(S)
 
-def split_into_fibonacci(s: str) -> List[int]:
+def split_into_fibonacci(s: str) -> list[int]:
     l, fm, fml = len(s), 2 ** 31, len(str(2 ** 31))
 
     candidates = (
@@ -1075,12 +1076,12 @@ def reverse_parentheses(s: str) -> str:
 
 ```python
 class Solution:
-    def constructRectangle(self, area: int) -> List[int]:
+    def constructRectangle(self, area: int) -> list[int]:
         return construct_rectangle(area)
 
 from math import isqrt
 
-def construct_rectangle(area: int) -> List[int]:
+def construct_rectangle(area: int) -> list[int]:
     w = isqrt(area)
     while area % w != 0:
         w -= 1
@@ -1182,10 +1183,10 @@ def unique_paths(m: int, n: int) -> int:
 
 ```python
 class Solution:
-    def minCostToMoveChips(self, chips: List[int]) -> int:
+    def minCostToMoveChips(self, chips: list[int]) -> int:
         return min_cost_to_move_chips(chips)
 
-def min_cost_to_move_chips(chips: List[int]) -> int:
+def min_cost_to_move_chips(chips: list[int]) -> int:
     return min(odd := sum(p % 2 for p in chips), len(chips) - odd)
 ```
 
@@ -1240,14 +1241,14 @@ def min_cost_to_move_chips(chips: List[int]) -> int:
 
 ```python
 class Solution:
-    def missingNumber(self, nums: List[int]) -> int:
+    def missingNumber(self, nums: list[int]) -> int:
         return missing_number(nums)
 
 from itertools import chain
 from functools import reduce
 from operator import xor
 
-def missing_number(nums: List[int]) -> int:
+def missing_number(nums: list[int]) -> int:
     return reduce(xor, chain(nums, range(len(nums) + 1)))
 ```
 
@@ -1310,10 +1311,10 @@ def missing_number(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def lemonadeChange(self, bills: List[int]) -> bool:
+    def lemonadeChange(self, bills: list[int]) -> bool:
         return lemonade_change(bills)
 
-def lemonade_change(bills: List[int]) -> bool:
+def lemonade_change(bills: list[int]) -> bool:
     values = [20, 10, 5]
     notes = [0] * (n := len(values))
     for bill in bills:
@@ -1337,10 +1338,10 @@ def lemonade_change(bills: List[int]) -> bool:
 
 ```python
 class Solution:
-    def lemonadeChange(self, bills: List[int]) -> bool:
+    def lemonadeChange(self, bills: list[int]) -> bool:
         return lemonade_change(bills)
 
-def lemonade_change(bills: List[int]) -> bool:
+def lemonade_change(bills: list[int]) -> bool:
     five = ten = 0
     for bill in bills:
         if bill == 5:
@@ -1507,12 +1508,12 @@ def remove_duplicates(s: str) -> str:
 #         self.right = None
 
 class Solution:
-    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+    def levelOrder(self, root: TreeNode) -> list[list[int]]:
         return level_order(root)
 
 from collections import deque
 
-def level_order(root: TreeNode) -> List[List[int]]:
+def level_order(root: TreeNode) -> list[list[int]]:
     if not root:
         return []
     q, r = deque([root]), []
@@ -1560,12 +1561,12 @@ def level_order(root: TreeNode) -> List[List[int]]:
 #         self.right = None
 
 class Solution:
-    def zigzagLevelOrder(self, root: TreeNode) -> List[List[int]]:
+    def zigzagLevelOrder(self, root: TreeNode) -> list[list[int]]:
         return zigzag_level_order(root)
 
 from collections import deque
 
-def zigzag_level_order(root: TreeNode) -> List[List[int]]:
+def zigzag_level_order(root: TreeNode) -> list[list[int]]:
     if not root:
         return []
     q, r = deque([root]), []
@@ -1623,12 +1624,12 @@ def zigzag_level_order(root: TreeNode) -> List[List[int]]:
 
 ```python
 class Solution:
-    def wiggleMaxLength(self, nums: List[int]) -> int:
+    def wiggleMaxLength(self, nums: list[int]) -> int:
         return wiggle_max_length(nums)
 
 from operator import sub
 
-def wiggle_max_length(nums: List[int]) -> int:
+def wiggle_max_length(nums: list[int]) -> int:
     if not nums:
         return 0
 
@@ -1693,13 +1694,13 @@ def wiggle_max_length(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def minSetSize(self, arr: List[int]) -> int:
+    def minSetSize(self, arr: list[int]) -> int:
         return min_set_size(arr)
 
 from collections import Counter
 from itertools import accumulate
 
-def min_set_size(arr: List[int]) -> int:
+def min_set_size(arr: list[int]) -> int:
     half = ceil(len(arr) / 2)
     return next(i + 1 for i, a in enumerate(accumulate(
         sorted(Counter(arr).values(), reverse=True)
@@ -1746,12 +1747,12 @@ def min_set_size(arr: List[int]) -> int:
 
 ```python
 class Solution:
-    def maxWidthOfVerticalArea(self, points: List[List[int]]) -> int:
+    def maxWidthOfVerticalArea(self, points: list[list[int]]) -> int:
         return max_width_of_vertical_area(points)
 
 from operator import sub
 
-def max_width_of_vertical_area(points: List[List[int]]) -> int:
+def max_width_of_vertical_area(points: list[list[int]]) -> int:
     xs = sorted({p[0] for p in points})
     return max(map(sub, xs[1:], xs), default=0)
 ```
@@ -1835,10 +1836,10 @@ def nth_person_gets_nth_seat(n: int) -> float:
 
 ```python
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def containsDuplicate(self, nums: list[int]) -> bool:
         return contains_duplicate(nums)
 
-def contains_duplicate(nums: List[int]) -> bool:
+def contains_duplicate(nums: list[int]) -> bool:
     seen = set()
     for n in nums:
         if n in seen:
@@ -1851,10 +1852,10 @@ def contains_duplicate(nums: List[int]) -> bool:
 
 ```python
 class Solution:
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def containsDuplicate(self, nums: list[int]) -> bool:
         return contains_duplicate(nums)
 
-def contains_duplicate(nums: List[int]) -> bool:
+def contains_duplicate(nums: list[int]) -> bool:
     return len(set(nums)) < len(nums)
 ```
 
@@ -1898,12 +1899,12 @@ def contains_duplicate(nums: List[int]) -> bool:
 
 ```python
 class Solution:
-    def countCharacters(self, words: List[str], chars: str) -> int:
+    def countCharacters(self, words: list[str], chars: str) -> int:
         return count_characters(words, chars)
 
 from collections import Counter
 
-def count_characters(words: List[str], chars: str) -> int:
+def count_characters(words: list[str], chars: str) -> int:
     chars = Counter(chars)
     return sum(
         len(word) for word in words
@@ -1944,10 +1945,10 @@ def count_characters(words: List[str], chars: str) -> int:
 
 ```python
 class Solution:
-    def relativeSortArray(self, arr1: List[int], arr2: List[int]) -> List[int]:
+    def relativeSortArray(self, arr1: list[int], arr2: list[int]) -> list[int]:
         return relative_sort_array(arr1, arr2)
 
-def relative_sort_array(arr1: List[int], arr2: List[int]) -> List[int]:
+def relative_sort_array(arr1: list[int], arr2: list[int]) -> list[int]:
     pos, mpos = {v: i for i, v in enumerate(arr2)}, len(arr2)
     return sorted(arr1, key=lambda v: (pos.get(v, mpos), v))
 ```
@@ -1992,12 +1993,12 @@ def relative_sort_array(arr1: List[int], arr2: List[int]) -> List[int]:
 
 ```python
 class Solution:
-    def majorityElement(self, nums: List[int]) -> List[int]:
+    def majorityElement(self, nums: list[int]) -> list[int]:
         return majority_element(nums, 3)
 
 from collections import Counter
 
-def majority_element(nums: List[int], f: int) -> List[int]:
+def majority_element(nums: list[int], f: int) -> list[int]:
     return [
         n for n, c in Counter(nums).most_common(f - 1)
         if c > len(nums) // f
@@ -2008,10 +2009,10 @@ def majority_element(nums: List[int], f: int) -> List[int]:
 
 ```python
 class Solution:
-    def majorityElement(self, nums: List[int]) -> List[int]:
+    def majorityElement(self, nums: list[int]) -> list[int]:
         return majority_element(nums, 3)
 
-def majority_element(nums: List[int], f: int) -> List[int]:
+def majority_element(nums: list[int], f: int) -> list[int]:
     m = f - 1
     r, c = [None] * m, [0] * m
     for n in nums:
@@ -2043,10 +2044,10 @@ def majority_element(nums: List[int], f: int) -> List[int]:
 
 ```python
 class Solution:
-    def majorityElement(self, nums: List[int]) -> List[int]:
+    def majorityElement(self, nums: list[int]) -> list[int]:
         return majority_element(nums)
 
-def majority_element(nums: List[int]) -> List[int]:
+def majority_element(nums: list[int]) -> list[int]:
     r1 = r2 = None
     c1 = c2 = 0
     for n in nums:
@@ -2223,10 +2224,10 @@ def min_partitions(n: str) -> int:
 
 ```python
 class Solution:
-    def intersection(self, nums1: List[int], nums2: List[int]) -> List[int]:
+    def intersection(self, nums1: list[int], nums2: list[int]) -> list[int]:
         return intersection(nums1, nums2)
 
-def intersection(nums1: List[int], nums2: List[int]) -> List[int]:
+def intersection(nums1: list[int], nums2: list[int]) -> list[int]:
     return list(set(nums1) & set(nums2))
 ```
 
@@ -2350,12 +2351,12 @@ def min_steps(n: int) -> int:
 
 ```python
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         return group_anagrams(strs)
 
 from collections import defaultdict
 
-def group_anagrams(strs: List[str]) -> List[List[str]]:
+def group_anagrams(strs: list[str]) -> list[list[str]]:
     r = defaultdict(list)
     for s in strs:
         k = ''.join(sorted(s))
@@ -2369,12 +2370,12 @@ def group_anagrams(strs: List[str]) -> List[List[str]]:
 
 ```python
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         return group_anagrams(strs)
 
 from collections import defaultdict
 
-def group_anagrams(strs: List[str]) -> List[List[str]]:
+def group_anagrams(strs: list[str]) -> list[list[str]]:
     r = defaultdict(list)
     for s in strs:
         c = [0] * 26
@@ -2390,7 +2391,7 @@ def group_anagrams(strs: List[str]) -> List[List[str]]:
 
 ```python
 class Solution:
-    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+    def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         return group_anagrams(strs)
 
 from collections import defaultdict
@@ -2398,7 +2399,7 @@ from math import prod
 
 _b = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101]
 
-def group_anagrams(strs: List[str]) -> List[List[str]]:
+def group_anagrams(strs: list[str]) -> list[list[str]]:
     r = defaultdict(list)
     for s in strs:
         k = prod(_b[ord(ch) - ord('a')] for ch in s)
@@ -2617,10 +2618,10 @@ def get_smallest_string(n: int, k: int) -> str:
 
 ```python
 class Solution:
-    def maxProfit(self, prices: List[int], fee: int) -> int:
+    def maxProfit(self, prices: list[int], fee: int) -> int:
         return max_profit(prices, fee)
 
-def max_profit(prices: List[int], fee: int) -> int:
+def max_profit(prices: list[int], fee: int) -> int:
     cl, op = 0, -prices[0]
     for price in prices[1:]:
         cl, op = max(cl, op + price - fee), max(op, cl - price)
@@ -2659,12 +2660,12 @@ def max_profit(prices: List[int], fee: int) -> int:
 
 ```python
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
+    def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
 
 from collections import Counter
 
-def single_number(nums: List[int]) -> int:
+def single_number(nums: list[int]) -> int:
     return next(n for n, c in Counter(nums).items() if c == 1)
 ```
 
@@ -2672,10 +2673,10 @@ def single_number(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
+    def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
 
-def single_number(nums: List[int]) -> int:
+def single_number(nums: list[int]) -> int:
     return (sum(set(nums)) * 3 - sum(nums)) // 2
 ```
 
@@ -2685,10 +2686,10 @@ def single_number(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
+    def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
 
-def single_number(nums: List[int]) -> int:
+def single_number(nums: list[int]) -> int:
     once = twice = 0
     for n in nums:
         once = ~twice & (once ^ n)
@@ -2728,12 +2729,12 @@ def single_number(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
+    def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
 
 from collections import Counter
 
-def single_number(nums: List[int]) -> int:
+def single_number(nums: list[int]) -> int:
     return next(n for n, c in Counter(nums).items() if c == 1)
 ```
 
@@ -2741,10 +2742,10 @@ def single_number(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
+    def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
 
-def single_number(nums: List[int]) -> int:
+def single_number(nums: list[int]) -> int:
     return sum(set(nums)) * 2 - sum(nums)
 ```
 
@@ -2754,12 +2755,12 @@ def single_number(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def singleNumber(self, nums: List[int]) -> int:
+    def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
 
 from operator import xor
 
-def single_number(nums: List[int]) -> int:
+def single_number(nums: list[int]) -> int:
     return accumulate(xor, nums)
 ```
 
@@ -2900,10 +2901,10 @@ def can_construct(ransom: str, magazine: str) -> bool:
 
 ```python
 class Solution:
-    def singleNonDuplicate(self, nums: List[int]) -> int:
+    def singleNonDuplicate(self, nums: list[int]) -> int:
         return single_non_duplicate(nums)
 
-def single_non_duplicate(nums: List[int]) -> int:
+def single_non_duplicate(nums: list[int]) -> int:
     low, high = 0, len(nums)
     while low + 1 < high:
         mid = (low + high) // 2
@@ -2963,10 +2964,10 @@ def single_non_duplicate(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def rotate(self, matrix: List[List[int]]) -> None:
+    def rotate(self, matrix: list[list[int]]) -> None:
         return rotate(matrix)
 
-def rotate(matrix: List[List[int]]) -> None:
+def rotate(matrix: list[list[int]]) -> None:
     n = len(matrix)
     for i in range(n // 2):
         for j in range((n + 1) // 2):
@@ -3188,10 +3189,10 @@ def remove_duplicate_letters(s: str) -> str:
 
 ```python
 class Solution:
-    def minCostClimbingStairs(self, cost: List[int]) -> int:
+    def minCostClimbingStairs(self, cost: list[int]) -> int:
         return min_cost_climbing_stairs(cost)
 
-def min_cost_climbing_stairs(cost: List[int]) -> int:
+def min_cost_climbing_stairs(cost: list[int]) -> int:
     r1 = r2 = 0
     for c in cost:
         r1, r2 = min(r1, r2) + c, r1
@@ -3273,10 +3274,10 @@ def first_unique_character(s: str) -> int:
 
 ```python
 class Solution:
-    def candy(self, ratings: List[int]) -> int:
+    def candy(self, ratings: list[int]) -> int:
         return candy(ratings)
 
-def candy(ratings: List[int]) -> int:
+def candy(ratings: list[int]) -> int:
     n = len(ratings)
 
     l = [1] * n
@@ -3296,12 +3297,12 @@ def candy(ratings: List[int]) -> int:
 
 ```python
 class Solution:
-    def candy(self, ratings: List[int]) -> int:
+    def candy(self, ratings: list[int]) -> int:
         return candy(ratings)
 
 from operator import sub
 
-def candy(ratings: List[int]) -> int:
+def candy(ratings: list[int]) -> int:
     r, inc, dec, pre = 1, 1, 0, 1
     for d in map(sub, ratings[1:], ratings):
         if d >= 0:
@@ -3360,10 +3361,10 @@ def candy(ratings: List[int]) -> int:
 
 ```python
 class Solution:
-    def findContentChildren(self, g: List[int], s: List[int]) -> int:
+    def findContentChildren(self, g: list[int], s: list[int]) -> int:
         return find_content_children(g, s)
 
-def find_content_children(g: List[int], s: List[int]) -> int:
+def find_content_children(g: list[int], s: list[int]) -> int:
     g, s, i = sorted(g), sorted(s), 0
     for t in s:
         if i >= len(g):
@@ -3396,12 +3397,12 @@ def find_content_children(g: List[int], s: List[int]) -> int:
 
 ```python
 class Solution:
-    def largestRectangleArea(self, heights: List[int]) -> int:
+    def largestRectangleArea(self, heights: list[int]) -> int:
         return largest_rectangle_area(heights)
 
 from itertools import chain
 
-def largest_rectangle_area(heights: List[int]) -> int:
+def largest_rectangle_area(heights: list[int]) -> int:
     r, s = 0, [(-1, -1)]
     for ri, rh in enumerate(chain(heights, [0])):
         while s and rh <= (mh := s[-1][1]):
@@ -3465,12 +3466,12 @@ def largest_rectangle_area(heights: List[int]) -> int:
 
 ```python
 class Solution:
-    def maximalRectangle(self, matrix: List[List[str]]) -> int:
+    def maximalRectangle(self, matrix: list[list[str]]) -> int:
         return maximal_rectangle(matrix)
 
 from itertools import chain
 
-def maximal_rectangle(matrix: List[List[str]]) -> int:
+def maximal_rectangle(matrix: list[list[str]]) -> int:
     if not matrix:
         return 0
 
@@ -3480,7 +3481,7 @@ def maximal_rectangle(matrix: List[List[str]]) -> int:
         r = max(r, maximal_rectangle_histogram(hs))
     return r
 
-def maximal_rectangle_histogram(heights: List[int]) -> int:
+def maximal_rectangle_histogram(heights: list[int]) -> int:
     r, s = 0, [(-1, -1)]
     for ri, rh in enumerate(chain(heights, [0])):
         while s and rh <= (mh := s[-1][1]):
@@ -3661,12 +3662,12 @@ def score_of_parentheses(s: str) -> int:
 
 ```python
 class Solution:
-    def maxProfit(self, k: int, prices: List[int]) -> int:
+    def maxProfit(self, k: int, prices: list[int]) -> int:
         return max_profit(k, prices)
 
 from math import inf
 
-def max_profit(k: int, prices: List[int]) -> int:
+def max_profit(k: int, prices: list[int]) -> int:
     p = [0] + [-inf] * (min(k, len(prices) // 2) * 2)
     for i, price in enumerate(prices):
         for j in range(1, min(len(p), ((i + 1) // 2 + 1) * 2)):
@@ -3711,10 +3712,10 @@ def max_profit(k: int, prices: List[int]) -> int:
 
 ```python
 class Solution:
-    def minPatches(self, nums: List[int], n: int) -> int:
+    def minPatches(self, nums: list[int], n: int) -> int:
         return min_patches(nums, n)
 
-def min_patches(nums: List[int], n: int) -> int:
+def min_patches(nums: list[int], n: int) -> int:
     m, i, r = 1, 0, 0
     while m <= n:
         if i < len(nums) and (k := nums[i]) <= m:
@@ -3766,12 +3767,12 @@ def min_patches(nums: List[int], n: int) -> int:
 
 ```python
 class Solution:
-    def lastStoneWeight(self, stones: List[int]) -> int:
+    def lastStoneWeight(self, stones: list[int]) -> int:
         return last_stone_weight(stones)
 
 from bisect import insort
 
-def last_stone_weight(stones: List[int]) -> int:
+def last_stone_weight(stones: list[int]) -> int:
     stones = sorted(stones)
     while len(stones) >= 2:
         x = stones.pop()
@@ -3787,12 +3788,12 @@ def last_stone_weight(stones: List[int]) -> int:
 
 ```python
 class Solution:
-    def lastStoneWeight(self, stones: List[int]) -> int:
+    def lastStoneWeight(self, stones: list[int]) -> int:
         return last_stone_weight(stones)
 
 from heapq import heapify, heappop, heappush
 
-def last_stone_weight(stones: List[int]) -> int:
+def last_stone_weight(stones: list[int]) -> int:
     stones = [-s for s in stones]
     heapify(stones)
     while len(stones) >= 2:
@@ -3843,10 +3844,10 @@ def last_stone_weight(stones: List[int]) -> int:
 
 ```python
 class Solution:
-    def arrayPairSum(self, nums: List[int]) -> int:
+    def arrayPairSum(self, nums: list[int]) -> int:
         return array_pair_sum(nums)
 
-def array_pair_sum(nums: List[int]) -> int:
+def array_pair_sum(nums: list[int]) -> int:
     return sum(sorted(nums)[::2])
 ```
 
@@ -3889,13 +3890,13 @@ def array_pair_sum(nums: List[int]) -> int:
 
 ```python
 class Solution:
-    def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
+    def eraseOverlapIntervals(self, intervals: list[list[int]]) -> int:
         return erase_overlap_intervals(intervals)
 
 from operator import itemgetter
 from math import inf
 
-def erase_overlap_intervals(intervals: List[List[int]]) -> int:
+def erase_overlap_intervals(intervals: list[list[int]]) -> int:
     intervals = sorted(intervals, key=itemgetter(1))
     last, reserved = -inf, 0
     for l, r in intervals:
@@ -3943,12 +3944,12 @@ def erase_overlap_intervals(intervals: List[List[int]]) -> int:
 
 ```python
 class Solution:
-    def numPairsDivisibleBy60(self, time: List[int]) -> int:
+    def numPairsDivisibleBy60(self, time: list[int]) -> int:
         return num_pairs_divisible_by_60(time)
 
 from collections import Counter
 
-def num_pairs_divisible_by_60(time: List[int]) -> int:
+def num_pairs_divisible_by_60(time: list[int]) -> int:
     c = Counter(t % 60 for t in time)
     return sum(c[t] * c[60 - t] for t in c if t < 30) \
         + (c[0] * (c[0] - 1) + c[30] * (c[30] - 1)) // 2
