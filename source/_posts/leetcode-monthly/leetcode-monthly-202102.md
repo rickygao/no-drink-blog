@@ -546,9 +546,9 @@ pub fn max_score(card_points: &[i32], k: usize) -> i32 {
 #### 示例
 
 ```raw
-输入：nums = [4,2,3]
+输入：nums = [4, 2, 3]
 输出：true
-解释：你可以通过把第一个4变成1来使得它成为一个非递减数列。
+解释：你可以通过把第一个 4 变成 1 来使得它成为一个非递减数列。
 ```
 
 ```raw
@@ -577,13 +577,13 @@ def check_possibility(nums: list[int]) -> bool:
         if n >= p:
             p, q = n, p
         else:
+            if t > 0:
+                return False
+            t += 1
             if n >= q:
                 p = n
             else:
                 q = n
-            t += 1
-            if t > 1:
-                return False
     return True
 ```
 
@@ -601,14 +601,14 @@ pub fn check_possibility(nums: &[i32]) -> bool {
             q = p;
             p = n;
         } else {
+            if t > 0 {
+                return false
+            }
+            t += 1;
             if n >= q {
                 p = n;
             } else {
                 q = n;
-            }
-            t += 1;
-            if t > 1 {
-                return false
             }
         }
     }
