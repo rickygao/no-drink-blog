@@ -532,3 +532,86 @@ pub fn max_score(card_points: &[i32], k: usize) -> i32 {
     }).1
 }
 ```
+
+## 665. 非递减数列{#leetcode-665}
+
+[:link: 来源](https://leetcode-cn.com/problems/non-decreasing-array/)
+
+### 题目
+
+给你一个长度为 `n` 的整数数组，请你判断在**最多**改变 `1` 个元素的情况下，该数组能否变成一个非递减数列。
+
+我们是这样定义一个非递减数列的： 对于数组中所有的 `0 < i < n`，总满足 `nums[i - 1] <= nums[i]`。
+
+#### 示例
+
+```raw
+输入：nums = [4,2,3]
+输出：true
+解释：你可以通过把第一个4变成1来使得它成为一个非递减数列。
+```
+
+```raw
+输入：nums = [4, 2, 1]
+输出：false
+解释：你不能在只改变一个元素的情况下将其变为非递减数列。
+```
+
+#### 说明
+
+- `1 <= n <= 1e4`；
+- `-1e5 <= nums[i] <= 1e5`。
+
+### 题解
+
+```python Python
+class Solution:
+    def checkPossibility(self, nums: list[int]) -> bool:
+        return check_possibility(nums)
+
+from math import inf
+
+def check_possibility(nums: list[int]) -> bool:
+    p, q, t = -inf, -inf, 0
+    for n in nums:
+        if n >= p:
+            p, q = n, p
+        else:
+            if n >= q:
+                p = n
+            else:
+                q = n
+            t += 1
+            if t > 1:
+                return False
+    return True
+```
+
+```rust Rust
+impl Solution {
+    pub fn check_possibility(nums: Vec<i32>) -> bool {
+        check_possibility(&nums)
+    }
+}
+
+pub fn check_possibility(nums: &[i32]) -> bool {
+    let (mut p, mut q, mut t) = (i32::MIN, i32::MIN, 0usize);
+    for &n in nums {
+        if n >= p {
+            q = p;
+            p = n;
+        } else {
+            if n >= q {
+                p = n;
+            } else {
+                q = n;
+            }
+            t += 1;
+            if t > 1 {
+                return false
+            }
+        }
+    }
+    true
+}
+```
