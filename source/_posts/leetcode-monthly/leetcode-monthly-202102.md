@@ -159,8 +159,8 @@ use std::collections::HashMap;
 pub fn character_replacement(s: &str, k: usize) -> usize {
     let mut c: HashMap<_, usize> = HashMap::new();
     let (mut m, mut l) = (0, 0);
-    let (mut p, mut q) = (s.chars(), s.chars());
-    while let Some(j) = q.next() {
+    let mut p = s.chars();
+    for j in s.chars() {
         m = m.max(*c.entry(j).and_modify(|cj| *cj += 1).or_insert(1));
         if l >= k + m {
             *c.get_mut(&p.next().unwrap()).unwrap() -= 1;
@@ -672,9 +672,11 @@ def my_pow(x: float, n: int) -> float:
 
 ```rust Rust
 impl Solution {
-    pub fn my_pow(x: f64, n: i32) -> f64 {
-        let mut x = if n > 0 { x } else { 1f64 / x };
-        let (mut n, mut r) = (n, 1f64);
+    pub fn my_pow(mut x: f64, mut n: i32) -> f64 {
+        if n < 0 {
+            x = 1f64 / x;
+        }
+        let mut r = 1f64;
         while n != 0 {
             if n & 1 == 1 {
                 r *= x;
@@ -761,7 +763,7 @@ impl Solution {
 use std::cmp::Ordering;
 
 pub fn max_turbulence_size(slice: &[impl Ord]) -> usize {
-    if slice.len() == 0 {
+    if slice.is_empty() {
         return 0;
     }
     let (mut pre, mut len, mut max) = (Ordering::Equal, 1, 1);
@@ -780,4 +782,5 @@ pub fn max_turbulence_size(slice: &[impl Ord]) -> usize {
     }
     max.max(len)
 }
+
 ```
