@@ -686,3 +686,98 @@ impl Solution {
     }
 }
 ```
+
+## 978. 最长湍流子数组{#leetcode-978}
+
+[:link: 来源](https://leetcode-cn.com/problems/longest-turbulent-subarray/)
+
+### 题目
+
+当 A 的子数组 `A[i:j]` 满足下列条件之一时，我们称其为湍流子数组：
+
+- 若 `i < k < j`，当 `k` 为奇数时，`A[k - 1] > A[k]`，且当 `k` 为偶数时，`A[k - 1] < A[k]`；
+- 若 `i < k < j`，当 `k` 为偶数时，`A[k - 1] > A[k]`，且当 `k` 为奇数时，`A[k - 1] < A[k]`。
+
+也就是说，如果比较符号在子数组中的每个相邻元素对之间翻转，则该子数组是湍流子数组。
+
+返回 `A` 的最大湍流子数组的长度。
+
+#### 示例
+
+```raw
+输入：[9, 4, 2, 10, 7, 8, 8, 1, 9]
+输出：5
+解释：(A[1] > A[2] < A[3] > A[4] < A[5])
+```
+
+```raw
+输入：[4, 8, 12, 16]
+输出：2
+```
+
+```raw
+输入：[100]
+输出：1
+```
+
+#### 提示
+
+- `1 <= len(A) <= 40000`；
+- `0 <= A[i] <= 1e9`。
+
+### 题解
+
+```python Python
+class Solution:
+    def maxTurbulenceSize(self, arr: List[int]) -> int:
+        return max_turbulence_size(arr)
+
+from operator import sub
+
+def max_turbulence_size(nums: List[int]) -> int:
+    if not nums:
+        return 0
+    p, l, m = 0, 1, 1
+    for d in map(sub, nums, nums[1:]):
+        if d == 0:
+            m = max(m, l)
+            l = 1
+        elif (d > 0) == (p > 0):
+            m = max(m, l)
+            l = 2
+        else:
+            l += 1
+        p = d
+    return max(m, l)
+```
+
+```rust Rust
+impl Solution {
+    pub fn max_turbulence_size(arr: Vec<i32>) -> i32 {
+        max_turbulence_size(&arr) as i32
+    }
+}
+
+use std::cmp::Ordering;
+
+pub fn max_turbulence_size(slice: &[impl Ord]) -> usize {
+    if slice.len() == 0 {
+        return 0;
+    }
+    let (mut pre, mut len, mut max) = (Ordering::Equal, 1, 1);
+    for (m, n) in Iterator::zip(slice.iter(), slice[1..].iter()) {
+        let ord = Ord::cmp(m, n);
+        if ord == Ordering::Equal {
+            max = max.max(len);
+            len = 1;
+        } else if ord == pre {
+            max = max.max(len);
+            len = 2; 
+        } else {
+            len += 1;
+        }
+        pre = ord;
+    }
+    max.max(len)
+}
+```
