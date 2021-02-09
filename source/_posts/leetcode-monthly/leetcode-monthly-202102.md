@@ -784,3 +784,76 @@ pub fn max_turbulence_size(slice: &[impl Ord]) -> usize {
 }
 
 ```
+
+## 992. K 个不同整数的子数组{#leetcode-992}
+
+[:link: 来源](https://leetcode-cn.com/problems/subarrays-with-k-different-integers/)
+
+### 题目
+
+给定一个正整数数组 `A`，如果 `A` 的某个子数组中不同整数的个数恰好为 `K`，则称 `A` 的这个连续、不一定独立的子数组为**好子数组**。（例如，`[1, 2, 3, 1, 2]` 中有 3 个不同的整数：1、2、3）
+
+返回 `A` 中好子数组的数目。
+
+#### 示例
+
+```raw
+输入：A = [1, 2, 1, 2, 3], K = 2
+输出：7
+解释：恰好由 2 个不同整数组成的子数组：[1, 2]、[2, 1]、[1, 2]、[2, 3]、[1, 2, 1]、[2, 1, 2]、[1, 2, 1, 2]。
+```
+
+```raw
+输入：A = [1, 2, 1, 3, 4], K = 3
+输出：3
+解释：恰好由 3 个不同整数组成的子数组：[1, 2, 1, 3]、[2, 1, 3]、[1, 3, 4]。
+```
+
+#### 提示
+
+- `1 <= len(A) <= 20000`；
+- `1 <= A[i] <= len(A)`；
+- `1 <= K <= len(A)`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn subarrays_with_k_distinct(a: Vec<i32>, k: i32) -> i32 {
+        subarrays_with_k_distinct(&a, k as usize) as i32
+    }
+}
+
+use std::collections::HashMap;
+use std::hash::Hash;
+
+pub fn subarrays_with_k_distinct(a: &[impl Eq + Hash], k: usize) -> usize {
+    if k == 0 {
+        return 0;
+    }
+    subarrays_with_at_most_k_distinct(a, k) - subarrays_with_at_most_k_distinct(a, k - 1)
+}
+
+pub fn subarrays_with_at_most_k_distinct(a: &[impl Eq + Hash], k: usize) -> usize {
+    let mut p = a.iter();
+    let mut c = HashMap::new();
+    let (mut s, mut l, mut r) = (0, 0, 0);
+    for i in a.iter() {
+        l += 1;
+        if *c.entry(i).and_modify(|ci| *ci += 1).or_insert(1) == 1 {
+            s += 1;
+        }
+        while s > k {
+            let j = p.next().unwrap();
+            l -= 1;
+            let cj = c.get_mut(j).unwrap();
+            *cj -= 1;
+            if *cj == 0 {
+                s -= 1;
+            }
+        }
+        r += l;
+    }
+    r
+}
+```
