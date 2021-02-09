@@ -157,7 +157,7 @@ impl Solution {
 use std::collections::HashMap;
 
 pub fn character_replacement(s: &str, k: usize) -> usize {
-    let mut c: HashMap<_, usize> = HashMap::new();
+    let mut c = HashMap::new();
     let (mut m, mut l) = (0, 0);
     let mut p = s.chars();
     for j in s.chars() {
@@ -724,7 +724,7 @@ impl Solution {
 
 #### 提示
 
-- `1 <= len(A) <= 40000`；
+- `1 <= len(A) <= 4e4`；
 - `0 <= A[i] <= 1e9`。
 
 ### 题解
@@ -791,7 +791,7 @@ pub fn max_turbulence_size(slice: &[impl Ord]) -> usize {
 
 ### 题目
 
-给定一个正整数数组 `A`，如果 `A` 的某个子数组中不同整数的个数恰好为 `K`，则称 `A` 的这个连续、不一定独立的子数组为**好子数组**。（例如，`[1, 2, 3, 1, 2]` 中有 3 个不同的整数：1、2、3）
+给定一个正整数数组 `A`，如果 `A` 的某个子数组中不同整数的个数恰好为 `K`，则称 `A` 的这个连续、不一定独立的子数组为**好子数组**。（例如，`[1, 2, 3, 1, 2]` 中有 3 个不同的整数：`1`、`2`、`3`）
 
 返回 `A` 中好子数组的数目。
 
@@ -811,7 +811,7 @@ pub fn max_turbulence_size(slice: &[impl Ord]) -> usize {
 
 #### 提示
 
-- `1 <= len(A) <= 20000`；
+- `1 <= len(A) <= 2e4`；
 - `1 <= A[i] <= len(A)`；
 - `1 <= K <= len(A)`。
 
@@ -835,9 +835,9 @@ pub fn subarrays_with_k_distinct(a: &[impl Eq + Hash], k: usize) -> usize {
 }
 
 pub fn subarrays_with_at_most_k_distinct(a: &[impl Eq + Hash], k: usize) -> usize {
-    let mut p = a.iter();
     let mut c = HashMap::new();
     let (mut s, mut l, mut r) = (0, 0, 0);
+    let mut p = a.iter();
     for i in a.iter() {
         l += 1;
         if *c.entry(i).and_modify(|ci| *ci += 1).or_insert(1) == 1 {
