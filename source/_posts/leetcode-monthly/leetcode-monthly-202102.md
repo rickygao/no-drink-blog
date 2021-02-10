@@ -941,3 +941,68 @@ pub fn check_inclusion(s1: &str, s2: &str) -> bool {
     false
 }
 ```
+
+## 703. 数据流中的第 K 大元素{#leetcode-703}
+
+[:link: 来源](https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/)
+
+### 题目
+
+设计一个找到数据流中第 `k` 大元素的类（class）。注意是排序后的第 `k` 大元素，不是第 `k` 个不同的元素。
+
+请实现 `KthLargest` 类：
+
+- `KthLargest(k, nums)` 使用整数 `k` 和整数流 `nums` 初始化对象；
+- `add(val)` 将 `val` 插入数据流 `nums` 后，返回当前数据流中第 `k` 大的元素。
+
+#### 示例
+
+```raw
+输入：["KthLargest", "add", "add", "add", "add", "add"], [[3, [4, 5, 8, 2]], [3], [5], [10], [9], [4]]
+输出：[null, 4, 5, 5, 8, 8]
+```
+
+#### 提示
+
+- `1 <= k <= 1e4`；
+- `0 <= len(nums) <= 1e4`；
+- `-1e4 <= nums[i] <= 1e4`；
+- `-1e4 <= val <= 1e4`；
+- 最多调用 `add` 方法 `1e4` 次；
+- 题目数据保证，在查找第 `k` 大元素时，数组中至少有 `k` 个元素。
+
+### 题解
+
+```rust Rust
+use std::collections::BinaryHeap;
+use std::cmp::Reverse;
+
+struct KthLargest {
+    k: usize,
+    h: BinaryHeap<Reverse<i32>>,
+}
+
+impl KthLargest {
+    pub fn new(k: i32, mut nums: Vec<i32>) -> Self {
+        let mut r = KthLargest {
+            h: BinaryHeap::new(),
+            k: k as usize,
+        };
+        for n in nums {
+            r.add(n);
+        }
+        r
+    }
+
+    pub fn add(&mut self, val: i32) -> i32 {
+        let val = Reverse(val);
+        if self.h.len() < self.k {
+            self.h.push(val);
+        } else if val < *self.h.peek().unwrap() {
+            self.h.pop();
+            self.h.push(val);
+        }
+        self.h.peek().unwrap().0
+    }
+}
+```
