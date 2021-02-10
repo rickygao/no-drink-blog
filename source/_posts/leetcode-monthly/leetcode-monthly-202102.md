@@ -857,3 +857,87 @@ pub fn subarrays_with_at_most_k_distinct(a: &[impl Eq + Hash], k: usize) -> usiz
     r
 }
 ```
+
+## 567. 字符串的排列{#leetcode-567}
+
+[:link: 来源](https://leetcode-cn.com/problems/permutation-in-string/)
+
+### 题目
+
+给定两个字符串 `s1` 和 `s2`，写一个函数来判断 `s2` 是否包含 `s1` 的排列。
+
+换句话说，第一个字符串的排列之一是第二个字符串的子串。
+
+#### 示例
+
+```raw
+输入：s1 = "ab", s2 = "eidbaooo"
+输出：true
+解释：s2 包含 s1 的排列之一（"ba"）。
+```
+
+```raw
+输入：s1 = "ab", s2 = "eidboaoo"
+输出：false
+```
+
+#### 注意
+
+- 输入的字符串只包含小写字母；
+- `1 <= len(s1), len(s2) <= 1e4`。
+
+### 题解
+
+滑动窗口。
+
+```rust Rust
+impl Solution {
+    pub fn check_inclusion(s1: String, s2: String) -> bool {
+        check_inclusion(&s1, &s2)
+    }
+}
+
+use std::collections::HashMap;
+
+pub fn check_inclusion(s1: &str, s2: &str) -> bool {
+    let mut c = HashMap::new();
+    for i in s1.chars() {
+        c.entry(i).and_modify(|ci| *ci += 1).or_insert(1);
+    }
+    let mut r = c.keys().len();
+    fn window_push(i: char, c: &mut HashMap<char, isize>, r: &mut usize) {
+        c.entry(i).and_modify(|ci| {
+            *ci -= 1;
+            match *ci {
+                0 => *r -= 1,
+                -1 => *r += 1,
+                _ => (),
+            }
+        });
+    }
+    fn window_pop(i: char, c: &mut HashMap<char, isize>, r: &mut usize) {
+        c.entry(i).and_modify(|ci| {
+            *ci += 1;
+            match *ci {
+                0 => *r -= 1,
+                1 => *r += 1,
+                _ => (),
+            }
+        });
+    }
+    for k in s2.chars().take(s1.len()) {
+        window_push(k, &mut c, &mut r);
+    }
+    if r == 0 {
+        return true;
+    }
+    for (j, k) in Iterator::zip(s2.chars(), s2.chars().skip(s1.len())) {
+        window_pop(j, &mut c, &mut r);
+        window_push(k, &mut c, &mut r);
+        if r == 0 {
+            return true;
+        }
+    }
+    false
+}
+```
