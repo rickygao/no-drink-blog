@@ -1006,3 +1006,46 @@ impl KthLargest {
     }
 }
 ```
+
+## 119. 杨辉三角 II{#leetcode-119}
+
+[:link: 来源](https://leetcode-cn.com/problems/pascals-triangle-ii/)
+
+### 题目
+
+给定一个非负索引 `k`，其中 `k <= 33`，返回杨辉三角的第 `k` 行。
+
+{% asset_img pascals_triangle.gif 200 185 "'杨辉三角' '杨辉三角'" %}
+
+在杨辉三角中，每个数是它左上方和右上方的数的和。
+
+#### 示例
+
+```raw
+输入：3
+输出：[1, 3, 3, 1]
+```
+
+#### 进阶
+
+你可以优化你的算法到 $\mathrm{O}(k)$ 空间复杂度吗？
+
+### 题解
+
+另见 [118. 杨辉三角 I](/leetcode-monthly-202012/#leetcode-118)。
+
+```rust Rust
+impl Solution {
+    pub fn get_row(row_index: i32) -> Vec<i32> {
+        get_row(row_index as usize).into_iter().map(|i| i as i32).collect()
+    }
+}
+
+pub fn get_row(row_index: usize) -> Vec<usize> {
+    let mut r = Vec::with_capacity(row_index + 1);
+    for i in 0..=row_index {
+        r.push(r.last().map(|p| p * (row_index - i + 1) / i).unwrap_or(1));
+    }
+    r
+}
+```
