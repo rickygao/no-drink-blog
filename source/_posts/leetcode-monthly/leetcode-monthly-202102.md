@@ -1049,3 +1049,38 @@ pub fn get_row(row_index: usize) -> Vec<usize> {
     r
 }
 ```
+
+## 448. 找到所有数组中消失的数字{#leetcode-448}
+
+[:link: 来源](https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/)
+
+### 题目
+
+给定一个范围在 `1 <= a[i] <= n`（`n = len(a)`）的**整型数组**，数组中的元素一些出现了两次，另一些只出现一次。
+
+找到所有在 `1` 至 `n` 范围内没有出现在数组中的数字。
+
+您能在不使用额外空间且时间复杂度为 $\mathrm{O}(n)$ 的情况下完成这个任务吗? 你可以假定返回的数组不算在额外空间内。
+
+#### 示例
+
+```raw
+输入：[4, 3, 2, 7, 8, 2, 3, 1]
+输出：[5, 6]
+```
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn find_disappeared_numbers(nums: Vec<i32>) -> Vec<i32> {
+        find_disappeared_numbers(&nums)
+    }
+}
+
+pub fn find_disappeared_numbers(nums: &[i32]) -> Vec<i32> {
+    let mut r: Vec<_> = (1..=nums.len() as i32).collect();
+    nums.iter().for_each(|&i| r[i as usize - 1] = 0);
+    r.into_iter().filter(|&i| i > 0).collect()
+}
+```
