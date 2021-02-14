@@ -1160,3 +1160,106 @@ pub fn num_decodings(s: &str) -> usize {
     }).0
 }
 ```
+
+## 765. 情侣牵手{#leetcode-765}
+
+[:link: 来源](https://leetcode-cn.com/problems/couples-holding-hands/)
+
+### 题目
+
+$N$ 对情侣坐在连续排列的 $2N$ 个座位上，想要牵到对方的手。计算最少交换座位的次数，以便每对情侣可以并肩坐在一起。一次交换可选择任意两人，让他们站起来交换座位。
+
+人和座位用 $0$ 到 $2N-1$ 的整数表示，情侣们按顺序编号，第一对是 $(0,1)$，第二对是 $(2,3)$，以此类推，最后一对是 $(2N-2,2N-1)$。
+
+这些情侣的初始座位 `row[i]` 是由最初始坐在第 `i` 个座位上的人决定的。
+
+#### 示例
+
+```raw
+输入：row = [0, 2, 1, 3]
+输出：1
+解释：我们只需要交换 row[1] 和 row[2] 的位置即可。
+```
+
+```raw
+输入：row = [3, 2, 0, 1]
+输出：0
+解释：无需交换座位，所有的情侣都已经可以手牵手了。
+```
+
+#### 说明
+
+- `len(row)` 是偶数且 `4 <= len(row) <= 60`；
+- 可以保证 `row` 是 `range(len(row))` 的一个全排列。
+
+### 题解
+
+并查集。
+
+```rust Rust
+impl Solution {
+    pub fn min_swaps_couples(row: Vec<i32>) -> i32 {
+        let row: Vec<_> = row.into_iter().map(|i| i as usize).collect();
+        min_swaps_couples(&row) as i32
+    }
+}
+
+use std::cell::Cell;
+use std::fmt;
+
+struct UnionFind {
+    parents: Vec<Cell<usize>>,
+}
+
+impl UnionFind {
+    #[inline]
+    pub fn new(len: usize) -> UnionFind {
+        UnionFind { parents: (0..len).map(Cell::new).collect() }
+    }
+
+    #[inline]
+    pub fn len(&self) -> usize {
+        self.parents.len()
+    }
+
+    #[inline]
+    pub fn is_empty(&self) -> bool {
+        self.parents.is_empty()
+    }
+
+    pub fn find(&self, i: usize) -> usize {
+        let pc = &self.parents[i];
+        let p = pc.get();
+        if p != i {
+            pc.set(self.find(p));
+        }
+        pc.get()
+    }
+
+    pub fn union(&mut self, i: usize, j: usize) -> bool {
+        let (pi, pj) = (self.find(i), self.find(j));
+        if pi == pj {
+            return false;
+        }
+        self.parents[pj].set(pi);
+        true
+    }
+}
+
+impl fmt::Debug for UnionFind {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        f.debug_list().entries(self.parents.iter().map(Cell::get)).finish()
+    }
+}
+
+pub fn min_swaps_couples(row: &[usize]) -> usize {
+    let mut r = row.len() / 2;
+    let mut uf = UnionFind::new(r);
+    for c in row.chunks(2) {
+        if !uf.union(c[0] / 2, c[1] / 2) {
+            r -= 1;
+        }
+    }
+    r
+}
+```
