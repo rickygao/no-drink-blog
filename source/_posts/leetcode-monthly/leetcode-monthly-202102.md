@@ -838,7 +838,7 @@ pub fn subarrays_with_at_most_k_distinct(a: &[impl Eq + Hash], k: usize) -> usiz
     let mut c = HashMap::new();
     let (mut s, mut l, mut r) = (0, 0, 0);
     let mut p = a.iter();
-    for i in a.iter() {
+    for i in a {
         l += 1;
         if *c.entry(i).and_modify(|ci| *ci += 1).or_insert(1) == 1 {
             s += 1;
@@ -1207,14 +1207,16 @@ impl Solution {
 use std::cell::Cell;
 use std::fmt;
 
-struct UnionFind {
+pub struct UnionFind {
     parents: Vec<Cell<usize>>,
 }
 
 impl UnionFind {
     #[inline]
     pub fn new(len: usize) -> UnionFind {
-        UnionFind { parents: (0..len).map(Cell::new).collect() }
+        UnionFind {
+            parents: (0..len).map(Cell::new).collect(),
+        }
     }
 
     #[inline]
