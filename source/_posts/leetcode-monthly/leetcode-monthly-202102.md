@@ -838,7 +838,7 @@ pub fn subarrays_with_at_most_k_distinct(a: &[impl Eq + Hash], k: usize) -> usiz
     let mut c = HashMap::new();
     let (mut s, mut l, mut r) = (0, 0, 0);
     let mut p = a.iter();
-    for i in a {
+    for i in a.iter() {
         l += 1;
         if *c.entry(i).and_modify(|ci| *ci += 1).or_insert(1) == 1 {
             s += 1;
