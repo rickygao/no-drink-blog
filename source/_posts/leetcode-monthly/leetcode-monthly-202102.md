@@ -1265,3 +1265,47 @@ pub fn min_swaps_couples(row: &[usize]) -> usize {
     r
 }
 ```
+
+## 485. 最大连续1的个数{#leetcode-485}
+
+[:link: 来源](https://leetcode-cn.com/problems/max-consecutive-ones/)
+
+### 题目
+
+给定一个二进制数组， 计算其中最大连续 `1` 的个数。
+
+#### 示例
+
+```raw
+输入：[1, 1, 0, 1, 1, 1]
+输出：3
+解释：开头的两位和最后的三位都是连续 1，所以最大连续 1 的个数是 3。
+```
+
+#### 注意
+
+- 输入的数组只包含 `0` 和 `1`；
+- 输入数组的长度是正整数，且不超过 `1e4`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn find_max_consecutive_ones(nums: Vec<i32>) -> i32 {
+        find_max_consecutive_ones(&nums) as i32
+    }
+}
+
+pub fn find_max_consecutive_ones(nums: &[i32]) -> usize {
+    let (mut c, mut m) = (0, 0);
+    for n in nums {
+        if *n == 1 {
+            c += 1;
+        } else {
+            m = m.max(c);
+            c = 0;
+        }
+    }
+    m.max(c)
+}
+```
