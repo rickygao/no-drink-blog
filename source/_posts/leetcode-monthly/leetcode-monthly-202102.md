@@ -1309,3 +1309,63 @@ pub fn find_max_consecutive_ones(nums: &[i32]) -> usize {
     m.max(c)
 }
 ```
+
+## 561. 数组拆分 I{#leetcode-561}
+
+[:link: 来源](https://leetcode-cn.com/problems/array-partition-i/)
+
+### 题目
+
+给定长度为 $2n$ 的整数数组 $nums$，你的任务是将这些数分成 $n$ 对, 例如 $(a_1,b_1),(a_2,b_2),\dots,(a_n,b_n)$，使得从 $\sum_{i=1}^n\min(a_i,b_i)$ 最大。
+
+返回该**最大总和**。
+
+#### 示例
+
+```raw
+输入：nums = [1, 4, 3, 2]
+输出：4
+解释：所有可能的分法（忽略元素顺序）为：
+1. (1, 4), (2, 3) -> min(1, 4) + min(2, 3) = 1 + 2 = 3；
+2. (1, 3), (2, 4) -> min(1, 3) + min(2, 4) = 1 + 2 = 3；
+3. (1, 2), (3, 4) -> min(1, 2) + min(3, 4) = 1 + 3 = 4。
+```
+
+```raw
+输入：nums = [6, 2, 6, 5, 1, 2]
+输出：9
+解释：最优的分法为 (2, 1), (2, 5), (6, 6)。min(2, 1) + min(2, 5) + min(6, 6) = 1 + 2 + 6 = 9。
+```
+
+#### 提示
+
+- `1 <= n <= 1e4`；
+- `len(nums) == 2 * n`；
+- `-1e4 <= nums[i] <= 1e4`。
+
+### 题解
+
+排序，贪心。
+
+```python Python
+class Solution:
+    def arrayPairSum(self, nums: list[int]) -> int:
+        return array_pair_sum(nums)
+
+def array_pair_sum(nums: list[int]) -> int:
+    return sum(sorted(nums)[::2])
+```
+
+```rust Rust
+impl Solution {
+    pub fn array_pair_sum(nums: Vec<i32>) -> i32 {
+        array_pair_sum(&nums)
+    }
+}
+
+pub fn array_pair_sum(nums: &[i32]) -> i32 {
+    let mut v = nums.to_vec();
+    v.sort_unstable();
+    v.into_iter().step_by(2).sum()
+}
+```
