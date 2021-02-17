@@ -1420,3 +1420,96 @@ impl Solution {
     }
 }
 ```
+
+## 995. K 连续位的最小翻转次数{#leetcode-995}
+
+[:link: 来源](https://leetcode-cn.com/problems/minimum-number-of-k-consecutive-bit-flips/)
+
+### 题目
+
+在仅包含 `0` 和 `1` 的数组 `A` 中，一次 `K` 位翻转包括选择一个长度为 `K` 的（连续）子数组，同时将子数组中的每个 `0` 更改为 `1`，而每个 `1` 更改为 `0`。
+
+返回所需的 `K` 位翻转的最小次数，以便数组没有值为 `0` 的元素。如果不可能，返回 `-1`。
+
+#### 示例
+
+```raw
+输入：A = [0, 1, 0], K = 1
+输出：2
+解释：先翻转 A[0]，然后翻转 A[2]。
+```
+
+```raw
+输入：A = [1, 1, 0], K = 2
+输出：-1
+解释：无论我们怎样翻转大小为 2 的子数组，我们都不能使数组变为 [1, 1, 1]。
+```
+
+```raw
+输入：A = [0, 0, 0, 1, 0, 1, 1, 0], K = 3
+输出：3
+解释：
+翻转 A[0], A[1], A[2]: A 变成 [1, 1, 1, 1, 0, 1, 1, 0]；
+翻转 A[4], A[5], A[6]: A 变成 [1, 1, 1, 1, 1, 0, 0, 0]；
+翻转 A[5], A[6], A[7]: A 变成 [1, 1, 1, 1, 1, 1, 1, 1]。
+```
+
+#### 提示
+
+- `1 <= len(A) <= 3e4`；
+- `1 <= K <= len(A)`。
+
+### 题解
+
+贪心，滑动窗口。
+
+```python Python
+class Solution:
+    def minKBitFlips(self, A: list[int], K: int) -> int:
+        return min_bit_flips(A, K)
+
+from collections import deque
+from itertools import islice
+
+def min_bit_flips(a: list[int], k: int) -> int:
+    futures, flip, count = deque([False] * k), False, 0
+    for bit in a:
+        flip = flip != futures.popleft()
+        need = bit == flip
+        if need:
+            flip = not flip
+            count += 1
+        futures.append(need)
+    return -1 if any(islice(futures, 1, None)) else count
+```
+
+```rust Rust
+impl Solution {
+    pub fn min_k_bit_flips(a: Vec<i32>, k: i32) -> i32 {
+        min_k_bit_flips(&a, k as usize).map_or(-1, |i| i as i32)
+    }
+}
+
+use std::collections::VecDeque;
+use std::iter::repeat;
+
+pub fn min_k_bit_flips(a: &[i32], k: usize) -> Option<usize> {
+    let mut futures = repeat(false).take(k).collect::<VecDeque<_>>();
+    let mut flip = false;
+    let mut count = 0;
+    for bit in a.iter().cloned().map(|bit| bit == 1) {
+        flip ^= futures.pop_front().unwrap();
+        let need = !(bit ^ flip);
+        if need {
+            flip = !flip;
+            count += 1;
+        }
+        futures.push_back(need);
+    }
+    if futures.into_iter().skip(1).any(|bit| bit) {
+        None
+    } else {
+        Some(count)
+    }
+}
+```
