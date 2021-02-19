@@ -1513,3 +1513,78 @@ pub fn min_k_bit_flips(a: &[i32], k: usize) -> Option<usize> {
     }
 }
 ```
+
+## 1004. 最大连续 1 的个数 III{#leetcode-1004}
+
+[:link: 来源](https://leetcode-cn.com/problems/max-consecutive-ones-iii/)
+
+### 题目
+
+给定一个由若干 `0` 和 `1` 组成的数组 `A`，我们最多可以将 `K` 个值从 `0` 变成 `1`。
+
+返回仅包含 `1` 的最长（连续）子数组的长度。
+
+#### 示例
+
+```raw
+输入：A = [1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0], K = 2
+输出：6
+解释：[1, 1, 1, 0, 0, {(1), 1, 1, 1, 1, (1)}]，最长的子数组长度为 6。
+```
+
+```raw
+输入：A = [0, 0, 1, 1, 0, 0, 1, 1, 1, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1], K = 3
+输出：10
+解释：[0, 0, {1, 1, (1), (1), 1, 1, 1, (1), 1, 1}, 0, 0, 0, 1, 1, 1, 1]，最长的子数组长度为 10。
+```
+
+#### 提示
+
+- `1 <= len(A) <= 2e4`;
+- `0 <= K <= len(A)`；
+- `A[i] in (0, 1)`。
+
+### 题解
+
+滑动窗口。
+
+```rust Rust
+impl Solution {
+    pub fn longest_ones(a: Vec<i32>, k: i32) -> i32 {
+        longest_ones(&a, k as usize) as i32
+    }
+}
+
+use std::iter::{repeat, once};
+use std::collections::VecDeque;
+
+pub fn longest_ones(a: &[i32], k: usize) -> usize {
+    let mut max = 0;
+    let mut begins = repeat(0).take(k + 1).collect::<VecDeque<_>>();
+    a.iter()
+        .enumerate()
+        .filter_map(|(i, &bit)| if bit == 0 { Some(i) } else { None })
+        .chain(once(a.len()))
+        .for_each(|i| {
+            max = max.max(i - begins.pop_front().unwrap());
+            begins.push_back(i + 1);
+        });
+    max
+}
+```
+
+```python Python
+class Solution:
+    def longestOnes(self, A: list[int], K: int) -> int:
+        return longest_ones(A, K)
+
+from itertools import chain
+from collections import deque
+
+def longest_ones(a: list[int], k: int) -> int:
+    starts, m = deque([0] * (k + 1)), 0
+    for i in chain((i for i, bit in enumerate(a) if not bit), [len(a)]):
+        m = max(m, i - starts.popleft())
+        starts.append(i + 1)
+    return m
+```
