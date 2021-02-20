@@ -41,7 +41,7 @@ mathjax: true
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def canPlaceFlowers(self, flowerbed: list[int], n: int) -> bool:
         return can_place_flowers(flowerbed, n)
@@ -97,7 +97,7 @@ def can_place_flowers(flowerbed: list[int], n: int) -> bool:
 
 数学题。[裴蜀定理](https://zh.wikipedia.org/wiki/貝祖等式)的推广形式：若 $a_i\in\mathbb{Z}$ 且 $d=\gcd(a_i)$，则关于 $x_i$ 的方程 $\sum_ia_ix_i=m$ 有整数解当且仅当 $d\mid m$，其中 $i=1,2,\dots,n$；特别地，$\sum_ia_ix_i=1$ 有整数解当且仅当 $a_i$ 互质。
 
-```python
+```python Python
 class Solution:
     def isGoodArray(self, nums: list[int]) -> bool:
         return is_good_array(nums)
@@ -164,7 +164,7 @@ def is_good_array(nums: list[int]) -> bool:
 
 单调队列。
 
-```python
+```python Python
 class Solution:
     def maxSlidingWindow(self, nums: list[int], k: int) -> list[int]:
         return max_sliding_window(nums, k)
@@ -206,7 +206,7 @@ def generate_max_sliding_window(nums: Iterator[int], k: int) -> Iterator[int]:
 
 ### 题解
 
-```python
+```python Python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -279,7 +279,7 @@ $$
 
 #### 迭代
 
-```python
+```python Python
 class Solution:
     def fib(self, n: int) -> int:
         return fib(n)
@@ -300,7 +300,7 @@ $$
 \end{aligned}
 $$
 
-```python
+```python Python
 class Solution:
     def fib(self, n: int) -> int:
         return fib(n)
@@ -316,7 +316,7 @@ def fib(n: int) -> int:
 
 #### 查表
 
-```python
+```python Python
 class Solution:
     def fib(self, n: int) -> int:
         return fib(n)
@@ -379,7 +379,7 @@ def fib(n: int) -> int:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def largeGroupPositions(self, s: str) -> list[list[int]]:
         return large_group_positions(s)
@@ -449,7 +449,7 @@ def large_group_positions(s: str) -> list[list[int]]:
 
 #### 深度优先搜索
 
-```python
+```python Python
 class Solution:
     def calcEquation(self, equations: list[list[str]], values: list[float], queries: list[list[str]]) -> list[float]:
         return calc_equation(equations, values, queries)
@@ -485,7 +485,7 @@ def calc_equation(equations: list[list[str]], values: list[float], queries: list
 
 #### 广度优先搜索
 
-```python
+```python Python
 class Solution:
     def calcEquation(self, equations: list[list[str]], values: list[float], queries: list[list[str]]) -> list[float]:
         return calc_equation(equations, values, queries)
@@ -549,7 +549,7 @@ def calc_equation(equations: list[list[str]], values: list[float], queries: list
 
 #### 并查集
 
-```python
+```python Python
 class Solution:
     def findCircleNum(self, isConnected: list[list[int]]) -> int:
         return find_circle_num(isConnected)
@@ -574,7 +574,7 @@ def find_circle_num(is_connected: list[list[int]]) -> int:
 
 #### 深度优先搜索
 
-```python
+```python Python
 class Solution:
     def findCircleNum(self, isConnected: list[list[int]]) -> int:
         return find_circle_num(isConnected)
@@ -597,7 +597,7 @@ def find_circle_num(is_connected: list[list[int]]) -> int:
 
 #### 广度优先搜索
 
-```python
+```python Python
 class Solution:
     def findCircleNum(self, isConnected: list[list[int]]) -> int:
         return find_circle_num(isConnected)
@@ -656,7 +656,7 @@ def find_circle_num(is_connected: list[list[int]]) -> int:
 
 #### 直接
 
-```python
+```python Python
 class Solution:
     def rotate(self, nums: list[int], k: int) -> None:
         rotate(nums, k)
@@ -673,7 +673,7 @@ def rotate(nums: list[int], k: int) -> None:
 例如：`n = 10`、`k = 4`、`p = gcd(n, k) = 2`。
 此时只需 `nums[0 -> 4 -> 8 -> 2 -> 6]`、`nums[1 -> 5 -> 9 -> 3 -> 5]` 即可完成旋转。
 
-```python
+```python Python
 class Solution:
     def rotate(self, nums: list[int], k: int) -> None:
         rotate(nums, k)
@@ -693,7 +693,7 @@ def rotate(nums: list[int], k: int) -> None:
 
 三次翻转。
 
-```python
+```python Python
 class Solution:
     def rotate(self, nums: list[int], k: int) -> None:
         rotate(nums, k)
@@ -764,7 +764,7 @@ def rotate(nums: list[int], k: int) -> None:
 
 本题是 [188. 买卖股票的最佳时机 IV](/leetcode-monthly-202012/#leetcode-188)的特化，可直接套用。
 
-```python
+```python Python
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:
         return max_profit(2, prices)
@@ -781,7 +781,7 @@ def max_profit(k: int, prices: list[int]) -> int:
 
 #### 特化
 
-```python
+```python Python
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:
         return max_profit(prices)
@@ -859,7 +859,7 @@ def max_profit(prices: list[int]) -> int:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def summaryRanges(self, nums: list[int]) -> list[str]:
         return summary_ranges(nums)
@@ -930,7 +930,7 @@ def summary_ranges(nums: list[int]) -> list[str]:
 
 并查集。先求连通分支，再排序 `s` 的每个连通分支子序列。
 
-```python
+```python Python
 class Solution:
     def smallestStringWithSwaps(self, s: str, pairs: list[list[int]]) -> str:
         return smallest_string_with_swaps(s, pairs)
@@ -1003,7 +1003,7 @@ def smallest_string_with_swaps(s: str, pairs: list[list[int]]) -> str:
 
 两次拓扑排序。
 
-```python
+```python Python
 class Solution:
     def sortItems(self, n: int, m: int, group: list[int], beforeItems: list[list[int]]) -> list[int]:
         return sort_items(n, m, group, beforeItems)
@@ -1086,7 +1086,7 @@ def sort_items(
 
 并查集。
 
-```python
+```python Python
 class Solution:
     def findRedundantConnection(self, edges: list[list[int]]) -> list[int]:
         return find_redundant_connection(edges)
@@ -1152,7 +1152,7 @@ def find_redundant_connection(edges: list[list[int]]) -> list[int]:
 
 #### 循环
 
-```python
+```python Python
 class Solution:
     def prefixesDivBy5(self, A: list[int]) -> list[bool]:
         return prefixes_div_by_5(A)
@@ -1167,7 +1167,7 @@ def prefixes_div_by_5(a: list[int]) -> list[bool]:
 
 #### 简化
 
-```python
+```python Python
 class Solution:
     def prefixesDivBy5(self, A: list[int]) -> list[bool]:
         return prefixes_div_by_5(A)
@@ -1232,7 +1232,7 @@ def prefixes_div_by_5(a: list[int]) -> list[bool]:
 
 并查集。同行、同列的点相连，最终最少剩余连通分支数个点（每一连通分支按任意遍历序的倒序移除点），最终结果（最多可移除的点数）为总点数减连通分支数。
 
-```python
+```python Python
 class Solution:
     def removeStones(self, stones: list[list[int]]) -> int:
         return remove_stones(stones)
@@ -1304,7 +1304,7 @@ $$
 \end{aligned}
 $$
 
-```python
+```python Python
 class Solution:
     def checkStraightLine(self, coordinates: list[list[int]]) -> bool:
         return check_straight_line(coordinates)
@@ -1315,7 +1315,7 @@ def check_straight_line(coordinates: list[list[int]]) -> bool:
     return all(dx * (y - y0) == dy * (x - x0) for x, y in coordinates[2:])
 ```
 
-```python
+```python Python
 class Solution:
     def checkStraightLine(self, coordinates: list[list[int]]) -> bool:
         return check_straight_line(coordinates)
@@ -1372,7 +1372,7 @@ def check_straight_line(coordinates: list[list[int]]) -> bool:
 
 并查集。
 
-```python
+```python Python
 class Solution:
     def accountsMerge(self, accounts: list[list[str]]) -> list[list[str]]:
         return accounts_merge(accounts)
@@ -1455,7 +1455,7 @@ $$
 
 并查集记录连通性。
 
-```python
+```python Python
 class Solution:
     def minCostConnectPoints(self, points: list[list[int]]) -> int:
         return min_cost_connect_points(points)
@@ -1485,7 +1485,7 @@ def min_cost_connect_points(points: list[list[int]]) -> int:
 
 #### Prim
 
-```python
+```python Python
 class Solution:
     def minCostConnectPoints(self, points: list[list[int]]) -> int:
         return min_cost_connect_points(points)
@@ -1536,7 +1536,7 @@ def min_cost_connect_points(points: list[list[int]]) -> int:
 
 #### 排序
 
-```python
+```python Python
 class Solution:
     def maximumProduct(self, nums: list[int]) -> int:
         return maximum_product(nums)
@@ -1549,7 +1549,7 @@ def maximum_product(nums: list[int]) -> int:
 
 #### 扫描
 
-```python
+```python Python
 class Solution:
     def maximumProduct(self, nums: list[int]) -> int:
         return maximum_product(nums)
@@ -1623,7 +1623,7 @@ def maximum_product(nums: list[int]) -> int:
 
 #### 列表
 
-```python
+```python Python
 class Solution:
     def addToArrayForm(self, A: list[int], K: int) -> list[int]:
         return add_to_array_form(A, K)
@@ -1642,7 +1642,7 @@ def add_to_array_form(a: list[int], k: int) -> list[int]:
 
 #### 双端队列
 
-```python
+```python Python
 class Solution:
     def addToArrayForm(self, A: list[int], K: int) -> list[int]:
         return add_to_array_form(A, K)
@@ -1709,7 +1709,7 @@ def add_to_array_form(a: list[int], k: int) -> list[int]:
 
 并查集。每次操作可合并两个连通分支，结果即连通分支数减一；若线缆数少于 `n - 1`，则线缆数量不足。
 
-```python
+```python Python
 class Solution:
     def makeConnected(self, n: int, connections: list[list[int]]) -> int:
         return make_connected(n, connections)
@@ -1763,7 +1763,7 @@ def make_connected(n: int, connections: list[list[int]]) -> int:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def findLengthOfLCIS(self, nums: list[int]) -> int:
         return find_length_of_lcis(nums)
@@ -1845,7 +1845,7 @@ def find_length_of_lcis(nums: list[int]) -> int:
 
 并查集。共 $N+1$ 个格点，起始时边缘格点处于同一连通分支。遍历所有方格：若出现斜线连接的格点已经处于同一连通分支，则证明格点出现闭环，结果将多划分出一个区域；否则将格点合并。
 
-```python
+```python Python
 class Solution:
     def regionsBySlashes(self, grid: list[str]) -> int:
         return regions_by_slashes(grid)
@@ -1906,7 +1906,7 @@ def regions_by_slashes(grid: list[str]) -> int:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def numEquivDominoPairs(self, dominoes: list[list[int]]) -> int:
         return num_equiv_domino_pairs(dominoes)
@@ -1973,7 +1973,7 @@ Alice 和 Bob 共有一个无向图，其中包含 `n` 个节点和 `3` 种类�
 - 并查集，Kruscal。逆向思维，向空图添加边，优先使用公共边；
 - 提前退出。
 
-```python
+```python Python
 class Solution:
     def maxNumEdgesToRemove(self, n: int, edges: list[list[int]]) -> int:
         return max_num_edges_to_remove(n, edges)
@@ -2043,7 +2043,7 @@ def max_num_edges_to_remove(n: int, edges: list[list[int]]) -> int:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def pivotIndex(self, nums: list[int]) -> int:
         return pivot_index(nums)
@@ -2102,7 +2102,7 @@ def pivot_index(nums: list[int]) -> int:
 
 #### 排序并查集
 
-```python
+```python Python
 class Solution:
     def minimumEffortPath(self, heights: list[list[int]]) -> int:
         return minimum_effort_path(heights)
@@ -2138,7 +2138,7 @@ def minimum_effort_path(heights: list[list[int]]) -> int:
 
 #### 堆并查集
 
-```python
+```python Python
 class Solution:
     def minimumEffortPath(self, heights: list[list[int]]) -> int:
         return minimum_effort_path(heights)
@@ -2225,7 +2225,7 @@ def minimum_effort_path(heights: list[list[int]]) -> int:
 
 可仿照[上题](#leetcode-1631)。
 
-```python
+```python Python
 class Solution:
     def swimInWater(self, grid: list[list[int]]) -> int:
         return swim_in_water(grid)
@@ -2301,7 +2301,7 @@ def swim_in_water(heights: list[list[int]]) -> int:
 
 并查集。
 
-```python
+```python Python
 class Solution:
     def numSimilarGroups(self, strs: list[str]) -> int:
         return num_similar_groups(strs)

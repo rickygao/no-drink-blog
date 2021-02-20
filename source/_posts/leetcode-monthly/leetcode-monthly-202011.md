@@ -40,7 +40,7 @@ mathjax: true
 
 #### 递归
 
-```python
+```python Python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -77,7 +77,7 @@ def tree_height(root: TreeNode) -> int:
 
 #### 迭代
 
-```python
+```python Python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -178,7 +178,7 @@ def tree_height(root: TreeNode) -> int:
 
 桶计数，往复遍历。
 
-```python
+```python Python
 class Solution:
     def sortString(self, s: str) -> str:
         return sort_string(s)
@@ -229,7 +229,7 @@ def sort_string(s: str) -> str:
 
 索引反查字典。
 
-```python
+```python Python
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:
         return two_sum(nums, target)
@@ -268,7 +268,7 @@ def two_sum(nums: list[int], target: int) -> list[int]:
 
 给出了一个通用的解，可以传入任意多个数。
 
-```python
+```python Python
 # Definition for singly-linked list.
 # class ListNode:
 #     def __init__(self, val=0, next=None):
@@ -333,7 +333,7 @@ def add_numbers(*heads: list[ListNode]) -> ListNode:
 - `[i, j]` 滑动窗口；
 - 利用字典进行 `i` 跳跃。
 
-```python
+```python Python
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
         return length_of_longest_substring(s)
@@ -384,7 +384,7 @@ def length_of_longest_substring(s: str) -> int:
 
 #### 排序
 
-```python
+```python Python
 class Solution:
     def maximumGap(self, nums: list[int]) -> int:
         return maximum_gap(nums)
@@ -400,7 +400,7 @@ def maximum_gap(nums: list[int]) -> int:
 
 记整数列表的长度为 $l$，最小值和最大值分别为 $m$、$n$。则桶的大小为 $s=\frac{n-m}{l-1}$，第 $i$ 个桶容纳 $[m+is,m+(i+1)s)$，可保证最大间距不会出现在桶内。
 
-```python
+```python Python
 class Solution:
     def maximumGap(self, nums: list[int]) -> int:
         return maximum_gap(nums)
@@ -460,7 +460,7 @@ def maximum_gap(nums: list[int]) -> int:
 
 双指针，一个向后遍历，一个向前遍历，找到每一个需要交换的数对。
 
-```python
+```python Python
 class Solution:
     def sortArrayByParity(self, A: list[int]) -> list[int]:
         return sort_array_by_parity(A)
@@ -510,7 +510,7 @@ def sort_array_by_parity(l: list[int]) -> list[int]:
 
 双指针，一个遍历偶数位置，一个遍历奇数位置，找到每一个需要交换的数对。
 
-```python
+```python Python
 class Solution:
     def sortArrayByParityII(self, A: list[int]) -> list[int]:
         return sort_array_by_parity_ii(A)
@@ -575,7 +575,7 @@ def sort_array_by_parity_ii(l: list[int]) -> list[int]:
 
 数学题。
 
-```python
+```python Python
 class Solution:
     def angleClock(self, hour: int, minutes: int) -> float:
         return angle_clock(hour, minutes)
@@ -624,7 +624,7 @@ def angle_clock(hour: int, minutes: int) -> float:
 
 字典计数，记录出现区间。频次最大的数的出现区间中长度最短的即为所求。
 
-```python
+```python Python
 class Solution:
     def findShortestSubArray(self, nums: list[int]) -> int:
         return find_shortest_sub_array(nums)
@@ -712,7 +712,7 @@ pub fn find_shortest_sub_array(nums: &[i32]) -> usize {
 
 二分计数查找。
 
-```python
+```python Python
 class Solution:
     def fourSumCount(self, A: list[int], B: list[int], C: list[int], D: list[int]) -> int:
         return sum_count(A, B, C, D)
@@ -755,7 +755,7 @@ def sum_count(A: list[int], B: list[int], C: list[int], D: list[int]) -> int:
 
 #### 线性查找
 
-```python
+```python Python
 class Solution:
     def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
         return insert(intervals, newInterval)
@@ -784,7 +784,7 @@ def insert(intervals: list[list[int]], new_interval: list[int]) -> list[list[int
 
 #### 二分查找
 
-```python
+```python Python
 class Solution:
     def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
         return insert(intervals, newInterval)
@@ -823,7 +823,7 @@ def insert(intervals: list[list[int]], new_interval: list[int]) -> list[list[int
 
 #### 二分查找（原地）
 
-```python
+```python Python
 class Solution:
     def insert(self, intervals: list[list[int]], newInterval: list[int]) -> list[list[int]]:
         return insert(intervals, newInterval)
@@ -890,7 +890,7 @@ def insert(intervals: list[list[int]], new_interval: list[int]) -> list[list[int
 
 #### 二分查找
 
-```python
+```python Python
 class Solution:
     def reversePairs(self, nums: list[int]) -> int:
         return reverse_pairs(nums)
@@ -910,7 +910,7 @@ def reverse_pairs(nums: list[int]) -> int:
 - 离散化；
 - 树状数组。
 
-```python
+```python Python
 class Solution:
     def reversePairs(self, nums: list[int]) -> int:
         return reverse_pairs(nums)
@@ -984,7 +984,7 @@ def reverse_pairs(nums: list[int]) -> int:
 
 排序，动态规划。`m[j]` 表示前 `j` 个球员进行组合且第 `j` 个球员出场的最高得分。
 
-```python
+```python Python
 class Solution:
     def bestTeamScore(self, scores: list[int], ages: list[int]) -> int:
         return best_team_score(scores, ages)
@@ -1041,7 +1041,7 @@ def best_team_score(scores: list[int], ages: list[int]) -> int:
 
 排序，贪心。对于每条边 `a`，如果以该边为最长边，则最有可能形成合法三角形且周长最大的是 `b`、`c` 选取策略是一致的，即选取次长的两条边。
 
-```python
+```python Python
 class Solution:
     def largestPerimeter(self, A: list[int]) -> int:
         return largest_perimeter(A)
@@ -1095,7 +1095,7 @@ def largest_perimeter(sides: list[int]) -> int:
 
 #### 递归
 
-```python
+```python Python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -1119,7 +1119,7 @@ def is_same_tree(p: TreeNode, q: TreeNode) -> bool:
 
 #### 迭代
 
-```python
+```python Python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -1177,7 +1177,7 @@ def is_same_tree(t1: TreeNode, t2: TreeNode) -> bool:
 - 不可行的充要条件是最大出现次数大于长度的一半向上取整；
 - 贪心。先填充奇数位置，再填充偶数位置。
 
-```python
+```python Python
 class Solution:
     def reorganizeString(self, S: str) -> str:
         return reorganize_string(S)
@@ -1258,7 +1258,7 @@ def reorganize_string(s: str) -> str:
 
 #### 暴力
 
-```python
+```python Python
 class Solution:
     def containsPattern(self, arr: list[int], m: int, k: int) -> bool:
         return contains_pattern(arr, m, k)
@@ -1269,7 +1269,7 @@ def contains_pattern(arr: list[int], m: int, k: int) -> bool:
 
 #### 优化
 
-```python
+```python Python
 class Solution:
     def containsPattern(self, arr: list[int], m: int, k: int) -> bool:
         return contains_pattern(arr, m, k)
@@ -1311,7 +1311,7 @@ def contains_pattern(arr: list[int], m: int, k: int) -> bool:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def letterCombinations(self, digits: str) -> list[str]:
         return letter_combinations(digits)

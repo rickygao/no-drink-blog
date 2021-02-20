@@ -50,7 +50,7 @@ mathjax: true
 
 二分查找。
 
-```python
+```python Python
 class Solution:
     def searchRange(self, nums: list[int], target: int) -> list[int]:
         return search_range(nums, target)
@@ -105,7 +105,7 @@ def search_range(nums: list[int], target: int) -> list[int]:
 - 二分缩小问题；
 - 记忆化。
 
-```python
+```python Python
 class Solution:
     def countVowelStrings(self, n: int) -> int:
         return count_vowel_strings(n, 5)
@@ -130,7 +130,7 @@ def count_vowel_strings(n: int, v: int) -> int:
 
 数学题。$\binom{n+4}{4}$，即为 `n + 4` 个空位安置 `4` 个挡板，从而将 `n` 个空位划分为 `5` 组连续空位，分别装填 `(a, e, i, o, u)`。
 
-```python
+```python Python
 class Solution:
     def countVowelStrings(self, n: int) -> int:
         return count_vowel_strings(n, 5)
@@ -143,7 +143,7 @@ def count_vowel_strings(n: int, v: int) -> int:
 
 #### 查表
 
-```python
+```python Python
 TABLE = [
     1, 5, 15, 35, 70, 126, 210, 330, 495, 715, 1001,
     1365, 1820, 2380, 3060, 3876, 4845, 5985, 7315, 8855, 10626,
@@ -191,7 +191,7 @@ class Solution:
 
 计数，排序，生成字符串。
 
-```python
+```python Python
 class Solution:
     def frequencySort(self, s: str) -> str:
         return frequency_sort(s)
@@ -238,7 +238,7 @@ def frequency_sort(s: str) -> str:
 - 分治；
 - 单调栈。
 
-```python
+```python Python
 class Solution:
     def maxNumber(self, nums1: list[int], nums2: list[int], k: int) -> list[int]:
         return max_number(nums1, nums2, k)
@@ -301,7 +301,7 @@ def _merge(seq1: list[int], seq2: list[int]) -> list[int]:
 
 筛法。
 
-```python
+```python Python
 class Solution:
     def countPrimes(self, n: int) -> int:
         return count_primes(n)
@@ -356,7 +356,7 @@ def count_primes(n: int) -> int:
 
 #### 递归
 
-```python
+```python Python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -382,7 +382,7 @@ def is_symmetric(t1: TreeNode, t2: TreeNode) -> bool:
 
 #### 迭代
 
-```python
+```python Python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -450,7 +450,7 @@ def is_symmetric(t1: TreeNode, t2: TreeNode) -> bool:
 
 贪心策略：优先考虑最短的序列，如无合适的序列则新建。
 
-```python
+```python Python
 class Solution:
     def isPossible(self, nums: list[int]) -> bool:
         return is_possible(nums)
@@ -472,7 +472,7 @@ def is_possible(nums: list[int]) -> bool:
 - `s1`、`s2`、`s3` 分别代表长度为 `1`、长度为 `2`、长度大于等于 `3` 的末尾为 `prev` 的序列，存储它们的个数；
 - 贪心策略：优先满足 `s1`、`s2` 的增长需求，如无法满足则失败；然后满足 `s3` 的增长需求；最后再考虑新建序列。
 
-```python
+```python Python
 class Solution:
     def isPossible(self, nums: list[int]) -> bool:
         return is_possible(nums)
@@ -536,7 +536,7 @@ def is_possible(nums: list[int]) -> bool:
 - 通过 `s[-1] < a_j` 的条件为 `a_k` 赋值，保证了对于一个尽量大的 `a_k` 会存在 `a_j` 比它更大；
 - 只需存在一个 `a_i < a_k` 小，即可断言成功。
 
-```python
+```python Python
 class Solution:
     def find132pattern(self, nums: list[int]) -> bool:
         return find_132_pattern(nums)
@@ -600,7 +600,7 @@ def find_132_pattern(nums: list[int]) -> bool:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def leastInterval(self, tasks: list[str], n: int) -> int:
         return least_interval(tasks, n)
@@ -644,7 +644,7 @@ def least_interval(tasks: list[str], n: int) -> int:
 
 不如来写一个生成器吧！
 
-```python
+```python Python
 class Solution:
     def generate(self, numRows: int) -> list[list[int]]:
         return pascals_triangle(numRows)
@@ -701,7 +701,7 @@ def generate_pascals_triangle() -> Iterator[list[int]]:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def isUgly(self, num: int) -> bool:
         return is_ugly(num)
@@ -744,7 +744,7 @@ def is_ugly(num: int) -> bool:
 
 数学题。所有 `k` 位数的数字总个数为 $9k\times{10}^{k-1}$，用 `m` 代表 $9\times{10}^{k-1}$。找到第 `n` 个数字位于整数 `t` 的自低位起的第 `i` 个十进制位（`i` 从 `0` 计起）。
 
-```python
+```python Python
 class Solution:
     def findNthDigit(self, n: int) -> int:
         return find_nth_digit(n)
@@ -813,7 +813,7 @@ def find_nth_digit(n: int) -> int:
 
 计数，求交，相乘。
 
-```python
+```python Python
 class Solution:
     def numTriplets(self, nums1: list[int], nums2: list[int]) -> int:
         return num_triplets(nums1, nums2) + num_triplets(nums2, nums1)
@@ -859,7 +859,7 @@ def num_triplets(nums1: list[int], nums2: list[int]) -> int:
 
 #### 贪心
 
-```python
+```python Python
 class Solution:
     def matrixScore(self, A: list[list[int]]) -> int:
         return matrix_score(A)
@@ -884,7 +884,7 @@ def matrix_score(matrix: list[list[int]]) -> int:
 
 #### 优化
 
-```python
+```python Python
 class Solution:
     def matrixScore(self, A: list[list[int]]) -> int:
         return matrix_score(A)
@@ -959,7 +959,7 @@ def matrix_score(matrix: list[list[int]]) -> int:
 - 当确定了斐波那契数列的起始两项时，后续的项也就确定了，枚举测试即可；
 - 注意题目要求整数在 32 位有符号整数范围内。
 
-```python
+```python Python
 class Solution:
     def splitIntoFibonacci(self, S: str) -> list[int]:
         return split_into_fibonacci(S)
@@ -1026,7 +1026,7 @@ def split_into_fibonacci(s: str) -> list[int]:
 
 栈，每当括号闭合时翻转栈顶字符串并合并。
 
-```python
+```python Python
 class Solution:
     def reverseParentheses(self, s: str) -> str:
         return reverse_parentheses(s)
@@ -1074,7 +1074,7 @@ def reverse_parentheses(s: str) -> str:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def constructRectangle(self, area: int) -> list[int]:
         return construct_rectangle(area)
@@ -1130,7 +1130,7 @@ def construct_rectangle(area: int) -> list[int]:
 
 数学题，组合计数。共需行动 $m+n-2$ 步，其中 $m-1$ 步为向右移动，则有 $\binom{m+n-2}{m-1}$ 种选择。
 
-```python
+```python Python
 class Solution:
     def uniquePaths(self, m: int, n: int) -> int:
         return unique_paths(m, n)
@@ -1181,7 +1181,7 @@ def unique_paths(m: int, n: int) -> int:
 
 奇偶性相同的位置是等价的，只需求奇位置和偶位置的筹码数量的最小值。
 
-```python
+```python Python
 class Solution:
     def minCostToMoveChips(self, chips: list[int]) -> int:
         return min_cost_to_move_chips(chips)
@@ -1239,7 +1239,7 @@ def min_cost_to_move_chips(chips: list[int]) -> int:
 
 利用按位异或的对合性。
 
-```python
+```python Python
 class Solution:
     def missingNumber(self, nums: list[int]) -> int:
         return missing_number(nums)
@@ -1309,7 +1309,7 @@ def missing_number(nums: list[int]) -> int:
 
 #### 通用贪心
 
-```python
+```python Python
 class Solution:
     def lemonadeChange(self, bills: list[int]) -> bool:
         return lemonade_change(bills)
@@ -1336,7 +1336,7 @@ def lemonade_change(bills: list[int]) -> bool:
 
 `20` 美元无法用于找零。
 
-```python
+```python Python
 class Solution:
     def lemonadeChange(self, bills: list[int]) -> bool:
         return lemonade_change(bills)
@@ -1410,7 +1410,7 @@ Dota2 参议院由来自两派的参议员组成。现在参议院希望对一�
 
 贪心。每个参议员选择禁止当前最先要投票的敌方参议员的权利，直到有一方全部被禁止。
 
-```python
+```python Python
 class Solution:
     def predictPartyVictory(self, senate: str) -> str:
         return predict_party_victory(senate)
@@ -1460,7 +1460,7 @@ def predict_party_victory(senate: str) -> str:
 
 栈。每一字符与栈顶消重。是 [1209. 删除字符串中的所有相邻重复项 II](#leetcode-1209)的特化。
 
-```python
+```python Python
 class Solution:
     def removeDuplicates(self, S: str) -> str:
         return remove_duplicates(S)
@@ -1499,7 +1499,7 @@ def remove_duplicates(s: str) -> str:
 
 层次遍历。
 
-```python
+```python Python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -1552,7 +1552,7 @@ def level_order(root: TreeNode) -> list[list[int]]:
 
 层次遍历。奇数层翻转。
 
-```python
+```python Python
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, x):
@@ -1622,7 +1622,7 @@ def zigzag_level_order(root: TreeNode) -> list[list[int]]:
 
 贪心。统计波峰、波谷数量。
 
-```python
+```python Python
 class Solution:
     def wiggleMaxLength(self, nums: list[int]) -> int:
         return wiggle_max_length(nums)
@@ -1692,7 +1692,7 @@ def wiggle_max_length(nums: list[int]) -> int:
 
 贪心。
 
-```python
+```python Python
 class Solution:
     def minSetSize(self, arr: list[int]) -> int:
         return min_set_size(arr)
@@ -1745,7 +1745,7 @@ def min_set_size(arr: list[int]) -> int:
 
 排序，最大差值。
 
-```python
+```python Python
 class Solution:
     def maxWidthOfVerticalArea(self, points: list[list[int]]) -> int:
         return max_width_of_vertical_area(points)
@@ -1794,7 +1794,7 @@ def max_width_of_vertical_area(points: list[list[int]]) -> int:
 
 数学题。
 
-```python
+```python Python
 class Solution:
     def nthPersonGetsNthSeat(self, n: int) -> float:
         return nth_person_gets_nth_seat(n)
@@ -1834,7 +1834,7 @@ def nth_person_gets_nth_seat(n: int) -> float:
 
 #### 高效
 
-```python
+```python Python
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
         return contains_duplicate(nums)
@@ -1850,7 +1850,7 @@ def contains_duplicate(nums: list[int]) -> bool:
 
 #### 简洁
 
-```python
+```python Python
 class Solution:
     def containsDuplicate(self, nums: list[int]) -> bool:
         return contains_duplicate(nums)
@@ -1897,7 +1897,7 @@ def contains_duplicate(nums: list[int]) -> bool:
 
 计数。
 
-```python
+```python Python
 class Solution:
     def countCharacters(self, words: list[str], chars: str) -> int:
         return count_characters(words, chars)
@@ -1943,7 +1943,7 @@ def count_characters(words: list[str], chars: str) -> int:
 
 反查位置。
 
-```python
+```python Python
 class Solution:
     def relativeSortArray(self, arr1: list[int], arr2: list[int]) -> list[int]:
         return relative_sort_array(arr1, arr2)
@@ -1991,7 +1991,7 @@ def relative_sort_array(arr1: list[int], arr2: list[int]) -> list[int]:
 
 #### 通用计数
 
-```python
+```python Python
 class Solution:
     def majorityElement(self, nums: list[int]) -> list[int]:
         return majority_element(nums, 3)
@@ -2007,7 +2007,7 @@ def majority_element(nums: list[int], f: int) -> list[int]:
 
 #### 通用摩尔投票
 
-```python
+```python Python
 class Solution:
     def majorityElement(self, nums: list[int]) -> list[int]:
         return majority_element(nums, 3)
@@ -2042,7 +2042,7 @@ def majority_element(nums: list[int], f: int) -> list[int]:
 
 #### 特化摩尔投票
 
-```python
+```python Python
 class Solution:
     def majorityElement(self, nums: list[int]) -> list[int]:
         return majority_element(nums)
@@ -2122,7 +2122,7 @@ def majority_element(nums: list[int]) -> list[int]:
 
 #### 模拟
 
-```python
+```python Python
 class Solution:
     def numberOfMatches(self, n: int) -> int:
         return number_of_matches(n)
@@ -2139,7 +2139,7 @@ def number_of_matches(n: int) -> int:
 
 每场比赛淘汰一支队伍，共淘汰 `n - 1` 支队伍，故需进行 `n - 1` 场比赛。
 
-```python
+```python Python
 class Solution:
     def numberOfMatches(self, n: int) -> int:
         return number_of_matches(n)
@@ -2186,7 +2186,7 @@ def number_of_matches(n: int) -> int:
 
 只需找到最大的十进制数字。
 
-```python
+```python Python
 class Solution:
     def minPartitions(self, n: str) -> int:
         return min_partitions(n)
@@ -2222,7 +2222,7 @@ def min_partitions(n: str) -> int:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def intersection(self, nums1: list[int], nums2: list[int]) -> list[int]:
         return intersection(nums1, nums2)
@@ -2266,7 +2266,7 @@ def intersection(nums1: list[int], nums2: list[int]) -> list[int]:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def generateTheString(sel，n: int) -> str:
         return generate_the_string(n)
@@ -2308,7 +2308,7 @@ def generate_the_string(n: int) -> str:
 
 贪心，质因数分解。对于 $n=\prod_i f_i$，其中 $f_i$ 是质数，需要 $\sum_i f_i$ 次操作，即 $\prod_i (\mathrm{Copy\ All})(\mathrm{Paste})^{f_i-1}$。
 
-```python
+```python Python
 class Solution:
     def minSteps(self, n: int) -> int:
         return min_steps(n)
@@ -2349,7 +2349,7 @@ def min_steps(n: int) -> int:
 
 有序字符串作为键。
 
-```python
+```python Python
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         return group_anagrams(strs)
@@ -2368,7 +2368,7 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
 
 计数元组作为键。
 
-```python
+```python Python
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         return group_anagrams(strs)
@@ -2389,7 +2389,7 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
 
 利用质数因数分解设计次序不敏感的键。
 
-```python
+```python Python
 class Solution:
     def groupAnagrams(self, strs: list[str]) -> list[list[str]]:
         return group_anagrams(strs)
@@ -2442,7 +2442,7 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
 
 如果 `N` 不满足要求，则结果应为以若干 `9` 结尾的整数，位于破坏单调性的首个位置之前的不会破坏单调性的首个可退位之后；可退位进行退位；之前的位保留。
 
-```python
+```python Python
 class Solution:
     def monotoneIncreasingDigits(sel，N: int) -> int:
         return monotone_increasing_digits(N)
@@ -2507,7 +2507,7 @@ def monotone_increasing_digits(n: int) -> int:
 
 两个字典记录双射。
 
-```python
+```python Python
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:
         return wrod_pattern(pattern, s)
@@ -2566,7 +2566,7 @@ def wrod_pattern(pattern: str, s: str) -> bool:
 
 贪心。构造形如 `AmZ` 的串，`A` 由 `'a'` 组成，`Z` 由 `'z'` 组成，`m` 是某个小写字母。
 
-```python
+```python Python
 class Solution:
     def getSmallestString(self, n: int, k: int) -> str:
         return get_smallest_string(n, k)
@@ -2616,7 +2616,7 @@ def get_smallest_string(n: int, k: int) -> str:
 
 动态规划。`cl`、`op` 分别记录平仓或持仓的情况下迄今的最大盈利。
 
-```python
+```python Python
 class Solution:
     def maxProfit(self, prices: list[int], fee: int) -> int:
         return max_profit(prices, fee)
@@ -2658,7 +2658,7 @@ def max_profit(prices: list[int], fee: int) -> int:
 
 最通用。
 
-```python
+```python Python
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
@@ -2671,7 +2671,7 @@ def single_number(nums: list[int]) -> int:
 
 #### 求和
 
-```python
+```python Python
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
@@ -2684,7 +2684,7 @@ def single_number(nums: list[int]) -> int:
 
 `once`、`twice` 记录了出现次数为模三余一和二的二进制位。空间复杂度为常数级。
 
-```python
+```python Python
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
@@ -2727,7 +2727,7 @@ def single_number(nums: list[int]) -> int:
 
 最通用。
 
-```python
+```python Python
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
@@ -2740,7 +2740,7 @@ def single_number(nums: list[int]) -> int:
 
 #### 求和
 
-```python
+```python Python
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
@@ -2753,7 +2753,7 @@ def single_number(nums: list[int]) -> int:
 
 利用按位异或的对合性。
 
-```python
+```python Python
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:
         return single_number(nums)
@@ -2809,7 +2809,7 @@ def single_number(nums: list[int]) -> int:
 
 #### 计数
 
-```python
+```python Python
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
         return find_the_difference(s, t)
@@ -2823,7 +2823,7 @@ def find_the_difference(s: str, t: str) -> str:
 
 #### 求和
 
-```python
+```python Python
 class Solution:
     def findTheDifference(self, s: str, t: str) -> str:
         return find_the_difference(s, t)
@@ -2860,7 +2860,7 @@ canConstruct("aa", "aab") -> true
 
 #### 计数
 
-```python
+```python Python
 class Solution:
     def canConstruct(self, ransom: str, magazine: str) -> bool:
         return can_construct(ransom, magazine)
@@ -2899,7 +2899,7 @@ def can_construct(ransom: str, magazine: str) -> bool:
 
 #### 二分查找
 
-```python
+```python Python
 class Solution:
     def singleNonDuplicate(self, nums: list[int]) -> int:
         return single_non_duplicate(nums)
@@ -2962,7 +2962,7 @@ def single_non_duplicate(nums: list[int]) -> int:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def rotate(self, matrix: list[list[int]]) -> None:
         return rotate(matrix)
@@ -3023,7 +3023,7 @@ def rotate(matrix: list[list[int]]) -> None:
 
 栈。每一字符与栈顶消重。是 [1047. 删除字符串中的所有相邻重复项](#leetcode-1047)的推广。
 
-```python
+```python Python
 class Solution:
     def removeDuplicates(self, s: str, k: int) -> str:
         return remove_duplicates(s, k)
@@ -3079,7 +3079,7 @@ def remove_duplicates(s: str, k: int) -> str:
 
 双指针。
 
-```python
+```python Python
 class Solution:
     def reverseOnlyLetters(self, S: str) -> str:
         return reverse_only_letters(S)
@@ -3132,7 +3132,7 @@ def reverse_only_letters(s: str) -> str:
 
 贪心，单调栈。集合 `included` 记录已经加入到栈 `stack` 中的字符。如果栈顶字符 `top` 与当前字符 `c` 出现逆序 `top >= c`，且未来还有机会遇到栈顶字符，即 `remaining[top] > 0`，则不断出栈。
 
-```python
+```python Python
 class Solution:
     def removeDuplicateLetters(self, s: str) -> str:
         return remove_duplicate_letters(s)
@@ -3187,7 +3187,7 @@ def remove_duplicate_letters(s: str) -> str:
 
 动态规划。
 
-```python
+```python Python
 class Solution:
     def minCostClimbingStairs(self, cost: list[int]) -> int:
         return min_cost_climbing_stairs(cost)
@@ -3227,7 +3227,7 @@ def min_cost_climbing_stairs(cost: list[int]) -> int:
 
 计数，迭代。
 
-```python
+```python Python
 class Solution:
     def firstUniqChar(self, s: str) -> int:
         return first_unique_character(s)
@@ -3272,7 +3272,7 @@ def first_unique_character(s: str) -> int:
 
 #### 朴素贪心
 
-```python
+```python Python
 class Solution:
     def candy(self, ratings: list[int]) -> int:
         return candy(ratings)
@@ -3295,7 +3295,7 @@ def candy(ratings: list[int]) -> int:
 
 #### 优化贪心
 
-```python
+```python Python
 class Solution:
     def candy(self, ratings: list[int]) -> int:
         return candy(ratings)
@@ -3359,7 +3359,7 @@ def candy(ratings: list[int]) -> int:
 
 排序，贪心。使用最小的代价满足每个胃口小的孩子。
 
-```python
+```python Python
 class Solution:
     def findContentChildren(self, g: list[int], s: list[int]) -> int:
         return find_content_children(g, s)
@@ -3395,7 +3395,7 @@ def find_content_children(g: list[int], s: list[int]) -> int:
 
 单调栈。每次出栈都对应找到了一组 `(li, mh, ri)`，代表了一个高度为 `mh` 的柱，左右最近矮于它的柱的索引分别是 `li` 和 `ri`。从而确定了一个局部最大矩形，高度为 `mh`，宽度为左右矮柱所夹部分 `ri - li - 1`。
 
-```python
+```python Python
 class Solution:
     def largestRectangleArea(self, heights: list[int]) -> int:
         return largest_rectangle_area(heights)
@@ -3464,7 +3464,7 @@ def largest_rectangle_area(heights: list[int]) -> int:
 
 将矩阵逐行转化为柱状图，再利用 [84. 柱状图中最大的矩形](#leetcode-84)的方法求解。
 
-```python
+```python Python
 class Solution:
     def maximalRectangle(self, matrix: list[list[str]]) -> int:
         return maximal_rectangle(matrix)
@@ -3529,7 +3529,7 @@ def maximal_rectangle_histogram(heights: list[int]) -> int:
 
 #### 高效
 
-```python
+```python Python
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         return is_isomorphix(s, t)
@@ -3550,7 +3550,7 @@ def is_isomorphix(s: str, t: str) -> bool:
 
 #### 简洁
 
-```python
+```python Python
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
         return is_isomorphix(s, t)
@@ -3600,7 +3600,7 @@ def is_isomorphix(s: str, t: str) -> bool:
 
 ### 题解
 
-```python
+```python Python
 class Solution:
     def scoreOfParentheses(self, S: str) -> int:
         return score_of_parentheses(S)
@@ -3660,7 +3660,7 @@ def score_of_parentheses(s: str) -> int:
 - 动态规划。仿照 [123. 买卖股票的最佳时机 III](/leetcode-monthly-202101/#leetcode-123)和 [714. 买卖股票的最佳时机含手续费](#leetcode-714)，其中 `p[j * 2]` 表示最多进行 `j` 次交易且当前为空仓的利润，`p[j * 2 + 1]` 表示最多进行 `j` 次交易且当前为开仓的利润，这也暗示 `p[:(j + 1) * 2]` 可以完整地表示 `j` 次交易的最大利润；
 - 最多进行 `len(prices) // 2` 次有效的交易（买卖股票），故而可缩小总共需申请的状态空间。考虑第 `i` 支股票时，最多进行 `(i + 1) // 2` 次有效的交易，故而可缩小每次迭代需更新的状态空间。
 
-```python
+```python Python
 class Solution:
     def maxProfit(self, k: int, prices: list[int]) -> int:
         return max_profit(k, prices)
@@ -3710,7 +3710,7 @@ def max_profit(k: int, prices: list[int]) -> int:
 
 贪心。当区间 `[1, m)` 中的整数可以被表示时，可以利用 `k <= m` 的数进行扩张，从而表示区间 `[1, m + k)` 中的整数。当 `nums` 中没有合适的 `k` 时，最节省的扩张是直接补充 `m`，这样可以表示区间 `[1, 2 * m)` 中的整数，此时需要补充的个数 `r += 1`。
 
-```python
+```python Python
 class Solution:
     def minPatches(self, nums: list[int], n: int) -> int:
         return min_patches(nums, n)
@@ -3765,7 +3765,7 @@ def min_patches(nums: list[int], n: int) -> int:
 
 模拟。排序，二分插入。
 
-```python
+```python Python
 class Solution:
     def lastStoneWeight(self, stones: list[int]) -> int:
         return last_stone_weight(stones)
@@ -3786,7 +3786,7 @@ def last_stone_weight(stones: list[int]) -> int:
 
 模拟。最小堆。通过取负数转化成最小堆。
 
-```python
+```python Python
 class Solution:
     def lastStoneWeight(self, stones: list[int]) -> int:
         return last_stone_weight(stones)
@@ -3842,7 +3842,7 @@ def last_stone_weight(stones: list[int]) -> int:
 
 贪心。排序后即 $[a_1,b_1,a_2,b_2,\dots,a_n,b_n]$ 且 $a_i<b_i$，于是求 $\sum_{i=1}^na_i$ 即可。
 
-```python
+```python Python
 class Solution:
     def arrayPairSum(self, nums: list[int]) -> int:
         return array_pair_sum(nums)
@@ -3888,7 +3888,7 @@ def array_pair_sum(nums: list[int]) -> int:
 
 贪心。从 `intervals` 逐一选出能保留下来的区间，对于当前所有可以保留的区间，选择右端点最小的。
 
-```python
+```python Python
 class Solution:
     def eraseOverlapIntervals(self, intervals: list[list[int]]) -> int:
         return erase_overlap_intervals(intervals)
@@ -3942,7 +3942,7 @@ def erase_overlap_intervals(intervals: list[list[int]]) -> int:
 
 计数。
 
-```python
+```python Python
 class Solution:
     def numPairsDivisibleBy60(self, time: list[int]) -> int:
         return num_pairs_divisible_by_60(time)
