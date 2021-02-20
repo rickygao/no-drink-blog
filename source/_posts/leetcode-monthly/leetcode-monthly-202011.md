@@ -617,8 +617,8 @@ def angle_clock(hour: int, minutes: int) -> float:
 
 #### 注意
 
-- `1 <= len(nums) <= 50000`；
-- `0 <= nums[i] <= 49999`。
+- `1 <= len(nums) <= 5e4`；
+- `0 <= nums[i] < 5e4`。
 
 ### 题解
 
@@ -630,9 +630,7 @@ class Solution:
         return find_shortest_sub_array(nums)
 
 def find_shortest_sub_array(nums: list[int]) -> int:
-    counter = dict()
-    starts = dict()
-    stops = dict()
+    counter, starts, stops = {}, {}, {}
 
     for i, n in enumerate(nums):
         count = counter.get(n, 0)
@@ -649,6 +647,45 @@ def find_shortest_sub_array(nums: list[int]) -> int:
     ), default=0)
 
     return min_slice
+```
+
+```rust Rust
+impl Solution {
+    pub fn find_shortest_sub_array(nums: Vec<i32>) -> i32 {
+        find_shortest_sub_array(&nums) as i32
+    }
+}
+
+use std::collections::HashMap;
+
+pub fn find_shortest_sub_array(nums: &[i32]) -> usize {
+    let mut count_begin_end = HashMap::new();
+    nums.iter().enumerate().for_each(|(i, n)| {
+        count_begin_end
+            .entry(n)
+            .and_modify(|(c, _, e)| {
+                *c += 1;
+                *e = i;
+            })
+            .or_insert_with(|| (1, i, i));
+    });
+    let max_count = count_begin_end
+        .values()
+        .map(|(c, _, _)| *c)
+        .max()
+        .unwrap_or(0);
+    count_begin_end
+        .values()
+        .filter_map(|(c, b, e)| {
+            if *c == max_count {
+                Some(e - b + 1)
+            } else {
+                None
+            }
+        })
+        .min()
+        .unwrap_or(0)
+}
 ```
 
 ## 454. 四数相加 II{#leetcode-454}
