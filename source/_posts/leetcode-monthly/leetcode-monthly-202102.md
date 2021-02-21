@@ -1588,3 +1588,95 @@ def longest_ones(a: list[int], k: int) -> int:
         starts.append(i + 1)
     return m
 ```
+
+## 1438. 绝对差不超过限制的最长连续子数组{#leetcode-1438}
+
+[:link: 来源](https://leetcode-cn.com/problems/longest-continuous-subarray-with-absolute-diff-less-than-or-equal-to-limit/)
+
+### 题目
+
+给你一个整数数组 `nums`，和一个表示限制的整数 `limit`，请你返回最长连续子数组的长度，该子数组中的任意两个元素之间的绝对差必须小于或者等于 `limit`。
+
+如果不存在满足条件的子数组，则返回 `0`。
+
+#### 示例
+
+```raw
+输入：nums = [8, 2, 4, 7], limit = 4
+输出：2 
+解释：所有子数组如下：
+[8         ] 最大绝对差 abs(8 - 8) = 0 <= 4；
+[8, 2      ] 最大绝对差 abs(8 - 2) = 6 >  4； 
+[8, 2, 4   ] 最大绝对差 abs(8 - 2) = 6 >  4；
+[8, 2, 4, 7] 最大绝对差 abs(8 - 2) = 6 >  4；
+[   2      ] 最大绝对差 abs(2 - 2) = 0 <= 4；
+[   2, 4   ] 最大绝对差 abs(2 - 4) = 2 <= 4；
+[   2, 4, 7] 最大绝对差 abs(2 - 7) = 5 >  4；
+[      4   ] 最大绝对差 abs(4 - 4) = 0 <= 4；
+[      4, 7] 最大绝对差 abs(4 - 7) = 3 <= 4；
+[         7] 最大绝对差 abs(7 - 7) = 0 <= 4。
+因此，满足题意的最长子数组的长度为 2。
+```
+
+```raw
+输入：nums = [10, 1, 2, 4, 7, 2], limit = 5
+输出：4 
+解释：满足题意的最长子数组是 [2, 4, 7, 2]，其最大绝对差 abs(2 - 7) = 5 <= 5。
+```
+
+```raw
+输入：nums = [4, 2, 2, 2, 4, 4, 2, 2], limit = 0
+输出：3
+```
+
+#### 提示
+
+- `1 <= len(nums) <= 1e5`；
+- `1 <= nums[i] <= 1e9`；
+- `0 <= limit <= 1e9`。
+
+### 题解
+
+滑动窗口，单调队列。维护窗口内的最小值和最大值。
+
+```rust Rust
+impl Solution {
+    pub fn longest_subarray(nums: Vec<i32>, limit: i32) -> i32 {
+        longest_subarray(&nums, limit) as i32
+    }
+}
+
+use std::collections::VecDeque;
+
+pub fn longest_subarray<'a, T>(nums: &'a [T], limit: T) -> usize
+where
+    T: Ord,
+    &'a T: std::ops::Sub<Output = T>,
+{
+    let (mut mins, mut maxs) = (VecDeque::new(), VecDeque::new());
+    let (mut p, mut l) = (nums.iter(), 0);
+    for n in nums {
+        while mins.back().map_or(false, |&x| x > n) {
+            mins.pop_back();
+        }
+        while maxs.back().map_or(false, |&x| x < n) {
+            maxs.pop_back();
+        }
+        mins.push_back(n);
+        maxs.push_back(n);
+        let (&min, &max) = (mins.front().unwrap(), maxs.front().unwrap());
+        if max - min > limit {
+            let left = p.next().unwrap();
+            if min >= left {
+                mins.pop_front();
+            }
+            if max <= left {
+                maxs.pop_front();
+            }
+        } else {
+            l += 1;
+        }
+    }
+    l
+}
+```
