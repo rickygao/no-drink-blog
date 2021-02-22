@@ -1741,3 +1741,75 @@ where
         .all(|(r, s)| Iterator::zip(r.into_iter(), s.into_iter().skip(1)).all(|(m, n)| m == n))
 }
 ```
+
+## 1052. 爱生气的书店老板{#leetcode-1052}
+
+[:link: 来源](https://leetcode-cn.com/problems/grumpy-bookstore-owner/)
+
+### 题目
+
+今天，书店老板有一家店打算试营业 `len(customers)` 分钟。每分钟都有一些顾客（`customers[i]`）会进入书店，所有这些顾客都会在那一分钟结束后离开。
+
+在某些时候，书店老板会生气。如果书店老板在第 `i` 分钟生气，那么 `grumpy[i] = 1`，否则 `grumpy[i] = 0`。当书店老板生气时，那一分钟的顾客就会不满意，不生气则他们是满意的。
+
+书店老板知道一个秘密技巧，能抑制自己的情绪，可以让自己连续 `X` 分钟不生气，但却只能使用一次。
+
+请你返回这一天营业下来，最多有多少客户能够感到满意的数量。
+
+#### 示例
+
+```raw
+输入：customers = [1, 0, 1, 2, 1, 1, 7, 5], grumpy = [0, 1, 0, 1, 0, 1, 0, 1], X = 3
+输出：16
+解释：书店老板在最后 3 分钟保持冷静。感到满意的最大客户数量 = 1 + 1 + 1 + 1 + 7 + 5 = 16。
+```
+
+#### 提示
+
+- `1 <= X <= len(customers) == len(grumpy) <= 2e4`；
+- `0 <= customers[i] <= 1e3`;
+- `0 <= grumpy[i] <= 1`。
+
+### 题解
+
+滑动窗口。同时计算老板生气和时不生气时两种情况的顾客数。生气时的求最大窗口和，不生气时的全部保留。
+
+```rust Rust
+impl Solution {
+    pub fn max_satisfied(customers: Vec<i32>, grumpy: Vec<i32>, x: i32) -> i32 {
+        let customers = customers.into_iter().map(|e| e as usize).collect::<Vec<_>>();
+        let grumpy = grumpy.into_iter().map(|e| e == 1).collect::<Vec<_>>();
+        max_satisfied(&customers, &grumpy, x as usize) as i32
+    }
+}
+
+pub fn max_satisfied(customers: &[usize], grumpy: &[bool], x: usize) -> usize {
+    let (mut extra, mut base) = (0, 0);
+    Iterator::zip(customers[..x].iter(), grumpy[..x].iter()).for_each(|(&m, &g)| {
+        if g {
+            extra += m;
+        } else {
+            base += m;
+        }
+    });
+
+    let mut max = extra;
+    Iterator::zip(
+        Iterator::zip(customers.iter(), grumpy.iter()),
+        Iterator::zip(customers[x..].iter(), grumpy[x..].iter()),
+    )
+    .for_each(|((&m, &g), (&n, &h))| {
+        if g {
+            extra -= m;
+        }
+        if h {
+            extra += n;
+        } else {
+            base += n;
+        }
+        max = max.max(extra);
+    });
+
+    max + base
+}
+```
