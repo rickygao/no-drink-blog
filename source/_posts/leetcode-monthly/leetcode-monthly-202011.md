@@ -351,6 +351,30 @@ def length_of_longest_substring(s: str) -> int:
     return mlen
 ```
 
+```rust Rust
+impl Solution {
+    pub fn length_of_longest_substring(s: String) -> i32 {
+        length_of_longest_substring(&s) as i32
+    }
+}
+
+use std::collections::HashMap;
+
+pub fn length_of_longest_substring(s: &str) -> usize {
+    let mut window = HashMap::new();
+    let (mut i, mut max) = (0, 0);
+    for (j, c) in s.chars().enumerate() {
+        if let Some(p) = window.insert(c, j) {
+            if p >= i {
+                max = max.max(j - i);
+                i = p + 1;
+            }
+        }
+    }
+    max.max(s.len() - i)
+}
+```
+
 ## 164. 最大间距{#leetcode-164}
 
 [:link: 来源](https://leetcode-cn.com/problems/maximum-gap/)
