@@ -1927,3 +1927,71 @@ class Solution:
     def transpose(self, matrix: list[list[int]]) -> list[list[int]]:
         return list(map(list, zip(*matrix)))
 ```
+
+## 41. 缺失的第一个正数{#leetcode-41}
+
+[:link: 来源](https://leetcode-cn.com/problems/first-missing-positive/)
+
+### 题目
+
+给你一个未排序的整数数组 `nums`，请你找出其中没有出现的最小的正整数。
+
+#### 进阶
+
+你可以实现时间复杂度为 $\mathrm{O}(n)$ 并且只使用常数级别额外空间的解决方案吗？
+
+#### 示例
+
+```raw
+输入：nums = [1, 2, 0]
+输出：3
+```
+
+```raw
+输入：nums = [3, 4, -1, 1]
+输出：2
+```
+
+```raw
+输入：nums = [7, 8, 9, 11, 12]
+输出：1
+```
+
+#### 提示
+
+- `0 <= len(nums) <= 300`；
+- `-2 ** 31 <= nums[i] <= 2 ** 31 - 1`。
+
+### 题解
+
+不能，除非注明可以原地修改。
+
+```python Python
+class Solution:
+    def firstMissingPositive(self, nums: list[int]) -> int:
+        return first_missing_positive(nums)
+
+def first_missing_positive(nums: list[int]) -> int:
+    s, i = set(nums), 1
+    while i in s:
+        i += 1
+    return i
+```
+
+```rust Rust
+impl Solution {
+    pub fn first_missing_positive(nums: Vec<i32>) -> i32 {
+        first_missing_positive(&nums)
+    }
+}
+
+use std::collections::HashSet;
+
+pub fn first_missing_positive(nums: &[i32]) -> i32 {
+    let (s, mut i) = (nums.iter().collect::<HashSet<_>>(), 1);
+    while s.contains(&i) {
+        i += 1;
+    }
+    i
+}
+```
