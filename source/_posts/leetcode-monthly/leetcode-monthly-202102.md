@@ -1647,14 +1647,17 @@ impl Solution {
 }
 
 use std::collections::VecDeque;
+use std::ops::Sub;
 
-pub fn longest_subarray<'a, T>(nums: &'a [T], limit: T) -> usize
+pub fn longest_subarray<'a, E, I>(nums: &'a I, limit: E) -> usize
 where
-    T: Ord,
-    &'a T: std::ops::Sub<Output = T>,
+    E: 'a + Ord,
+    I: 'a + ?Sized,
+    &'a E: Sub<Output = E>,
+    &'a I: IntoIterator<Item = &'a E>,
 {
     let (mut mins, mut maxs) = (VecDeque::new(), VecDeque::new());
-    let (mut p, mut l) = (nums.iter(), 0);
+    let (mut p, mut l) = (nums.into_iter(), 0);
     for n in nums {
         while mins.back().map_or(false, |&x| x > n) {
             mins.pop_back();
@@ -1665,7 +1668,8 @@ where
         mins.push_back(n);
         maxs.push_back(n);
         let (&min, &max) = (mins.front().unwrap(), maxs.front().unwrap());
-        if max - min > limit {
+        let distance = max - min;
+        if distance > limit {
             let left = p.next().unwrap();
             if min >= left {
                 mins.pop_front();
@@ -1731,11 +1735,12 @@ impl Solution {
 
 pub fn is_toeplitz_matrix<'a, E, I, J>(matrix: &'a J) -> bool
 where
+    E: 'a + ?Sized,
+    I: 'a + ?Sized,
+    J: 'a + ?Sized,
     &'a E: Eq,
     &'a I: IntoIterator<Item = &'a E>,
     &'a J: IntoIterator<Item = &'a I>,
-    E: 'a,
-    I: 'a,
 {
     Iterator::zip(matrix.into_iter(), matrix.into_iter().skip(1))
         .all(|(r, s)| Iterator::zip(r.into_iter(), s.into_iter().skip(1)).all(|(m, n)| m == n))
