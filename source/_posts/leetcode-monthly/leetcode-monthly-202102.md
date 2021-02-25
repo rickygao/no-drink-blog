@@ -1995,3 +1995,81 @@ pub fn first_missing_positive(nums: &[i32]) -> i32 {
     i
 }
 ```
+
+## 1178. 猜字谜{#leetcode-1178}
+
+[:link: 来源](https://leetcode-cn.com/problems/number-of-valid-words-for-each-puzzle/)
+
+### 题目
+
+外国友人仿照中国字谜设计了一个英文版猜字谜小游戏，请你来猜猜看吧。
+
+字谜的迷面 `puzzle` 按字符串形式给出，如果一个单词 `word` 符合下面两个条件，那么它就可以算作谜底：
+
+- 单词 `word` 中包含谜面 `puzzle` 的第一个字母。
+- 单词 `word` 中的每一个字母都可以在谜面 `puzzle` 中找到。例如，如果字谜的谜面是 `"abcdefg"`，那么可以作为谜底的单词有 `"faced"`、`"cabbage"` 和 `"baggage"`；而 `"beefed"`（不含字母 `'a'`）以及 `"based"`（其中的 `'s'` 没有出现在谜面中）。
+
+返回一个答案数组 `answer`，数组中的每个元素 `answer[i]` 是在给出的单词列表 `words` 中可以作为字谜迷面 `puzzles[i]` 所对应的谜底的单词数目。
+
+#### 示例
+
+```raw
+输入：words = ["aaaa", "asas", "able", "ability", "actt", "actor", "access"], puzzles = ["aboveyz", "abrodyz", "abslute", "absoryz", "actresz", "gaswxyz"]
+输出：[1, 1, 3, 2, 4, 0]
+解释：
+1 个单词可以作为 "aboveyz" 的谜底："aaaa"；
+1 个单词可以作为 "abrodyz" 的谜底："aaaa"；
+3 个单词可以作为 "abslute" 的谜底："aaaa"、"asas"、"able"；
+2 个单词可以作为 "absoryz" 的谜底："aaaa"、"asas"；
+4 个单词可以作为 "actresz" 的谜底："aaaa"、"asas"、"actt"、"access"；
+没有单词可以作为 "gaswxyz" 的谜底，因为列表中的单词都不含字母 'g'。
+```
+
+#### 提示
+
+- `1 <= len(words) <= 1e5`；
+- `4 <= len(words[i]) <= 50`；
+- `1 <= len(puzzles) <= 1e4`；
+- `len(puzzles[i]) == 7`；
+- `words[i][j]`、`puzzles[i][j]` 都是小写英文字母。
+- 每个 `puzzles[i]` 所包含的字符都不重复。
+
+### 题解
+
+位集。只利用了字符串仅包含小写英文字母的限制。
+
+```rust Rust
+impl Solution {
+    pub fn find_num_of_valid_words(words: Vec<String>, puzzles: Vec<String>) -> Vec<i32> {
+        find_num_of_valid_words(
+            &words.iter().map(String::as_str).collect::<Vec<_>>(),
+            &puzzles.iter().map(String::as_str).collect::<Vec<_>>(),
+        )
+        .into_iter()
+        .map(|e| e as i32)
+        .collect()
+    }
+}
+
+pub fn find_num_of_valid_words(words: &[&str], puzzles: &[&str]) -> Vec<usize> {
+    fn into_mask(a: u8) -> u32 {
+        1 << (a - b'a')
+    }
+    fn into_set(s: &str) -> u32 {
+        s.bytes().fold(0, |s, c| s | into_mask(c))
+    }
+    let words: Vec<u32> = words.iter().copied().map(into_set).collect();
+    puzzles
+        .iter()
+        .copied()
+        .map(|puzzle| (into_mask(puzzle.as_bytes()[0]), into_set(puzzle)))
+        .map(|(first_mask, puzzle)| {
+            words
+                .iter()
+                .copied()
+                .filter(|&word| word & puzzle == word | first_mask)
+                .count()
+        })
+        .collect()
+}
+```
