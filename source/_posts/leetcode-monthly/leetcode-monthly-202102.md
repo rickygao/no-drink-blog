@@ -1874,3 +1874,51 @@ impl Solution {
     }
 }
 ```
+
+## 867. 转置矩阵{#leetcode-867}
+
+[:link: 来源](https://leetcode-cn.com/problems/transpose-matrix/)
+
+### 题目
+
+给你一个二维整数数组 `matrix`，返回 `matrix` 的**转置矩阵**。
+
+矩阵的**转置**是指将矩阵的主对角线翻转，交换矩阵的行索引与列索引。
+
+#### 示例
+
+```raw
+输入：matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+输出：[[1, 4, 7], [2, 5, 8], [3, 6, 9]]
+```
+
+```raw
+输入：matrix = [[1, 2, 3], [4, 5, 6]]
+输出：[[1, 4], [2, 5], [3, 6]]
+```
+
+#### 提示
+
+- `m == len(matrix)`；
+- `n == len(matrix[i])`；
+- `1 <= m, n <= 1e3`；
+- `1 <= m * n <= 1e5`；
+- `-1e9 <= matrix[i][j] <= 1e9`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn transpose(matrix: Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+        (0..matrix.first().map_or(0, |r| r.len()))
+            .map(|c| matrix.iter().map(|r| r[c]).collect())
+            .collect()
+    }
+}
+```
+
+```python Python
+class Solution:
+    def transpose(self, matrix: list[list[int]]) -> list[list[int]]:
+        return list(map(list, zip(*matrix)))
+```
