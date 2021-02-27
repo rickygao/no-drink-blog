@@ -2073,3 +2073,60 @@ pub fn find_num_of_valid_words(words: &[&str], puzzles: &[&str]) -> Vec<usize> {
         .collect()
 }
 ```
+
+## 395. 至少有K个重复字符的最长子串{#leetcode-395}
+
+[:link: 来源](https://leetcode-cn.com/problems/longest-substring-with-at-least-k-repeating-characters/)
+
+### 题目
+
+找到给定字符串（由小写字符组成）中的最长子串 `T`，要求 `T` 中的每一字符出现次数都不少于 `k`。输出 `T` 的长度。
+
+#### 示例
+
+```raw
+输入：s = "aaabb", k = 3
+输出：3
+解释：最长子串为 "aaa"，其中 'a' 重复了 3 次。
+```
+
+```raw
+输入：s = "ababbc", k = 2
+输出：5
+解释：最长子串为 "ababb"，其中 'a' 重复了 2 次，'b' 重复了 3 次。
+```
+
+### 题解
+
+分治。满足性质的最长字串不会跨越破坏性质的字符，于是以破坏性质的字符为界限，分而治之。
+
+```rust Rust
+impl Solution {
+    pub fn longest_substring(s: String, k: i32) -> i32 {
+        longest_substring(&s, k as usize) as i32
+    }
+}
+
+use std::collections::HashMap;
+
+pub fn longest_substring(s: &str, k: usize) -> usize {
+    let mut counter = HashMap::new();
+    for c in s.chars() {
+        *counter.entry(c).or_insert(0) += 1;
+    }
+
+    let pattern = counter
+        .into_iter()
+        .filter_map(|(c, n)| if n < k { Some(c) } else { None })
+        .collect::<Vec<_>>();
+
+    if pattern.is_empty() {
+        return s.chars().count();
+    }
+
+    s.split(pattern.as_slice())
+        .map(|ss| longest_substring(ss, k))
+        .max()
+        .unwrap()
+}
+```
