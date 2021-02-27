@@ -2130,3 +2130,73 @@ pub fn longest_substring(s: &str, k: usize) -> usize {
         .unwrap()
 }
 ```
+
+## 896. 单调数列{#leetcode-896}
+
+[:link: 来源](https://leetcode-cn.com/problems/monotonic-array/)
+
+### 题目
+
+如果数组是单调递增或单调递减的，那么它是单调的。
+
+如果对于所有 `i <= j`，`A[i] <= A[j]`，那么数组 `A` 是单调递增的。 如果对于所有 `i <= j`，`A[i] >= A[j]`，那么数组 `A` 是单调递减的。
+
+当给定的数组 `A` 是单调数组时返回 `true`，否则返回 `false`。
+
+#### 示例
+
+```raw
+输入：[1, 2, 2, 3]
+输出：true
+```
+
+```raw
+输入：[6, 5, 4, 4]
+输出：true
+```
+
+```raw
+输入：[1, 3, 2]
+输出：false
+```
+
+```raw
+输入：[1, 2, 4, 5]
+输出：true
+```
+
+```raw
+输入：[1, 1, 1]
+输出：true
+```
+
+#### 提示
+
+- `1 <= len(A) <= 5e4`；
+- `-1e5 <= A[i] <= 1e5`。
+
+### 题解
+
+利用 `[T]::windows`、`Iterator::try_fold`、`PartialOrd::partial_cmp` 完成一个泛型版本。
+
+```rust Rust
+impl Solution {
+    pub fn is_monotonic(a: Vec<i32>) -> bool {
+        is_monotonic(&a)
+    }
+}
+
+use std::cmp::Ordering::Equal;
+
+pub fn is_monotonic(a: &[impl PartialOrd]) -> bool {
+    a.windows(2).try_fold(Equal, |s, w| {
+        let o = PartialOrd::partial_cmp(&w[0], &w[1])?;
+        match (s, o) {
+            (Equal, o) => Some(o),
+            (s, Equal) => Some(s),
+            (s, o) if s == o => Some(s),
+            _ => None
+        }
+    }).is_some()
+}
+```
