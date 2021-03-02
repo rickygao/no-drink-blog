@@ -79,3 +79,66 @@ impl NumArray {
     }
 }
 ```
+
+## 304. 二维区域和检索 - 矩阵不可变{#leetcode-304}
+
+[:link: 来源](https://leetcode-cn.com/problems/range-sum-query-2d-immutable/)
+
+### 题目
+
+给定一个二维矩阵，计算其子矩形范围内元素的总和，该子矩阵的左上角为 `(row1, col1)`，右下角为 `(row2, col2)`。
+
+#### 提示
+
+- 你可以假设矩阵不可变；
+- 会多次调用 `sumRegion` 方法；
+- 你可以假设 `row1 <= row2` 且 `col1 <= col2`。
+
+### 题解
+
+```rust Rust
+struct NumMatrix {
+    prefix_sum: Vec<Vec<i32>>,
+}
+
+impl NumMatrix {
+    fn new(matrix: Vec<Vec<i32>>) -> Self {
+        let l = matrix.first().map_or(0, |v| v.len());
+        Self {
+            prefix_sum: matrix
+                .into_iter()
+                .scan(vec![0; l], |t, r| {
+                    t.iter_mut()
+                        .zip(r.into_iter().scan(0, |s, n| {
+                            *s += n;
+                            Some(*s)
+                        }))
+                        .for_each(|(s, n)| *s += n);
+                    Some(t.clone())
+                })
+                .collect(),
+        }
+    }
+
+    fn sum_region(&self, row1: i32, col1: i32, row2: i32, col2: i32) -> i32 {
+        self.real_sum_region(
+            (row1 as usize, col1 as usize),
+            (row2 as usize, col2 as usize),
+        )
+    }
+
+    fn real_sum_region(&self, i: (usize, usize), j: (usize, usize)) -> i32 {
+        let mut r = self.prefix_sum[j.0][j.1];
+        if i.0 > 0 {
+            r -= self.prefix_sum[i.0 - 1][j.1];
+        }
+        if i.1 > 0 {
+            r -= self.prefix_sum[j.0][i.1 - 1];
+        }
+        if i.0 > 0 && i.1 > 0 {
+            r += self.prefix_sum[i.0 - 1][i.1 - 1];
+        }
+        r
+    }
+}
+```
