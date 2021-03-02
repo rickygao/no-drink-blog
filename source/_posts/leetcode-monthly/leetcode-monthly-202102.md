@@ -1,13 +1,13 @@
 ---
 title: LeetCode 月报 202102
 date: 2021-02-01 00:00:00
-tags: [LeetCode]
+tags: [LeetCode, Sliding Window]
 mathjax: true
 ---
 
 快过年了。重启「Rust 从入门到放弃」计划。
 
-本月大概是滑动窗口月了。
+本月大概是滑动窗口月了，战绩 30 题。
 
 <!-- more -->
 
