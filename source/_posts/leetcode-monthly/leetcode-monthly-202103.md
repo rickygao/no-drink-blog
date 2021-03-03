@@ -142,3 +142,56 @@ impl NumMatrix {
     }
 }
 ```
+
+## 338. 比特位计数{#leetcode-338}
+
+[:link: 来源](https://leetcode-cn.com/problems/counting-bits/)
+
+### 题目
+
+给定一个非负整数 `num`。对于 `0 <= i <= num` 范围中的每个数字 `i`，计算其二进制数中的 `1` 的数目并将它们作为数组返回。
+
+#### 示例
+
+```raw
+输入：2
+输出：[0, 1, 1]
+```
+
+```raw
+输入：5
+输出：[0, 1, 1, 2, 1, 2]
+```
+
+### 题解
+
+#### 直接
+
+```rust Rust
+impl Solution {
+    pub fn count_bits(num: i32) -> Vec<i32> {
+        (0..=num).map(|n| n.count_ones() as i32).collect()
+    }
+}
+```
+
+#### 动态规划
+
+将求 `i` 中 `1` 比特的个数转化为求 `j < i` 中 `1` 比特的个数。
+
+```rust Rust
+impl Solution {
+    pub fn count_bits(num: i32) -> Vec<i32> {
+        count_bits(num as usize + 1).into_iter().map(|n| n as i32).collect()
+    }
+}
+
+pub fn count_bits(num: usize) -> Vec<usize> {
+    let mut r = Vec::with_capacity(num);
+    r.push(0);
+    for i in 1..num {
+        r.push(r[i >> 1] + (i & 1)); // or r.push(r[i & (i - 1)] + 1);
+    }
+    r
+}
+```
