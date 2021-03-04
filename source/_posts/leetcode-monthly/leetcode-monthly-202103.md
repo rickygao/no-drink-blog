@@ -195,3 +195,153 @@ pub fn count_bits(num: usize) -> Vec<usize> {
     r
 }
 ```
+
+## 300. 最长递增子序列{#leetcode-300}
+
+[:link: 来源](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+
+### 题目
+
+给你一个整数数组 `nums`，找到其中最长严格递增子序列的长度。
+
+子序列是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，`[3, 6, 2, 7]` 是数组 `[0, 3, 1, 6, 2, 2, 7]` 的子序列。
+
+#### 示例
+
+```raw
+输入：nums = [10, 9, 2, 5, 3, 7, 101, 18]
+输出：4
+解释：最长递增子序列是 [2, 3, 7, 101]，因此长度为 4。
+```
+
+```raw
+输入：nums = [0, 1, 0, 3, 2, 3]
+输出：4
+```
+
+```raw
+输入：nums = [7, 7, 7, 7, 7, 7, 7]
+输出：1
+```
+
+#### 提示
+
+- `1 <= len(nums) <= 2500`；
+- `-1e4 <= nums[i] <= 1e4`。
+
+#### 进阶
+
+- 你可以设计时间复杂度为 $\mathrm{O}(n^2)$ 的解决方案吗？
+- 你能将算法的时间复杂度降低到 $\mathrm{O}(n\log n)$ 吗？
+
+### 题解
+
+#### 动态规划
+
+记 `nums` 为 $a$ 且其长度为 $n$，有递推方程：$l_0=1,l_j=\max_{(0\le i\lt j)\wedge(a_j>a_i)}l_i+1$，最终结果为 $\max_{0<i<n} l_i$。时间复杂度为 $\mathrm{O}(n^2)$。
+
+```rust Rust
+impl Solution {
+    pub fn length_of_lis(nums: Vec<i32>) -> i32 {
+        length_of_lis(&nums) as i32
+    }
+}
+
+pub fn length_of_lis(nums: &[impl Ord]) -> usize {
+    let mut len = Vec::with_capacity(nums.len());
+    for num in nums {
+        len.push(
+            Iterator::zip(len.iter(), nums.iter())
+                .filter_map(|(l, n)| if num > n { Some(l) } else { None })
+                .max()
+                .copied()
+                .unwrap_or(0)
+                + 1,
+        );
+    }
+    len.iter().max().copied().unwrap_or(0)
+}
+```
+
+#### 二分贪心
+
+```rust Rust
+impl Solution {
+    pub fn length_of_lis(nums: Vec<i32>) -> i32 {
+        length_of_lis(&nums) as i32
+    }
+}
+
+pub fn length_of_lis(nums: &[impl Ord]) -> usize {
+    let mut len = 0;
+    let mut mono = Vec::with_capacity(nums.len());
+    for num in nums {
+        if mono.last().map_or(true, |&last| last < num) {
+            len += 1;
+            mono.push(num);
+        } else if let Err(pos) = mono.binary_search(&num) {
+            mono[pos] = num;
+        }
+    }
+    len
+}
+```
+
+## 354. 俄罗斯套娃信封问题{#leetcode-354}
+
+[:link: 来源](https://leetcode-cn.com/problems/russian-doll-envelopes/)
+
+### 题目
+
+给定一些标记了宽度和高度的信封，宽度和高度以整数对形式 `(w, h)` 出现。当另一个信封的宽度和高度都比这个信封大的时候，这个信封就可以放进另一个信封里，如同俄罗斯套娃一样。
+
+请计算最多能有多少个信封能组成一组“俄罗斯套娃”信封（即可以把一个信封放到另一个信封里面）。
+
+#### 说明
+
+不允许旋转信封。
+
+#### 示例
+
+```raw
+输入: envelopes = [[5, 4], [6, 4], [6, 7], [2, 3]]
+输出: 3 
+解释: 最多信封的个数为 3，组合为: [2, 3] => [5, 4] => [6, 7]。
+```
+
+### 题解
+
+按照“宽度升序、宽度相同时高度降序”的原则排序，转化为[上题](#leetcode-300)。
+
+```rust Rust
+impl Solution {
+    pub fn max_envelopes(envelopes: Vec<Vec<i32>>) -> i32 {
+        let envelopes = envelopes
+                .into_iter()
+                .map(|v| (v[0] as usize, v[1] as usize))
+                .collect::<Vec<_>>();
+        max_envelopes(&envelopes) as i32
+    }
+}
+
+pub fn max_envelopes(envelopes: &[(usize, usize)]) -> usize {
+    let mut envelopes: Vec<_> = envelopes.iter().copied().collect();
+    envelopes.sort_unstable_by(|a, b| Ord::cmp(&a.0, &b.0).then_with(|| Ord::cmp(&b.1, &a.1)));
+    let heights: Vec<_> = envelopes.into_iter().map(|(_, h)| h).collect();
+    length_of_lis(&heights)
+}
+
+pub fn length_of_lis(nums: &[impl Ord]) -> usize {
+    let mut len = 0;
+    let mut mono = Vec::with_capacity(nums.len());
+    for num in nums {
+        if mono.last().map_or(true, |&last| last < num) {
+            len += 1;
+            mono.push(num);
+        } else if let Err(pos) = mono.binary_search(&num) {
+            mono[pos] = num;
+        }
+    }
+    len
+}
+```
