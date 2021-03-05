@@ -83,7 +83,7 @@ menu:
   home: / || fa fa-home
   archives: /archives/ || fa fa-archive
   tags: /tags/ || fa fa-tags
-  marginalia: /the-marginalia-of-year-2020/ || fa fa-feather
+  marginalia: /marginalia-2020/ || fa fa-feather
   about: /about/ || fa fa-ghost
   # categories: /categories/ || fa fa-th
   # schedule: /schedule/ || fa fa-calendar
