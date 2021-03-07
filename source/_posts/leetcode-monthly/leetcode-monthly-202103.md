@@ -490,3 +490,60 @@ pub fn next_greater_elements(nums: &[i32]) -> Vec<i32> {
     greater
 }
 ```
+
+## 131. 分割回文串{#leetcode-131}
+
+[:link: 来源](https://leetcode-cn.com/problems/palindrome-partitioning/)
+
+### 题目
+
+给定一个字符串 `s`，将 `s` 分割成一些子串，使每个子串都是回文串。
+
+返回 `s` 所有可能的分割方案。
+
+#### 示例
+
+```raw
+输入："aab"
+输出：[["aa", "b"], ["a", "a", "b"]]
+```
+
+### 题解
+
+深度优先搜索。
+
+```rust Rust
+impl Solution {
+    pub fn partition(s: String) -> Vec<Vec<String>> {
+        partition(s.as_bytes())
+            .into_iter()
+            .map(|v| {
+                v.into_iter()
+                    .map(|s| std::str::from_utf8(s).unwrap().to_owned())
+                    .collect()
+            })
+            .collect()
+    }
+}
+
+pub fn partition<'a>(s: &'a [u8]) -> Vec<Vec<&'a [u8]>> {
+    let mut result = Vec::new();
+    for i in 0..s.len() {
+        let (front, back) = s.split_at(i);
+        if is_palindrome(back) {
+            if front.is_empty() {
+                result.push(vec![back]);
+            } else {
+                let mut front_result = partition(front);
+                front_result.iter_mut().for_each(|v| v.push(back));
+                result.append(&mut front_result);
+            }
+        }
+    }
+    result
+}
+
+fn is_palindrome(s: &[impl Ord]) -> bool {
+    Iterator::zip(s.iter(), s.iter().rev()).take(s.len() / 2).all(|c| c.0 == c.1)
+}
+```
