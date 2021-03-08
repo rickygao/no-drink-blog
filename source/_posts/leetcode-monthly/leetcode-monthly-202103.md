@@ -547,3 +547,70 @@ fn is_palindrome(s: &[impl Ord]) -> bool {
     Iterator::zip(s.iter(), s.iter().rev()).take(s.len() / 2).all(|c| c.0 == c.1)
 }
 ```
+
+## 132. 分割回文串 II{#leetcode-132}
+
+[:link: 来源](https://leetcode-cn.com/problems/palindrome-partitioning-ii/)
+
+### 题目
+
+给你一个字符串 `s`，请你将 `s` 分割成一些子串，使每个子串都是回文。
+
+返回符合要求的**最少分割次数**。
+
+#### 示例
+
+```raw
+输入：s = "aab"
+输出：1
+解释：只需一次分割就可将 s 分割成 ["aa", "b"] 这样两个回文子串。
+```
+
+```raw
+输入：s = "a"
+输出：0
+```
+
+```raw
+输入：s = "ab"
+输出：1
+```
+
+#### 提示
+
+- `1 <= len(s) <= 2e3`；
+- `s` 仅由小写英文字母组成。
+
+### 题解
+
+动态规划。
+
+```rust Rust
+impl Solution {
+    pub fn min_cut(s: String) -> i32 {
+        min_cut(s.as_bytes()) as i32
+    }
+}
+
+pub fn min_cut(s: &[u8]) -> usize {
+    let n = s.len();
+    let (mut is_palindrome, mut cut_count) = (vec![true; n], vec![0; n]);
+
+    // is_palindrome[j] in loop #i means s[j..=i] is palindrome.
+    for i in 0..n {
+        for j in 0..i {
+            // s[j..=i] is palindrome if s[j + 1..=i - 1] is palindrome and s[j] == s[i]
+            is_palindrome[j] = is_palindrome[j + 1] && s[j] == s[i];
+        }
+        if !is_palindrome[0] {
+            cut_count[i] = usize::MAX;
+            for j in 1..=i {
+                if is_palindrome[j] {
+                    cut_count[i] = cut_count[i].min(cut_count[j - 1] + 1);
+                }
+            }
+        }
+    }
+    cut_count.last().copied().unwrap_or(0)
+}
+```
