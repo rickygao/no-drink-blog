@@ -662,3 +662,69 @@ pub fn remove_duplicates(s: &str) -> String {
     buf.into_iter().collect()
 }
 ```
+
+## 224. 基本计算器{#leetcode-224}
+
+[:link: 来源](https://leetcode-cn.com/problems/basic-calculator/)
+
+### 题目
+
+实现一个基本的计算器来计算一个简单的字符串表达式 `s` 的值。
+
+#### 示例
+
+```raw
+输入：s = "1 + 1"
+输出：2
+```
+
+```raw
+输入：s = " 2-1 + 2 "
+输出：3
+```
+
+```raw
+输入：s = "(1+(4+5+2)-3)+(6+8)"
+输出：23
+```
+
+#### 提示
+
+- `1 <= len(s) <= 3e5`；
+- `s` 由数字、`'+'`、`'-'`、`'('`、`')'`、和 `' '` 组成；
+- `s` 表示一个有效的表达式。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn calculate(s: String) -> i32 {
+        let (mut ops, mut sign) = (vec![1], 1);
+        let mut result = 0;
+        let mut chars = s.chars().peekable();
+        while let Some(c) = chars.next() {
+            match c {
+                '+' => sign = ops.last().copied().unwrap(),
+                '-' => sign = -ops.last().copied().unwrap(),
+                '(' => ops.push(sign),
+                ')' => {
+                    ops.pop();
+                }
+                '0'..='9' => {
+                    let mut buf = c.to_digit(10).unwrap();
+                    while let Some(c) = chars.peek() {
+                        match c.to_digit(10) {
+                            Some(d) => buf = buf * 10 + d,
+                            None => break,
+                        }
+                        chars.next();
+                    }
+                    result += sign * (buf as i32);
+                }
+                _ => {}
+            }
+        }
+        result
+    }
+}
+```
