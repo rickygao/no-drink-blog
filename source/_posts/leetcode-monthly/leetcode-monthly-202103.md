@@ -728,3 +728,107 @@ impl Solution {
     }
 }
 ```
+
+## 227. 基本计算器 II{#leetcode-227}
+
+[:link: 来源](https://leetcode-cn.com/problems/basic-calculator-ii/)
+
+### 题目
+
+给你一个字符串表达式 `s`，请你实现一个基本计算器来计算并返回它的值。
+
+整数除法仅保留整数部分。
+
+#### 示例
+
+```raw
+输入：s = "3+2*2"
+输出：7
+```
+
+```raw
+输入：s = " 3/2 "
+输出：1
+```
+
+```raw
+输入：s = " 3+5 / 2 "
+输出：5
+```
+
+#### 提示
+
+- `1 <= len(s) <= 3e5`；
+- `s` 由整数和算符（`'+'`、`'-'`、`'*'`、`'/'`）组成，中间由一些空格隔开；
+- `s` 表示一个**有效表达式**；
+- 表达式中的所有整数都是非负整数，且在范围 `range(0, 2 ** 31)` 内；
+- 题目数据保证答案是一个 32 位整数。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn calculate(s: String) -> i32 {
+        let (mut operands, mut operators) = (vec![], vec![]);
+        let mut buf = None;
+
+        fn priority(operator: &char) -> u8 {
+            match operator {
+                '(' => u8::MIN,
+                '+' => 1,
+                '-' => 1,
+                '*' => 2,
+                '/' => 2,
+                ')' => u8::MAX,
+                _ => unimplemented!(),
+            }
+        }
+
+        fn operate(operator: char, operands: &mut Vec<i32>) {
+            let rhs = operands.pop().expect("missed rhs");
+            let lhs = operands.pop().expect("missed lhs");
+            operands.push(match operator {
+                '+' => lhs + rhs,
+                '-' => lhs - rhs,
+                '*' => lhs * rhs,
+                '/' => lhs / rhs,
+                _ => unimplemented!(),
+            });
+        }
+
+        fn balance_or_push(operator: char, operators: &mut Vec<char>) {
+            if operator == ')' {
+                operators.pop().filter(|&left| left == '(').expect("unpaired parentheses");
+            } else {
+                operators.push(operator);
+            }
+        }
+
+        for ch in s.chars() {
+            if ch.is_whitespace() {
+                continue;
+            }
+            if let Some(digit) = ch.to_digit(10) {
+                let n = buf.get_or_insert(0);
+                *n = *n * 10 + digit;
+                continue;
+            }
+            if let Some(num) = buf.take() {
+                operands.push(num as i32);
+            }
+            let current_priority = priority(&ch);
+            while operators.last().map_or(false, |op| priority(op) >= current_priority) {
+                operate(operators.pop().unwrap(), &mut operands);
+            }
+            balance_or_push(ch, &mut operators);
+        }
+        if let Some(num) = buf.take() {
+            operands.push(num as i32);
+        }
+        while operators.last().is_some() {
+            operate(operators.pop().unwrap(), &mut operands);
+        }
+        operands.pop().unwrap()
+    }
+}
+```
