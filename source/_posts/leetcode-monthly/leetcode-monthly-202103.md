@@ -832,3 +832,95 @@ impl Solution {
     }
 }
 ```
+
+## 331. 验证二叉树的前序序列化{#leetcode-331}
+
+[:link: 来源](https://leetcode-cn.com/problems/verify-preorder-serialization-of-a-binary-tree/)
+
+### 题目
+
+序列化二叉树的一种方法是使用前序遍历。当我们遇到一个非空节点时，我们可以记录下这个节点的值。如果它是一个空节点，我们可以使用一个标记值记录，例如 `'#'`。
+
+```raw
+     _9_
+    /   \
+   3     2
+  / \   / \
+ 4   1  #  6
+/ \ / \   / \
+# # # #   # #
+```
+
+例如，上面的二叉树可以被序列化为字符串 `"9,3,4,#,#,1,#,#,2,#,6,#,#"`，其中 `'#'` 代表一个空节点。
+
+给定一串以逗号分隔的序列，验证它是否是正确的二叉树的前序序列化。编写一个在不重构树的条件下的可行算法。
+
+每个以逗号分隔的字符或为一个整数或为一个表示 `null` 指针的 `'#'`。
+
+你可以认为输入格式总是有效的，例如它永远不会包含两个连续的逗号，比如 `"1,,3"`。
+
+#### 示例
+
+```raw
+输入："9,3,4,#,#,1,#,#,2,#,6,#,#"
+输出：true
+```
+
+```raw
+输入："1,#"
+输出：false
+```
+
+```raw
+输入："9,#,#,1"
+输出：false
+```
+
+### 题解
+
+#### 栈
+
+在栈顶替换模式 `[?, #, #]"` 为 `[#]`。
+
+```rust Rust
+impl Solution {
+    pub fn is_valid_serialization(preorder: String) -> bool {
+        is_valid_serialization(&preorder)
+    }
+}
+
+pub fn is_valid_serialization(preorder: &str) -> bool {
+    let mut stack = vec![];
+    for leaf in preorder.split(',').map(|e| e == "#") {
+        stack.push(leaf);
+        while let [.., false, true, true] = stack.as_slice() {
+            stack.truncate(stack.len() - 2);
+            *stack.last_mut().unwrap() = true;
+        }
+    }
+    stack == [true]
+}
+```
+
+#### 计数
+
+记录当前节点空余槽位。
+
+```rust Rust
+impl Solution {
+    pub fn is_valid_serialization(preorder: String) -> bool {
+        is_valid_serialization(&preorder)
+    }
+}
+
+pub fn is_valid_serialization(preorder: &str) -> bool {
+    let mut slots = 1;
+    for leaf in preorder.split(',').map(|e| e == "#") {
+        if slots <= 0 {
+            return false;
+        }
+        slots = if leaf { slots - 1 } else { slots + 1 };
+    }
+    slots == 0
+}
+```
