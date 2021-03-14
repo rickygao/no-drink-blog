@@ -1026,3 +1026,107 @@ impl MyHashSet {
     }
 }
 ```
+
+## 706. 设计哈希映射{#leetcode-706}
+
+[:link: 来源](https://leetcode-cn.com/problems/design-hashmap/)
+
+### 题目
+
+不使用任何内建的哈希表库设计一个哈希映射（`HashMap`）。
+
+实现 `MyHashMap` 类：
+
+- `void put(int key, int value)` 向哈希映射插入一个键值对 `(key, value)`。如果 `key` 已经存在于映射中，则更新其对应的值 `value`；
+- `int get(int key)` 返回特定的 `key` 所映射的 `value`。如果映射中不包含 `key` 的映射，返回 `-1`；
+- `void remove(key)` 如果映射中存在 `key` 的映射，则移除 `key` 和它所对应的 `value`。
+
+#### 示例
+
+```raw
+输入：
+["MyHashMap", "put", "put", "get", "get", "put", "get", "remove", "get"]
+[[], [1, 1], [2, 2], [1], [3], [2, 1], [2], [2], [2]]
+
+输出：
+[null, null, null, 1, -1, null, 1, null, -1]
+
+解释：
+MyHashMap myHashMap = new MyHashMap();
+myHashMap.put(1, 1); // map = [(1, 1)]
+myHashMap.put(2, 2); // map = [(1, 1), (2, 2)]
+myHashMap.get(1);    // 返回 1
+myHashMap.get(3);    // 返回 -1（未找到）
+myHashMap.put(2, 1); // map = [(1, 1), (2, 1)]（更新已有的值）
+myHashMap.get(2);    // 返回 1
+myHashMap.remove(2); // map = [(1, 1)]
+myHashMap.get(2);    // 返回 -1（未找到）
+```
+
+#### 提示
+
+- `0 <= key, value <= 1e6`；
+- 最多调用 `1e4` 次 `put`、`get` 和 `remove` 方法。
+
+### 题解
+
+修改一下[上题](#leetcode-705)的方法签名和搜索实现。`MyHashMap::put` 方法中考虑键已经存在的情况，并使用 `[T]::binary_search_by_key` 代替 `[T]::binary_search`。
+
+```rust Rust
+struct MyHashMap {
+    table: Vec<Vec<(i32, i32)>>,
+    base: usize,
+}
+
+impl MyHashMap {
+    const DEFAULT_BASE: usize = 1009;
+
+    pub fn new() -> Self {
+        Self::new_with_base(Self::DEFAULT_BASE)
+    }
+
+    pub fn new_with_base(base: usize) -> Self {
+        Self {
+            table: vec![vec![]; base],
+            base,
+        }
+    }
+
+    pub fn put(&mut self, key: i32, value: i32) {
+        let bucket = self.bucket_mut(key);
+        match bucket.binary_search_by_key(&key, |&(k, _)| k) {
+            Ok(index) => bucket[index].1 = value,
+            Err(index) => bucket.insert(index, (key, value)),
+        }
+    }
+
+    pub fn get(&self, key: i32) -> i32 {
+        let bucket = self.bucket(key);
+        match bucket.binary_search_by_key(&key, |&(k, _)| k) {
+            Ok(index) => bucket[index].1,
+            Err(_) => -1,
+        }
+    }
+
+    pub fn remove(&mut self, key: i32) {
+        let bucket = self.bucket_mut(key);
+        if let Ok(index) = bucket.binary_search_by_key(&key, |&(k, _)| k) {
+            bucket.remove(index);
+        }
+    }
+
+    fn hash(&self, key: i32) -> usize {
+        key.rem_euclid(self.base as i32) as usize
+    }
+
+    fn bucket(&self, key: i32) -> &Vec<(i32, i32)> {
+        let hash = self.hash(key);
+        &self.table[hash]
+    }
+
+    fn bucket_mut(&mut self, key: i32) -> &mut Vec<(i32, i32)> {
+        let hash = self.hash(key);
+        &mut self.table[hash]
+    }
+}
+```
