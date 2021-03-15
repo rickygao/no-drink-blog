@@ -1130,3 +1130,69 @@ impl MyHashMap {
     }
 }
 ```
+
+## 54. 螺旋矩阵{#leetcode-54}
+
+[:link: 来源](https://leetcode-cn.com/problems/spiral-matrix/)
+
+### 题目
+
+给你一个 `m` 行 `n` 列的矩阵 `matrix`，请按照**顺时针螺旋顺序**，返回矩阵中的所有元素。
+
+#### 示例
+
+```raw
+输入：matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+输出：[1, 2, 3, 6, 9, 8, 7, 4, 5]
+```
+
+```raw
+输入：matrix = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+输出：[1, 2, 3, 4, 8, 12, 11, 10, 9, 5, 6, 7]
+```
+
+#### 提示
+
+- `m == len(matrix)`；
+- `n == len(matrix[i])`；
+- `1 <= m, n <= 10`；
+- `-100 <= matrix[i][j] <= 100`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn spiral_order(matrix: Vec<Vec<i32>>) -> Vec<i32> {
+        let (m, n) = (matrix.len(), matrix.first().map_or(0, |row| row.len()));
+        let s = Ord::min(m, n);
+        let c = s / 2;
+        let mut v = Vec::with_capacity(m * n);
+        for i in 0..c {
+            for j in i..n - i - 1 {
+                v.push(matrix[i][j]);
+            }
+            for j in i..m - i - 1 {
+                v.push(matrix[j][n - i - 1]);
+            }
+            for j in i..n - i - 1 {
+                v.push(matrix[m - i - 1][n - j - 1]);
+            }
+            for j in i..m - i - 1 {
+                v.push(matrix[m - j - 1][i]);
+            }
+        }
+        if s % 2 == 1 {
+            if m <= n {
+                for j in c..n - c {
+                    v.push(matrix[c][j]);
+                }
+            } else {
+                for j in c..m - c {
+                    v.push(matrix[j][c]);
+                }
+            }
+        }
+        v
+    }
+}
+```
