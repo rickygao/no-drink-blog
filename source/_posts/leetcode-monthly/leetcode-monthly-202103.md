@@ -1196,3 +1196,61 @@ impl Solution {
     }
 }
 ```
+
+## 59. 螺旋矩阵 II{#leetcode-59}
+
+[:link: 来源](https://leetcode-cn.com/problems/spiral-matrix-ii/)
+
+### 题目
+
+给你一个正整数 `n`，生成一个包含 `1` 到 `n * n` 所有整数，且整数按顺时针顺序螺旋排列的 $n\times n$ 正方形矩阵 `matrix`。
+
+#### 示例
+
+```raw
+输入：n = 3
+输出：[[1, 2, 3], [8, 9, 4], [7, 6, 5]]
+```
+
+```raw
+输入：n = 1
+输出：[[1]]
+```
+
+#### 提示
+
+- `1 <= n <= 20`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn generate_matrix(n: i32) -> Vec<Vec<i32>> {
+        let n = n as usize;
+        let (c, mut k) = (n / 2, 1);
+        let mut m = vec![vec![0; n]; n];
+        for i in 0..c {
+            for j in i..n - i - 1 {
+                m[i][j] = k;
+                k += 1;
+            }
+            for j in i..n - i - 1 {
+                m[j][n - i - 1] = k;
+                k += 1;
+            }
+            for j in i..n - i - 1 {
+                m[n - i - 1][n - j - 1] = k;
+                k += 1;
+            }
+            for j in i..n - i - 1 {
+                m[n - j - 1][i] = k;
+                k += 1;
+            }
+        }
+        if n % 2 == 1 {
+            m[c][c] = k;
+        }
+        m
+    }
+}
+```
