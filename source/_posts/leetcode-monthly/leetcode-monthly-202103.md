@@ -5,7 +5,7 @@ tags: [LeetCode]
 mathjax: true
 ---
 
-假期正式结束了！这是新学期的第一份月报。
+假期正式结束了！这是新学期的第一份月报。诸事缠身，共完成 23 题。
 
 <!-- more -->
 
@@ -1587,9 +1587,19 @@ impl Solution {
 
 ### 题解
 
-分治。
+#### 内建
 
-```rust
+```rust Rust
+impl Solution {
+    pub fn reverse_bits(mut x: u32) -> u32 {
+        x.reverse_bits()
+    }
+}
+```
+
+#### 分治
+
+```rust Rust
 impl Solution {
     pub fn reverse_bits(mut x: u32) -> u32 {
         x = (x >> 16) | (x << 16);
