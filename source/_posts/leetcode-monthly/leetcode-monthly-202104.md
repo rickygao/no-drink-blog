@@ -59,3 +59,115 @@ impl Solution {
     }
 }
 ```
+
+## 1143. 最长公共子序列{#leetcode-1143}
+
+[:link: 来源](https://leetcode-cn.com/problems/longest-common-subsequence/)
+
+### 题目
+
+给定两个字符串 `text1` 和 `text2`，返回这两个字符串的最长**公共子序列**的长度。如果不存在**公共子序列**，返回 `0`。
+
+一个字符串的**子序列**是指这样一个新的字符串：它是由原字符串在不改变字符的相对顺序的情况下删除某些字符（也可以不删除任何字符）后组成的新字符串。
+
+例如，`"ace"` 是 `"abcde"` 的子序列，但 `"aec"` 不是 `"abcde"` 的子序列。
+
+两个字符串的**公共子序列**是这两个字符串所共同拥有的子序列。
+
+#### 示例
+
+```raw
+输入：text1 = "abcde", text2 = "ace"
+输出：3  
+解释：最长公共子序列是 "ace"，它的长度为 3。
+```
+
+```raw
+输入：text1 = "abc", text2 = "abc"
+输出：3
+解释：最长公共子序列是 "abc"，它的长度为 3。
+```
+
+```raw
+输入：text1 = "abc", text2 = "def"
+输出：0
+解释：两个字符串没有公共子序列，返回 0。
+```
+
+#### 提示
+
+- `1 <= len(text1), len(text2) <= 1e3`；
+- `text1` 和 `text2` 仅由小写英文字符组成。
+
+### 题解
+
+动态规划。设 $s=\overline{s_1s_2\dots s_m}$, $t=\overline{t_1t_2\dots t_n}$, $f_{i,j}=\mathrm{lcs}(\overline{s_1s_2\dots s_i},\overline{t_1t_2\dots t_j})$，则算法应返回 $f_{m,n}=\mathrm{lcs}(s,t)$，则有递推公式
+
+$$
+f_{i,j}=\begin{cases}
+    0,                         & \text{if } i=0\vee j=0,\\
+    f_{i-1,j-1},               & \text{if } i>0\wedge j>0\wedge s_i=s_j,\\
+    \max(f_{i-1,j},f_{i,j-1}), & \text{otherwise}.
+\end{cases}
+$$
+
+#### 二维状态
+
+```rust Rust
+impl Solution {
+    pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
+        longest_common_subsequence(&text1, &text2) as i32
+    }
+}
+
+impl Solution {
+    pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
+        longest_common_subsequence(&text1, &text2) as i32
+    }
+}
+
+pub fn longest_common_subsequence(s: &str, t: &str) -> usize {
+    let (m, n) = (s.chars().count(), t.chars().count());
+    let mut f = vec![vec![0; n + 1]; m + 1];
+    for (i, c) in s.chars().enumerate() {
+        for (j, d) in t.chars().enumerate() {
+            f[i + 1][j + 1] = if c == d {
+                f[i][j] + 1
+            } else {
+                Ord::max(f[i][j + 1], f[i + 1][j])
+            };
+        }
+    }
+    f[m][n]
+}
+```
+
+#### 状态压缩
+
+由于内层循环会覆盖掉左上方元素，需要通过 `ul` 记录。
+
+```rust Rust
+impl Solution {
+    pub fn longest_common_subsequence(text1: String, text2: String) -> i32 {
+        longest_common_subsequence(&text1, &text2) as i32
+    }
+}
+
+pub fn longest_common_subsequence(s: &str, t: &str) -> usize {
+    let n = t.chars().count();
+    let mut f = vec![0; n + 1];
+    for c in s.chars() {
+        let mut ul = f[0];
+        for (j, d) in t.chars().enumerate() {
+            let tmp = f[j + 1];
+            f[j + 1] = if c == d {
+                ul + 1
+            } else {
+                Ord::max(f[j + 1], f[j])
+            };
+            ul = tmp;
+        }
+    }
+    f[n]
+}
+```
