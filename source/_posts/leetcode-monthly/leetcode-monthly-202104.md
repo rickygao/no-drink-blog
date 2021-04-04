@@ -171,3 +171,67 @@ pub fn longest_common_subsequence(s: &str, t: &str) -> usize {
     f[n]
 }
 ```
+
+## 781. 森林中的兔子{#leetcode-781}
+
+[:link: 来源](https://leetcode-cn.com/problems/rabbits-in-forest/)
+
+### 题目
+
+森林中，每个兔子都有颜色。其中一些兔子（可能是全部）告诉你还有多少其他的兔子和自己有相同的颜色。我们将这些回答放在 `answers` 数组里。
+
+返回森林中兔子的最少数量。
+
+#### 示例
+
+```raw
+输入：answers = [1, 1, 2]
+输出：5
+解释：
+两只回答了 1 的兔子可能有相同的颜色，设为红色；
+之后回答了 2 的兔子不会是红色，否则他们的回答会相互矛盾，设回答了 2 的兔子为蓝色；
+此外，森林中还应有另外 2 只蓝色兔子的回答没有包含在数组中。
+因此森林中兔子的最少数量是 5，3 只回答的和 2 只没有回答的。
+```
+
+```raw
+输入：answers = [10, 10, 10]
+输出：11
+```
+
+```raw
+输入：answers = []
+输出：0
+```
+
+#### 说明
+
+- `len(answers) < 1e3`；
+- `0 <= answers[i] < 1e3`。
+
+### 题解
+
+贪心。对于每 $k+1$ 只回答了 $k$ 的兔子，至少要分配一种颜色。则对于回答了 $k$ 的 $v$ 只兔子，至少有 $\lceil\frac{v}{k+1}\rceil$ 种颜色，即至少有 $\lceil\frac{v}{k+1}\rceil(k+1)$ 只兔子。换言之，如果 $(k+1)\nmid v$，则至少有 $(k+1)-v\bmod(k+1)$ 只兔子没有回答。
+
+```rust Rust
+impl Solution {
+    pub fn num_rabbits(answers: Vec<i32>) -> i32 {
+        let answers: Vec<_> = answers.into_iter().map(|e| e as usize).collect();
+        num_rabbits(&answers) as i32
+    }
+}
+
+use std::collections::HashMap;
+
+pub fn num_rabbits(answers: &[usize]) -> usize {
+    let mut counts = HashMap::new();
+    answers
+        .iter()
+        .copied()
+        .for_each(|k| *counts.entry(k + 1).or_insert(0) += 1);
+    counts
+        .into_iter()
+        .map(|(k, v)| if v % k == 0 { v } else { v + k - v % k })
+        .sum()
+}
+```
