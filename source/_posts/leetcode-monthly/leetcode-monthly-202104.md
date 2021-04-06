@@ -235,3 +235,57 @@ pub fn num_rabbits(answers: &[usize]) -> usize {
         .sum()
 }
 ```
+
+## 80. 删除有序数组中的重复项 II{#leetcode-80}
+
+[:link: 来源](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array-ii/)
+
+### 题目
+
+给你一个有序数组 `nums`，请你**原地**删除重复出现的元素，使每个元素**最多出现两次**，返回删除后数组的新长度。
+
+不要使用额外的数组空间，你必须在**原地**修改输入数组，并在使用 $\mathrm{O}(1)$ 额外空间的条件下完成。
+
+#### 示例
+
+```raw
+输入：nums = [1, 1, 1, 2, 2, 3]
+输出：5, nums = [1, 1, 2, 2, 3]
+解释：函数应返回新长度 5，并且原数组的前五个元素被修改为 1, 1, 2, 2, 3。不需要考虑数组中超出新长度后面的元素。
+```
+
+```raw
+输入：nums = [0, 0, 1, 1, 1, 1, 2, 3, 3]
+输出：7, nums = [0, 0, 1, 1, 2, 3, 3]
+解释：函数应返回新长度 7，并且原数组的前五个元素被修改为 0, 0, 1, 1, 2, 3, 3。不需要考虑数组中超出新长度后面的元素。
+```
+
+#### 提示
+
+- `0 <= len(nums) <= 3e4`；
+- `-1e4 <= nums[i] <= 1e4`；
+- `nums` 已按升序排列。
+
+### 题解
+
+双指针检查重复并交换位置。`nums[i] = nums[j]` 赋值是拷贝语义，而 `Vec<T>::swap` 是移动语义不要求 `T: Copy`。
+
+```rust Rust
+impl Solution {
+    pub fn remove_duplicates(nums: &mut Vec<i32>) -> i32 {
+        remove_duplicates(nums, 2) as i32
+    }
+}
+
+pub fn remove_duplicates(nums: &mut [impl Eq], k: usize) -> usize {
+    let (mut i, mut j) = (k, k);
+    while j < nums.len() {
+        if nums[i - k] != nums[j] {
+            nums.swap(i, j);
+            i += 1;
+        }
+        j += 1;
+    }
+    i.min(nums.len())
+}
+```
