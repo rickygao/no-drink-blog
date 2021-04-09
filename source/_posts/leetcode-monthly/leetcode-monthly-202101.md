@@ -1079,7 +1079,7 @@ def sort_items(
 
 #### 注意
 
-- 输入的二维数组大小在 `3` 到 `1000`；
+- 输入的二维数组大小在 `3` 到 `1e3`；
 - 二维数组中的整数在 `1` 到 `N` 之间，其中 `N` 是输入数组的大小。
 
 ### 题解
@@ -1145,7 +1145,7 @@ def find_redundant_connection(edges: list[list[int]]) -> list[int]:
 
 #### 提示
 
-- `1 <= len(A) <= 30000`；
+- `1 <= len(A) <= 3e4`；
 - `A[i] in (0, 1)`。
 
 ### 题解
@@ -1527,7 +1527,7 @@ def min_cost_connect_points(points: list[list[int]]) -> int:
 
 #### 注意
 
-- 给定的整型数组长度范围是 $\left[3,{10}^4\right]$，数组中所有的元素范围是 $\left[-1000,1000\right]$；
+- 给定的整型数组长度范围是 $\left[3,{10}^4\right]$，数组中所有的元素范围是 $\left[-{10}^3,{10}^3\right]$；
 - 输入的数组中任意三个数的乘积不会超出 32 位有符号整数的范围。
 
 ### 题解
@@ -1901,7 +1901,7 @@ def regions_by_slashes(grid: list[str]) -> int:
 
 #### 提示
 
-- `1 <= len(dominoes) <= 40000`；
+- `1 <= len(dominoes) <= 4e4`；
 - `1 <= dominoes[i][j] <= 9`。
 
 ### 题解
@@ -2095,7 +2095,7 @@ def pivot_index(nums: list[int]) -> int:
 
 - `rows == len(heights)`；
 - `cols == len(heights[i])`；
-- `1 <= rows, cols <= 100`；
+- `1 <= rows, cols <= 1e2`；
 - `1 <= heights[i][j] <= 1e6`。
 
 ### 题解
@@ -2287,9 +2287,9 @@ def swim_in_water(heights: list[list[int]]) -> int:
 
 #### 提示
 
-- `1 <= len(strs) <= 100`；
+- `1 <= len(strs) <= 1e2`；
 - `1 <= len(strs[i]) <= 1e3`；
-- `sum(map(len, strs)) <= 2 * 1e4`；
+- `sum(map(len, strs)) <= 2e4`；
 - `strs[i]` 只包含小写字母；
 - `strs` 中的所有单词都具有相同的长度，且是彼此的字母异位词。
 

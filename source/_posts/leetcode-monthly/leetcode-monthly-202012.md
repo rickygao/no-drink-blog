@@ -508,7 +508,7 @@ def is_possible(nums: list[int]) -> bool:
 
 #### 注意
 
-`n < 15000`。
+`n < 1.5e4`。
 
 #### 示例
 
@@ -596,7 +596,7 @@ def find_132_pattern(nums: list[int]) -> bool:
 
 - `1 <= len(tasks) <= 1e4`；
 - `tasks[i]` 是大写英文字母；
-- `0 <= n <= 100`。
+- `0 <= n <= 1e2`。
 
 ### 题解
 
@@ -951,7 +951,7 @@ def matrix_score(matrix: list[list[int]]) -> int:
 
 #### 提示
 
-- `1 <= len(S) <= 200`；
+- `1 <= len(S) <= 2e2`；
 - 字符串 `S` 中只含有数字。
 
 ### 题解
@@ -1018,7 +1018,7 @@ def split_into_fibonacci(s: str) -> list[int]:
 
 #### 提示
 
-- `0 <= len(s) <= 2000`；
+- `0 <= len(s) <= 2e3`；
 - `s` 中只有小写英文字母和括号；
 - 我们确保所有括号都是成对出现的。
 
@@ -1123,7 +1123,7 @@ def construct_rectangle(area: int) -> list[int]:
 
 #### 提示
 
-- `1 <= m, n <= 100`；
+- `1 <= m, n <= 1e2`；
 - 题目数据保证答案小于等于 `2e9`。
 
 ### 题解
@@ -1174,7 +1174,7 @@ def unique_paths(m: int, n: int) -> int:
 
 #### 提示
 
-- `1 <= len(chips) <= 100`；
+- `1 <= len(chips) <= 1e2`；
 - `1 <= chips[i] <= 1e9`。
 
 ### 题解
@@ -1453,7 +1453,7 @@ def predict_party_victory(senate: str) -> str:
 
 #### 提示
 
-- `1 <= len(S) <= 20000`；
+- `1 <= len(S) <= 2e4`；
 - `S` 仅由小写英文字母组成。
 
 ### 题解
@@ -2116,7 +2116,7 @@ def majority_element(nums: list[int]) -> list[int]:
 
 #### 提示
 
-`1 <= n <= 200`。
+`1 <= n <= 2e2`。
 
 ### 题解
 
@@ -2262,7 +2262,7 @@ def intersection(nums1: list[int], nums2: list[int]) -> list[int]:
 
 #### 提示
 
-`1 <= n <= 500`。
+`1 <= n <= 5e2`。
 
 ### 题解
 
@@ -2608,9 +2608,9 @@ def get_smallest_string(n: int, k: int) -> str:
 总利润：((8 - 1) - 2) + ((9 - 4) - 2) = 8。
 ```
 
-- `0 < len(prices) <= 50000`；
-- `0 < prices[i] < 50000`；
-- `0 <= fee < 50000`。
+- `0 < len(prices) <= 5e4`；
+- `0 < prices[i] < 5e4`；
+- `0 <= fee < 5e4`。
 
 ### 题解
 
@@ -3071,7 +3071,7 @@ def remove_duplicates(s: str, k: int) -> str:
 
 #### 提示
 
-- `len(S) <= 100`；
+- `len(S) <= 1e2`；
 - `33 <= ord(S[i]) <= 122`；
 - `S` 中不包含 `'\\'` or `'"'`。
 
@@ -3457,7 +3457,7 @@ def largest_rectangle_area(heights: list[int]) -> int:
 
 - `rows == len(matrix)`；
 - `cols == len(matrix[0])`；
-- `0 <= rows, cols <= 200`；
+- `0 <= rows, cols <= 2e2`；
 - `matrix[i][j]` 为 `'0'` 或 `'1'`。
 
 ### 题解
@@ -3935,8 +3935,8 @@ def erase_overlap_intervals(intervals: list[list[int]]) -> int:
 
 #### 提示
 
-- `1 <= len(time) <= 60000`；
-- `1 <= time[i] <= 500`。
+- `1 <= len(time) <= 6e4`；
+- `1 <= time[i] <= 5e2`。
 
 ### 题解
 

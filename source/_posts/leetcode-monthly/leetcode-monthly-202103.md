@@ -226,7 +226,7 @@ pub fn count_bits(num: usize) -> Vec<usize> {
 
 #### 提示
 
-- `1 <= len(nums) <= 2500`；
+- `1 <= len(nums) <= 2.5e3`；
 - `-1e4 <= nums[i] <= 1e4`。
 
 #### 进阶
@@ -387,7 +387,7 @@ myQueue.empty(); // return false
 #### 提示
 
 - `1 <= x <= 9`；
-- 最多调用 `100` 次 `push`、`pop`、`peek` 和 `empty`；
+- 最多调用 `1e2` 次 `push`、`pop`、`peek` 和 `empty`；
 - 假设所有操作都是有效的（例如，一个空的队列不会调用 `pop` 或者 `peek` 操作）。
 
 ### 题解
@@ -1156,7 +1156,7 @@ impl MyHashMap {
 - `m == len(matrix)`；
 - `n == len(matrix[i])`；
 - `1 <= m, n <= 10`；
-- `-100 <= matrix[i][j] <= 100`。
+- `-1e2 <= matrix[i][j] <= 1e2`。
 
 ### 题解
 
@@ -1507,7 +1507,7 @@ where
 
 - `m == len(matrix)`；
 - `n == len(matrix[0])`；
-- `1 <= m, n <= 200`；
+- `1 <= m, n <= 2e2`；
 - `-2 ** 31 <= matrix[i][j] <= 2 ** 31 - 1`。
 
 ### 题解
@@ -1639,7 +1639,7 @@ impl Solution {
 
 - `m == len(matrix)`；
 - `n == len(matrix[i])`；
-- `1 <= m, n <= 100`；
+- `1 <= m, n <= 1e2`；
 - `-1e4 <= matrix[i][j], target <= 1e4`。
 
 ### 题解
