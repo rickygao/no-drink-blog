@@ -473,3 +473,113 @@ pub fn nth_ugly_number(n: usize, factors: &[usize]) -> usize {
 //     ugly_numbers.last().copied().unwrap()
 // }
 ```
+
+## 179. 最大数{#leetcode-179}
+
+[:link: 来源](https://leetcode-cn.com/problems/largest-number/)
+
+### 题目
+
+给定一组非负整数 `nums`，重新排列每个数的顺序（每个数不可拆分）使之组成一个最大的整数。
+
+#### 注意
+
+输出结果可能非常大，所以你需要返回一个字符串而不是整数。
+
+#### 示例
+
+```raw
+输入：nums = [10, 2]
+输出："210"
+```
+
+```raw
+输入：nums = [3, 30, 34, 5, 9]
+输出："9534330"
+```
+
+```raw
+输入：nums = [1]
+输出："1"
+```
+
+```raw
+输入：nums = [10]
+输出："10"
+```
+
+```raw
+输入：nums = [0, 0, 0]
+输出："0"
+```
+
+#### 提示
+
+- `1 <= len(nums) <= 1e2`；
+- `0 <= nums[i] <= 1e9`。
+
+### 题解
+
+贪心。
+
+#### 字符串拼接比较
+
+```rust Rust
+impl Solution {
+    pub fn largest_number(nums: Vec<i32>) -> String {
+        let mut nums: Vec<_> = nums.into_iter().map(|n| n.to_string()).collect();
+        nums.sort_unstable_by(|a, b| Ord::cmp(&(b.clone() + &a), &(a.clone() + &b)));
+        if let None | Some("0") = nums.first().map(String::as_str) {
+            "0".to_string()
+        } else {
+            nums.concat()
+        }
+    }
+}
+```
+
+#### 迭代器拼接比较
+
+```rust Rust
+impl Solution {
+    pub fn largest_number(nums: Vec<i32>) -> String {
+        let mut nums: Vec<_> = nums.into_iter().map(|n| n.to_string()).collect();
+        nums.sort_unstable_by(|a, b| {
+            Iterator::cmp(
+                b.as_bytes().iter().chain(a.as_bytes()),
+                a.as_bytes().iter().chain(b.as_bytes()),
+            )
+        });
+        if let None | Some("0") = nums.first().map(String::as_str) {
+            "0".to_string()
+        } else {
+            nums.concat()
+        }
+    }
+}
+```
+
+#### 整数拼接比较
+
+```rust Rust
+impl Solution {
+    pub fn largest_number(mut nums: Vec<i32>) -> String {
+        nums.sort_unstable_by(|&a, &b| {
+            let (a, mut s) = (a as u64, 10);
+            while s <= a {
+                s *= 10;
+            }
+            let (b, mut t) = (b as u64, 10);
+            while t <= b {
+                t *= 10;
+            }
+            Ord::cmp(&(s * b + a), &(t * a + b))
+        });
+        if let None | Some(0) = nums.first() {
+            "0".to_string()
+        } else {
+            nums.into_iter().map(|x| x.to_string()).collect()
+        }
+    }
+}
+```
