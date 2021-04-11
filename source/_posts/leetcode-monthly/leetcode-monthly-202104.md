@@ -330,3 +330,146 @@ impl Solution {
     }
 }
 ```
+
+## 263. 丑数{#leetcode-263}
+
+[:link: 来源](https://leetcode-cn.com/problems/ugly-number/)
+
+### 题目
+
+给你一个整数 `n`，请你判断 `n` 是否为**丑数**。如果是，返回 `true`；否则，返回 `false`。
+
+**丑数**就是只包含质因数 `2`、`3`、`5` 的正整数。
+
+#### 示例
+
+```raw
+输入：n = 6
+输出：true
+解释：6 = 2 * 3
+```
+
+```raw
+输入：n = 8
+输出：true
+解释：8 = 2 * 2 * 2
+```
+
+```raw
+输入：n = 14
+输出：false
+解释：14 不是丑数，因为它包含了另外一个质因数 7。
+```
+
+```raw
+输入：n = 1
+输出：true
+解释：1 通常被视为丑数。
+```
+
+#### 提示
+
+- `-2 ** 31 <= n <= 2 ** 31 - 1`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn is_ugly(n: i32) -> bool {
+        if n <= 0 {
+            return false;
+        }
+        is_ugly(n as usize, &[2, 3, 5])
+    }
+}
+
+pub fn is_ugly(mut n: usize, factors: &[usize]) -> bool {
+    for factor in factors {
+        while n % factor == 0 {
+            n /= factor;
+        }
+    }
+    n == 1
+}
+```
+
+## 264. 丑数 II{#leetcode-264}
+
+[:link: 来源](https://leetcode-cn.com/problems/ugly-number-ii/)
+
+### 题目
+
+给你一个整数 `n`，请你找出并返回第 `n` 个**丑数**。
+
+**丑数**就是只包含质因数 `2`、`3`、`5` 的正整数。
+
+#### 示例
+
+```raw
+输入：n = 10
+输出：12
+解释：[1, 2, 3, 4, 5, 6, 8, 9, 10, 12] 是由前 10 个丑数组成的序列。
+```
+
+```raw
+输入：n = 1
+输出：1
+解释：1 通常被视为丑数。
+```
+
+#### 提示
+
+- `1 <= n <= 1690`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn nth_ugly_number(n: i32) -> i32 {
+        nth_ugly_number(n as usize, &[2, 3, 5]) as i32
+    }
+}
+
+pub fn nth_ugly_number(n: usize, factors: &[usize]) -> usize {
+    let mut ugly_numbers = Vec::with_capacity(n);
+    ugly_numbers.push(1);
+    let mut indices = vec![0; factors.len()];
+    let mut candidates = Vec::new();
+    while ugly_numbers.len() < n {
+        candidates.clear();
+        candidates.extend(
+            indices
+                .iter()
+                .map(|&i| ugly_numbers[i])
+                .zip(factors)
+                .map(|(i, f)| i * f),
+        );
+        let next = candidates.iter().min().copied().unwrap();
+        ugly_numbers.push(next);
+        Iterator::zip(indices.iter_mut(), candidates.iter())
+            .filter_map(|(i, c)| if *c == next { Some(i) } else { None })
+            .for_each(|i| *i += 1);
+    }
+    ugly_numbers.last().copied().unwrap()
+}
+
+// Once [const generics](https://github.com/rust-lang/rfcs/blob/master/text/2000-const-generics.md) is stablized.
+// pub fn nth_ugly_number<const N: usize>(n: usize, factors: &[usize; N]) -> usize {
+//     let mut ugly_numbers = Vec::with_capacity(n);
+//     ugly_numbers.push(1);
+//     let (mut indices, mut candidates) = ([0; N], [1; N]);
+//     while ugly_numbers.len() < n {
+//         for i in 0..N {
+//             candidates[i] = ugly_numbers[indices[i]] * factors[i];
+//         }
+//         let next = candidates.iter().min().copied().unwrap();
+//         ugly_numbers.push(next);
+//         for i in 0..N {
+//             if candidates[i] == next {
+//                 indices[i] += 1;
+//             }
+//         }
+//     }
+//     ugly_numbers.last().copied().unwrap()
+// }
+```
