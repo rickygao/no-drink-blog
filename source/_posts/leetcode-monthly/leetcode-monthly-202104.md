@@ -583,3 +583,82 @@ impl Solution {
     }
 }
 ```
+
+## 1680. 连接连续二进制数字{#leetcode-1680}
+
+[:link: 来源](https://leetcode-cn.com/problems/concatenation-of-consecutive-binary-numbers/)
+
+### 题目
+
+给你一个整数 `n`，请你将 `1` 到 `n` 的二进制表示连接起来，并返回连接结果对应的**十进制**数对 `1e9 + 7` 取余的结果。
+
+#### 示例
+
+```raw
+输入：n = 1
+输出：1
+解释：二进制的 "1" 对应着十进制的 1。
+```
+
+```raw
+输入：n = 3
+输出：27
+解释：
+二进制下，1、2、3 分别对应 "1"、"10"、"11"；
+将它们依次连接，我们得到 "11011"，对应着十进制的 27。
+```
+
+```raw
+输入：n = 12
+输出：505379714
+解释：
+连接结果为 "1101110010111011110001001101010111100"；
+对应的十进制数字为 118505380540；
+对 1e9 + 7 取余后，结果为 505379714。
+```
+
+#### 提示
+
+- `1 <= n <= 1e5`。
+
+### 题解
+
+#### 直接模拟
+
+```rust Rust
+impl Solution {
+    pub fn concatenated_binary(n: i32) -> i32 {
+        concatenated_binary(n as usize, 1_000_000_007) as i32
+    }
+}
+
+pub fn concatenated_binary(n: usize, m: usize) -> usize {
+    let mut r = 0;
+    for i in 1..=n {
+        r = (r * (i + 1).next_power_of_two() + i) % m;
+    }
+    r
+}
+```
+
+#### 优化模拟
+
+```rust Rust
+impl Solution {
+    pub fn concatenated_binary(n: i32) -> i32 {
+        concatenated_binary(n as usize, 1_000_000_007) as i32
+    }
+}
+
+pub fn concatenated_binary(n: usize, m: usize) -> usize {
+    let (mut r, mut b) = (0, 0);
+    for i in 1..=n {
+        // or check if i & (i - 1) == 0
+        if i.is_power_of_two() {
+            p += 1;
+        }
+        r = ((r << b) + i) % m;
+    }
+    r
+}
+```
