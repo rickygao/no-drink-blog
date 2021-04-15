@@ -331,6 +331,68 @@ impl Solution {
 }
 ```
 
+## 213. 打家劫舍 II{#leetcode-213}
+
+[:link: 来源](https://leetcode-cn.com/problems/house-robber-ii/)
+
+### 题目
+
+你是一个专业的小偷，计划偷窃沿街的房屋，每间房内都藏有一定的现金。这个地方所有的房屋都**围成一圈**，这意味着第一个房屋和最后一个房屋是紧挨着的。同时，相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。
+
+给定一个代表每个房屋存放金额的非负整数数组，计算你**在不触动警报装置的情况下**，能够偷窃到的最高金额。
+
+#### 示例
+
+```raw
+输入：nums = [2, 3, 2]
+输出：3
+解释：你不能先偷窃 1 号房屋（金额 = 2），然后偷窃 3 号房屋（金额 = 2），因为他们是相邻的。
+```
+
+```raw
+输入：nums = [1, 2, 3, 1]
+输出：4
+解释：你可以先偷窃 1 号房屋（金额 = 1），然后偷窃 3 号房屋（金额 = 3）。偷窃到的最高金额 = 1 + 3 = 4 。
+```
+
+```raw
+输入：nums = [0]
+输出：0
+```
+
+#### 提示
+
+- `1 <= len(nums) <= 1e2`；
+- `0 <= nums[i] <= 1e3`。
+
+### 题解
+
+动态规划。
+
+```rust Rust
+impl Solution {
+    pub fn rob(nums: Vec<i32>) -> i32 {
+        let nums: Vec<_> = nums.into_iter().map(|n| n as usize).collect();
+        rob_circular(&nums) as i32
+    }
+}
+
+pub fn rob(nums: &[usize]) -> usize {
+    nums.iter().fold((0, 0), |(a, b), n| (a.max(n + b), a)).0
+}
+
+pub fn rob_circular(nums: &[usize]) -> usize {
+    match nums {
+        [] => 0,
+        [single] => *single,
+        _ => usize::max(
+            rob(nums.split_first().unwrap().1),
+            rob(nums.split_last().unwrap().1),
+        ),
+    }
+}
+```
+
 ## 263. 丑数{#leetcode-263}
 
 [:link: 来源](https://leetcode-cn.com/problems/ugly-number/)
