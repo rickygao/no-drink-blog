@@ -810,3 +810,107 @@ impl Trie {
     }
 }
 ```
+
+## 87. 扰乱字符串{#leetcode-87}
+
+[:link: 来源](https://leetcode-cn.com/problems/scramble-string/)
+
+### 题目
+
+使用下面描述的算法可以扰乱字符串 `s` 得到字符串 `t`：
+
+- 如果字符串的长度为 `1`，算法停止；
+- 如果字符串的长度大于 `1`，执行下述步骤：
+  1. 在一个**随机**下标处将字符串分割成两个非空的子字符串。即如果已知字符串 `s`，则可以将其分成两个子字符串 `x` 和 `y`，且满足 `s = x + y`；
+  2. **随机**决定是要「交换两个子字符串」还是要「保持这两个子字符串的顺序不变」。即在执行这一步骤之后，`s` 可能是 `s = x + y` 或者 `s = y + x`。
+  3. 在 `x` 和 `y` 这两个子字符串上继续从步骤 1 开始递归执行此算法。
+
+给你两个**长度相等**的字符串 `s1` 和 `s2`，判断 `s2` 是否是 `s1` 的扰乱字符串。如果是，返回 `true`，否则返回 `false`。
+
+#### 示例
+
+```raw
+输入：s1 = "great", s2 = "rgeat"
+输出：true
+解释：
+(1) "great" -> "gr", "eat"
+(2) "gr" -> "r", "g"; "eat" -> "e", "at"
+(3) "r"; "g"; "e"; "at" -> "a", "t"
+这是一种能够扰乱 s1 得到 s2 的情形，可以认为 s2 是 s1 的扰乱字符串，返回 true。
+```
+
+```raw
+输入：s1 = "abcde", s2 = "caebd"
+输出：false
+```
+
+```raw
+输入：s1 = "a", s2 = "a"
+输出：true
+```
+
+#### 提示
+
+- `len(s1) == len(s2)`；
+- `1 <= len(s1) <= 30`；
+- `s1` 和 `s2` 由小写英文字母组成。
+
+### 题解
+
+记忆化搜索。
+
+```rust Rust
+impl Solution {
+    pub fn is_scramble(s1: String, s2: String) -> bool {
+        is_scramble(&s1, &s2)
+    }
+}
+
+struct Memo<'a> {
+    v: Vec<Option<bool>>,
+    l: usize,
+    s: &'a [char],
+    t: &'a [char],
+}
+
+impl<'a> Memo<'a> {
+    pub fn new(s: &'a [char], t: &'a [char]) -> Memo<'a> {
+        let l = s.len() + 1;
+        let v = vec![None; l * l * l * l];
+        Memo { v, l, s, t }
+    }
+
+    fn idx(&self, s_low: usize, s_high: usize, t_low: usize, t_high: usize) -> usize {
+        let mut idx = 0;
+        idx = idx * self.l + s_low;
+        idx = idx * self.l + s_high;
+        idx = idx * self.l + t_low;
+        idx = idx * self.l + t_high;
+        idx
+    }
+
+    pub fn search(&mut self, s_low: usize, s_high: usize, t_low: usize, t_high: usize) -> bool {
+        let idx = self.idx(s_low, s_high, t_low, t_high);
+        self.v[idx].unwrap_or_else(|| {
+            let len = s_high - s_low;
+            let r = match len {
+                0 => true,
+                1 => self.s[s_low] == self.t[t_low],
+                _ => (1..len).any(|p| {
+                    self.search(s_low, s_low + p, t_low, t_low + p)
+                        && self.search(s_low + p, s_high, t_low + p, t_high)
+                        || self.search(s_low, s_low + p, t_high - p, t_high)
+                            && self.search(s_low + p, s_high, t_low, t_high - p)
+                }),
+            };
+            self.v[idx] = r.into();
+            r
+        })
+    }
+}
+
+pub fn is_scramble(s: &str, t: &str) -> bool {
+    let (ref s, ref t) = (s.chars().collect::<Vec<_>>(), t.chars().collect::<Vec<_>>());
+    Memo::new(s, t).search(0, s.len(), 0, t.len())
+}
+```
