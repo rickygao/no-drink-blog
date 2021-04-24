@@ -972,3 +972,64 @@ pub fn max_dist_to_closest(seats: &[bool]) -> usize {
     max.max(seats.len() - last.unwrap() - 1)
 }
 ```
+
+## 377. 组合总和 Ⅳ{#leetcode-377}
+
+[:link: 来源](https://leetcode-cn.com/problems/combination-sum-iv/)
+
+### 题目
+
+给你一个由**不同**整数组成的数组 `nums`，和一个目标整数 `target`。请你从 `nums` 中找出并返回总和为 `target` 的元素组合的个数。
+
+题目数据保证答案符合 32 位整数范围。
+
+#### 示例
+
+```raw
+输入：nums = [1, 2, 3], target = 4
+输出：7
+解释：
+所有可能的组合为：
+(1, 1, 1, 1)
+(1, 1, 2)
+(1, 2, 1)
+(1, 3)
+(2, 1, 1)
+(2, 2)
+(3, 1)
+请注意，顺序不同的序列被视作不同的组合。
+```
+
+```raw
+输入：nums = [9], target = 3
+输出：0
+```
+
+#### 提示
+
+- `1 <= len(nums) <= 2e2`;
+- `1 <= nums[i] <= 1e3`；
+- `nums` 中的所有元素**互不相同**；
+- `1 <= target <= 1e3`。
+
+### 题解
+
+动态规划。
+
+```rust Rust
+impl Solution {
+    pub fn combination_sum4(nums: Vec<i32>, target: i32) -> i32 {
+        let nums: Vec<_> = nums.into_iter().map(|n| n as usize).collect();
+        combination_sum4(&nums, target as usize) as i32
+    }
+}
+
+pub fn combination_sum4(nums: &[usize], target: usize) -> usize {
+    let mut memo = Vec::with_capacity(target + 1);
+    memo.push(1);
+    for i in 1..=target {
+        memo.push(nums.iter().filter_map(|n| memo.get(i - n)).sum());
+    }
+    memo[target]
+}
+```
