@@ -1107,3 +1107,67 @@ impl Solution {
     }
 }
 ```
+
+## 633. 平方数之和{#leetcode-633}
+
+[:link: 来源](https://leetcode-cn.com/problems/sum-of-square-numbers/)
+
+### 题目
+
+给定一个非负整数 `c`，你要判断是否存在两个整数 `a` 和 `b`，使得 $a^2+b^2=c$。
+
+#### 示例
+
+```raw
+输入：c = 5
+输出：true
+解释：1 * 1 + 2 * 2 = 5
+```
+
+```raw
+输入：c = 3
+输出：false
+```
+
+```raw
+输入：c = 4
+输出：true
+```
+
+```raw
+输入：c = 2
+输出：true
+```
+
+```raw
+输入：c = 1
+输出：true
+```
+
+#### 提示
+
+- `0 <= c <= 2 ** 31 - 1`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn judge_square_sum(c: i32) -> bool {
+        judge_square_sum(c as usize)
+    }
+}
+
+use std::cmp::Ordering;
+
+pub fn judge_square_sum(c: usize) -> bool {
+    let (mut a, mut b) = (0, (c as f64).sqrt() as usize);
+    while a <= b {
+        match Ord::cmp(&c, &(a * a + b * b)) {
+            Ordering::Greater => a += 1,
+            Ordering::Less => b -= 1,
+            Ordering::Equal => return true,
+        }
+    }
+    false
+}
+```
