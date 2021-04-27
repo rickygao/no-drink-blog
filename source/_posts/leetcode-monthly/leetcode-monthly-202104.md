@@ -1033,3 +1033,77 @@ pub fn combination_sum4(nums: &[usize], target: usize) -> usize {
     memo[target]
 }
 ```
+
+## 938. 二叉搜索树的范围和{#leetcode-938}
+
+[:link: 来源](https://leetcode-cn.com/problems/range-sum-of-bst/)
+
+### 题目
+
+给定二叉搜索树的根结点 `root`，返回值位于范围 $[low,high]$ 之间的所有结点的值的和。
+
+#### 示例
+
+```raw
+输入：root = [10, 5, 15, 3, 7, null, 18], low = 7, high = 15
+输出：32
+```
+
+```raw
+输入：root = [10, 5, 15, 3, 7, 13, 18, 1, null, 6], low = 6, high = 10
+输出：23
+```
+
+#### 提示
+
+- 树中节点数目在范围 $[1,2\times{10}^4]$ 内；
+- `1 <= node.val <= 1e5`；
+- `1 <= low <= high <= 1e5`；
+- 所有 `node.val` 互不相同。
+
+### 题解
+
+深度优先搜索，剪枝。
+
+```rust Rust
+// Definition for a binary tree node.
+// #[derive(Debug, PartialEq, Eq)]
+// pub struct TreeNode {
+//   pub val: i32,
+//   pub left: Option<Rc<RefCell<TreeNode>>>,
+//   pub right: Option<Rc<RefCell<TreeNode>>>,
+// }
+//
+// impl TreeNode {
+//   #[inline]
+//   pub fn new(val: i32) -> Self {
+//     TreeNode {
+//       val,
+//       left: None,
+//       right: None
+//     }
+//   }
+// }
+
+use std::cell::RefCell;
+use std::rc::Rc;
+impl Solution {
+    pub fn range_sum_bst(root: Option<Rc<RefCell<TreeNode>>>, low: i32, high: i32) -> i32 {
+        let (mut stack, mut sum) = (root.into_iter().collect::<Vec<_>>(), 0);
+        while let Some(node) = stack.pop() {
+            let node = node.borrow();
+            let (left, right) = (node.val >= low, node.val <= high);
+            if left && right {
+                sum += node.val;
+            }
+            if left {
+                stack.extend(node.left.clone());
+            }
+            if right {
+                stack.extend(node.right.clone());
+            }
+        }
+        sum
+    }
+}
+```
