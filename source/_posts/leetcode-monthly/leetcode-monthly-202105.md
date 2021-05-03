@@ -138,3 +138,60 @@ def least_bricks(wall: list[list[int]]) -> int:
     bounds = Counter(chain.from_iterable(accumulate(row[:-1]) for row in wall))
     return len(wall) - max(bounds.values(), default=0)
 ```
+
+## 7. 整数反转{#leetcode-7}
+
+[:link: 来源](https://leetcode-cn.com/problems/reverse-integer/submissions/)
+
+### 题目
+
+给你一个 32 位的有符号整数 `x`，返回将 `x` 中的数字部分反转后的结果。
+
+如果反转后整数超过 32 位的有符号整数的范围，则返回 `0`。
+
+假设环境不允许存储 64 位整数（有符号或无符号）。
+
+#### 示例
+
+```raw
+输入：x = 123
+输出：321
+```
+
+```raw
+输入：x = -123
+输出：-321
+```
+
+```raw
+输入：x = 120
+输出：21
+```
+
+```raw
+输入：x = 0
+输出：0
+```
+
+#### 提示
+
+- `-2 ** 31 <= x <= 2 ** 31 - 1`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn reverse(x: i32) -> i32 {
+        checked_reverse(x).unwrap_or(0)
+    }
+}
+
+pub fn checked_reverse(mut x: i32) -> Option<i32> {
+    let mut r: i32 = 0;
+    while x != 0 {
+        r = r.checked_mul(10)?.checked_add(x % 10)?;
+        x /= 10;
+    }
+    r.into()
+}
+```
