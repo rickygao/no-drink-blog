@@ -5,7 +5,7 @@ tags: [LeetCode]
 mathjax: true
 ---
 
-劳逸结合，快乐生活。
+劳逸结合、快乐生活。
 
 <!-- more -->
 

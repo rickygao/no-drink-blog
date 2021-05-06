@@ -5,7 +5,7 @@ tags: [LeetCode]
 mathjax: true
 ---
 
-心到神知、上供人吃。
+心到神知、上供人吃。共完成 17 题。
 
 <!-- more -->
 
