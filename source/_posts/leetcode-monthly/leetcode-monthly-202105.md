@@ -245,3 +245,28 @@ impl Solution {
     }
 }
 ```
+
+```rust Rust
+impl Solution {
+    pub fn decode(encoded: Vec<i32>, first: i32) -> Vec<i32> {
+        std::iter::once(first)
+            .chain(encoded.into_iter().scan(first, |st, n| {
+                *st ^= n;
+                Some(*st)
+            }))
+            .collect()
+    }
+}
+```
+
+```python Python
+class Solution:
+    def decode(self, encoded: list[int], first: int) -> list[int]:
+        return decode(encoded, first)
+
+from operator import xor
+from itertools import accumulate
+
+def decode(encoded: list[int], first: int) -> list[int]:
+    return list(accumulate(encoded, xor, initial=first))
+```
