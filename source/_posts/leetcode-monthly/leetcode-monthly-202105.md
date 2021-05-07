@@ -270,3 +270,130 @@ from itertools import accumulate
 def decode(encoded: list[int], first: int) -> list[int]:
     return list(accumulate(encoded, xor, initial=first))
 ```
+
+## 1486. 数组异或操作{#leetcode-1486}
+
+[:link: 来源](https://leetcode-cn.com/problems/xor-operation-in-an-array/)
+
+### 题目
+
+给你两个整数，`n` 和 `start`。
+
+数组 `nums` 定义为：`nums[i] = start + 2 * i`（下标从 `0` 开始）且 `n == len(nums)`。
+
+请返回 `nums` 中所有元素按位异或后得到的结果。
+
+#### 示例
+
+```raw
+输入：n = 5, start = 0
+输出：8
+解释：数组 nums 为 [0, 2, 4, 6, 8]，其中 0 ^ 2 ^ 4 ^ 6 ^ 8 = 8。
+```
+
+```raw
+输入：n = 4, start = 3
+输出：8
+解释：数组 nums 为 [3, 5, 7, 9]，其中 3 ^ 5 ^ 7 ^ 9 = 8。
+```
+
+```raw
+输入：n = 1, start = 7
+输出：7
+```
+
+```raw
+输入：n = 10, start = 5
+输出：2
+```
+
+#### 提示
+
+- `1 <= n <= 1e3`；
+- `0 <= start <= 1e3`；
+- `n == len(nums)`。
+
+### 题解
+
+#### 模拟
+
+```rust Rust
+impl Solution {
+    pub fn xor_operation(n: i32, start: i32) -> i32 {
+        xor_operation(n as usize, start as usize) as i32
+    }
+}
+
+use std::iter::successors;
+use std::ops::BitXor;
+
+pub fn xor_operation(n: usize, start: usize) -> usize {
+    successors(start.into(), |p| p.checked_add(2))
+        .take(n)
+        .fold(0, BitXor::bitxor)
+}
+```
+
+#### 数学
+
+首先，将原异或和式转变为计算连续整数的异或和，即
+
+$$
+\bigoplus_{k=0}^{n-1}\left(start+2k\right)=
+\overbrace{\bigoplus_{k=0}^{n-1}\left(s+k\right)}^{\text{high bits }r}\times2+
+\overbrace{\left(start\bmod2\right)\left(n\bmod2\right)}^{\text{low bit }e},
+$$
+
+其中 $s=\left\lfloor\frac{start}{2}\right\rfloor$。这样一来，可以利用异或的对合律可知
+
+$$
+r=\left(\bigoplus_{k=0}^{s-1}k\right)\oplus\left(\bigoplus_{k=0}^{s+n-1}k\right).
+$$
+
+将 $\bigoplus_{k=0}^{n-1}k$ 记作 $f\left(n\right)$，利用异或的如下性质
+
+$$
+\forall i\in\mathbb{N},\,\bigoplus_{k=0}^3\left(4i+k\right)=0,
+$$
+
+可以快速计算
+
+$$
+f\left(n\right)=\begin{cases}
+    0,   & \text{if } n\bmod4=0, \\
+    n-1, & \text{if } n\bmod4=1, \\
+    1,   & \text{if } n\bmod4=2, \\
+    n,   & \text{if } n\bmod4=3. \\
+\end{cases}
+$$
+
+综合上述结论有
+
+$$
+\bigoplus_{k=0}^{n-1}\left(start+2k\right)=\overbrace{f\left(n\right)\oplus f\left(s+n\right)}^{\text{high bits }r}\times2+
+\overbrace{\left(start\bmod2\right)\left(n\bmod2\right)}^{\text{low bit }e}.
+$$
+
+```rust Rust
+impl Solution {
+    pub fn xor_operation(n: i32, start: i32) -> i32 {
+        xor_operation(n as usize, start as usize) as i32
+    }
+}
+
+pub fn xor_operation(n: usize, start: usize) -> usize {
+    let (s, e) = (start >> 1, n & start & 1);
+    let r = sum_xor(s) ^ sum_xor(s + n);
+    r << 1 | e
+}
+
+fn sum_xor(n: usize) -> usize {
+    match n % 4 {
+        0 => 0,
+        1 => n - 1,
+        2 => 1,
+        3 => n,
+        _ => unreachable!(),
+    }
+}
+```
