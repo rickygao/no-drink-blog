@@ -397,3 +397,52 @@ fn sum_xor(n: usize) -> usize {
     }
 }
 ```
+
+## 172. 阶乘后的零{#leetcode-172}
+
+[:link: 来源](https://leetcode-cn.com/problems/factorial-trailing-zeroes/)
+
+### 题目
+
+给定一个整数 `n`，返回 `n!` 结果尾数中零的数量。
+
+#### 示例
+
+```raw
+输入: 3
+输出: 0
+解释: 3! = 6, 尾数中没有零。
+```
+
+```raw
+输入: 5
+输出: 1
+解释: 5! = 120, 尾数中有 1 个零.
+```
+
+#### 说明
+
+你算法的时间复杂度应为 $\mathrm{O}(\log n)$。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn trailing_zeroes(n: i32) -> i32 {
+        trailing_zeroes(n as usize) as i32
+    }
+}
+
+pub fn trailing_zeroes(n: usize) -> usize {
+    prime_factor_order_to(n, 5)
+}
+
+fn prime_factor_order_to(mut n: usize, f: usize) -> usize {
+    let mut p = 0;
+    while n >= f {
+        n /= f;
+        p += n;
+    }
+    p
+}
+```
