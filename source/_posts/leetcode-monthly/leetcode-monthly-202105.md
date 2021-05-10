@@ -446,3 +446,159 @@ fn prime_factor_order_to(mut n: usize, f: usize) -> usize {
     p
 }
 ```
+
+## 872. 叶子相似的树{#leetcode-872}
+
+[:link: 来源](https://leetcode-cn.com/problems/leaf-similar-trees/)
+
+### 题目
+
+请考虑一棵二叉树上所有的叶子，这些叶子的值按从左到右的顺序排列形成一个**叶值序列**。
+
+如果有两棵二叉树的叶值序列是相同，那么我们就认为它们是**叶相似**的。
+
+如果给定的两个根结点分别为 `root1` 和 `root2` 的树是叶相似的，则返回 `true`；否则返回 `false`。
+
+#### 示例
+
+```raw
+输入：root1 = [3, 5, 1, 6, 2, 9, 8, null, null, 7, 4], root2 = [3, 5, 1, 6, 7, 4, 2, null, null, null, null, null, null, 9, 8]
+输出：true
+```
+
+```raw
+输入：root1 = [1], root2 = [1]
+输出：true
+```
+
+```raw
+输入：root1 = [1], root2 = [2]
+输出：false
+```
+
+```raw
+输入：root1 = [1, 2], root2 = [2, 2]
+输出：true
+```
+
+```raw
+输入：root1 = [1, 2, 3], root2 = [1, 3, 2]
+输出：false
+```
+
+#### 提示
+
+- 给定的两棵树可能会有 `1` 到 `200` 个结点；
+- 给定的两棵树上的值介于 `0` 到 `200` 之间。
+
+### 题解
+
+#### 深度优先搜索
+
+```rust Rust
+// Definition for a binary tree node.
+// #[derive(Debug, PartialEq, Eq)]
+// pub struct TreeNode {
+//   pub val: i32,
+//   pub left: Option<Rc<RefCell<TreeNode>>>,
+//   pub right: Option<Rc<RefCell<TreeNode>>>,
+// }
+//
+// impl TreeNode {
+//   #[inline]
+//   pub fn new(val: i32) -> Self {
+//     TreeNode {
+//       val,
+//       left: None,
+//       right: None
+//     }
+//   }
+// }
+
+use std::rc::Rc;
+use std::cell::RefCell;
+impl Solution {
+    pub fn leaf_similar(
+        root1: Option<Rc<RefCell<TreeNode>>>,
+        root2: Option<Rc<RefCell<TreeNode>>>,
+    ) -> bool {
+        leaves(root1) == leaves(root2)
+    }
+}
+
+fn leaves(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
+    root.map(|root| {
+        let (mut stack, mut leaves) = (vec![root], vec![]);
+        while let Some(node) = stack.pop() {
+            let node = node.borrow();
+            node.left.as_ref().cloned().map(|l| stack.push(l));
+            node.right.as_ref().cloned().map(|r| stack.push(r));
+            if node.left.as_ref().or(node.right.as_ref()).is_none() {
+                leaves.push(node.val);
+            }
+        }
+        leaves
+    }).unwrap_or_default()
+}
+```
+
+#### 叶子迭代器
+
+```rust Rust
+// Definition for a binary tree node.
+// #[derive(Debug, PartialEq, Eq)]
+// pub struct TreeNode {
+//   pub val: i32,
+//   pub left: Option<Rc<RefCell<TreeNode>>>,
+//   pub right: Option<Rc<RefCell<TreeNode>>>,
+// }
+//
+// impl TreeNode {
+//   #[inline]
+//   pub fn new(val: i32) -> Self {
+//     TreeNode {
+//       val,
+//       left: None,
+//       right: None
+//     }
+//   }
+// }
+
+use std::rc::Rc;
+use std::cell::RefCell;
+impl Solution {
+    pub fn leaf_similar(
+        root1: Option<Rc<RefCell<TreeNode>>>,
+        root2: Option<Rc<RefCell<TreeNode>>>,
+    ) -> bool {
+        Iterator::eq(LeavesIter::new(root1), LeavesIter::new(root2))
+    }
+}
+
+struct LeavesIter {
+    stack: Vec<Rc<RefCell<TreeNode>>>,
+}
+
+impl LeavesIter {
+    fn new(root: Option<Rc<RefCell<TreeNode>>>) -> Self {
+        Self {
+            stack: root.into_iter().collect(),
+        }
+    }
+}
+
+impl Iterator for LeavesIter {
+    type Item = Rc<RefCell<TreeNode>>;
+    fn next(&mut self) -> Option<<Self as Iterator>::Item> {
+        while let Some(node) = self.stack.pop() {
+            let inner = node.borrow();
+            inner.left.as_ref().cloned().map(|l| self.stack.push(l));
+            inner.right.as_ref().cloned().map(|r| self.stack.push(r));
+            if inner.left.as_ref().or(inner.right.as_ref()).is_none() {
+                return node.clone().into();
+            }
+        }
+        return None;
+    }
+}
+```
