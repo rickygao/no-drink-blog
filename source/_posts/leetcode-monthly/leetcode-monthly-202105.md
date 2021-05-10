@@ -24,7 +24,7 @@ mathjax: true
 #### 示例
 
 ```raw
-输入：[[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], 1
+输入：employees = [[1, 5, [2, 3]], [2, 3, []], [3, 3, []]], id = 1
 输出：11
 解释：员工 1 自身的重要度是 5，他有两个直系下属 2 和 3，而且 2 和 3 的重要度均为 3。因此员工 1 的总重要度是 5 + 3 + 3 = 11。
 ```
@@ -215,7 +215,7 @@ pub fn checked_reverse(mut x: i32) -> Option<i32> {
 ```raw
 输入：encoded = [1, 2, 3], first = 1
 输出：[1, 0, 2, 1]
-解释：若 arr = [1, 0, 2, 1]，那么 first = 1 且 encoded = [1 ^ 0, 0 ^ 2, 2 ^ 1] = [1, 2, 3]
+解释：若 arr = [1, 0, 2, 1]，那么 first = 1 且 encoded = [1 ^ 0, 0 ^ 2, 2 ^ 1] = [1, 2, 3]。
 ```
 
 ```raw
@@ -247,9 +247,11 @@ impl Solution {
 ```
 
 ```rust Rust
+use std::iter::once;
+
 impl Solution {
     pub fn decode(encoded: Vec<i32>, first: i32) -> Vec<i32> {
-        std::iter::once(first)
+        once(first)
             .chain(encoded.into_iter().scan(first, |st, n| {
                 *st ^= n;
                 Some(*st)
@@ -411,13 +413,13 @@ fn sum_xor(n: usize) -> usize {
 ```raw
 输入: 3
 输出: 0
-解释: 3! = 6, 尾数中没有零。
+解释: 3! = 6，尾数中没有零。
 ```
 
 ```raw
 输入: 5
 输出: 1
-解释: 5! = 120, 尾数中有 1 个零.
+解释: 5! = 120，尾数中有 1 个零。
 ```
 
 #### 说明
@@ -622,7 +624,7 @@ impl Iterator for LeavesIter {
 ```raw
 输入：encoded = [3, 1]
 输出：[1, 2, 3]
-解释：如果 perm = [1, 2, 3]，那么 encoded = [1 ^ 2, 2 ^ 3] = [3, 1]
+解释：如果 perm = [1, 2, 3]，那么 encoded = [1 ^ 2, 2 ^ 3] = [3, 1]。
 ```
 
 ```raw
