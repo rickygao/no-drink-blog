@@ -604,3 +604,70 @@ impl Iterator for LeavesIter {
     }
 }
 ```
+
+## 1734. 解码异或后的排列{#leetcode-1734}
+
+[:link: 来源](https://leetcode-cn.com/problems/decode-xored-permutation/)
+
+### 题目
+
+给你一个整数数组 `perm`，它是前 `n` 个正整数的排列，且 `n` 是个**奇数**。
+
+它被加密成另一个长度为 `n - 1` 的整数数组 `encoded`，满足 `encoded[i] = perm[i] ^ perm[i + 1]`。比方说，如果 `perm = [1, 3, 2]`，那么 `encoded = [2, 1]`。
+
+给你 `encoded` 数组，请你返回原始数组 `perm`。题目保证答案存在且唯一。
+
+#### 示例
+
+```raw
+输入：encoded = [3, 1]
+输出：[1, 2, 3]
+解释：如果 perm = [1, 2, 3]，那么 encoded = [1 ^ 2, 2 ^ 3] = [3, 1]
+```
+
+```raw
+输入：encoded = [6, 5, 4, 6]
+输出：[2, 4, 1, 5, 3]
+```
+
+#### 提示
+
+- `3 <= n < 1e5`；
+- `n` 是奇数；
+- `len(encoded) == n - 1`。
+
+### 题解
+
+```python Python
+class Solution:
+    def decode(self, encoded: list[int]) -> list[int]:
+        return decode(encoded)
+
+from operator import xor
+from itertools import accumulate
+from functools import reduce
+
+def decode(encoded: list[int]) -> list[int]:
+    first = reduce(xor, range(len(encoded) + 2)) ^ reduce(xor, encoded[1::2])
+    return list(accumulate(encoded, xor, initial=first))
+```
+
+```rust Rust
+use std::iter::once;
+use std::ops::BitXor;
+
+impl Solution {
+    pub fn decode(encoded: Vec<i32>) -> Vec<i32> {
+        let n = encoded.len() + 1;
+        let first = (1..=n as i32)
+            .chain(encoded.iter().skip(1).step_by(2).copied())
+            .fold(0, BitXor::bitxor);
+        once(first)
+            .chain(encoded.into_iter().scan(first, |st, e| {
+                *st ^= e;
+                Some(*st)
+            }))
+            .collect()
+    }
+}
+```
