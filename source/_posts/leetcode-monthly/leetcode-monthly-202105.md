@@ -515,8 +515,9 @@ fn prime_factor_order_to(mut n: usize, f: usize) -> usize {
 //   }
 // }
 
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
+
 impl Solution {
     pub fn leaf_similar(
         root1: Option<Rc<RefCell<TreeNode>>>,
@@ -564,8 +565,9 @@ fn leaves(root: Option<Rc<RefCell<TreeNode>>>) -> Vec<i32> {
 //   }
 // }
 
-use std::rc::Rc;
 use std::cell::RefCell;
+use std::rc::Rc;
+
 impl Solution {
     pub fn leaf_similar(
         root1: Option<Rc<RefCell<TreeNode>>>,
