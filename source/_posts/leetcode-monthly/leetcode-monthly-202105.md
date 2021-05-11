@@ -640,6 +640,35 @@ impl Iterator for LeavesIter {
 
 ### 题解
 
+正整数排列的全异或为
+
+$$
+\begin{aligned}
+total&=\bigoplus_{k=1}^{n}k=\bigoplus_{k=0}^{n-1}{perm}_{k}\\
+&={perm}_0\oplus\left(\bigoplus_{k=1}^{n-1}{perm}_{k}\right).
+\end{aligned}
+$$
+
+编码结果的奇数项异或为
+
+$$
+\begin{aligned}
+odd&=\bigoplus_{k=1}^{\left\lfloor n/2\right\rfloor}{encoded}_{2k-1}\\
+&=\bigoplus_{k=1}^{\left\lfloor n/2\right\rfloor}\left({perm}_{2k-1}\oplus{perm}_{2k}\right)\\
+&=\bigoplus_{k=1}^{n-1}{perm}_{k}.
+\end{aligned}
+$$
+
+于是可得
+
+$$
+\begin{aligned}
+total\oplus odd&={perm}_0\oplus\left(\bigoplus_{k=1}^{n-1}{perm}_{k}\right)\oplus\left(\bigoplus_{k=1}^{n-1}{perm}_{k}\right)\\
+&={perm}_0.
+\end{aligned}
+$$
+
+
 ```python Python
 class Solution:
     def decode(self, encoded: list[int]) -> list[int]:
