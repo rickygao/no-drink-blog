@@ -702,3 +702,83 @@ impl Solution {
     }
 }
 ```
+
+## 1310. 子数组异或查询{#leetcode-1310}
+
+[:link: 来源](https://leetcode-cn.com/problems/xor-queries-of-a-subarray/)
+
+### 题目
+
+有一个正整数数组 `arr`，现给你一个对应的查询数组 `queries`，其中 `queries[i] = [li, ri]`。
+
+对于每个查询 `i`，请你计算从 `li` 到 `ri` 的异或值（即 `arr[li] ^ arr[li+1] ^ ... ^ arr[ri]`）作为本次查询的结果。
+
+并返回一个包含给定查询 `queries` 所有结果的数组。
+
+#### 示例
+
+```raw
+输入：arr = [1, 3, 4, 8], queries = [[0, 1], [1, 2], [0, 3], [3, 3]]
+输出：[2, 7, 14, 8]
+```
+
+```raw
+输入：arr = [4, 8, 2, 10], queries = [[2, 3], [1, 3], [0, 0], [0, 3]]
+输出：[8, 0, 4, 4]
+```
+
+#### 提示
+
+- `1 <= len(arr) <= 3e4`；
+- `1 <= arr[i] <= 1e9`；
+- `1 <= len(queries) <= 3e4`；
+- `len(queries[i]) == 2`；
+- `0 <= queries[i][0] <= queries[i][1] < len(arr)`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn xor_queries(arr: Vec<i32>, queries: Vec<Vec<i32>>) -> Vec<i32> {
+        let queries: Vec<_> = queries
+            .into_iter()
+            .map(|queries| (queries[0] as usize, queries[1] as usize))
+            .collect();
+        xor_queries(&arr, &queries)
+    }
+}
+
+pub fn xor_queries(arr: &[i32], queries: &[(usize, usize)]) -> Vec<i32> {
+    let prefix: Vec<_> = arr
+        .iter()
+        .scan(0, |st, n| {
+            *st ^= n;
+            Some(*st)
+        })
+        .collect();
+
+    queries
+        .iter()
+        .map(|&(l, r)| {
+            if l > 0 {
+                prefix[l - 1] ^ prefix[r]
+            } else {
+                prefix[r]
+            }
+        })
+        .collect()
+}
+```
+
+```python Python
+class Solution:
+    def xorQueries(self, arr: list[int], queries: list[list[int]]) -> list[int]:
+        return xor_queries(arr, queries)
+
+from operator import xor
+from itertools import accumulate
+
+def xor_queries(arr: list[int], queries: list[tuple[int, int]]) -> list[int]:
+    prefix = list(accumulate(arr, xor, initial=0))
+    return [prefix[l] ^ prefix[r + 1] for l, r in queries]
+```
