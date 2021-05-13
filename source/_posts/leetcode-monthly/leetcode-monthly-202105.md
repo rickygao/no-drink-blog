@@ -668,7 +668,6 @@ total\oplus odd&={perm}_0\oplus\left(\bigoplus_{k=1}^{n-1}{perm}_{k}\right)\oplu
 \end{aligned}
 $$
 
-
 ```python Python
 class Solution:
     def decode(self, encoded: list[int]) -> list[int]:
