@@ -782,3 +782,59 @@ def xor_queries(arr: list[int], queries: list[tuple[int, int]]) -> list[int]:
     prefix = list(accumulate(arr, xor, initial=0))
     return [prefix[l] ^ prefix[r + 1] for l, r in queries]
 ```
+
+## 1679. K 和数对的最大数目{#leetcode-1679}
+
+[:link: 来源](https://leetcode-cn.com/problems/max-number-of-k-sum-pairs/)
+
+### 题目
+
+给你一个整数数组 `nums` 和一个整数 `k`。
+
+每一步操作中，你需要从数组中选出和为 `k` 的两个整数，并将它们移出数组。
+
+返回你可以对数组执行的最大操作数。
+
+#### 示例
+
+```raw
+输入：nums = [1, 2, 3, 4], k = 5
+输出：2
+```
+
+```raw
+输入：nums = [3, 1, 3, 4, 3], k = 6
+输出：1
+```
+
+#### 提示
+
+- `1 <= len(nums) <= 1e5`；
+- `1 <= nums[i] <= 1e9`；
+- `1 <= k <= 1e9`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn max_operations(nums: Vec<i32>, k: i32) -> i32 {
+        max_operations(&nums, k) as i32
+    }
+}
+
+use std::collections::HashMap;
+
+pub fn max_operations(nums: &[i32], k: i32) -> usize {
+    let (mut counter, mut result) = (HashMap::new(), 0);
+    for &n in nums {
+        match counter.get_mut(&(k - n)) {
+            Some(count) if *count > 0 => {
+                *count -= 1;
+                result += 1;
+            }
+            _ => *counter.entry(n).or_insert(0) += 1,
+        }
+    }
+    result
+}
+```
