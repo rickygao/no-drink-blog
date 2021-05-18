@@ -958,3 +958,80 @@ pub mod roman_impl {
     }
 }
 ```
+
+## 1442. 形成两个异或相等数组的三元组数目{#leetcode-1442}
+
+[:link: 来源](https://leetcode-cn.com/problems/count-triplets-that-can-form-two-arrays-of-equal-xor/)
+
+### 题目
+
+给你一个整数数组 `arr`。
+
+现需要从数组中取三个下标 `i`、`j`、`k` ，其中 `0 <= i < j <= k < len(arr)`。
+
+`a` 和 `b` 定义如下：
+
+- `a = arr[i] ^ arr[i + 1] ^ ... ^ arr[j - 1]`；
+- `b = arr[j] ^ arr[j + 1] ^ ... ^ arr[k]`。
+
+请返回能够令 `a == b` 成立的三元组 `(i, j, k)` 的数目。
+
+#### 示例
+
+```raw
+输入：arr = [2, 3, 1, 6, 7]
+输出：4
+解释：满足题意的三元组分别是 (0, 1, 2)、(0, 2, 2)、(2, 3, 4)、(2, 4, 4)。
+```
+
+```raw
+输入：arr = [1, 1, 1, 1, 1]
+输出：10
+```
+
+```raw
+输入：arr = [2, 3]
+输出：0
+```
+
+```raw
+输入：arr = [1, 3, 5, 7, 9]
+输出：3
+```
+
+```raw
+输入：arr = [7, 11, 12, 9, 5, 2, 7, 17, 22]
+输出：8
+```
+
+#### 提示
+
+- `1 <= len(arr) <= 3e2`；
+- `1 <= arr[i] <= 1e8`。
+
+### 题解
+
+```rust Rust
+impl Solution {
+    pub fn count_triplets(arr: Vec<i32>) -> i32 {
+        count_triplets(&arr) as i32
+    }
+}
+
+use std::collections::HashMap;
+
+pub fn count_triplets(arr: &[i32]) -> usize {
+    let mut counter = HashMap::new();
+    let (mut r, mut p) = (0, 0);
+    for (i, e) in arr.iter().enumerate() {
+        if let Some((count, total)) = counter.get(&(p ^ e)) {
+            r += count * i - total;
+        }
+        let (count, total) = counter.entry(p).or_insert((0, 0));
+        *count += 1;
+        *total += i;
+        p ^= e;
+    }
+    r
+}
+```
