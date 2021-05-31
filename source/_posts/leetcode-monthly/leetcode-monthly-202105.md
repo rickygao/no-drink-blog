@@ -5,7 +5,7 @@ tags: [LeetCode]
 mathjax: true
 ---
 
-劳逸结合、快乐生活。
+劳逸结合、快乐生活。共完成 13 题。
 
 <!-- more -->
 
@@ -1033,5 +1033,61 @@ pub fn count_triplets(arr: &[i32]) -> usize {
         p ^= e;
     }
     r
+}
+```
+
+## 342. 4 的幂{#leetcode-342}
+
+[:link: 来源](https://leetcode-cn.com/problems/power-of-four/)
+
+### 题目
+
+给定一个整数，写一个函数来判断它是否是 `4` 的幂次方。如果是，返回 `true`；否则，返回 `false`。
+
+#### 示例
+
+```raw
+输入：n = 16
+输出：true
+```
+
+```raw
+输入：n = 5
+输出：false
+```
+
+```raw
+输入：n = 1
+输出：true
+```
+
+#### 提示
+
+- `-2 ** 31 <= n <= 2 ** 31 - 1`。
+
+#### 进阶
+
+你能不使用循环或者递归来完成本题吗？
+
+### 题解
+
+对于 `4` 的幂次，有
+
+$$
+\begin{aligned}
+\left(3+1\right)^k
+&=\sum_{i=0}^k\binom{k}{i}\times3^i\times1^{k-i}\\
+&=1+3\sum_{i=1}^k\binom{k}{i}\times3^{i-1}\times1^{k-i}\\
+&\equiv1\pmod3
+\end{aligned}
+$$
+
+而对于非 `4` 的幂次，且是 `2` 的幂次方，其可表示为 $2\times4^k\equiv2\pmod3$。
+
+```rust Rust
+impl Solution {
+    pub fn is_power_of_four(n: i32) -> bool {
+        n > 0 && n & (n - 1) == 0 && n % 3 == 1
+    }
 }
 ```
