@@ -25,6 +25,7 @@ comments: false
 - 2017 年 1 月迄今 - Android RD @ 天外天工作室，天津大学。
 - 2018 年 7 月至 2018 年 8 月 - Intern @ 消费者 BG AI 技术应用部，华为。
 - 2019 年 4 月至 2019 年 6 月 - Android RD Intern @ UGC 火山小视频，字节跳动。
+- 2021 年 7 月至 2021 年 9 月 - SWE Intern @ STCA，微软。
 
 ## 学术成果
 
