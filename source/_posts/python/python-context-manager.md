@@ -27,7 +27,7 @@ finally:
 
 ## 使用魔术方法实现上下文管理器
 
-Python 中有一类方法的方法名会由双下划线 `__` 包裹起来，比如 `__init__`、`_len_` 等，它们叫做魔术方法。而使用魔术方法来实现上下文管理器重点在于实现 `__enter__` 和 `__exit__` 方法。顾名思义，它们分别于进入和退出上下文时被调用。除此之外，Python 3.5 还引入了 `__aenter__` 和 `__aexit__`，用于实现异步上下文管理器，它们被 `async with` 使用，这里不加考虑。如下我们可以实现一个自己的上下文管理器：
+Python 中有一类方法的方法名会由双下划线 `__` 包裹起来，比如 `__init__`、`__len__` 等，它们叫做魔术方法。而使用魔术方法来实现上下文管理器重点在于实现 `__enter__` 和 `__exit__` 方法。顾名思义，它们分别于进入和退出上下文时被调用。除此之外，Python 3.5 还引入了 `__aenter__` 和 `__aexit__`，用于实现异步上下文管理器，它们被 `async with` 使用，这里不加考虑。如下我们可以实现一个自己的上下文管理器：
 
 ```python
 class MyContextManager:
@@ -80,7 +80,7 @@ from contextlib import contextmanager
 @contextmanager
 def my_context_manager():
     print('Enter my context.')
-    yield 'a message yeilded from my_context'
+    yield 'a message yeilded from my_context_manager'
     print('Exit my context.')
 
 with my_context_manager() as message:
@@ -91,7 +91,7 @@ with my_context_manager() as message:
 
 ```raw
 Enter my context.
-Wow, my context manager sends "a message yeilded from my_context" to me.
+Wow, my context manager sends "a message yeilded from my_context_manager" to me.
 Exit my context.
 ```
 
