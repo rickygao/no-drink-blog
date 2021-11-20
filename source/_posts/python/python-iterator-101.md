@@ -6,12 +6,12 @@ tags: [Python, Iterator]
 
 迭代器是很多流行的编程语言的标准配置，用以表示逻辑上有顺序的一系列元素，通常是一次性的和惰性的。尤其是在 Python 中，迭代器得益于其高效且易用的特性，以及如 `more-itertools` 等社区维护的优秀开源包，得到了广泛的应用。本文将对 Python 中的迭代器进行简单的介绍，并辅以示例帮助理解。
 
-灵活地使用迭代器需要解决三个问题：迭代器从哪来、迭代器怎么变和迭代器得到啥。下面的代码块是一个典型的迭代器使用实例，三行代码分别对应了迭代器从哪来、迭代器怎么变、迭代器到哪去。
+灵活地使用迭代器需要解决三个问题：迭代器从哪来、迭代器怎么变和迭代器得到啥。下面的代码块是一个典型的迭代器使用实例，三行代码分别对应了迭代器从哪来、迭代器怎么变、迭代器能干啥。
 
 ```python
 numbers = range(42) # where iterators come
 doubled = map(lambda n: n * 2, numbers) # how iterators transform
-summary = sum(doubled) # what iterators do
+summary = sum(doubled) # what iterators can do
 ```
 
 当然，与之基本等价的更地道的写法是 `summary = sum(n * 2 for n in range(42))`，而这通常适用于较为简单的操作。
